@@ -1,0 +1,351 @@
+レミントンM870:
+    Item_Information:
+        Item_Name: "&eレミントンM870"
+        Item_Type: 138
+        Item_Lore: "&f最大火力: 36.00|&f発射間隔: 2.00|&fリロード: 1.00|&f弾のブレ: 2.30|&f発射弾数: 15.00|&f飛翔時間: 0.20|&fアドオン: なし|&bAmmo: Normal|&b攻撃型/Gun-SG/Main|||&7ﾀﾞﾒｰｼﾞ特化でありながら良い扱いやすさを持つ。|&7ほとんどの項目において程よく仕上がっており、|&7良い点を伸ばした武器であるといえる。|&7発射間隔が物足りないがまぁ...大丈夫だろっ☆"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 1
+        Projectile_Amount: 15
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 2
+        Delay_Between_Shots: 40
+        Bullet_Spread: 2.3
+        Removal_Or_Drag_Delay: 4-true
+        Sounds_Shoot: ENTITY_ZOMBIE_ATTACK_DOOR_WOOD-1-1-0,ENTITY_GENERIC_EXPLODE-1-2-0,ITEM_FIRECHARGE_USE-1-1-0,BLOCK_PISTON_CONTRACT-1-1.8-10,BLOCK_PISTON_CONTRACT-1-2-12
+    Reload:
+        Enable: true
+        Reload_Amount: 6
+        Reload_Duration: 20
+        Sounds_Reloading: BLOCK_NOTE_HAT-1-1-0,BLOCK_NOTE_SNARE-1-2-1
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Reload_Bullets_Individually: true
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Firearm_Action:
+        Type: break
+        Open_Duration: 10
+        Close_Duration: 15
+        Sound_Open: BLOCK_WOODEN_DOOR_OPEN-1-2-0
+        Sound_Close: BLOCK_WOODEN_DOOR_CLOSE-1-2-0,BLOCK_PISTON_CONTRACT-1-1.8-10,BLOCK_PISTON_CONTRACT-1-2-12
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 353
+        Ammo_Name_Check: 弾薬 -ShotShell-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 40
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+s12k:
+    Item_Information:
+        Item_Name: "&es12k"
+        Item_Type: 138
+        Item_Lore: "&f最大火力: 21.44|&f発射間隔: 0.50|&fリロード: 1.35|&f弾のブレ: 2.10|&f発射弾数: 8.00|&f飛翔時間: 0.20|&fアドオン: なし|&bAmmo: Normal|&b攻撃型/Gun-SG/Main|||&7「一発目を外したなら2発目を撃てばいい。」|&7というｺﾝｾﾌﾟﾄで作られた一品。|&7ではないが、使い方はそんな感じである。|&7ﾘﾛｰﾄﾞ時間が一番の悩みだ。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 1
+        Projectile_Amount: 10
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 2
+        Delay_Between_Shots: 10
+        Bullet_Spread: 2.1
+        Removal_Or_Drag_Delay: 4-true
+        Sounds_Shoot: ENTITY_ZOMBIE_ATTACK_DOOR_WOOD-1-1-0,ENTITY_GENERIC_EXPLODE-1-2-0,ITEM_FIRECHARGE_USE-1-1-0,BLOCK_PISTON_CONTRACT-1-1.8-10,BLOCK_PISTON_CONTRACT-1-2-12
+    Reload:
+        Enable: true
+        Reload_Amount: 5
+        Reload_Duration: 27
+        Sounds_Reloading: BLOCK_NOTE_HAT-1-1-0,BLOCK_NOTE_SNARE-1-2-1
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Reload_Bullets_Individually: true
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Firearm_Action:
+        Type: break
+        Open_Duration: 10
+        Close_Duration: 15
+        Sound_Open: BLOCK_WOODEN_DOOR_OPEN-1-2-0
+        Sound_Close: BLOCK_WOODEN_DOOR_CLOSE-1-2-0,BLOCK_PISTON_CONTRACT-1-1.8-10,BLOCK_PISTON_CONTRACT-1-2-12
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 353
+        Ammo_Name_Check: 弾薬 -ShotShell-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 68
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+MAG-7:
+    Item_Information:
+        Item_Name: "&eMAG-7"
+        Item_Type: 138
+        Item_Lore: "&f最大火力: 31.20|&f発射間隔: 1.20|&fリロード: 1.15|&f弾のブレ: 1.80|&f発射弾数: 13.00|&f飛翔時間: 0.20|&fアドオン: なし|&bAmmo: Normal|&bバランス型/Gun-SG/Main|||&7ﾚﾐﾝﾄﾝM870と肩を並べる一品。|&7こちらは精度と発射間隔が優秀である。|&7これで倒されたのか、そこら辺のｿﾞﾝﾋﾞより|&7弱体化修正の希望が相次いでいる。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 1
+        Projectile_Amount: 13
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 2
+        Delay_Between_Shots: 24
+        Bullet_Spread: 1.8
+        Removal_Or_Drag_Delay: 4-true
+        Sounds_Shoot: ENTITY_ZOMBIE_ATTACK_DOOR_WOOD-1-1-0,ENTITY_GENERIC_EXPLODE-1-2-0,ITEM_FIRECHARGE_USE-1-1-0,BLOCK_PISTON_CONTRACT-1-1.8-10,BLOCK_PISTON_CONTRACT-1-2-12
+    Reload:
+        Enable: true
+        Reload_Amount: 5
+        Reload_Duration: 23
+        Sounds_Reloading: BLOCK_NOTE_HAT-1-1-0,BLOCK_NOTE_SNARE-1-2-1
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Reload_Bullets_Individually: true
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Firearm_Action:
+        Type: break
+        Open_Duration: 10
+        Close_Duration: 15
+        Sound_Open: BLOCK_WOODEN_DOOR_OPEN-1-2-0
+        Sound_Close: BLOCK_WOODEN_DOOR_CLOSE-1-2-0,BLOCK_PISTON_CONTRACT-1-1.8-10,BLOCK_PISTON_CONTRACT-1-2-12
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 353
+        Ammo_Name_Check: 弾薬 -ShotShell-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 40
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+EnduranTN7:
+    Item_Information:
+        Item_Name: "&eEnduran TN7"
+        Item_Type: 138
+        Item_Lore: "&f最大火力: 26.40|&f発射間隔: 1.50|&fリロード: 0.90|&f弾のブレ: 2.40|&f発射弾数: 22.00|&f飛翔時間: 0.25|&fアドオン: なし|&bAmmo: Normal|&b防衛型/Gun-SG/Main|||&7ｽﾗｲﾑが作り上げた持久性特化の武器。|&7ﾀﾞﾒｰｼﾞは低いものの、|&7飛翔距離、装填数、発射弾数において高水準。|&7程よくﾀﾞﾒｰｼﾞを与え、ﾉｯｸﾊﾞｯｸで前線を保つ。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 1
+        Projectile_Amount: 22
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 1
+        Delay_Between_Shots: 30
+        Bullet_Spread: 2.4
+        Removal_Or_Drag_Delay: 5-true
+        Sounds_Shoot: ENTITY_ZOMBIE_ATTACK_DOOR_WOOD-1-1-0,ENTITY_GENERIC_EXPLODE-1-2-0,ITEM_FIRECHARGE_USE-1-1-0,BLOCK_PISTON_CONTRACT-1-1.8-10,BLOCK_PISTON_CONTRACT-1-2-12
+    Reload:
+        Enable: true
+        Reload_Amount: 10
+        Reload_Duration: 18
+        Sounds_Reloading: BLOCK_NOTE_HAT-1-1-0,BLOCK_NOTE_SNARE-1-2-1
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Reload_Bullets_Individually: true
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Firearm_Action:
+        Type: break
+        Open_Duration: 10
+        Close_Duration: 15
+        Sound_Open: BLOCK_WOODEN_DOOR_OPEN-1-2-0
+        Sound_Close: BLOCK_WOODEN_DOOR_CLOSE-1-2-0,BLOCK_PISTON_CONTRACT-1-1.8-10,BLOCK_PISTON_CONTRACT-1-2-12
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 353
+        Ammo_Name_Check: 弾薬 -ShotShell-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 20
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+無尽蔵:
+    Item_Information:
+        Item_Name: "&e無尽蔵"
+        Item_Type: 138
+        Item_Lore: "&f最大火力: 2.40|&f連射速度: 5.00|&fリロード: 0.05|&f弾のブレ: 2.00|&f発射弾数: 2.00|&f飛翔時間: 0.20|&fアドオン: 確率で弾を消費しない(ﾘﾛｰﾄﾞ)|&bAmmo: Normal|&b防衛型/Gun-SG/Main|||&7「なにこれ...」 全民がそう言い放った。|&7「ﾗｲﾄﾏｼﾝｼｮｯﾄｶﾞﾝ」...とでも言おうかな。(ﾆﾀｧ)|&7これ以上に素晴らしい兵器があるかい？ 安心してくれ、|&7弾の消費は抑えてある。(ｷﾘｯ) &o-RiceBallSouls"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 2
+        Projectile_Type: snowball
+        Projectile_Speed: 20
+        Projectile_Damage: 1
+        Bullet_Spread: 2
+        Removal_Or_Drag_Delay: 20-true
+        Sounds_Shoot: ENTITY_ZOMBIE_ATTACK_DOOR_WOOD-1-1-0,ENTITY_GENERIC_EXPLODE-1-2-0,ITEM_FIRECHARGE_USE-1-1-0,BLOCK_PISTON_CONTRACT-1-1.8-10,BLOCK_PISTON_CONTRACT-1-2-12
+    Reload:
+        Enable: true
+        Reload_Amount: 60
+        Reload_Duration: 1
+        Sounds_Reloading: BLOCK_NOTE_HAT-0.4-1-0,BLOCK_NOTE_SNARE-0.6-6-1
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Reload_Bullets_Individually: true
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Firearm_Action:
+        Type: break
+        Open_Duration: 10
+        Close_Duration: 15
+        Sound_Open: BLOCK_WOODEN_DOOR_OPEN-1-2-0
+        Sound_Close: BLOCK_WOODEN_DOOR_CLOSE-1-2-0,BLOCK_PISTON_CONTRACT-1-1.8-10,BLOCK_PISTON_CONTRACT-1-2-12
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 353
+        Ammo_Name_Check: 弾薬 -ShotShell-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 20
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 5
+
+DoubleBarrel-RB:
+    Item_Information:
+        Item_Name: "&eDoubleBarrel-RB"
+        Item_Type: 138
+        Item_Lore: "&f最大火力: 25.00|&f発射間隔 0.75|&fリロード: 3.50|&f弾のブレ: 1.20|&f発射弾数: 20.00|&f飛翔時間: 0.20|&fアドオン: 弾速が早い|&bAmmo: Normal|&b防衛型/Gun-SG/Main|||&7弾速が通常の3倍になったｼｮｯﾄｶﾞﾝ。|&7砂糖を金属に練りこむことで実現。|&7弾のﾌﾞﾚ等が大きく見えるが弾速でｶﾊﾞｰされている。|&7どうして砂糖なのかは未だに謎。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 20
+        Projectile_Type: snowball
+        Projectile_Speed: 120
+        Projectile_Damage: 1
+        Delay_Between_Shots: 15
+        Bullet_Spread: 1.2
+        Removal_Or_Drag_Delay: 4-true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_ZOMBIE_ATTACK_DOOR_WOOD-1-1-0,ENTITY_GENERIC_EXPLODE-1-2-0,ITEM_FIRECHARGE_USE-1-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 2
+        Reload_Duration: 70
+        Sounds_Reloading: BLOCK_WOODEN_DOOR_OPEN-1-2-0,BLOCK_NOTE_HAT-1-1-10,BLOCK_NOTE_SNARE-1-2-11,BLOCK_NOTE_HAT-1-1-11,BLOCK_NOTE_SNARE-1-2-12,BLOCK_WOODEN_DOOR_OPEN-1-2-20,BLOCK_WOODEN_DOOR_CLOSE-1-2-50,BLOCK_PISTON_CONTRACT-1-2-60
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 353
+        Ammo_Name_Check: 弾薬 -ShotShell-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 25
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+SeptupleBarrel-RB:
+    Item_Information:
+        Item_Name: "&aSeptupleBarrel-RB"
+        Item_Type: 138
+        Item_Lore: "&f最大火力: 31.25|&f発射間隔 0.75|&fリロード: 3.50|&f弾のブレ: 0.70|&f発射弾数: 20.00|&f飛翔時間: 0.20|&fアドオン: 弾速がとても早い, HP大幅減少|&bAmmo: Normal|&b攻撃型/Gun-SG/Main||||&7ﾏｶﾞｼﾞﾝ(?)を拡張した大きなｼｮｯﾄｶﾞﾝ。|&7反動としてHPが減少するが、|&7それに見合う価値はあるはず。|&eBefore: DoubleBarrel-RB[装填数]"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 25
+        Projectile_Type: snowball
+        Projectile_Speed: 140
+        Projectile_Damage: 1
+        Delay_Between_Shots: 15
+        Bullet_Spread: 0.7
+        Removal_Or_Drag_Delay: 4-true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_ZOMBIE_ATTACK_DOOR_WOOD-1-1-0,ENTITY_GENERIC_EXPLODE-1-2-0,ITEM_FIRECHARGE_USE-1-1-0, BLOCK_NOTE_SNARE-1-2-10
+    Reload:
+        Enable: true
+        Reload_Amount: 7
+        Reload_Duration: 70
+        Sounds_Reloading: BLOCK_WOODEN_DOOR_OPEN-1-2-0,BLOCK_NOTE_HAT-1-1-10,BLOCK_NOTE_SNARE-1-2-11,BLOCK_NOTE_HAT-1-1-11,BLOCK_NOTE_SNARE-1-2-12,BLOCK_WOODEN_DOOR_OPEN-1-2-20,BLOCK_WOODEN_DOOR_CLOSE-1-2-50,BLOCK_PISTON_CONTRACT-1-2-60
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 353
+        Ammo_Name_Check: 弾薬 -ShotShell-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 25
+    Particles:
+        Enable: true
+        Particle_Terrain: true

@@ -1,0 +1,49 @@
+ShopName: dhxfgnrthrstrgs
+DisplayName: '&lMainMagicShop - Creation'
+signs:
+  text: '[MainMagicShop - Creation]'
+  NeedPermissionToCreateSign: true
+shop:
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: vesbesvredverd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''
+  チャージア:
+    RewardType: playercommand
+    PriceType: money
+    Price: 16300
+    Reward: brsbrbrbrbrbrbbb チャージア 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:0
+    - name:&9チャージア
+    - 'lore:&f高威力なチャージ式ウェポン。##&f&b必要水晶 : 16300'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  スペルアロー:
+    RewardType: playercommand
+    PriceType: money
+    Price: 11900
+    Reward: brsbrbrbrbrbrbbb スペルアロー 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:0
+    - name:&9スペルアロー
+    - 'lore:&f安定した連射型魔法。##&f&b必要水晶 : 11900'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''

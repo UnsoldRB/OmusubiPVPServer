@@ -1,0 +1,47 @@
+スピード・ブースト:
+    Item_Information:
+        Item_Name: "&eスピード・ブースト"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: 移動速度上昇|&f効果強度: 0.20(p), 5.00(t)|&f逑逑逑逑: なし|&f使用間隔: 20.00|&f即時詠唱: 0.00|&fウェイト: 0.00%|&fアドオン: なし|&bCost: 1|&bAmmo: Crystal|&bバランス型/SideMagic-Souls/Sub|||&7持つと足に力がみなぎる杖。|&7巨木の周りに自生していた。|&7杖を振りかざすと、|&7周囲にそよ風が吹き始めるらしい。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 400
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 0-true
+        Sounds_Shoot: WEATHER_RAIN-1-2-0,WEATHER_RAIN-1-2-0,WEATHER_RAIN-1-1-0,BLOCK_NOTE_HAT-1-1-40,BLOCK_NOTE_HAT-1-1-60,BLOCK_NOTE_HAT-1-1-80,ENTITY_GENERIC_EXTINGUISH_FIRE-1-0-100
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+ヘルスヒール:
+    Item_Information:
+        Item_Name: "&eヘルスヒール"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: 自身以外の味方を回復|&f効果強度: 18.00(p), 9.00(d)|&f逑逑逑逑: なし|&f使用間隔: 30.00|&f簡易詠唱: 1.00∴30.00|&fウェイト: 100.00%|&fアドオン: なし|&bCost: 2|&bAmmo: Crystal|&b防衛型/SideMagic-Souls/Sub||||&7宝箱に入っていたオーブ。|&7優しく投げると、周囲にその効果をもたらす。|&7どういう嫌がらせか、使用者本人に効果が表れない。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 2
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 0-true
+        Sounds_Shoot: ENTITY_GENERIC_SWIM-1-0-0,ENTITY_GENERIC_SWIM-1-1-10,ENTITY_GENERIC_SWIM-1-2-20
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Particles:
+        Enable: true
+        Particle_Terrain: true

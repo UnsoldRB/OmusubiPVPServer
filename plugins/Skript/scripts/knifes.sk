@@ -1,0 +1,109 @@
+import:
+	com.shampaggon.crackshot.CSUtility
+	com.shampaggon.crackshot.events.WeaponDamageEntityEvent
+
+on script load:
+	delete {Knife::*}
+	delete {fryingpan::*}
+
+WeaponDamageEntityEvent:
+	if event.getWeaponTitle() contains "Melee":
+		set {_delay} to skutilities yaml value "%event.getWeaponTitle()%.Shooting.Delay_Between_Shots" of file "plugins/CrackShot/weapons/Knife.yml"
+		event.getPlayer().setCooldown(event.getPlayer().getItemInHand().getType(), "%{_delay}%" parsed as number)
+	if lore of event.getVictim()'s held item contains "/Knife":
+		if {Knife::%event.getVictim()%} is true:
+			cancel event
+			Damage(event.getPlayer(), event.getVictim(), (event.getDamage() / 2), (event.getPlayer()'s selected hotbar slot))
+		else:
+			set {Knife::%event.getVictim()%} to true
+			wait 10 ticks
+			delete {Knife::%event.getVictim()%}
+		if {fryingpan::%event.getVictim()%} is set:
+			cancel event
+			set {_damage} to (event.getDamage() / 2) * 4
+			Damage({killername::%event.getVictim()%}, event.getVictim(), ({_damage} / 10), ({killername::%event.getVictim()%}'s selected hotbar slot))
+			Playsound(event.getVictim(), "heavyattack", 1, 2)
+			execute console command "/execute %event.getVictim()% ~ ~ ~ /particle blockdust ~ ~1 ~ 0 0 0 0.1 60 normal @a 7"
+
+on damage of player:
+	if lore of victim's held item contains "/Knife":
+		if damage cause is not projectile:
+			if {fryingpan::%victim%} is set:
+				set damage to damage * 0.4
+				Playsound(victim, "heavyattack", 1, 2)
+				execute console command "/execute %victim% ~ ~ ~ /particle blockdust ~ ~1 ~ 0 0 0 0.1 60 normal @a 7"
+
+
+on crackshot shoot:
+	if event-string is "ポイズンダガー":
+		set {_loc} to location of player
+		wait 1 ticks
+		if block at location 0.1 meter below player is not air or water:
+			delete velocity of player
+			set y-coord of {_loc} to y-coord of player
+			push player upwards at speed 0.2
+			push player direction from player to location at {_loc} at speed -1.4
+			Playsound(player, "step", 1, 1)
+			execute console command "/execute %player% ~ ~ ~ /particle blockdust ~ ~ ~ 0.5 0 0.5 0.1 60 normal @a 2"
+	else if event-string is "フライパン":
+		execute console command "/execute %player% ~ ~ ~ /particle magicCrit ~ ~1 ~ 0 0 0 0.5 10"
+		add 1 to {fryingpan::%player%}
+		wait 2 ticks
+		remove 1 from {fryingpan::%player%}
+		if {fryingpan::%player%} is less than 1:
+			delete {fryingpan::%player%}
+	else if event-string is "アサシンダガー":
+		set player's offhand to unbreakable iron hoe:8 named ""
+		Invisible(player, 160)
+		wait 8 seconds
+		if player's offhand is unbreakable iron hoe:8:
+			set player's offhand to air
+	else if event-string is "コールドレイピア":
+		delete velocity of player
+		loop all blocks in radius 3 around location 3 meter forwards player:
+			if loop-block is not air:
+				if block at location above loop-block is air or water:
+					add location of loop-block to {_loc::*}
+					add type of loop-block to {_type::*}
+		loop all blocks in radius 3 around location 1 meter forwards, 3 meter right player:
+			if loop-block is not air:
+				if block at location above loop-block is air or water:
+					add location of loop-block to {_loc::*}
+					add type of loop-block to {_type::*}
+		loop all blocks in radius 3 around location 1 meter forwards, 3 meter left player:
+			if loop-block is not air:
+				if block at location above loop-block is air or water:
+					add location of loop-block to {_loc::*}
+					add type of loop-block to {_type::*}
+		loop {_loc::*}:
+			chance of 80%:
+				AreaEffect(player, location 0.5 meter above loop-value, "sweepAttack", 0, 0.1, 1)
+		Playsound(player, "entity.player.attack.sweep", 1, 2)	
+		wait 5 ticks
+		delete velocity of player
+		loop {_loc::*}:
+			set block at loop-value to packed ice
+			draw 1 blockcrack material particle made of ice at loop-value, speed 0.1, offset 0, 10, 0, keepFor 0.1 seconds
+			draw 3 blockcrack material particle made of ice at location 0.6 meter above loop-value, speed 0.1, offset 0, 0, 0, keepFor 0.1 seconds
+			loop all players in radius 2 around location 1 meter above loop-value:
+				if {team::%loop-player%} is not {team::%player%}:
+					if loop-player is not event-player:
+						Damage(player, loop-player, 8, player's selected hotbar slot)
+						push loop-player upwards at speed 0.03
+			chance of 50%:
+				set {_vector} to vector between loop-value and location 5 meter above, (1 or 0) meter north, (1 or 0) meter east loop-value
+				draw 2 blue scale 10 colored directional itemcrack particles at loop-value with direction {_vector} and speed random number between 0.10 and 0.20
+				Playsound(player, "block.glass.break", 1, (random number between 0.0 and 1.5))	
+		wait 2 ticks
+		loop {_loc::*}:
+			set block at loop-value to {_type::%loop-index%}
+
+
+
+WeaponDamageEntityEvent:
+	set {_victim} to event.getVictim()
+	if event.getWeaponTitle() is "ポイズンダガーMELEE":
+		if {_victim} has poison:
+			apply potion of poison of tier 1 to {_victim} for 0.6 seconds
+		else:
+			apply potion of poison of tier 1 to {_victim} for 3.1 seconds

@@ -1,0 +1,227 @@
+フック:
+    Shoot:
+        Trails:
+            Default_Trail: "SP-MOVE"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+モア・フック:
+    Shoot:
+        Trails:
+            Default_Trail: "SP-MOVE"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+
+ショートダッシュ:
+    Shoot:
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+簡易テレポート:
+    Shoot:
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+クイックカット:
+    Shoot:
+        Trails:
+            Default_Trail: "SP-MOVE"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+スピードカット:
+    Shoot:
+        Trails:
+            Default_Trail: "SP-MOVE"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+バックステップ:
+    Shoot:
+        Trails:
+            Default_Trail: "SP-MOVE"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+SnowWalk:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+フェイクムーブ:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+フロウ:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"

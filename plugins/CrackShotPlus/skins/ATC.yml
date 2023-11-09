@@ -1,0 +1,18 @@
+﻿P90/Custom-Ammo_default:
+    Durability: 2
+    Change_Item_Type: "IRON_AXE"
+フック/Custom-Speed_default:
+    Durability: 1
+    Change_Item_Type: "DIAMOND_SWORD"
+アイスボール/Custom-Bounce_default:
+    Durability: 3
+    Change_Item_Type: "IRON_SWORD"
+Twin-MG/Custom-Reload_default:
+    Durability: 1
+    Change_Item_Type: "IRON_AXE"
+DesertEagle/Custom-Reload_default:
+    Durability: 1
+    Change_Item_Type: "DIAMOND_HOE"
+DSR-1/Custom-Ammo_default:
+    Durability: 1
+    Change_Item_Type: "DIAMOND_AXE"

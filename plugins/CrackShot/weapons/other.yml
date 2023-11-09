@@ -1,0 +1,198 @@
+
+op1:
+    Item_Information:
+        Item_Name: "OP移動用武器"
+        Item_Type: 294
+        Remove_Unused_Tag: true
+        Attachments:
+            Type: main
+            Toggle_Delay: 0
+            Info: "op2"
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Recoil_Amount: -50
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 1-true
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 16
+op2:
+    Item_Information:
+        Item_Name: "op移動2"
+        Item_Type: 294
+        Remove_Unused_Tag: true
+        Attachments:
+            Type: accessory
+            Toggle_Delay: 0
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Recoil_Amount: -20
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 1-true
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 10
+op3:
+    Item_Information:
+        Item_Name: "&eOP用ペーストスタッフ"
+        Item_Type: 294
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 1-true
+    Extras:
+        Run_Command:
+            - "/paste"
+
+SCAR-H(?):
+    Item_Information:
+        Item_Name: "&eSCAR-H(?)"
+        Item_Type: 278~2
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Recoil_Amount: 0
+        Projectile_Amount: 25
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 3000
+        Bullet_Spread: 8
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,BLOCK_NOTE_SNARE-1-1.8-0,ENTITY_GENERIC_BIG_FALL-0.4-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 10
+        Zoom_Bullet_Spread: 1
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 16
+    Sneak:
+        Enable: true
+        Bullet_Spread: 1
+    Custom_Death_Message:
+        Normal: "&7<victim>は<shooter>にSCAR-H(?)で倒された。"
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+Disable:
+    Item_Information:
+        Item_Name: "&eDisable"
+        Item_Type: 1
+        Melee_Mode: true
+        Hidden_From_List: true
+    Shooting:
+
+        Projectile_Damage: 0
+menu:
+    Item_Information:
+        Item_Name: "&eMenu"
+        Item_Lore: "&f右クリックで瞬時にMenuを開けます"
+        Item_Type: 2267
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 1-true
+    Extras:
+        Run_Command:
+            - "@chestcommands open Omusubi <shooter>"
+pvpmenu:
+    Item_Information:
+        Item_Name: "&ePVPMenu"
+        Item_Lore: "&f右クリックで瞬時に|&fPVPに特化させたMenuを開けます"
+        Item_Type: 2267
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 1-true
+    Extras:
+        Run_Command:
+            - "@bs open ezrgaergeargaedfswe <shooter>"
+
+KillLog変更リセット:
+    Item_Information:
+        Item_Name: "&eKillLog変更 -リセット-"
+        Item_Lore: "&f使用すると通常のKillLogになります||&f左クリックで使用できます"
+        Item_Type: 339
+        Remove_Unused_Tag: true
+    Shooting:
+
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 1-true
+RPG-7(?):
+    Item_Information:
+        Item_Name: "&eRPG-7(?)"
+        Item_Type: 269
+        Item_Lore: ""
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 1
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 15
+        Projectile_Damage: 7
+        Remove_Bullet_Drop: true
+        Bullet_Spread: 0
+        Sounds_Shoot: ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_IRONGOLEM_HURT-1-1-0,ENTITY_IRONGOLEM_HURT-1-0-0,BLOCK_IRON_DOOR_OPEN-1-0.6-1,BLOCK_IRON_DOOR_OPEN-1-1.6-1
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Explosions:
+        Enable: true
+        Knockback: 20
+        Damage_Multiplier: 500
+        Explosion_No_Grief: true
+        Explosion_Radius: 6
+        On_Impact_With_Anything: true
+crystalplease:
+    Item_Information:
+        Item_Name: "&e10万クリスタル"
+        Item_Lore: "&f右クリックで使用"
+        Item_Type: 2267
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 1-true
+    Extras:
+        Run_Command:
+            - "@money grant <shooter> 100000"
+        One_Time_Use: true
+

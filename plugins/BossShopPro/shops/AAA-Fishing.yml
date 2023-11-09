@@ -1,0 +1,75 @@
+ShopName: erhedtrstgtfr
+DisplayName: '&9&lおさかなShop'
+signs:
+  text: '[おさかなShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  1:
+    RewardType: playercommand
+    PriceType: item
+    Price:
+    - - id:346
+      - amount:1
+      - durability:64
+    Reward: vgwrhlwuiesrngsli シンプルつりざお
+    MenuItem:
+    - hideflags:all
+    - id:346
+    - amount:1
+    - durability:0
+    - name:&9シンプルつりざお
+    - 'lore:&fフツーのつりざお。#&f何か効果があるわけでもない。##&b必要 : すばらしい釣り竿'
+    Message: '&e%itemname%&eを購入しました'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  2:
+    RewardType: playercommand
+    PriceType: item
+    Price:
+    - - id:346
+      - amount:1
+      - durability:64
+    Reward: vgwrhlwuiesrngsli ビーキューつりざお
+    MenuItem:
+    - hideflags:all
+    - id:346
+    - amount:1
+    - durability:0
+    - name:&9ビーキューつりざお
+    - 'lore:&fちょっと強いつりざお。#&f少しだけ良いものが釣れるかも？。##&b必要 : すばらしい釣り竿'
+    Message: '&e%itemname%&eを購入しました'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  3:
+    RewardType: playercommand
+    PriceType: item
+    Price:
+    - - id:346
+      - amount:1
+      - durability:64
+    Reward: vgwrhlwuiesrngsli ファストつりざお
+    MenuItem:
+    - hideflags:all
+    - id:346
+    - amount:1
+    - durability:0
+    - name:&9ファストつりざお
+    - 'lore:&fせっかちなつりざお。#&f数を釣るならもってこい。##&b必要 : すばらしい釣り竿'
+    Message: '&e%itemname%&eを購入しました'
+    InventoryLocation: 3
+    ExtraPermission: ''
+  4:
+    RewardType: playercommand
+    PriceType: money
+    Price: 10000
+    Reward: brsbrbrbrbrbrbbb すばらしい釣り竿 1
+    MenuItem:
+    - hideflags:all
+    - id:346
+    - amount:1
+    - durability:0
+    - name:&9すばらしい釣り竿
+    - 'lore:&fワンタイムな釣り竿。#&f本来ならTeamBattleの賞品。#&f値段が高いのはそれが理由だろう。##&b必要水晶 : 10000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 5
+    ExtraPermission: ''

@@ -1,0 +1,39 @@
+レーザー:
+    Item_Information:
+        Item_Name: "&eレーザー"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: ダメージ(ﾉｯｸﾊﾞｯｸ)|&f効果強度: 10.00(p)|&f逑逑逑逑: 1.00(p)|&f使用間隔: 1.20|&f充填詠唱: 6.00∴10.00(s)|&fウェイト: 20.00%|&fアドオン: なし|&bAmmo: Crystal|&bバランス型/Magic-Souls/Main||||&7どこかのおじさんが編み出した魔術。|&7自分の集中力を槍とし、|&7相手に飛ばす。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 24
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 50
+        Projectile_Damage: 10
+        Remove_Bullet_Drop: true
+        Bullet_Spread: 0
+        Sounds_Shoot: ENTITY_WITHER_SHOOT-1-2-0,ENTITY_GHAST_DEATH-1-0-0
+    Reload:
+        Enable: true
+        Reload_Amount: 5
+        Reload_Duration: 120
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+        Knockback: 1
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 296
+        Ammo_Name_Check: 弾薬 -Crystal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true

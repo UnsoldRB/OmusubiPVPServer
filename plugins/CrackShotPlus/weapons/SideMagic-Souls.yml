@@ -1,0 +1,10 @@
+スピード・ブースト:
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+ヘルスヒール:
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"

@@ -1,0 +1,19 @@
+Skill-ジャンプパッド:
+    Item_Information:
+        Item_Name: "&eSkill-ジャンプパッド"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: ｼﾞｬﾝﾌﾟﾊﾟｯﾄﾞを設置する∴40(ｸﾘｯｸ)|&f逑逑逑逑: なし|&f逑逑逑逑: なし|&f装備条件: なし(r)|&f逑逑逑逑: なし(r)|&b防衛型/Skill-Supply/Skill||||&7さわやかな手触りのSkill。|&7どこまでも飛んでいける。|&7気がする。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Disable: true
+
+Skill-フレッシュレーダー:
+    Item_Information:
+        Item_Name: "&eSkill-フレッシュレーダー"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 半径100block以内の敵を発光させる∴30(ｸﾘｯｸ)|&f逑逑逑逑: なし|&f逑逑逑逑: なし|&f装備条件: なし(r)|&f逑逑逑逑: なし(r)|&bバランス型/Skill-Supply/Skill|||||&7磁場が発生しているSkill。|&7ずっと持ってると頭がモヤモヤする。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Disable: true

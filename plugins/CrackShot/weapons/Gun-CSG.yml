@@ -1,0 +1,101 @@
+PSR-2000:
+    Item_Information:
+        Item_Name: "&ePSR-2000"
+        Item_Type: 138
+        Item_Lore: "&f最大火力: 12.10|&f発射間隔: 1.00|&fリロード: 4.00|&f弾のブレ: 1.60|&f発射弾数: 11.00|&fアドオン: なし|&bAmmo: Normal|&b防衛型/Gun-CSG/Sub||||&7ある男はﾘﾎﾞﾙﾊﾞｰを扱えないことを嘆いた。|&7当たらないなら当たるような武器を使えばいい。|&7散弾銃であるこのSubは扱いやすさと火力を備えている。"
+        Inventory_Control: sub
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 11
+        Delay_Between_Shots: 20
+        Projectile_Type: Snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 1
+        Bullet_Spread: 1.6
+        Sounds_Shoot: ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0,BLOCK_PISTON_CONTRACT-1-2-10
+    Reload:
+        Enable: true
+        Reload_Amount: 4
+        Reload_Duration: 80
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 1.3
+    Sneak:
+        Enable: true
+        No_Recoil: true
+        Bullet_Spread: 1.3
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 10
+
+TH-Spread:
+    Item_Information:
+        Item_Name: "&eTH-Spread"
+        Item_Type: 138
+        Item_Lore: "&f最大火力: 3.00|&f発射間隔: 2.20(4)|&fリロード: 4.00|&f弾のブレ: 2.60|&f発射弾数: 3.00|&fアドオン: なし|&bAmmo: Normal|&bバランス型/Gun-CSG/Sub||||&7少しでもﾀﾞﾒｰｼﾞを稼ぐことに特化した武器。|&7複数回に分けて発射することで、|&7一度により多くの弾を飛ばせるように作られている。"
+        Inventory_Control: sub
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 3
+        Delay_Between_Shots: 44
+        Projectile_Type: Snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 1
+        Bullet_Spread: 2.6
+        Sounds_Shoot: ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0,BLOCK_PISTON_CONTRACT-1-2-10
+    Reload:
+        Enable: true
+        Reload_Amount: 20
+        Reload_Duration: 80
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 2.3
+    Sneak:
+        Enable: true
+        No_Recoil: true
+        Bullet_Spread: 2.3
+    Burstfire:
+        Enable: true
+        Shots_Per_Burst: 4
+        Delay_Between_Shots_In_Burst: 2
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true

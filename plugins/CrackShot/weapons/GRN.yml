@@ -1,0 +1,170 @@
+スタンダードグレネード:
+    Item_Information:
+        Item_Name: "&eスタンダードグレネード"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 60.00|&fリロード: 30.00|&f爆破範囲: 5.00|&f爆発遅延: 2.00|&f投擲速度: 10.00|&f特殊効果: なし|&f逑逑逑逑: なし|&bバランス型/GRN/Grenade|||||&7扱いやすく設計された量産型グレネード。|&7超スタンダード。"
+        Inventory_Control: g
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Delay_Between_Shots: 400
+        Projectile_Type: egg
+        Projectile_Subtype: 285
+        Projectile_Amount: 1
+        Projectile_Speed: 15
+        Sounds_Shoot: ENTITY_GENERIC_EXTINGUISH_FIRE-0.4-2-1
+    Abilities:
+        Reset_Hit_Cooldown: true
+アイスCグレネード:
+    Item_Information:
+        Item_Name: "&eアイスCグレネード"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 4.50|&fリロード: 27.00|&f爆破範囲: 6.00|&f爆破遅延: 1.00|&f投擲速度: 17.00|&f特殊効果: 一定間隔で7回動きを止める(ﾀﾞﾒｰｼﾞ)|&f逑逑逑逑: なし|&b防衛型/GRN/Grenade||||&7僅かに冷たさを感じるグレネード。|&7被害者に足止めの効果を与える。|&7真夏に人に対して投げると喜ばれる。"
+        Inventory_Control: g
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Delay_Between_Shots: 340
+        Projectile_Type: egg
+        Projectile_Subtype: 285
+        Projectile_Amount: 1
+        Projectile_Speed: 17
+        Sounds_Shoot: ENTITY_GENERIC_EXTINGUISH_FIRE-0.4-2-1
+    Abilities:
+        Reset_Hit_Cooldown: true
+軽量グレネード:
+    Item_Information:
+        Item_Name: "&e軽量グレネード"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 44.00|&fリロード: 27.00|&f爆破範囲: 4.00|&f爆発遅延: 1.50|&f投擲速度: 15.00|&f特殊効果: なし|&f逑逑逑逑: なし|&b攻撃型/GRN/Grenade|||||&7改良型ｽﾀﾝﾀﾞｰﾄﾞｸﾞﾚﾈｰﾄﾞ。|&7ﾀﾞﾒｰｼﾞを引き換えに爆破遅延を短くした。"
+        Inventory_Control: g
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Delay_Between_Shots: 340
+        Projectile_Type: egg
+        Projectile_Subtype: 285
+        Projectile_Amount: 1
+        Projectile_Speed: 15
+        Sounds_Shoot: ENTITY_GENERIC_EXTINGUISH_FIRE-0.4-2-1
+    Abilities:
+        Reset_Hit_Cooldown: true
+フレイミーグレネード:
+    Item_Information:
+        Item_Name: "&eフレイミーグレネード"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 35.00|&fリロード: 32.50|&f爆破範囲: 7.50|&f爆発遅延: 2.00|&f投擲速度: 12.00|&f特殊効果: 5秒間着火(ﾀﾞﾒｰｼﾞ)|&f逑逑逑逑: なし|&b攻撃型/GRN/Grenade||||&7瞬間火力を目的としないｸﾞﾚﾈｰﾄﾞ。|&7被害者に5秒の着火を与え、|&7視界を害し、円滑な行動を封じる。"
+        Inventory_Control: g
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Delay_Between_Shots: 450
+        Projectile_Type: egg
+        Projectile_Subtype: 285
+        Projectile_Amount: 1
+        Projectile_Speed: 12
+        Sounds_Shoot: ENTITY_GENERIC_EXTINGUISH_FIRE-0.4-2-1
+    Abilities:
+        Reset_Hit_Cooldown: true
+ダッシュグレネード:
+    Item_Information:
+        Item_Name: "&eダッシュグレネード"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 0.00|&fリロード: 26.00|&f爆破範囲: 0.00|&f爆発遅延: 0.50|&f投擲速度: 22.00|&f特殊効果: 投げた先にﾃﾚﾎﾟｰﾄする|&f逑逑逑逑: なし|&b攻撃型/GRN/Grenade|||&7銃好きの魔術師が趣味で作ったもの。|&7ﾀﾞﾒｰｼﾞはなく、ﾃﾚﾎﾟｰﾄができる。|&7魔法を使ったほうが便利なため、|&7作っただけで使わなかったようだ。"
+        Inventory_Control: g
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Delay_Between_Shots: 320
+        Projectile_Type: egg
+        Projectile_Amount: 1
+        Projectile_Speed: 22
+        Removal_Or_Drag_Delay: 10-false
+        Sounds_Shoot: ENTITY_GENERIC_EXTINGUISH_FIRE-0.4-2-1,ENTITY_ENDERMEN_TELEPORT-1-0-11
+    Abilities:
+        Reset_Hit_Cooldown: true
+ジャンプグレネード:
+    Item_Information:
+        Item_Name: "&eジャンプグレネード"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 0.00|&fリロード: 26.00|&f爆破範囲: 0.00|&f爆発遅延: 0.00|&f投擲速度: 0.00|&f特殊効果: 跳躍力上昇6s|&f逑逑逑逑: なし|&bバランス型/GRN/Grenade|||||&7うさぎのような跳躍力を自身に付与するｸﾞﾚﾈｰﾄﾞ。|&7使い方は色々あるだろう。"
+        Inventory_Control: g
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Delay_Between_Shots: 320
+        Projectile_Type: egg
+        Projectile_Amount: 1
+        Projectile_Speed: 0
+        Removal_Or_Drag_Delay: 0-true
+        Sounds_Shoot: ENTITY_RABBIT_HURT-1-1-0,ENTITY_RABBIT_HURT-1-2-0,ENTITY_RABBIT_HURT-1-0-0,ENTITY_RABBIT_HURT-1-0.5-0,ENTITY_RABBIT_HURT-1-1.5-0,ENTITY_RABBIT_DEATH-1-0-0,ENTITY_RABBIT_DEATH-1-2-0,ENTITY_RABBIT_DEATH-1-1-0,ENTITY_PLAYER_BIG_FALL-1-0-160
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: JUMP-160-8
+対空グレネード:
+    Item_Information:
+        Item_Name: "&e対空グレネード"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 20.00|&fリロード: 35.00|&f爆破範囲: 300.00|&f爆発遅延: 0.00|&f投擲速度: 100.00|&f特殊効果: 高ﾀﾞﾒｰｼﾞ(ﾀﾞﾒｰｼﾞ)|&f逑逑逑逑: 叩き落す(ﾀﾞﾒｰｼﾞ)|&b防衛型/GRN/Grenade||||&7風を操る者が蚊を倒すために作ったもの。|&7被害者に高火力を示した後に叩き落す。|&7ただし効果の対象は空中にいる敵に対してのみ。"
+        Inventory_Control: g
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Delay_Between_Shots: 400
+        Projectile_Type: snowball
+        Projectile_Amount: 15
+        Projectile_Speed: 100
+        Projectile_Damage: 0
+        Bullet_Spread: 0.7
+        Sounds_Shoot: ENTITY_GENERIC_EXTINGUISH_FIRE-0.4-2-1,ENTITY_WITHER_SHOOT-1-2-1
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+追尾ミサイル:
+    Item_Information:
+        Item_Name: "&6追尾ミサイル"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 15.00|&fリロード: 5.00|&f爆破範囲: 3.50|&f爆発遅延: 0.00|&f投擲速度: 40.00|&f特殊効果: ﾘﾛｰﾄﾞが銃の仕様と同じ|&f逑逑逑逑: 視点の先の敵を追尾(発射)|&bAmmo: Arrow|&b防衛型/GRN/Main||||&7すっごいｶｯｺｲｨｨｲミサイル。|&7ロマンがいっぱい詰まっている。|&7ちゃんと使ってあげれば役に立つ。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: Snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 1
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-0.5-0-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 10
+    Reload:
+        Enable: true
+        Reload_Amount: 5
+        Reload_Duration: 100
+        Sounds_Reloading: BLOCK_PISTON_EXTEND-1-0-40,ENTITY_GENERIC_EXTINGUISH_FIRE-1-0-0,BLOCK_PISTON_EXTEND-1-0-50,BLOCK_PISTON_EXTEND-1-0-60,BLOCK_PISTON_EXTEND-1-0-100,BLOCK_PISTON_EXTEND-1-0-70,BLOCK_PISTON_EXTEND-1-0-80,BLOCK_PISTON_EXTEND-1-0-90,ITEM_ARMOR_EQUIP_CHAIN-1-0-140,ITEM_ARMOR_EQUIP_CHAIN-1-0-140,ITEM_ARMOR_EQUIP_CHAIN-1-0-140
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Extras:
+        Run_Command: 
+            - "@execute <shooter> ~ ~ ~ /playsound minecraft:entity.shulker.shoot master @a ~ ~ ~ 2 2"
+    Burstfire:
+        Enable: true
+        Shots_Per_Burst: 5
+        Delay_Between_Shots_In_Burst: 2
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 262
+        Ammo_Name_Check: 弾薬 -Arrow-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true

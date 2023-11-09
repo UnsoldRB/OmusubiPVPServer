@@ -1,0 +1,19 @@
+﻿P90_default:
+    Durability: 225
+    Change_Item_Type: "DIAMOND_PICKAXE"
+M76_default:
+    Durability: 226
+    Change_Item_Type: "DIAMOND_PICKAXE"
+UMP45_default:
+    Durability: 226
+    Change_Item_Type: "DIAMOND_PICKAXE"
+MP5_default:
+    Durability: 224
+    Change_Item_Type: "DIAMOND_PICKAXE"
+BDisturb_default:
+    Durability: 224
+    Change_Item_Type: "DIAMOND_PICKAXE"
+KRISSVector_default:
+    Durability: 227
+    Change_Item_Type: "DIAMOND_PICKAXE"
+

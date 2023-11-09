@@ -1,0 +1,491 @@
+﻿import:
+	com.shampaggon.crackshot.CSUtility
+	com.shampaggon.crackshot.events.WeaponReloadEvent
+on script load:
+	delete {ReloadCancel::*}
+	delete {Reloadspeed::*}
+
+#{リロード短縮}
+function ChangeVisualreload(p:player, i:number):
+	set {_i} to rounded ({_i} / 15)
+	loop 15 times:
+		add 1 to {_count}
+		set {_text} to ""
+		loop (16 - {_count}) times:
+			set {_text} to "%{_text}%A"
+		loop {_i} times:
+			send action bar "§e§n§l§k%{_text}%" to {_p}
+			wait 1 ticks
+	send action bar "Completed" to {_p}
+on WeaponReloadEvent:
+	set {_p} to event.getPlayer()
+	if {ReloadCancel::%{_p}%} contains "%{_p}'s selected hotbar slot%":
+		replace "ᴿ" in name of {_p}'s held item with ""
+		set {_item} to {_p}'s held item
+		set {_p}'s held item to air
+		wait 1 ticks
+		set {_p}'s held item to {_item}
+	else:
+		set {_yml} to CheckWeaponCategory({_p}'s held item, 4)
+		set {_w} to event.getWeaponTitle()
+		set {_delay} to skutilities yaml value "%{_w}%.Reload.Reload_Duration" of file "plugins/CrackShot/weapons/%{_yml}%.yml"
+		set {_lore::1} to skutilities yaml value "%{_w}%.Item_Information.Item_Lore" of file "plugins/CrackShot/weapons/%{_yml}%.yml"
+		set {_lore::*} to {_lore::1} split by "|"
+		remove 5 from {_delay}
+		set {_ammo} to skutilities yaml value "%{_w}%.Reload.Reload_Amount" of file "plugins/CrackShot/weapons/%{_yml}%.yml"
+		set {_count} to 0
+		set {_slot} to {_p}'s selected hotbar slot
+		if {Reloadspeed::%{_p}%.%{_slot}%} is set:
+			event.setReloadSpeed({Reloadspeed::%{_p}%.%{_slot}%})
+			set {_delay} to {_delay} * {Reloadspeed::%{_p}%.%{_slot}%}
+			round({_delay})
+			ChangeVisualreload({_p}, {_delay})
+		if lore of {_p}'s held item contains "/Gun-":
+			if lore of {_p}'s held item contains "/Gun-AR" or "/Gun-SMG":
+				loop round({_delay} * 0.04) times:
+					wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "item.flintandsteel.use", 1, 1.2)
+					loop round({_delay} * 0.10) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "item.flintandsteel.use", 1, 1)
+					loop round({_delay} * 0.02) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.wooden_door.open", 1, 2)
+					loop round({_delay} * 0.4) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "item.flintandsteel.use", 1, 1)
+					loop round({_delay} * 0.01) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "entity.player.hurt", 1, 0)
+					loop round({_delay} * 0.01) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.wooden_door.close", 1, 2)
+					loop round({_delay} * 0.1) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.note.snare", 1, 0)
+					loop round({_delay} * 0.12) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.piston.contract", 1, 2)
+					loop round({_delay} * 0.08) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.piston.contract", 1, 2)
+
+			else if lore of {_p}'s held item contains "/Gun-HSR" or "/Gun-LSR":
+				loop round({_delay} * 0.04) times:
+					name of {_p}'s held item is {_item}
+					wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "item.flintandsteel.use", 1, 1.2)
+					loop round({_delay} * 0.10) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.piston.contract", 1, 2)
+					loop round({_delay} * 0.20) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "entity.shulker.open", 1, 1.2)
+					loop round({_delay} * 0.02) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "entity.shulker.open", 1, 2)
+					loop round({_delay} * 0.15) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "entity.tnt.primed", 1, 2)
+					loop round({_delay} * 0.25) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "item.flintandsteel.use", 1, 1)
+					loop round({_delay} * 0.01) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "entity.player.hurt", 1, 0)
+					loop round({_delay} * 0.01) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.wooden_door.close", 1, 2)
+					loop round({_delay} * 0.1) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.note.snare", 1, 2)
+					loop round({_delay} * 0.12) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.piston.extend", 1, 1.1)
+
+
+			else if lore of {_p}'s held item contains "/Gun-LMG":
+				loop round({_delay} * 0.04) times:
+					name of {_p}'s held item is {_item}
+					wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "item.flintandsteel.use", 1, 1.2)
+					loop round({_delay} * 0.10) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "entity.shulker.open", 1, 0)
+					loop round({_delay} * 0.02) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "entity.shulker.open", 1, 0.3)
+					loop round({_delay} * 0.15) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "entity.horse.saddle", 1, 2)
+					loop round({_delay} * 0.25) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "entity.horse.armor", 1, 0.8)
+					Playsound({_p}, "entity.horse.armor", 1, 0.2)
+					loop round({_delay} * 0.10) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "entity.player.hurt", 1, 0)
+					loop round({_delay} * 0.01) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "entity.shulker.close", 1, 0.5)
+					loop round({_delay} * 0.15) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.note.snare", 1, 0)
+					loop round({_delay} * 0.12) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.piston.extend", 1, 0.8)
+					loop round({_delay} * 0.12) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.piston.extend", 1, 1.4)
+
+			if lore of {_p}'s held item contains "/Gun-HG" or "/Gun-CSG":
+				loop round({_delay} * 0.04) times:
+					wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "item.flintandsteel.use", 1, 2)
+					Playsound({_p}, "item.flintandsteel.use", 1, 2)
+					loop round({_delay} * 0.15) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "item.flintandsteel.use", 1, 1)
+					loop round({_delay} * 0.02) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.wooden_door.open", 1, 2)
+					loop round({_delay} * 0.35) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "entity.player.hurt", 1, 0)
+					loop round({_delay} * 0.15) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "item.flintandsteel.use", 1, 0.8)
+					Playsound({_p}, "item.flintandsteel.use", 1, 1)
+					loop round({_delay} * 0.12) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.piston.contract", 1, 2)
+					loop round({_delay} * 0.04) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.piston.extend", 1, 2)
+
+			else if lore of {_p}'s held item contains "/Gun-REV":
+				loop round({_delay} * 0.06) times:
+					wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					Playsound({_p}, "block.wooden_door.open", 1, 2)
+					loop round({_delay} * 0.1) times:
+						wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					loop {_ammo} times:
+						Playsound({_p}, "item.flintandsteel.use", 1, 2)
+						wait 1 ticks
+					loop round({_delay} * 0.15) times:
+						wait 1 ticks
+				remove 8 * {_ammo} from {_delay}
+				loop {_ammo} times:
+					if name of {_p}'s held item contains "ᴿ":
+						Playsound({_p}, "item.flintandsteel.use", 1, 0)
+						loop round({_delay} / {_ammo}) times:
+							wait 1 ticks
+				if name of {_p}'s held item contains "ᴿ":
+					loop round({_delay} * 0.06) times:
+						wait 1 ticks
+					Playsound({_p}, "block.wooden_door.close", 1, 2)
+					loop round({_delay} * 0.16) times:
+						wait 1 ticks
+					loop 8 times:
+						Playsound({_p}, "entity.blaze.hurt", 0.2, 2)
+						wait 1 ticks
+		else if lore of {_p}'s held item contains "/Magic-" or "/SideMagic-":
+			set {_delay} to {_lore::5}
+			replace "(s)", "(m)", "(c)", "f充填詠唱: ", "f高等詠唱: " and "&" in {_lore::5} with ""
+			if {_lore::5} contains "∴":
+				set {_delay.temp::*} to {_lore::5} split by "∴"
+				set {_lore::5} to {_delay.temp::1}
+			set {_delay} to ({_lore::5} parsed as number * 20) / 20
+			replace "%%", "&" and "fウェイト: " in {_lore::6} with ""
+			set {_weight} to {_p}'s walk speed * ({_lore::6} parsed as number * 0.01)
+			remove {_weight} from {_p}'s walk speed
+			if lore of {_p}'s held item contains "-Blaze":
+				Playsound({_p}, "entity.zombie_villager.converted", 1, 1.6)
+				loop 20 times:
+					if name of {_p}'s held item contains "ᴿ":
+						add 0.1 to {_count}
+						loop ceiling({_delay}) times:
+							wait 1 ticks
+						Playsound({_p}, "entity.zombie.infect", 1, {_count})
+						Playsound({_p}, "entity.blaze.burn", 1, (2 - {_count}))
+			else if lore of {_p}'s held item contains "-Freeze":
+				Playsound({_p}, "entity.vex.ambient", 1, 0)
+				Playsound({_p}, "entity.vex.ambient", 1, 0.3)
+				loop 20 times:
+					if name of {_p}'s held item contains "ᴿ":
+						add 0.1 to {_count}
+						loop ceiling({_delay}) times:
+							wait 1 ticks
+						Playsound({_p}, "item.bucket.fill", 1, {_count})
+						Playsound({_p}, "item.bucket.empty", 1, (2 - {_count}))
+			else if lore of {_p}'s held item contains "-Storm":
+				Playsound({_p}, "entity.firework.twinkle_far", 1, 0)
+				Playsound({_p}, "entity.firework.blast_far", 1, 0)
+				loop 20 times:
+					if name of {_p}'s held item contains "ᴿ":
+						add 0.1 to {_count}
+						loop ceiling({_delay}) times:
+							wait 1 ticks
+						Playsound({_p}, "entity.player.attack.sweep", 1, {_count})
+						Playsound({_p}, "entity.vex.death", 1, (2 - {_count}))
+			else if lore of {_p}'s held item contains "-Creation":
+				if name of {_p}'s held item does not contain "チャージア":
+					Playsound({_p}, "block.portal.trigger", 1, 2)
+					loop 20 times:
+						if name of {_p}'s held item contains "ᴿ":
+							add 0.1 to {_count}
+							loop ceiling({_delay}) times:
+								wait 1 ticks
+							Playsound({_p}, "block.gravel.break", 1, {_count})
+							Playsound({_p}, "block.gravel.place", 1, (2 - {_count}))
+			else if lore of {_p}'s held item contains "-Souls":
+				Playsound({_p}, "ambient.cave", 1, 2)
+				Playsound({_p}, "ambient.cave", 1, 2)
+				loop 20 times:
+					if name of {_p}'s held item contains "ᴿ":
+						add 0.1 to {_count}
+						loop ceiling({_delay}) times:
+							wait 1 ticks
+						Playsound({_p}, "entity.guardian.attack", 1, {_count})
+						Playsound({_p}, "entity.ghast.death", 1, (2 - {_count}))
+			add {_weight} to {_p}'s walk speed
+		else if lore of {_p}'s held item contains "/SP":
+			if lore of {_p}'s held item contains "/SP-Move":
+				loop 20 times:
+					Playsound({_p}, "entity.spider.ambient", 1, (2 - {_count}))
+					add 0.1 to {_count}
+					wait 1 ticks
+		else if lore of {_p}'s held item contains "/KNIFE":
+			Playsound({_p}, "entity.spider.ambient", 1, 2)
+			loop round({_delay} * 0.1) times:
+				wait 1 ticks
+			remove round({_delay} * 0.1) from {_delay}
+			loop 5 times:
+				if name of {_p}'s held item contains "ᴿ":
+					loop round({_delay} * 0.2) times:
+						wait 1 ticks
+					add 0.4 to {_count}
+					Playsound({_p}, "ui.button.click", 1, 2)
+					Playsound({_p}, "block.note.snare", 1, {_count})
+
+on right click:
+	if lore of player's held item contains "簡易詠唱: ":
+		if name of player's held item contains " §r▫":
+			if name of player's held item does not contain " §r▪":
+				if inventory of player contains 1 of wheat:
+					set {_name} to name of player's held item
+					replace " §r▫" in {_name} with ""
+					set name of player's held item to "%{_name}% §r▪"
+					set {_lore::1} to skutilities yaml value "%CheckWeaponName({_name}, false)%.Item_Information.Item_Lore" of file "plugins/CrackShot/weapons/%CheckWeaponCategory(player's held item, 4)%.yml"
+					set {_lore::*} to {_lore::1} split by "|"
+					replace "&" and "f簡易詠唱: " in {_lore::5} with ""
+					set {_RecallDatas::*} to {_lore::5} split by "∴"
+					replace "%%", "&" and "fウェイト: " in {_lore::6} with ""
+					set {_recall} to {_RecallDatas::1} parsed as number * 20
+					set {_cooldown} to {_RecallDatas::2} parsed as number * 20
+					set {_weight} to player's walk speed * ({_lore::6} parsed as number * 0.01)
+					set {_item} to player's selected hotbar slot
+					remove {_weight} from player's walk speed
+					execute console command "/execute %player% ~ ~1.5 ~ /particle enchantmenttable ~ ~ ~ 0 0 0 1 60"
+					Playsound(player, "entity.zombie_villager.converted", 1, 1.6)
+					loop {_recall} times:
+						if player's selected hotbar slot is {_item}:
+							wait 1 ticks
+							add 100 / {_recall} to {_Progress}
+							if {_Progress} is more than 99.9:
+								set {_Progress} to 99.9
+							set {_ViewProgress} to subtext of "%{_Progress}%" from characters 1 to 4
+							send action bar "§aRecalling... §l%{_ViewProgress}%%%" to player
+							add 1 to {_count}
+							if {_count} is 20:
+								Playsound(player, "item.bottle.fill", 1, 0.6)
+								delete {_count}
+						else:
+							set {_IfFailed} to true
+							exit 2 sections
+					if {_IfFailed} is true:
+						Playsound(player, "entity.item.break", 1, 2)
+						set name of slot {_item} of player to "%{_name}% §r▫"
+						add {_weight} to player's walk speed
+					else:
+						set name of slot {_item} of player to {_name}
+						enchant slot {_item} of player with efficiency 1
+						add {_weight} to player's walk speed
+						if CheckWeaponCategory(slot {_item} of player, 3) is "Main":
+							player.setCooldown(player.getItemInHand().getType(), {_cooldown})	
+						Playsound(player, "entity.zombie.infect", 1, 2)
+						Playsound(player, "entity.zombie.infect", 1, 2)
+						send action bar "§fRecall Completed" to player
+						remove 1 of wheat from inventory of player
+						delete {_Progress}
+						loop {_cooldown} times:
+							wait 1 ticks
+							if name of slot {_item} of player contains " §r▫":
+								set name of slot {_item} of player to "%{_name}% §7▫"
+							if player's selected hotbar slot is {_item}:
+								add 100 / {_cooldown} to {_Progress}
+								if {_Progress} is more than 99.9:
+									set {_Progress} to 99.99
+								set {_ViewProgress} to subtext of "%{_Progress}%" from characters 1 to 4
+								send action bar "§aCooldown... §l%{_ViewProgress}%%%" to player
+						if player's selected hotbar slot is {_item}:
+							send action bar "§fCooldown Completed" to player
+						SendSidebar(player, "§a§lREADY:§r§l//%CheckWeaponCharacter(""レイザー"")%//", 1, 40)
+						replace " §7▫" in name of slot {_item} of player with " §r▫"
+						play "BLOCK_GLASS_BREAK" to player at volume 10
+				else:
+					play "UI_BUTTON_CLICK" to player at volume 10
+
+#{詠唱}
+on tool change:
+	if lore of player's held item contains "高等詠唱: ":
+		SetWeaponAmmo(player, (player's selected hotbar slot), 0)
+		disenchant the slot player's selected hotbar slot of player
+	else if lore of player's held item contains "簡易詠唱: ":
+		set {_name} to name of player's held item
+		replace " §r▫", " §r▪" and " §7▫" in {_name} with ""
+		set name of player's held item to "%{_name}% §r▫"
+		disenchant player's held item
+
+on crackshot shoot:
+	if lore of player's held item contains "高等詠唱: ":
+		if CheckWeaponAmmo(name of player's held item) is 0:
+			disenchant player's held item
+	else if lore of player's held item contains "簡易詠唱: ":
+		set {_name} to name of player's held item
+		replace " §r▫", " §r▪" and " §7▫" in {_name} with ""
+		set name of player's held item to "%{_name}% §r▫"
+		disenchant player's held item
+	else if lore of player's held item contains "即時詠唱: ":
+		set {_lore::1} to skutilities yaml value "%CheckWeaponName(name of player's held item, false)%.Item_Information.Item_Lore" of file "plugins/CrackShot/weapons/%CheckWeaponCategory(player's held item, 4)%.yml"
+		set {_lore::*} to {_lore::1} split by "|"
+		replace "&" and "f使用間隔: " in {_lore::4} with ""
+		replace "&" and "f即時詠唱: " in {_lore::5} with ""
+		replace "%%", "&" and "fウェイト: " in {_lore::6} with ""
+		set {_count} to 20 * {_lore::4} parsed as number
+		set {_item} to player's selected hotbar slot
+		if {_lore::6} is not "0.00":
+			set {_weight} to player's walk speed * ({_lore::6} parsed as number * 0.01)
+			remove {_weight} from player's walk speed
+			set {_Beforerecall} to 20 * {_lore::5} parsed as number
+			remove {_Beforerecall} from {_count}
+			set {_Progress} to 100
+			loop {_Beforerecall} times:
+				remove 100 / {_Beforerecall} from {_Progress}
+				if player's selected hotbar slot is {_item}:
+					if {_Progress} is less than 0.1:
+						set {_Progress} to 0.01
+					set {_ViewProgress} to subtext of "%{_Progress}%" from characters 1 to 4
+					send action bar "§cCooldown... §l%{_ViewProgress}%%%" to player
+				wait 1 ticks
+			if player's selected hotbar slot is {_item}:
+				play "BLOCK_GLASS_BREAK" to player at volume 10
+			add {_weight} to player's walk speed
+		set {_Progress} to 0.00
+		loop {_count} times:
+			add 100 / {_count} to {_Progress}
+			if player's selected hotbar slot is {_item}:
+				if {_Progress} is more than 99.9:
+					set {_Progress} to 99.99
+				set {_ViewProgress} to subtext of "%{_Progress}%" from characters 1 to 4
+				send action bar "§aCooldown... §l%{_ViewProgress}%%%" to player
+			wait 1 ticks
+		if player's selected hotbar slot is {_item}:
+			send action bar "§fCooldown Completed" to player
+		SendSidebar(player, "§a§lREADY:§r§l//%CheckWeaponCharacter(""レイザー"")%//", 1, 40)
+		play "BLOCK_GLASS_BREAK" to player at volume 10
+
+
+crackshot reload complete:
+	set {_lore::1} to skutilities yaml value "%event-string%.Item_Information.Item_Lore" of file "plugins/CrackShot/weapons/%CheckWeaponCategory(player's held item, 4)%.yml"
+	set {_lore::*} to {_lore::1} split by "|"
+	if lore of player's held item contains "/SP-Move":
+		set {_cooldown} to skutilities yaml value "%event-string%.Reload.Reload_Shoot_Delay" of file "plugins/CrackShot/weapons/SP-Move.yml"
+		player.setCooldown(player.getItemInHand().getType(), {_cooldown})
+		loop {_cooldown} times:
+			wait 1 ticks
+		SendSidebar(player, "§a§lREADY:§r§l//%CheckWeaponCharacter(""フック"")%//", 1, 40)
+		play "BLOCK_GLASS_BREAK" to player at volume 10
+	else if {_lore::5} contains "高等詠唱":
+		if {_lore::5} contains "∴":
+			replace "&" and "f高等詠唱: " in {_lore::5} with ""
+			set {_RecallDatas::*} to {_lore::5} split by "∴"
+			set {_item} to player's selected hotbar slot
+			set {_time} to {_RecallDatas::2} parsed as number * 20
+			if CheckWeaponCategory(player's held item, 3) is "Main":
+				player.setCooldown(player.getItemInHand().getType(), {_time})
+			enchant player's held item with efficiency 1
+			set {ReloadCancel::%player%} to "%{ReloadCancel::%player%}%%{_item}%"
+			loop {_time} times:
+				wait 1 ticks
+				add 100 / {_time} to {_Progress}
+				if player's selected hotbar slot is {_item}:
+					if {_Progress} is more than 99.9:
+						set {_Progress} to 99.9
+					set {_ViewProgress} to subtext of "%{_Progress}%" from characters 1 to 4
+					send action bar "§aCooldown... §l%{_ViewProgress}%%%" to player
+			if player's selected hotbar slot is {_item}:
+				send action bar "§fCooldown Completed" to player
+			SendSidebar(player, "§a§lREADY:§r§l//%CheckWeaponCharacter(""レイザー"")%//", 1, 40)
+			replace "%{_item}%" and "<none>" in {ReloadCancel::%player%} with ""
+			play "BLOCK_GLASS_BREAK" to player at volume 10
+	else if {_lore::5} contains "充填詠唱":
+		if {_lore::5} contains "∴":
+			replace "(s)", "(m)", "(c)", "&" and "f充填詠唱: " in {_lore::5} with ""
+			set {_RecallDatas::*} to {_lore::5} split by "∴"
+			set {_item} to player's selected hotbar slot
+			set {_time} to {_RecallDatas::2} parsed as number * 20
+			if CheckWeaponCategory(player's held item, 3) is "Main":
+				player.setCooldown(player.getItemInHand().getType(), {_time})
+			set {ReloadCancel::%player%} to "%{ReloadCancel::%player%}%%{_item}%"
+			loop {_time} times:
+				wait 1 ticks
+				add 100 / {_time} to {_Progress}
+				if player's selected hotbar slot is {_item}:
+					if {_Progress} is more than 99.9:
+						set {_Progress} to 99.9
+					set {_ViewProgress} to subtext of "%{_Progress}%" from characters 1 to 4
+					send action bar "§aCooldown... §l%{_ViewProgress}%%%" to player
+			if player's selected hotbar slot is {_item}:
+				send action bar "§fCooldown Completed" to player
+			SendSidebar(player, "§a§lREADY:§r§l//%CheckWeaponCharacter(""レイザー"")%//", 1, 40)
+			replace "%{_item}%" and "<none>" in {ReloadCancel::%player%} with ""
+			play "BLOCK_GLASS_BREAK" to player at volume 10

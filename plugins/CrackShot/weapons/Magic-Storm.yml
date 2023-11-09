@@ -1,0 +1,37 @@
+ウィンド:
+    Item_Information:
+        Item_Name: "&eウィンド"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: ダメージ(範囲ダメージ)|&f効果強度: 2.00(p)|&f逑逑逑逑: 0.50(p), 5.00(d), 4.00(t)|&f使用間隔: 1.50|&f充填詠唱: 5.00(s)|&fウェイト: -20.00%|&fアドオン: なし|&bAmmo: Crystal|&bバランス型/Magic-Storm/Main|||&7風を纏った球を放つ魔法。|&7わりとくっそまじで微妙に痛い。|&7防衛においては輝くだろうが、|&7相手の動きを止めるほどの力はないので..."
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 30
+        Recoil_Amount: 1
+        Projectile_Amount: 1
+        Projectile_Type: egg
+        Projectile_Speed: 15
+        Projectile_Damage: 4
+        Bullet_Spread: 0.0
+        Sounds_Shoot: ENTITY_ITEM_PICKUP-1-2-2,ENTITY_FIREWORK_LARGE_BLAST_FAR-1-0-0
+    Reload:
+        Enable: true
+        Reload_Amount: 5
+        Reload_Duration: 100
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 296
+        Ammo_Name_Check: 弾薬 -Crystal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0

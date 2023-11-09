@@ -1,0 +1,163 @@
+コルト・パイソン357Magnum:
+    Shoot:
+        Trails:
+            Default_Trail: "SMG"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 20.0
+                Maxium: 20.0
+            Sideways:
+                Minium: -10.0
+                Maxium: 10.0
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot！"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"
+    
+M500:
+    Shoot:
+        Trails:
+            Default_Trail: "SMG"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 20.0
+                Maxium: 20.0
+            Sideways:
+                Minium: -10.0
+                Maxium: 10.0
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot！"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"
+
+FlipShot:
+    Shoot:
+        Trails:
+            Default_Trail: "FlipShot"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 5.0
+                Maxium: 5.0
+            Sideways:
+                Minium: -5.0
+                Maxium: 5.0
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot！"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"
+
+Longer:
+    Shoot:
+        Trails:
+            Default_Trail: "SMG"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 20.0
+                Maxium: 20.0
+            Sideways:
+                Minium: -10.0
+                Maxium: 10.0
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot！"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"

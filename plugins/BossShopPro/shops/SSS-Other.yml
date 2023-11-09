@@ -1,0 +1,91 @@
+ShopName: gfhnfdghndhdythtd
+DisplayName: '&lOtherShop'
+signs:
+  text: '[OtherShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  GShop:
+    RewardType: shop
+    PriceType: free
+    Reward: fbdbstbzs
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_PICKAXE
+    - unbreakable:true
+    - durability:1
+    - amount:1
+    - durability:1
+    - name:&9&lグレネード Shop
+    - 'lore:&8グレネードが販売されています'
+    Message: ''
+    InventoryLocation: 1
+    ExtraPermission: ''
+  SkillShop:
+    RewardType: shop
+    PriceType: free
+    Reward: ftnjtfnjrfgtnhrtjfgn
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_AXE
+    - unbreakable:true
+    - amount:1
+    - durability:1
+    - name:&9&lSkill Shop
+    - 'lore:&8Skillが販売されています'
+    Message: ''
+    InventoryLocation: 2
+    ExtraPermission: ''
+  LastShop:
+    RewardType: shop
+    PriceType: free
+    Reward: rgrgsfrgheghedhgedgxdegxdegseygedx5yerfgt5rgft54gft54rgft
+    MenuItem:
+    - hideflags:all
+    - type:NETHER_STAR
+    - amount:1
+    - durability:0
+    - name:&9&lLast Shop
+    - 'lore:&8Lastが販売されています'
+    Message: ''
+    InventoryLocation: 3
+    ExtraPermission: ''
+  MShop:
+    RewardType: shop
+    PriceType: free
+    Reward: ztslibnhutiZ
+    MenuItem:
+    - hideflags:all
+    - type:IRON_PICKAXE
+    - unbreakable:true
+    - amount:1
+    - durability:1
+    - name:&9&lMaterial Shop
+    - 'lore:&8釣りで入手できる素材が販売されています#&8どうしても釣れないときに買いましょう。'
+    Message: ''
+    InventoryLocation: 6
+    ExtraPermission: ''
+  UShop:
+    RewardType: shop
+    PriceType: free
+    Reward: edawefdseawfdsafasc
+    MenuItem:
+    - hideflags:all
+    - type:CHEST
+    - amount:1
+    - durability:0
+    - name:&9&lUtility Shop
+    - 'lore:&8役立つアイテムが販売されています'
+    Message: ''
+    InventoryLocation: 7
+    ExtraPermission: ''
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: nvskeibvlnseurgglensdjkvnszfkjvbhsueil
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

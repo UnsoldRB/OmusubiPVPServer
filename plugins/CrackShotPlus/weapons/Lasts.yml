@@ -1,0 +1,29 @@
+Last-ヘビーリボルバーREADY:
+    Shoot:
+        Trails:
+            Default_Trail: "SMG"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot！"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"
+    Held:
+        Hide_Attributes: true

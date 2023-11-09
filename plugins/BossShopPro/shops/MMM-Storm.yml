@@ -1,0 +1,33 @@
+ShopName: dhtgtnjgtbnfrgthrte5
+DisplayName: '&lMainMagicShop - Storm'
+signs:
+  text: '[MainMagicShop - Storm]'
+  NeedPermissionToCreateSign: true
+shop:
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: vesbesvredverd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''
+  ウィンド:
+    RewardType: playercommand
+    PriceType: money
+    Price: 11000
+    Reward: brsbrbrbrbrbrbbb ウィンド 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:617
+    - name:&9ウィンド
+    - 'lore:&f火力自体は低いが、#&f一つの地点を守るのに特化。##&f&b必要水晶 : 11000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''

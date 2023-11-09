@@ -1,0 +1,393 @@
+import:
+	com.shampaggon.crackshot.CSUtility
+
+on script load:
+	delete {SidebarMessage::*}
+	delete {ExplosionResistance::*}
+
+function DetectEntity(l:location, r:number, e:entity) :: boolean:
+	loop all entities in radius {_r} around {_l}:
+		if loop-entity is {_e}:
+			return true
+			stop
+	return false
+
+function AreaEffect(p:player, l:location, type:text, range:number, speed:number, amount:integer):
+	set {_l} to "%{_l}%"
+	replace "x: ", "y:", "z:", ", " in {_l} with ""
+	execute console command "/execute %{_p}% ~ ~ ~ /particle %{_type}% %{_l}% %{_range}% %{_range}% %{_range}% %{_speed}% %{_amount}%"
+
+function SummonEntity(p:player, l:location, type:text) :: entity:
+	set {_l} to "%{_l}%"
+	replace "x: ", "y:", "z:", ", " in {_l} with ""
+	if {team::%{_p}%} is "blue":
+		execute console command "/execute %{_p}% ~ ~ ~ /summon %{_type}% %{_l}% {CustomName:""§9%{_p}%"",CustomNameVisible:1}"
+	else if {team::%{_p}%} is "red":
+		execute console command "/execute %{_p}% ~ ~ ~ /summon %{_type}% %{_l}% {CustomName:""§c%{_p}%"",CustomNameVisible:1}"
+	return last spawned entity
+function PlaceBlock(p:player, l:location, t:number):
+	set {_beforetype} to id of block at {_l}
+	{_l}.getBlock().setTypeId({_t})
+	draw 5 blockcrack particle made of red nether brick at location of block at {_l}
+	set {_l} to "%{_l}%"
+	replace "x:", "y:", "z:", " " in {_l} with ""
+	set {BreakBlock.Location::%{_p}%} to "%{BreakBlock.Location::%{_p}%}%/%{_l}%"
+	set {BreakBlock.Type::%{_p}%} to "%{BreakBlock.Type::%{_p}%}%/%{_beforetype}%"
+
+
+function RepairBlock(l1:number, l2:number, l3:number, t:number):
+	set {_l} to location at {_l1}, {_l2}, {_l3} of world "TeamBattle"
+	loop 6 times:
+		wait 10 ticks
+		Playsound({_l}, "block.stone.break", 1, 1.5)
+		draw 5 blockcrack particle made of barrier at location of block at {_l}
+	wait 10 ticks
+	Playsound({_l}, "block.stone.break", 1, 1.5)
+	draw 5 blockcrack particle made of red nether brick at location of block at {_l}
+	{_l}.getBlock().setTypeId({_t})
+
+function BreakBlock(p:player, l:location):
+	if id of block at {_l} is 250:
+		set block at {_l} to air
+		Playsound({_l}, "block.stone.break", 1, 1)
+		draw 5 blockcrack particle made of red nether brick at location of block at {_l}
+	else if id of block at {_l} is 235:
+		set block at {_l} to air
+		Playsound({_l}, "block.stone.break", 1, 1)
+		draw 5 blockcrack particle made of red nether brick at location of block at {_l}
+		set {_l} to "%location of block at {_l}%"
+		replace "x:", "y:", "z:", " " in {_l} with ""
+		set {BreakBlock.Location::%{_p}%} to "%{BreakBlock.Location::%{_p}%}%/%{_l}%"
+		set {BreakBlock.Type::%{_p}%} to "%{BreakBlock.Type::%{_p}%}%/235"
+	else:
+		set {_l} to "%location of block at {_l}%"
+		replace "x:", "y:", "z:", " " in {_l} with ""
+		if {BreakBlock.Location::%{_p}%} contains "/%{_l}%":
+			set {_Location::*} to {BreakBlock.Location::%{_p}%} split by "/"
+			if {_Locations::*} contains {_l}:
+				loop {_Locations::*}:
+					if loop-value is {_l}:
+						set {_SplitLocation::*} to loop-value split by ","
+						set {_Location} to location at {_SplitLocation::1} parsed as number, {_SplitLocation::2} parsed as number, {_SplitLocation::3} parsed as number of world "TeamBattle"
+						set {_Type::*} to {BreakBlock.Type::%loop-index%} split by "/"
+						{_Location}.getBlock().setTypeId({_Type::%loop-index%} parsed as number)
+						remove "/{_l}" from {BreakBlock.Location::%{_p}%}
+						remove "/%{_Type::%loop-index%}%" from {BreakBlock.Type::%{_p}%}
+						stop
+
+
+
+
+function TeleportEffect(p:player):
+	wait 1 ticks
+	play "AMBIENT_CAVE" to {_p} at volume 10 with pitch 2
+	execute console command "/execute %{_p}% ~ ~ ~ /particle spell ~ ~1 ~ 1 1 1 1 100 force %{_p}%"
+	apply potion of blindness of tier 1 to {_p} for 0.8 seconds
+
+function Invisible(p:player, n:number):
+	apply potion of invisibility of tier 1 to {_p} for "%{_n}% ticks" parsed as timespan
+	loop {EntryPlayers::*}:
+		if {team::%loop-value%} is not {team::%{_p}%}:
+			set {_packet} to new play_server_entity_equipment packet
+			set int pnum 0 of {_packet} to id of {_p}
+			set "ItemSlots" penum 0 of {_packet} to "FEET"
+			set "ItemModifier" pinfo 0 of {_packet} to "air" parsed as item
+			send loop-value packet {_packet}
+			set {_packet} to new play_server_entity_equipment packet
+			set int pnum 0 of {_packet} to id of {_p}
+			set "ItemSlots" penum 0 of {_packet} to "MAINHAND"
+			set "ItemModifier" pinfo 0 of {_packet} to "air" parsed as item
+			send loop-value packet {_packet}
+	loop {_n} times:
+		wait 1 ticks
+		add 1 to {_count}
+		if {_count} is 10:
+			AreaEffect({_p}, location 0.5 meter above {_p}, "smoke", 1, 0, 1)
+			delete {_count}
+		if {_p} does not have invisibility:
+			exit 2 sections
+	loop {EntryPlayers::*}:
+		set {_item} to {_p}'s boots
+		set {_item2} to {_p}'s held item
+		if {team::%loop-value%} is not {team::%{_p}%}:
+			set {_packet} to new play_server_entity_equipment packet
+			set int pnum 0 of {_packet} to id of {_p}
+			set "ItemSlots" penum 0 of {_packet} to "FEET"
+			set "ItemModifier" pinfo 0 of {_packet} to {_item}
+			send loop-value packet {_packet}
+			set {_packet} to new play_server_entity_equipment packet
+			set int pnum 0 of {_packet} to id of {_p}
+			set "ItemSlots" penum 0 of {_packet} to "MAINHAND"
+			set "ItemModifier" pinfo 0 of {_packet} to {_item2}
+			send loop-value packet {_packet}
+
+
+
+
+function CheckWeaponCharacter(t:text) :: text:
+	if {_t} is "AK-47":
+		return "适"
+	else if {_t} is "レイザー":
+		return "逄"
+	else if {_t} is "フック":
+		return "逅"
+	else if {_t} is "DesertEagle":
+		return "逈"
+	else if {_t} is "燎原の火":
+		return "选"
+	else if {_t} is "Skill-アルリジェネ":
+		return "逊"
+	else if {_t} is "スタンダードグレネード":
+		return "逍"
+	else if {_t} is "ダガー":
+		return "逎"
+
+
+function CheckWeaponSlot(p:player, t:text) :: number:
+	if {_t} does not contain "Last":
+		set {_skip} to true
+	loop integers from 0 to 8:
+		if lore of slot loop-int of {_p} contains {_t}:
+			if {_skip} is true:
+				if name of slot loop-int of {_p} does not contain "Last":
+					return loop-int
+					stop
+			else:
+				return loop-int
+				stop
+
+function CheckWeaponSlotWithName(p:player, t:text) :: number:
+	loop integers from 0 to 8:
+		if name of slot loop-int of {_p} contains {_t}:
+			return loop-int
+			stop
+
+function CheckMultipleWeaponSlot(p:player, t:text) :: numbers:
+	loop integers from 0 to 8:
+		if lore of slot loop-int of {_p} contains {_t}:
+			add loop-int to {_returns::*}
+	return {_returns::*}
+
+function CheckWeaponName(i:text, IfUncolor:boolean) :: text:
+	if {_IfUncolor} is true:
+		set {_i} to uncolored {_i}
+	replace " ", ".", "▪", "▫", "§r" and "&e" in {_i} with ""
+	if {_i} contains "«":
+		set {_i} to subtext of {_i} from characters 1 to (length of {_i} - 2)
+		loop 30 times:
+			if last 1 character of {_i} is "«":
+				set {_i} to subtext of {_i} from characters 1 to (length of {_i} - 1)
+				exit 2 sections
+			else:
+				set {_i} to subtext of {_i} from characters 1 to (length of {_i} - 1)
+	return {_i}
+
+function CheckWeaponAmmo(i:text) :: number:
+	if {_i} contains "«0":
+		return 0
+		stop
+	else if {_i} contains "«":
+		set {_ammo::*} to uncolored {_i} split by "«"
+		replace "»" and "ᴿ" in {_ammo::2} with ""
+		return {_ammo::2} parsed as number
+		stop
+	return 0
+
+
+function SetWeaponAmmo(p:player, slot:number, n:number):
+	if name of slot {_slot} of {_p} contains "«":
+		replace "ᴿ" in name of slot {_slot} of {_p} with ""
+	if name of slot {_slot} of {_p} contains "«":
+		set {_ammo::*} to name of slot {_slot} of {_p} split by "«"
+		set {_name} to CheckWeaponName(name of slot {_slot} of {_p}, true)
+		set {_category} to CheckWeaponCategory(slot {_slot} of {_p}, 4)
+		set {_max} to skutilities yaml value "%{_name}%.Reload.Reload_Amount" of file "plugins/CrackShot/weapons/%{_category}%.yml"
+		set {_test} to uncolored {_ammo::2}
+		replace "»" in {_test} with ""
+		if {_n} is more than "%{_max}%" parsed as number:
+			replace {_test} in {_ammo::2} with "%{_max}%"
+		else:
+			replace {_test} in {_ammo::2} with "%{_n}%"
+		set name of slot {_slot} of {_p} to "%{_ammo::1}%«%{_ammo::2}%"
+
+
+
+function CheckWeaponCategory(i:item, CheckType:integer) :: text:
+	if {_CheckType} is 1:
+		if lore of {_i} contains "Gun-":
+			return "Gun"
+		else if lore of {_i} contains "Magic-":	
+			return "Magic"
+		else if lore of {_i} contains "SP-":	
+			return "SP"
+		else if lore of {_i} contains "GRN":
+			return "GRN"
+		else if lore of {_i} contains "Knife":
+			return "Knife"
+		else if lore of {_i} contains "Skill":
+			return "Skill"
+		else if lore of {_i} contains "Last":
+			return "Last"
+	else if {_CheckType} is 2:
+		if lore of {_i} contains "-AR":
+			return "AR"
+		else if lore of {_i} contains "-SMG":
+			return "SMG"
+		else if lore of {_i} contains "-HSR":
+			return "HSR"
+		else if lore of {_i} contains "-LSR":
+			return "LSR"
+		else if lore of {_i} contains "-SG":
+			return "SG"
+		else if lore of {_i} contains "-LMG":
+			return "LMG"
+		else if lore of {_i} contains "-HG":
+			return "HG"
+		else if lore of {_i} contains "-REV":
+			return "REV"
+		else if lore of {_i} contains "-CSG":
+			return "CSG"
+		else if lore of {_i} contains "-Blaze":
+			return "Blaze"
+		else if lore of {_i} contains "-Freeze":
+			return "Freeze"
+		else if lore of {_i} contains "-Storm":
+			return "Storm"
+		else if lore of {_i} contains "-Creation":
+			return "Creation"
+		else if lore of {_i} contains "-Soul":
+			return "Soul"
+		else if lore of {_i} contains "Knife":
+			return "Knife"
+		else if lore of {_i} contains "-Move":
+			return "Move"
+		else if lore of {_i} contains "GRN":
+			return "GRN"
+		else if lore of {_i} contains "-Buff":
+			return "Buff"
+		else if lore of {_i} contains "-Supply":
+			return "Supply"
+		else if lore of {_i} contains "-Damage":
+			return "Damage"
+	else if {_CheckType} is 3:
+		if lore of {_i} contains "/Main":
+			return "Main"
+		else if lore of {_i} contains "/Sub":
+			return "Sub"
+		else if lore of {_i} contains "/Special":
+			return "Special"
+		else if lore of {_i} contains "/Grenade":
+			return "Grenade"
+		else if lore of {_i} contains "/Skill":
+			return "Skill"
+		else if lore of {_i} contains "/Last":
+			return "Last"
+	else if {_CheckType} is 4:
+		set {_lore::*} to lore of {_i}
+		loop {_lore::*}:
+			if loop-value contains "型/":
+				set {_return::*} to uncolored loop-value split by "/"
+				return {_return::2}
+				stop
+function Playsound(p:location, s:text, o1:number, o2:number):
+	loop all players in radius (16 * {_o1}) around {_p}:
+		execute console command "/execute %loop-value% ~ ~ ~ /playsound %{_s}% master %loop-value% %Location({_p})% %{_o1}% %{_o2}%"
+#		play sound {_s} with volume {_o1} and pitch {_o2} at {_p} for loop-player
+
+#Player, Location, Damage, Range, Fire, ReturnVictims, item
+function Explosion(p:player, l:location, d:number, r:number, f:number = 0, i:boolean = false, s:number) :: players:
+	if block at location of {_l} is not air or water:
+		if block at location 0.5 meter above {_l} is air or water:
+			set {_l} to location of block at location 0.5 meter above {_l}
+		else:
+			loop all blocks in radius 1.5 around {_l}:
+				if loop-block is air or water:
+					set {_l} to location of loop-block
+					exit 2 sections
+	set {_d3} to {_d}
+	if {_r} is 1:
+		set {_explosionforce} to 1
+	else if {_r} is less than 3:
+		set {_explosionforce} to 2
+	else:
+		set {_explosionforce} to 3
+	loop {_r} times:
+		set {_addloc1} to random number between ({_r} - 1) and 0.5
+		chance of 50%:
+			set {_addloc1} to {_addloc1} * -1
+		set {_addloc2} to random number between ({_r} - 0.5) and 0.5
+		chance of 50%:
+			set {_addloc2} to {_addloc2} * -1
+		set {_addloc3} to random number between ({_r} - 0.5) and 0.5
+		chance of 50%:
+			set {_addloc3} to {_addloc3} * -1
+		set {_addloc4} to location {_addloc1} meter above, {_addloc2} meter north, {_addloc3} meter east {_l}
+		set {_explosioneffectforce} to {_explosionforce} * 30
+		execute console command "/execute %{_p}% ~ ~ ~ /particle explode %Location({_addloc4})% 0 0 0 0.2 %{_explosioneffectforce}%"
+		make safe explosion with force {_explosionforce} at {_addloc4}
+	add 1 to {_r}
+	loop all players in radius {_r} around {_l}:
+		if {team::%{_p}%} is not {team::%loop-player%}:
+			set {_hit} to true
+			set {_distance} to {_r} - distance between {_l} and loop-player
+			set {_d2} to ({_d} - 2.5) / {_r}
+			set {_damage} to {_distance} * {_d2}
+			set {_damage} to {_damage} + 2.5 * 1.1
+			round({_damage})
+			set {_Loc::*} to line between location 1.5 above loop-player and {_l} with density 0.5
+			loop {_Loc::*}:
+				if block at loop-value-2 is not air or water:
+					set {_damage} to {_damage} / 20
+					exit 2 sections
+			Damage({_p}, loop-player, {_damage}, {_s}, "Explode")
+			push loop-player direction from {_l} to loop-player at speed {_damage} * 0.05
+			if y-coord of loop-player is not less than y-coord of {_l}:
+				push loop-player upwards at speed 0.5
+			Playsound({_p}, "entity.skeleton.shoot", 1, 2)
+			add loop-player to {_victims::*}
+			if {_f} is not 0:
+				ignite the loop-player for "%{_f}% ticks" parsed as timespan
+		else if loop-player is {_p}:
+			remove {_d} from health of {_v}
+			if {_f} is not 0:
+				ignite the loop-player for "%{_f}% ticks" parsed as timespan
+	if {_hit} is true:
+		send {_p} title "" with subtitle "§7Hit！" for 1 seconds
+	if {_i} is true:
+		return {_victims::*}
+	loop all blocks in radius {_r} around {_l}:
+		if loop-block is not air:
+			BreakBlock({_p}, location of loop-block)
+
+function Damage(a:player, v:player, d:number, s:number, c:text = "Damage"):
+	if health of {_v} is not less than 0:
+		if {pvp::%{_a}%} and {pvp::%{_v}%} is 0:
+			set {weapontool::%{_a}%} to {_s}
+			set {killername::%{_v}%} to {_a}
+			if {_c} is "Explode":
+				if {ExplosionResistance::%{_p}%} is set:
+					if {ExplosionResistance::%{_p}%} is more than 1:
+						set {_Resistance} to 1
+					else if {ExplosionResistance::%{_p}%} is less than 0:
+						set {_Resistance} to 0
+					else:
+						set {_Resistance} to {ExplosionResistance::%{_p}%}
+					set {_d} to {_d} * (1 - {_Resistance})
+			remove {_d} from health of {_v}
+			Playsound({_a}, "entity.skeleton.shoot", 1, 2)
+
+
+function ArmorstandEffect(t:number, l:location, p:number, y:number, i:item):
+	spawn an armor stand at {_l}
+	set {_Armorstand} to spawned armor stand
+	Add "{CustomName:""ArmorstandEffect"",NoGravity:1b,Small:1,Marker:1b,Invisible:1,NoBasePlate:1,ArmorItems:[{},{},{},{id:""minecraft:apple"",Count:1b}],Pose:{Body:[0f,0f,0f],LeftArm:[0f,0f,0f],RightArm:[0f,0f,0f],LeftLeg:[0f,0f,0f],RightLeg:[0f,0f,0f],Head:[%{_p}%f,%{_y}%f,0f]}}" To nbt of spawned armor stand
+	set spawned armor stand's helmet to {_i}
+
+
+function Location(l:location) :: text:
+	set {_l} to "%{_l}%"
+	replace "x: ", "y:", "z:", ", " in {_l} with ""
+	return {_l}
+
+
+

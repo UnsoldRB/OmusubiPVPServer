@@ -1,0 +1,187 @@
+ダガー:
+    Item_Information:
+        Item_Name: "&6ダガー"
+        Item_Type: 138
+        Melee_Mode: true
+        Remove_Unused_Tag: true
+        Item_Lore: "&fダメージ: 5.50|&f攻撃間隔: 0.15|&f武器寸法: 3.50|&f発動効果: 移動速度上昇|&f逑逑逑逑: なし|&f逑逑逑逑: なし|&f逑逑逑逑: なし|&bバランス型/Knife/Sub||||&7お手頃なダガー。|&7単純だが壊れにくく、|&7接近戦で頼りになる。"
+        Inventory_Control: sub
+    Shooting:
+        Delay_Between_Shots: 3
+        Projectile_Damage: 5
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 50
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+
+アサシンダガー:
+    Item_Information:
+        Item_Name: "&eアサシンダガー"
+        Item_Type: 138
+        Remove_Unused_Tag: true
+        Item_Lore: "&fダメージ: 6.00|&f攻撃間隔: 0.15|&f武器寸法: 3.50|&f発動効果: ﾀﾞﾒｰｼﾞ+10(Backstab)|&f逑逑逑逑: HP減少|&f逑逑逑逑: 8秒間透明化∴18.00(右ｸﾘｯｸ)|&f逑逑逑逑: なし|&b攻撃型/Knife/Main||||&7軽量で鋭利なダガー。|&7敵の背後を捉えた時、|&7もう相手は死んでいる。"
+        Inventory_Control: main
+        Melee_Attachment: アサシンダガーMELEE
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 360
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 0-true
+        Sounds_Shoot: ENTITY_GENERIC_SWIM-1-2-0,ENTITY_GENERIC_SWIM-1-0-0,ENTITY_GENERIC_SWIM-1-1-0
+アサシンダガーMELEE:
+    Item_Information:
+        Item_Name: "&eアサシンダガーMELEE"
+        Item_Type: 1
+        Melee_Mode: true
+    Shooting:
+        Delay_Between_Shots: 3
+        Projectile_Damage: 6
+    Backstab:
+        Enable: true
+        Bonus_Damage: 10
+    Particles:
+        Enable: true
+        Particle_Backstab: block_break-152
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+
+フライパン:
+    Item_Information:
+        Item_Name: "&eフライパン"
+        Item_Type: 138
+        Remove_Unused_Tag: true
+        Item_Lore: "&fダメージ: 5.00|&f攻撃間隔: 0.35|&f武器寸法: 3.50|&f発動効果: 被ﾀﾞﾒｰｼﾞ60%減少∴5.00(右ｸﾘｯｸ長押し)|&f逑逑逑逑: HP小増加|&f逑逑逑逑: ﾉｯｸﾊﾞｯｸ(攻撃)|&f逑逑逑逑: なし|&b防衛型/Knife/Main|||&7重量級のチタン製フライパン。|&7その大きな体は弾を通さず、|&7爆風を遮る。|&7税込780000円。"
+        Inventory_Control: main
+        Melee_Attachment: フライパンMELEE
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: egg
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 0-true
+        Sounds_Shoot: ENTITY_GENERIC_EXTINGUISH_FIRE-0.2-0-0
+    Reload:
+        Enable: true
+        Reload_Amount: 80
+        Reload_Duration: 100
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 296
+        Ammo_Name_Check: 弾薬 -Crystal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 16
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: SLOW-1-2
+フライパンMELEE:
+    Item_Information:
+        Item_Name: "&eアサシンダガーMELEE"
+        Item_Type: 1
+        Melee_Mode: true
+    Shooting:
+        Delay_Between_Shots: 7
+        Projectile_Damage: 5
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0,BLOCK_ANVIL_LAND-1-0-0
+
+ポイズンダガー:
+    Item_Information:
+        Item_Name: "&eポイズンダガー"
+        Item_Type: 138
+        Remove_Unused_Tag: true
+        Item_Lore: "&fダメージ: 6.00|&f攻撃間隔: 0.15|&f武器寸法: 3.50|&f発動効果: 相手に毒Ⅰ3sを付与(攻撃)|&f逑逑逑逑: 毒を0.5s延長(毒状態の相手に攻撃)|&f逑逑逑逑: 水平方向へ小さく移動∴0.80R3.50(地面で右ｸﾘｯｸ)|&f逑逑逑逑: HP極小減少|&b攻撃型/Knife/Main|||&7刃に毒が塗られたプラスチックナイフ。|&7軽いので、程々な機動力が保証される。|&7握る所もﾌﾟﾗｽﾁｯｸなので、|&7力を入れすぎると変形する。"
+        Inventory_Control: main
+        Melee_Attachment: ポイズンダガーMELEE
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 16
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 0-true
+    Reload:
+        Enable: true
+        Reload_Amount: 3
+        Reload_Duration: 70
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 296
+        Ammo_Name_Check: 弾薬 -Crystal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+ポイズンダガーMELEE:
+    Item_Information:
+        Item_Name: "&eポイズンダガーMELEE"
+        Item_Type: 1
+        Melee_Mode: true
+    Shooting:
+        Delay_Between_Shots: 3
+        Projectile_Damage: 6
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+
+コールドレイピア:
+    Item_Information:
+        Item_Name: "&eコールドレイピア"
+        Item_Type: 138
+        Remove_Unused_Tag: true
+        Item_Lore: "&fダメージ: 11.00|&f攻撃間隔: 0.40|&f武器寸法: 3.50|&f発動効果: 前方を氷で薙ぎ払う∴15.00(右ｸﾘｯｸ)|&f逑逑逑逑: 移動速度上昇|&f逑逑逑逑: HP小減少|&f逑逑逑逑: なし|&bバランス型/Knife/Main|||&7冷蔵庫のドアを開けて、|&7その前で裸になった時のような寒気を放つ武器。|&7使用者に適正があればその冷気を自由に扱える。|&7冬場に持ち歩くと煙たがられてしまう。"
+        Inventory_Control: main
+        Melee_Attachment: コールドレイピアMELEE
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 300
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 0-true
+コールドレイピアMELEE:
+    Item_Information:
+        Item_Name: "&eコールドレイピアMELEE"
+        Item_Type: 1
+        Melee_Mode: true
+    Shooting:
+        Delay_Between_Shots: 8
+        Projectile_Damage: 11
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0

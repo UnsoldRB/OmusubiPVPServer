@@ -1,0 +1,49 @@
+ShopName: dhthnngfxsynyjrfgftfty
+DisplayName: '&lMainMagicShop - Freeze'
+signs:
+  text: '[MainMagicShop - Freeze]'
+  NeedPermissionToCreateSign: true
+shop:
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: vesbesvredverd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''
+  アイスボール:
+    RewardType: playercommand
+    PriceType: money
+    Price: 9700
+    Reward: brsbrbrbrbrbrbbb アイスボール 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:305
+    - name:&9アイスボール
+    - 'lore:&f高い防衛能力を持つ武器。#&fFreeze系武器の名に恥じない性能。##&f&b必要水晶 : 9700'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  スプレッドアイス:
+    RewardType: playercommand
+    PriceType: money
+    Price: 11700
+    Reward: brsbrbrbrbrbrbbb スプレッドアイス 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:306
+    - name:&9スプレッドアイス
+    - 'lore:&f高い防衛能力を持つ武器。#&f相手の足止めに最適。##&f&b必要水晶 : 11700'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''

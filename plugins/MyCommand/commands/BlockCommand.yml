@@ -1,0 +1,116 @@
+﻿pl:
+  command: /pl
+  type: RUN_COMMAND
+  runcmd:
+  - /
+bs:
+  command: /bs
+  type: RUN_COMMAND
+  runcmd:
+  - /
+plugin:
+  command: /plugin
+  type: RUN_COMMAND
+  runcmd:
+  - /
+bukkitpl:
+  command: /bukkit:pl
+  type: RUN_COMMAND
+  runcmd:
+  - /
+bukkitplugin:
+  command: /bukkit:plugin
+  type: RUN_COMMAND
+  runcmd:
+  - /
+w:
+  command: /w
+  type: RUN_COMMAND
+  runcmd:
+  - /
+
+msg:
+  command: /msg
+  type: RUN_COMMAND
+  runcmd:
+  - /
+r:
+  command: /r
+  type: RUN_COMMAND
+  runcmd:
+  - /
+m:
+  command: /m
+  type: RUN_COMMAND
+  runcmd:
+  - /
+t:
+  command: /t
+  type: RUN_COMMAND
+  runcmd:
+  - /
+centry1:
+  command: /centry join
+  type: RUN_COMMAND
+  runcmd:
+  - /
+centry1:
+  command: /centry 
+  type: RUN_COMMAND
+  runcmd:
+  - /
+bukkitplugin2:
+  command: /plugins
+  type: RUN_COMMAND
+  runcmd:
+  - /
+bukkitplugins2:
+  command: /bukkit:plugins
+  type: RUN_COMMAND
+  runcmd:
+  - /
+cjoin:
+  command: /cjoin
+  type: RUN_COMMAND
+  runcmd:
+  - /
+endercontainers:
+  command: /ecp
+  type: RUN_COMMAND
+  runcmd:
+  - /
+endercontainers2:
+  command: /enderc
+  type: RUN_COMMAND
+  runcmd:
+  - /
+endercontainers3:
+  command: /endercontainers
+  type: RUN_COMMAND
+  runcmd:
+  - /
+endercontainers4:
+  command: /ec
+  type: RUN_COMMAND
+  runcmd:
+  - /
+endercontainers5:
+  command: /enc
+  type: RUN_COMMAND
+  runcmd:
+  - /
+endercontainers6:
+  command: /endc
+  type: RUN_COMMAND
+  runcmd:
+  - /
+endercontainers7:
+  command: /enderchest
+  type: RUN_COMMAND
+  runcmd:
+  - /
+endercontainers8:
+  command: /gargesfesgfrveasrfgsdrgfer
+  type: RUN_COMMAND
+  runcmd:
+  - /endercontainers:enderchest

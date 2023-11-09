@@ -1,0 +1,70 @@
+Crystal:
+    Item_Information:
+        Item_Name: "&b弾薬 -Crystal-"
+        Item_Type: 296
+        Remove_Unused_Tag: true
+        Item_Lore: "&r主な魔法のリチャージに必要な弾"
+    Shooting:
+        Disable: true
+Normal:
+    Item_Information:
+        Item_Name: "&b弾薬 -Normal-"
+        Item_Type: 295
+        Remove_Unused_Tag: true
+        Item_Lore: "&r銃器に使用される主な弾"
+    Shooting:
+        Disable: true
+Air:
+    Item_Information:
+        Item_Name: "&b弾薬 -Air-"
+        Item_Type: 433
+        Remove_Unused_Tag: true
+        Item_Lore: "&r飛行武器に使用される特殊な弾"
+    Shooting:
+        Disable: true
+Pro:
+    Item_Information:
+        Item_Name: "&b弾薬 -Pro-"
+        Item_Type: 337
+        Remove_Unused_Tag: true
+        Item_Lore: "&r特殊な武器に使用される希少な弾"
+    Shooting:
+        Disable: true
+ShotShell:
+    Item_Information:
+        Item_Name: "&b弾薬 -ShotShell-"
+        Item_Type: 353
+        Remove_Unused_Tag: true
+        Item_Lore: "&rショットガンに使用される若干安い弾"
+    Shooting:
+        Disable: true
+Arrow:
+    Item_Information:
+        Item_Name: "&b弾薬 -Arrow-"
+        Item_Type: 262
+        Remove_Unused_Tag: true
+        Item_Lore: "&r四角いクラフターが使っていた丈夫な矢"
+    Shooting:
+        Disable: true
+弾薬Set:
+    Item_Information:
+        Item_Name: "&b弾薬Set"
+        Item_Type: 54
+        Item_Lore: "&f右クリックで解凍できます"
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Projectile_Type: energy
+        Projectile_SubType: 1-1-NONE-1
+        Projectile_Speed: 0
+        Sounds_Shoot: BLOCK_ANVIL_USE-1-2-0
+    Extras:
+        Run_Command: 
+             - "@execute <shooter> ~ ~ ~ /shot give <shooter> Normal 48"
+             - "@execute <shooter> ~ ~ ~ /shot give <shooter> Crystal 48"
+             - "@execute <shooter> ~ ~ ~ /shot give <shooter> Shotshell 64"
+             - "@execute <shooter> ~ ~ ~ /shot give <shooter> Air 32"
+             - "@execute <shooter> ~ ~ ~ /shot give <shooter> Pro 3"
+        One_Time_Use: true
+

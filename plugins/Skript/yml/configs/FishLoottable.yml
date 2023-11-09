@@ -1,0 +1,238 @@
+﻿Common:
+  コモヌ:
+    MinSize: 15
+    MaxSize: 30
+    ItemData: '257:1'
+    Sell: 0.1
+    Lore: 'どこにでもいるおさかな。||最近足の生えたコモヌが発見された。'
+  ザコ:
+    MinSize: 3
+    MaxSize: 7
+    ItemData: '257:1'
+    Sell: 0.5
+    Lore: 'どこにでもいるが見つけにくい。||コモヌより高く売れる。'
+  ノロフィーシュ:
+    MinSize: 40
+    MaxSize: 70
+    ItemData: '257:1'
+    Sell: 0.1
+    Lore: '時速1mの魚。||斜め上に泳がないと重すぎて沈む。'
+  コモル:
+    MinSize: 10
+    MaxSize: 20
+    ItemData: '257:1'
+    Sell: 0.2
+    Lore: 'コモヌの親戚。||外に出るとすぐに死ぬためその名が付いた。'
+  コモルンゴー:
+    MinSize: 30
+    MaxSize: 45
+    ItemData: '257:1'
+    Sell: 0.18
+    Lore: 'コモヌの親。||口がずっとンゴンゴしている。||かわいいかよ'
+  ギョッ:
+    MinSize: 10
+    MaxSize: 60
+    ItemData: '257:1'
+    Sell: 0.2
+    Lore: '全ての原型。||水素が水素であるように。||この魚も魚である。||ｷﾞｮｷﾞｮって顔をしている魚だ。'
+  コモンモラウス:
+    MinSize: 10
+    MaxSize: 25
+    ItemData: '257:1'
+    Sell: 0.2
+    Lore: 'コモヌの亜種。||それでも価値はさほど変わらない。'
+
+UnCommon:
+  N・コモヌ:
+    MinSize: 30
+    MaxSize: 40
+    ItemData: '257:1'
+    Sell: 0.2
+    Lore: 'コモヌに足が生えたもの。||陸上の方が動きやすそう。'
+  灰マグロ:
+    MinSize: 20
+    MaxSize: 40
+    ItemData: '257:1'
+    Sell: 0.2
+    Lore: '日本海にいそうなマグロ。||クロマグロが洗濯機に入ると灰マグロになる。'
+  クエ:
+    MinSize: 50
+    MaxSize: 60
+    ItemData: '257:1'
+    Sell: 0.2
+    Lore: '夜に獲物を探す魚。||遠出をあまり好まないニート。'
+  スティックフィッシュ:
+    MinSize: 'Material'
+    MaxSize: 20
+    ItemData: '257:4'
+    Sell: 0.3
+    Lore: '非常に硬い棒の形をした魚。||サイズが20cmのものしか生まれない。'
+  ストライクフィッシュ:
+    MinSize: 30
+    MaxSize: 50
+    ItemData: '257:1'
+    Sell: 0.3
+    Lore: '岩に刺さる魚。||岩からイオンを吸収して生活する。'
+  ペペロンチーノ:
+    MinSize: 40
+    MaxSize: 50
+    ItemData: '257:1'
+    Sell: 0.3
+    Lore: 'どうしてこれが海にあるんだ...'
+  アイスフィッシュ:
+    MinSize: 'Material'
+    MaxSize: 40
+    ItemData: '257:1'
+    Sell: 0.3
+    Lore: '強い冷気を放つ魚。||夏場に持ってこい。'
+
+Rare:
+  ビレアノギョ:
+    MinSize: 15
+    MaxSize: 32
+    ItemData: '257:1'
+    Sell: 0.6
+    Lore: '名前の通りちょっとレアである。||微希少魚と書く。'
+  オウムガイ:
+    MinSize: 5
+    MaxSize: 15
+    ItemData: '257:1'
+    Sell: 0.6
+    Lore: '良く名前を聞く貝。||生きている化石とか言われているらしい。||貝からすればただの迷惑だろう。'
+  アイアンフィッシュ:
+    MinSize: 'Material'
+    MaxSize: 12
+    ItemData: '257:3'
+    Sell: 0.6
+    Lore: '海底にすむ金属の魚。||あらゆる方面で有効に使える。'
+  レザーフィッシュ:
+    MinSize: 'Material'
+    MaxSize: 16
+    ItemData: '257:2'
+    Sell: 0.6
+    Lore: '海底にすむ革の魚。||あらゆる方面で有効に使える。'
+  ストライクフィーシュア:
+    MinSize: 20
+    MaxSize: 40
+    ItemData: '257:1'
+    Sell: 0.7
+    Lore: 'ストライクフィッシュの進化系。||よりコンパクトに。||より鋭利に。'
+  バァーンフィッシュ:
+    MinSize: 1
+    MaxSize: 3
+    ItemData: '257:1'
+    Sell: 0.6
+    Lore: 'バァァアァァアアン！！！'
+
+Epic:
+  尽塀ザメ:
+    MinSize: 120
+    MaxSize: 150
+    ItemData: '257:1'
+    Sell: 0.4
+    Lore: '塀を作ることを覚えたサメ。||一生をかけて作られた塀はC4爆弾にも耐えうる。'
+  マナストーン:
+    MinSize: 'Material'
+    MaxSize: 15
+    ItemData: '257:1'
+    Sell: 3
+    Lore: 'RPGとかで見る魔力が込められた石。||周囲の魚が光り出す現象が秘に発生する。'
+  ムニケンマァー:
+    MinSize: 'Material'
+    MaxSize: 40
+    ItemData: '257:1'
+    Sell: 2
+    Lore: 'ギラギラとした鱗を持つ魚。||やすりの代わりとなる。'
+  クマ魚:
+    MinSize: 300
+    MaxSize: 300
+    ItemData: '257:1'
+    Sell: 0.3
+    Lore: '魚と書いているが...||どこからどう見てもクマである。||エラが無いのにどうやって生きているのか。'
+
+Legendary:
+  空きビン:
+    MinSize: 'Material'
+    MaxSize: 35
+    ItemData: '257:1'
+    Sell: 80
+    Lore: 'まじで空きビン。||これだけのために釣りをする軍人がいるらしい。'
+  マッガジ:
+    MinSize: 'Material'
+    MaxSize: 20
+    ItemData: '257:1'
+    Sell: 70
+    Lore: 'マガジンの素材。||銃には必要なのだ。'
+  ッバァァンフィッシュ:
+    MinSize: 'Material'
+    MaxSize: 120
+    ItemData: '257:1'
+    Sell: 30
+    Lore: 'バァーンフィッシュの先祖。||怒ると口から火薬を吐き出す。'
+  オレンジジュース:
+    MinSize: 20
+    MaxSize: 20
+    ItemData: '257:1'
+    Sell: 100
+    Lore: 'どこかの女の子がこぼしてしまった物。||これだけのために釣りをする変人がいるらしい。'
+  古き友人のぱんつ:
+    MinSize: 30
+    MaxSize: 40
+    ItemData: '257:1'
+    Sell: 50
+    Lore: '最後の3文字がどう考えても邪魔なアイテム。||例え大切な人のものでも形見にするのは||...抵抗があるかもしれない。'
+  折れたソード:
+    MinSize: 120
+    MaxSize: 140
+    ItemData: '257:1'
+    Sell: 50
+    Lore: 'すっごく...すっごく折れた剣。||なんか月のマークが刻まれている。'
+  ストライクフィリアージュ:
+    MinSize: 100
+    MaxSize: 200
+    ItemData: '257:1'
+    Sell: 23
+    Lore: 'ストライクフィッシュの最終形態。||全てを貫く。'
+
+Fantasy:
+  黄金米:
+    MinSize: 2
+    MaxSize: 4
+    ItemData: '257:1'
+    Sell: 800
+    Lore: '米の一種。||いくつかの粒が固まっている。||冷めてもおいしくいただける。'
+  白米:
+    MinSize: 2
+    MaxSize: 4
+    ItemData: '257:1'
+    Sell: 800
+    Lore: '知らない人はいない素晴らしい食べ物。||いくつかの粒が固まっている。||単純においしい。'
+  疑問符:
+    MinSize: 666
+    MaxSize: 666
+    ItemData: '257:1'
+    Sell: 8
+    Lore: 'なんで？どうして？||謎？？？'
+
+Unreal:
+  シーラカンス:
+    MinSize: 200
+    MaxSize: 220
+    ItemData: '257:1'
+    Sell: 30
+    Lore: '生きている化石と呼ばれる魚。||絶滅していると思われていたようで、||生きた個体が発見された時、||学会を騒然とさせた。'
+  おむすび:
+    MinSize: Material
+    MaxSize: 15
+    ItemData: '257:1'
+    Sell: 1000
+    Lore: '懐かしい記憶。'
+
+Options:
+  Common: §f
+  UnCommon: §a
+  Rare: §b
+  Epic: §5
+  Legendary: §6§l
+  Fantasy: §9§l§n
+  Unreal: §4§l§n§o

@@ -1,0 +1,27 @@
+﻿AK-47_default:
+    Durability: 1
+    Change_Item_Type: "DIAMOND_PICKAXE"
+SCAR-H_default:
+    Durability: 4
+    Change_Item_Type: "DIAMOND_PICKAXE"
+FA-MAS_default:
+    Durability: 2
+    Change_Item_Type: "DIAMOND_PICKAXE"
+FA-MASG2COMMAND_default:
+    Durability: 2
+    Change_Item_Type: "DIAMOND_PICKAXE"
+G36C_default:
+    Durability: 3
+    Change_Item_Type: "DIAMOND_PICKAXE"
+IMITavorTAR-21_default:
+    Durability: 5
+    Change_Item_Type: "DIAMOND_PICKAXE"
+Risk-Line_default:
+    Durability: 6
+    Change_Item_Type: "DIAMOND_PICKAXE"
+TCt-72_default:
+    Durability: 7
+    Change_Item_Type: "DIAMOND_PICKAXE"
+SCAR-L_default:
+    Durability: 8
+    Change_Item_Type: "DIAMOND_PICKAXE"

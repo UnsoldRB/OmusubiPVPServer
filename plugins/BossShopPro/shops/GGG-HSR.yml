@@ -1,0 +1,113 @@
+ShopName: vleberubyvnrnd
+DisplayName: '&9&lSRShop'
+signs:
+  text: '[SRShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  DSR-1:
+    RewardType: playercommand
+    PriceType: money
+    Price: 9200
+    Reward: brsbrbrbrbrbrbbb DSR-1 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - durability:455
+    - unbreakable:true
+    - name:&9DSR-1
+    - 'lore:&f安定して狙撃を続けられる銃#&7初期武器##&b必要水晶 : 9200'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  L96:
+    RewardType: playercommand
+    PriceType: money
+    Price: 11000
+    Reward: brsbrbrbrbrbrbbb L96 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:455
+    - name:&9L96
+    - 'lore:&f強いノックバックを持つ武器##&b必要水晶 : 11000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  ENDER-SNIPER:
+    RewardType: playercommand
+    PriceType: money
+    Price: 17000
+    Reward: brsbrbrbrbrbrbbb ENDER-SNIPER 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:455
+    - name:&9ENDER-SNIPER
+    - 'lore:&f位置交換ができる武器##&b必要水晶 : 17000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 5
+    ExtraPermission: ''
+  M40A1:
+    RewardType: playercommand
+    PriceType: money
+    Price: 13000
+    Reward: brsbrbrbrbrbrbbb M40A1 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:455
+    - name:&9M40A1
+    - 'lore:&fナイトビジョン付きの武器#&f装填数も若干多め##&b必要水晶 : 13000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 3
+    ExtraPermission: ''
+  ScoutRifle:
+    RewardType: playercommand
+    PriceType: money
+    Price: 9900
+    Reward: brsbrbrbrbrbrbbb ScoutRifle 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:456
+    - name:&9ScoutRifle
+    - 'lore:&f突撃しやすい武器##&b必要水晶 : 9900'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 4
+    ExtraPermission: ''
+  PGM Hecate II:
+    RewardType: playercommand
+    PriceType: money
+    Price: 19000
+    Reward: brsbrbrbrbrbrbbb PGMHecateII 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:457
+    - name:&9PGM Hecate II
+    - 'lore:&f単純な性能は強い武器#&f扱いにくい##&b必要水晶 : 19000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 6
+    ExtraPermission: ''
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: onvlaebvyulearh
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

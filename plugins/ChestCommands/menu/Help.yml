@@ -1,0 +1,164 @@
+﻿######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&1ヘルパー'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 4
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: 'avgeriugswefws'
+
+  # auto-refresh - OPTIONAL
+  # How frequently the menu will be refreshed, in seconds.
+  # Useful if you have variables in items' descriptions.
+  auto-refresh: 5
+
+  # This command command will be execute when the menu is opened.
+  # Supports all the icon command types.
+  open-action: 'sound: BLOCK_NOTE_PLING; tell: &e何か用かい？'
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    id: wool:1
+    left-click: false
+    right-click: false
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+
+pvp:
+  COMMAND: 'gerhgedfhed PVPについて'
+  NAME: '&ePVPについて'
+  LORE:
+    - ''
+  ID: 283
+  POSITION-X: 1
+  POSITION-Y: 1
+gun:
+  COMMAND: 'gerhgedfhed 銃について'
+  NAME: '&e銃について'
+  LORE:
+    - ''
+  ID: 283
+  POSITION-X: 2
+  POSITION-Y: 1
+magic:
+  COMMAND: 'gerhgedfhed 魔法について'
+  NAME: '&e魔法について'
+  LORE:
+    - ''
+  ID: 283
+  POSITION-X: 3
+  POSITION-Y: 1
+ammo:
+  COMMAND: 'gerhgedfhed 弾薬について'
+  NAME: '&e弾薬について'
+  LORE:
+    - ''
+  ID: 283
+  POSITION-X: 4
+  POSITION-Y: 1
+grenade:
+  COMMAND: 'gerhgedfhed グレネードについて'
+  NAME: '&eグレネードについて'
+  LORE:
+    - ''
+  ID: 283
+  POSITION-X: 5
+  POSITION-Y: 1
+damage:
+  COMMAND: 'gerhgedfhed 武器のダメージについて'
+  NAME: '&e武器のダメージについて'
+  LORE:
+    - ''
+  ID: 283
+  POSITION-X: 6
+  POSITION-Y: 1
+lowdamage:
+  COMMAND: 'gerhgedfhed 一見弱い武器について'
+  NAME: '&e一見弱い武器について'
+  LORE:
+    - ''
+  ID: 283
+  POSITION-X: 7
+  POSITION-Y: 1
+ability:
+  COMMAND: 'gerhgedfhed 使用回数に限りがあるAbilityについて'
+  NAME: '&e使用回数に限りがあるAbilityについて'
+  LORE:
+    - ''
+  ID: 283
+  POSITION-X: 8
+  POSITION-Y: 1
+attachment:
+  COMMAND: 'gerhgedfhed Attachmentについて'
+  NAME: '&eAttachmentについて'
+  LORE:
+    - ''
+  ID: 283
+  POSITION-X: 1
+  POSITION-Y: 2
+craft:
+  COMMAND: 'gerhgedfhed Craftについて'
+  NAME: '&eCraftについて'
+  LORE:
+    - ''
+  ID: 283
+  POSITION-X: 2
+  POSITION-Y: 2
+
+Wiki:
+  COMMAND: 'gerhgedfhed Wikiについて'
+  NAME: '&eWikiについて'
+  LORE:
+    - ''
+  ID: 339
+  POSITION-X: 2
+  POSITION-Y: 4
+command:
+  COMMAND: 'gerhgedfhed コマンドについて'
+  NAME: '&eコマンドについて'
+  LORE:
+    - ''
+  ID: 339
+  POSITION-X: 3
+  POSITION-Y: 4
+
+Perk:
+  COMMAND: 'gerhgedfhed PerkとLastについて'
+  NAME: '&eParkとLastについて'
+  LORE:
+    - ''
+  ID: 283
+  POSITION-X: 9
+  POSITION-Y: 1
+tab:
+  COMMAND: 'gerhgedfhed TABリストについて'
+  NAME: '&eTABリストについて'
+  LORE:
+    - ''
+  ID: 339
+  POSITION-X: 1
+  POSITION-Y: 4
+ALL:
+  COMMAND: 'gerhgedfhed 各施設の説明'
+  NAME: '&e各施設の説明'
+  LORE:
+    - ''
+  ID: 169
+  POSITION-X: 9
+  POSITION-Y: 4

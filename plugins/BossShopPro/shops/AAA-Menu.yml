@@ -1,0 +1,108 @@
+ShopName: nvskeibvlnseurgglensdjkvnszfkjvbhsueil
+DisplayName: '&lMenu'
+signs:
+  text: '[Menu]'
+  NeedPermissionToCreateSign: true
+shop:
+  PlayerInfo:
+    RewardType: nothing
+    PriceType: nothing
+    MenuItem:
+    - hideflags:all
+    - name:&6<< &c&l%name% &6>>
+    - 'lore:&2所持水晶: %balance%'
+    - type:SKULL_ITEM
+    - amount:1
+    - durability:3
+    - playerhead:%name%
+    Message: ''
+    InventoryLocation: 1
+    ExtraPermission: ''
+  GunShop:
+    RewardType: shop
+    PriceType: free
+    Reward: onvlaebvyulearh
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - durability:1
+    - unbreakable:true
+    - name:&9&lGunShop
+    - 'lore:&8銃が販売されています'
+    Message: ''
+    InventoryLocation: 3
+    ExtraPermission: ''
+  MagicShop:
+    RewardType: shop
+    PriceType: free
+    Reward: vesbesvredverd
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:1241
+    - name:&9&lMagicShop
+    - 'lore:&8魔法が販売されています'
+    Message: ''
+    InventoryLocation: 4
+    ExtraPermission: ''
+  KnifeShop:
+    RewardType: shop
+    PriceType: free
+    Reward: jdrthrt6rdyt45rffff
+    MenuItem:
+    - hideflags:all
+    - type:STONE_SWORD
+    - amount:1
+    - unbreakable:true
+    - durability:2
+    - name:&9&lKnifeShop
+    - 'lore:&8近接武器が販売されています#&8初心者にはお勧めしません'
+    Message: ''
+    InventoryLocation: 5
+    ExtraPermission: ''
+  SPWeaponShop:
+    RewardType: shop
+    PriceType: free
+    Reward: bfbsdfbsdbdbdbdbdbdbfddggd
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9&lSPWeaponShop
+    - 'lore:&8飛行武器が販売されています'
+    Message: ''
+    InventoryLocation: 6
+    ExtraPermission: ''
+  OtherShop:
+    RewardType: shop
+    PriceType: free
+    Reward: gfhnfdghndhdythtd
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_PICKAXE
+    - unbreakable:true
+    - durability:1
+    - amount:1
+    - name:&9&lOtherShop
+    - 'lore:&8その他のアイテムが販売されています'
+    Message: ''
+    InventoryLocation: 7
+    ExtraPermission: ''
+  CarryingShop:
+    RewardType: shop
+    PriceType: free
+    Reward: jndvisubvuoal
+    MenuItem:
+    - hideflags:all
+    - type:SEEDS
+    - amount:1
+    - name:&9&lCarryingShop
+    - 'lore:&8弾薬と食料が販売されています'
+    Message: ''
+    InventoryLocation: 9
+    ExtraPermission: ''

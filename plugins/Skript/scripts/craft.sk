@@ -1,0 +1,74 @@
+﻿on script load:
+	delete {Recipe::*}
+	delete {TodaysRecipe::*}
+	set {_temp::*} to skutilities yaml nodes "Recipes" of file "plugins/Skript/yml/configs/Recipes.yml"
+	loop {_temp::*}:
+		set {Recipe::%loop-value%} to skutilities yaml value "Recipes.%loop-value%" of file "plugins/Skript/yml/configs/Recipes.yml"
+	set {_today.temp} to random element of {_temp::*}
+	set {_Recipename::*} to {_today.temp} split by " "
+	set {TodaysRecipe::10} to {_Recipename::1}
+	set {_today.temp} to {Recipe::%{_today.temp}%}
+	set {_todaysrecipes.temp::*} to {_today.temp} split by "//"
+	loop 9 times:
+		add 1 to {_count}
+		add {_todaysrecipes.temp::%{_count}%} to {TodaysRecipe::*}
+
+on inventory click:
+	if name of clicked inventory is "container.crafting":
+		if clicked slot is 0:
+			cancel event
+			set {_craft} to CheckWeaponName(name of slot 1 of player's current inventory, true)
+			loop integers from 2 to 9:
+				set {_craft} to "%{_craft}%//%CheckWeaponName(name of slot loop-int of player's current inventory, true)%"
+			if {Recipe::*} contains {_craft}:
+				loop {Recipe::*}:
+					if loop-value is {_craft}:
+						Playsound(player, "block.anvil.use", 1, 0)
+						execute player command "/brsbrbrbrbrbrbbb %loop-index%"
+						loop integers from 1 to 11:
+							chance of 30%:
+								set slot loop-int-2 of player's current inventory to dye:15 named "§9こぼれ素材" with lore "§7クラフトで出てきたゴミ。||§7一応素材になるらしい。"
+							else:
+								set slot loop-int-2 of player's current inventory to air
+						stop
+	else if name of clicked inventory is "<blue>今日のレシピ。":
+		cancel event
+		wait 1 ticks
+		close player's inventory
+
+command /recipesfsefwefsdfsdvthtyj:
+	trigger:
+		open chest with 3 row named "<blue>今日のレシピ。" to player
+		play "BLOCK_IRON_DOOR_OPEN" to player at volume 1 with pitch 2
+		wait 1 ticks
+		set {_count} to 0
+		set {_count2} to 0
+		loop 3 times:
+			loop 3 times:
+				add 1 to {_count2}
+				if {TodaysRecipe::%{_count2}%} is not "<none>":
+					set slot {_count} of player's current inventory to torch named {TodaysRecipe::%{_count2}%}
+				add 1 to {_count}
+			add 6 to {_count}
+		set slot 3 of player's current inventory to iron bars named "§r"
+		set slot 12 of player's current inventory to iron bars named "§r"
+		set slot 21 of player's current inventory to iron bars named "§r"
+		set slot 16 of player's current inventory to sign named "§bレシピはいかがかな？" with lore "§71時間ごとに色々みせてあげるよ。||§7メモするなりして、欲しい武器を作りな。||§7もちろんお金はいらないよ。||§7レシピ見せてるだけだからね。"
+		set slot 5 of player's current inventory to paper named "§b今日のレシピは..." with lore "§r「&6%{TodaysRecipe::10}%§r」のレシピ"
+
+on craft:
+	cancel event
+
+every 20 minutes:
+	if number of all players is more than 2:
+		delete {TodaysRecipe::*}
+		set {_temp::*} to skutilities yaml nodes "Recipes" of file "plugins/Skript/yml/configs/Recipes.yml"
+		set {_today.temp} to random element of {_temp::*}
+		set {_Recipename::*} to {_today.temp} split by " "
+		set {TodaysRecipe::10} to {_Recipename::1}
+		set {_today.temp} to {Recipe::%{_today.temp}%}
+		set {_todaysrecipes.temp::*} to {_today.temp} split by "//"
+		loop 9 times:
+			add 1 to {_count}
+			add {_todaysrecipes.temp::%{_count}%} to {TodaysRecipe::*}
+		broadcast "§oレシピおじさんが新しいレシピを用意したようだ。"

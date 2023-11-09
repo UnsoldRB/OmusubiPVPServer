@@ -1,0 +1,470 @@
+# Citizens NPC Storage
+
+last-created-npc-id: 28
+npc:
+  '5':
+    name: PVPマネージャー
+    uuid: 7dae5f3f-7837-4e27-be11-af5ef37719b3
+    traits:
+      location:
+        world: world
+        x: '-73.5'
+        y: '15.5'
+        z: '-114.5'
+        yaw: '216.88047790527344'
+        pitch: '49.650020599365234'
+      type: ENDER_CRYSTAL
+      spawned: true
+      owner:
+        owner: RiceBallSouls
+        uuid: 02d4d7b5-160e-4740-a4f9-2b95466d36d2
+    traitnames: spawned,location,owner,mounttrait,type
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+    metadata:
+      respawn-delay: -1
+  '1':
+    name: 総合情報処理センター
+    uuid: 05e2c6a0-c176-46c7-8914-1da45e0d3e9e
+    traits:
+      location:
+        world: world
+        x: '-44.6998'
+        y: '13.0'
+        z: '-79.6997'
+        yaw: '-87.60302734375'
+        pitch: '0.0'
+      equipment:
+        helmet:
+          type: LEATHER_HELMET
+          amount: 1
+          durability: 0
+          mdata: 0
+        chestplate:
+          type: IRON_CHESTPLATE
+          amount: 1
+          durability: 0
+          mdata: 0
+        leggings:
+          type: CHAINMAIL_LEGGINGS
+          amount: 1
+          durability: 0
+          mdata: 0
+        boots:
+          type: LEATHER_BOOTS
+          amount: 1
+          durability: 0
+          mdata: 0
+      type: PLAYER
+      spawned: true
+      gravity:
+        enabled: false
+      inventory:
+        '36':
+          type: LEATHER_BOOTS
+          amount: 1
+          durability: 0
+          mdata: 0
+        '37':
+          type: CHAINMAIL_LEGGINGS
+          amount: 1
+          durability: 0
+          mdata: 0
+        '38':
+          type: IRON_CHESTPLATE
+          amount: 1
+          durability: 0
+          mdata: 0
+        '39':
+          type: LEATHER_HELMET
+          amount: 1
+          durability: 0
+          mdata: 0
+      owner:
+        owner: RiceBallSouls
+        uuid: 02d4d7b5-160e-4740-a4f9-2b95466d36d2
+    traitnames: location,spawned,inventory,equipment,owner,gravity,mounttrait,type
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+    metadata:
+      player-skin-textures: ewogICJ0aW1lc3RhbXAiIDogMTYzMTMzNjIxMjM2OSwKICAicHJvZmlsZUlkIiA6ICIwMmQ0ZDdiNTE2MGU0NzQwYTRmOTJiOTU0NjZkMzZkMiIsCiAgInByb2ZpbGVOYW1lIiA6ICJSaWNlQmFsbFNvdWxzIiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzg0Njk4MjEyZjAzM2I1NWNmNGRiODZmYmUxMDBkYzA1YWM1NTg1NGQzYjliM2I5ZWVmNWRkZTBjYjhiMGY5N2IiCiAgICB9CiAgfQp9
+      cached-skin-uuid-name: riceballsouls
+      cached-skin-uuid: 02d4d7b5-160e-4740-a4f9-2b95466d36d2
+      player-skin-name: riceballsouls
+      player-skin-signature: xPaHuXgIqPrDQRd3s7ewigKzLTCWWxHTdQu9k7c4bShz1FcwUf4ik223GV3DoDs0WtqQFykuIk6ofQloHBVaA3/SAIQWfK/uAm+FuavgespkkBuIBaIKpn/9E3uXzXtpxYLcH3+pErv4WH3kaMJs//ZOXHmXZ474tqWZyPc+BW5RZanwQgmIsCghepq/pakEfy2LWw/a9of+SnxdQHxA8w9KbvNsS5ScDAIRwUeVcQw5UJSefxTXX9nVMIHljLYDQDl6PiwbEZQwpmYblpqNdCPRRSJMnijeF0NDk8Rle6XjSqeKNQ9tHhLwoesisc5Uo5KHem2iSZIKpawjj62fn1nuyEZ59MG+btcaPopifmkLeNiTYRPK8UFPV87dSyv90fTE3zY/0ICI9A1A35JQj0FD1dguwf8QAFD+O8JF9f/j45/M3wi6uEUkXbzN1gN4i6EgCh336yDcy5Gb9PV+PPKMG9RNM2Ho/QvHXNlgA1KwXCIUKF4TXfSyd+OJUsHn5cPKwtyg4Lx/FkCuuF+JDp5U2OiT5/khWJZZQicBGJkwOVJvf6vqAJJtnJqVKXNS7ke/LfGyANoAaDwbpLs63uSuQSyIQVqBjWA8nq/GGIoQhot6fSO/k1FAoLHybQ9DA3u8HzxNopztOYeiA1LuJ1Wnbxjr5YBDI0clN3EQL6s=
+  '0':
+    metadata:
+      item-type-data: 0
+      item-type-id: COOKED_BEEF
+    name: おむすび
+    uuid: 224839d1-735f-442c-a82a-421358cf9eef
+    traits:
+      location:
+        world: world
+        x: '-27.524'
+        y: '14.5'
+        z: '-128.5389'
+        yaw: '-353.7032470703125'
+        pitch: '76.35014343261719'
+      type: DROPPED_ITEM
+      spawned: true
+      owner:
+        owner: RiceBallSouls
+        uuid: 02d4d7b5-160e-4740-a4f9-2b95466d36d2
+    traitnames: spawned,location,owner,mounttrait,type
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '7':
+    name: おじさんのお店
+    uuid: 0cd1bd73-888d-4270-96f4-1d833ead5257
+    traits:
+      location:
+        world: world
+        x: '-37.5491'
+        y: '13.0'
+        z: '-75.4594'
+        yaw: '-176.85186767578125'
+        pitch: '0.0'
+      age:
+        age: 0
+        locked: true
+      type: VILLAGER
+      spawned: true
+      owner:
+        owner: RiceBallSouls
+        uuid: 02d4d7b5-160e-4740-a4f9-2b95466d36d2
+    traitnames: location,spawned,age,owner,mounttrait,type
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '18':
+    name: スライミー 2号
+    uuid: ab724d0e-93e3-4016-a522-57cc02ea8777
+    traits:
+      spawned: true
+      controllable:
+        enabled: true
+        owner_required: false
+      location:
+        world: world
+        x: '-56.7268'
+        y: '13.0'
+        z: '-89.3196'
+        yaw: '-180.0'
+        pitch: '0.0'
+      type: SLIME
+      age:
+        age: 0
+        locked: true
+      owner:
+        owner: RiceBallSouls
+        uuid: 02d4d7b5-160e-4740-a4f9-2b95466d36d2
+    traitnames: location,spawned,age,owner,mounttrait,controllable,type
+    navigator:
+      speedmodifier: '3.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '17':
+    name: スライミー 1号
+    uuid: 8d69d4e1-8f3a-4293-bc23-480706f0a307
+    traits:
+      spawned: true
+      controllable:
+        enabled: true
+        owner_required: false
+      location:
+        world: world
+        x: '-55.029'
+        y: '15.0'
+        z: '-132.8976'
+        yaw: '-97.7647705078125'
+        pitch: '0.0'
+      type: SLIME
+      age:
+        age: 0
+        locked: true
+      owner:
+        owner: RiceBallSouls
+        uuid: 02d4d7b5-160e-4740-a4f9-2b95466d36d2
+    traitnames: location,spawned,age,owner,mounttrait,controllable,type
+    navigator:
+      speedmodifier: '3.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '16':
+    name: スライミー 3号
+    uuid: 4f1c0286-80ee-4cbc-8e8b-c83343cf1f9e
+    traits:
+      spawned: true
+      controllable:
+        enabled: true
+        owner_required: false
+      location:
+        world: world
+        x: '-65.8294'
+        y: '13.0'
+        z: '-132.2751'
+        yaw: '-55.1767463684082'
+        pitch: '0.0'
+      type: SLIME
+      age:
+        age: 0
+        locked: true
+      owner:
+        owner: RiceBallSouls
+        uuid: 02d4d7b5-160e-4740-a4f9-2b95466d36d2
+    traitnames: spawned,location,age,owner,mounttrait,controllable,type
+    navigator:
+      speedmodifier: '3.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '15':
+    name: スライミー 4号
+    uuid: e3293991-0e36-4744-bbee-14c5ab3beffd
+    traits:
+      spawned: true
+      controllable:
+        enabled: true
+        owner_required: false
+      location:
+        world: world
+        x: '-56.708'
+        y: '13.0'
+        z: '-91.6412'
+        yaw: '150.95333862304688'
+        pitch: '0.0'
+      type: SLIME
+      age:
+        age: 0
+        locked: true
+      owner:
+        owner: RiceBallSouls
+        uuid: 02d4d7b5-160e-4740-a4f9-2b95466d36d2
+    traitnames: spawned,location,age,owner,mounttrait,controllable,type
+    navigator:
+      speedmodifier: '3.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '13':
+    name: スライミー 5号
+    uuid: 83e0401c-bc1f-43ca-90db-0e9989e3c344
+    traits:
+      spawned: true
+      controllable:
+        enabled: true
+        owner_required: false
+      location:
+        world: world
+        x: '-47.775'
+        y: '12.0'
+        z: '-95.5591'
+        yaw: '44.5644416809082'
+        pitch: '0.0'
+      type: SLIME
+      age:
+        age: 0
+        locked: true
+      owner:
+        owner: RiceBallSouls
+        uuid: 02d4d7b5-160e-4740-a4f9-2b95466d36d2
+    traitnames: spawned,location,age,owner,mounttrait,controllable,type
+    navigator:
+      speedmodifier: '3.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '19':
+    name: すけちゃん
+    uuid: 4e8f22d4-2ab1-4b2e-b8e1-e5724cdc8e0c
+    traits:
+      spawned: true
+      type: SKELETON
+      location:
+        world: PVEworld
+        x: '-6.1668'
+        y: '8.0'
+        z: '19.9817'
+        yaw: '-70.64994049072266'
+        pitch: '0.0'
+      owner:
+        owner: RiceBallSouls
+        uuid: 02d4d7b5-160e-4740-a4f9-2b95466d36d2
+    traitnames: spawned,location,owner,mounttrait,type
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '25':
+    name: おさかな総合管理局
+    uuid: 93df75ba-1d68-4d5a-b459-865504b518ed
+    traits:
+      type: OCELOT
+      spawned: true
+      waypoints:
+        linear:
+          points:
+            '0':
+              location:
+                world: world
+                x: '12.0'
+                y: '13.0'
+                z: '-22.0'
+                yaw: '0.0'
+                pitch: '0.0'
+            '1':
+              location:
+                world: world
+                x: '12.0'
+                y: '13.0'
+                z: '-28.0'
+                yaw: '0.0'
+                pitch: '0.0'
+            '2':
+              location:
+                world: world
+                x: '13.0'
+                y: '13.0'
+                z: '-33.0'
+                yaw: '0.0'
+                pitch: '0.0'
+            '3':
+              location:
+                world: world
+                x: '21.0'
+                y: '13.0'
+                z: '-33.0'
+                yaw: '0.0'
+                pitch: '0.0'
+            '4':
+              location:
+                world: world
+                x: '21.0'
+                y: '14.0'
+                z: '-25.0'
+                yaw: '0.0'
+                pitch: '0.0'
+            '5':
+              location:
+                world: world
+                x: '22.0'
+                y: '13.0'
+                z: '-22.0'
+                yaw: '0.0'
+                pitch: '0.0'
+            '6':
+              location:
+                world: world
+                x: '17.0'
+                y: '13.0'
+                z: '-20.0'
+                yaw: '0.0'
+                pitch: '0.0'
+            '7':
+              location:
+                world: world
+                x: '14.0'
+                y: '12.0'
+                z: '-16.0'
+                yaw: '0.0'
+                pitch: '0.0'
+            '8':
+              location:
+                world: world
+                x: '5.0'
+                y: '12.0'
+                z: '-16.0'
+                yaw: '0.0'
+                pitch: '0.0'
+            '9':
+              location:
+                world: world
+                x: '5.0'
+                y: '12.0'
+                z: '-25.0'
+                yaw: '0.0'
+                pitch: '0.0'
+            '10':
+              location:
+                world: world
+                x: '18.0'
+                y: '13.0'
+                z: '-26.0'
+                yaw: '0.0'
+                pitch: '0.0'
+            '11':
+              location:
+                world: world
+                x: '18.0'
+                y: '13.0'
+                z: '-21.0'
+                yaw: '0.0'
+                pitch: '0.0'
+        provider: linear
+      location:
+        world: world
+        x: '19.2427'
+        y: '14.0625'
+        z: '-30.3223'
+        yaw: '226.030517578125'
+        pitch: '0.0'
+      age:
+        age: 0
+        locked: true
+      owner:
+        owner: RiceBallSouls
+        uuid: 02d4d7b5-160e-4740-a4f9-2b95466d36d2
+    traitnames: location,spawned,age,owner,mounttrait,waypoints,type
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '26':
+    name: 釣り堀おじさん
+    uuid: 0cc9ce89-8833-48b9-a943-13d15f7ff990
+    traits:
+      type: WITCH
+      gravity:
+        enabled: false
+      location:
+        world: world
+        x: '12.5221'
+        y: '13.5'
+        z: '-30.3'
+        yaw: '0.450439453125'
+        pitch: '0.0'
+      spawned: true
+      owner:
+        owner: RiceBallSouls
+        uuid: 02d4d7b5-160e-4740-a4f9-2b95466d36d2
+    traitnames: location,spawned,inventory,equipment,owner,mounttrait,type
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true
+  '28':
+    name: レシピおじさん
+    uuid: 18188bd3-0542-4a9d-ad7b-b869352a9282
+    traits:
+      location:
+        world: world
+        x: '-26.5167'
+        y: '13.0'
+        z: '-81.5048'
+        yaw: '73.50515747070312'
+        pitch: '0.0'
+      type: SKELETON
+      spawned: true
+      owner:
+        owner: RiceBallSouls
+        uuid: 02d4d7b5-160e-4740-a4f9-2b95466d36d2
+    traitnames: spawned,location,owner,mounttrait,type
+    navigator:
+      speedmodifier: '1.0'
+      avoidwater: false
+      usedefaultstuckaction: true

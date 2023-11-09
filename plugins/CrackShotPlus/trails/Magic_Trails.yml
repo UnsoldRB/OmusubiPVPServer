@@ -1,0 +1,38 @@
+﻿Blaze-Normal:
+    Trail: "FLAME"
+    Trail_Settings:
+        Speed: 0.1
+        Particle_Count: 1
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 2.5
+
+Freeze-Normal:
+    Trail: "REDSTONE"
+    Trail_Color: "80-208-255"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 0.5
+Freeze-MobSpell:
+    Trail: "SPELL"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+
+Storm-Normal:
+    Trail: "CLOUD"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+    Trail_Settings:
+        Speed: 0.2
+        Particle_Count: 2
+
+Souls-Normal:
+    Trail: "FIREWORKS_SPARK"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+    Trail_Settings:
+        Speed: 0.1
+        Particle_Count: 1

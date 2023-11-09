@@ -1,0 +1,88 @@
+アイスボール:
+    Item_Information:
+        Item_Name: "&eアイスボール"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: ダメージ×3(ﾉｯｸﾊﾞｯｸ)|&f効果強度: 7.80(p)|&f逑逑逑逑: 1.00(p)|&f使用間隔: 0.45|&f充填詠唱: 1.50(s)|&fウェイト: 20.00%|&fアドオン: なし|&bAmmo: Crystal|&bバランス型/Magic-Freeze/Main|||&7氷の塊を放つ魔法。|&7使用に技術等は必要なく、|&7この杖があればだれでも扱える。|&7ちなみに杖は雪山に埋まっていた。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 9
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: egg
+        Projectile_Speed: 30
+        Projectile_Damage: 2
+        Bullet_Spread: 0.4
+        Sounds_Shoot: ENTITY_ITEM_PICKUP-1-2-2,ENTITY_ITEM_PICKUP-1-0-0,ENTITY_ITEM_PICKUP-1-1-1,BLOCK_GLASS_BREAK-1-2-0
+    Reload:
+        Enable: true
+        Reload_Amount: 18
+        Reload_Duration: 30
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+        Knockback: 1
+    Burstfire:
+        Enable: true
+        Shots_Per_Burst: 3
+        Delay_Between_Shots_In_Burst: 1
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+        Particle_Impact_Anything: BLOCK_BREAK-90
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 296
+        Ammo_Name_Check: 弾薬 -Crystal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 60
+
+スプレッドアイス:
+    Item_Information:
+        Item_Name: "&eスプレッドアイス"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: ダメージ×4(慣性初期化)|&f効果強度: 8.00(p)|&f逑逑逑逑: 0.05(t)|&f使用間隔: 0.50|&f充填詠唱: 4.50∴8.00(s)|&fウェイト: 10.00%|&fアドオン: ｼｮｯﾄｶﾞﾝのような挙動, ｽｺｰﾌﾟ|&bAmmo: Crystal|&b防衛型/Magic-Freeze/Main||||&7前方にとても冷たい氷を放つ。|&7それはとても鋭く、|&7相手の体に刺さり、行動を阻害する。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 10
+        Projectile_Amount: 4
+        Projectile_Type: egg
+        Projectile_Speed: 40
+        Projectile_Damage: 2
+        Bullet_Spread: 1.2
+        Sounds_Shoot: ENTITY_WITHER_SHOOT-1-1.3-0,ENTITY_BLAZE_HURT-1-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 12
+        Reload_Duration: 90
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 6
+        Zoom_Bullet_Spread: 0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 296
+        Ammo_Name_Check: 弾薬 -Crystal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true

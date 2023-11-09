@@ -1,0 +1,87 @@
+﻿Configuration_Reloaded_Message: "&7Configuration reloaded."
+No_Permissions_Message: "&7Sorry, but you do not have permissions for this."
+Check_For_Updates: true
+Check_Pre_Reload: true
+Generate_Resource_Pack: true
+Reload_CrackShot_On_CrackShotPlus_Reload: true
+GUI:
+    # Size of 9, 18, 27, 36(?), 45(?) and 54 are allowed
+    Size: 54
+    Name: "&c<-> &7Weapon Settings &c<->"
+    Commands:
+    - "/weaponsettings"
+    - "/atc"
+    Weapon_Slot: 40
+    Visual_Reload:
+        Slot: 37
+        Denied_Item: "Visual_Reload_Not_Available"
+    Fill_Items:
+    - "27-Fill_Item"
+    - "28-Fill_Item"
+    - "29-Fill_Item"
+    - "30-Fill_Item"
+    - "31-Fill_Item"
+    - "32-Fill_Item"
+    - "33-Fill_Item"
+    - "34-Fill_Item"
+    - "35-Fill_Item"
+    - "36-Fill_Item"
+    - "38-Fill_Item"
+    - "39-Fill_Item"
+    - "41-Fill_Item"
+    - "42-Fill_Item"
+    - "44-Fill_Item"
+    - "45-Fill_Item"
+    - "46-Fill_Item"
+    - "47-Fill_Item"
+    - "48-Fill_Item"
+    - "49-Fill_Item"
+    - "50-Fill_Item"
+    - "51-Fill_Item"
+    - "52-Fill_Item"
+    - "53-Fill_Item"
+    #- "slot-item name"
+
+Visual_Reload_Not_Available:
+    Item_Type: "STONE_SWORD"
+    Item_Name: "&c<-> &7中心のスロットに武器を入れてください &c<->"
+    Item_Lore:
+    - "&7"
+    Item_Durability: 22
+
+Trail_Not_Available:
+    Item_Type: "STONE_SWORD"
+    Item_Name: "&c<-> &7Not available &c<->"
+    Item_Lore:
+    - "&7Trail changing is not currently available."
+    Item_Durability: 22
+
+Skin_Not_Available:
+    Item_Type: "STONE_SWORD"
+    Item_Name: "&c<-> &7Not available &c<->"
+    Item_Lore:
+    - "&7Skin changing is not currently available."
+    Item_Durability: 22
+
+Ammo_Remove_Not_Available:
+    Item_Type: "STONE_SWORD"
+    Item_Name: "&c<-> &7中心のスロットに武器を入れてください &c<->"
+    Item_Lore:
+    - "&7"
+    Item_Durability: 22
+
+Ammo_Remove_Item:
+    Item_Type: "STAINED_GLASS_PANE:14"
+    Item_Name: "&c<-> &7弾薬を取り出す &c<->"
+    Item_Lore:
+    - "&c- &7クリック &c- &71 Ammo"
+    - "&c- &7Shift+クリック &c- &75 Ammo"
+
+Apply:
+    Item_Type: "STONE_SWORD"
+    Item_Name: "&c<-> &7変更を保存する &c<->"
+    Item_Durability: 21
+
+Fill_Item:
+    Item_Type: "STAINED_GLASS_PANE:7"
+    Item_Name: "&c<&7-&c>"

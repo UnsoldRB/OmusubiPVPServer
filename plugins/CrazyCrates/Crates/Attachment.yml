@@ -1,0 +1,90 @@
+﻿Crate:
+  CrateType: QuickCrate
+  CrateName: '&b洗濯釜'
+  StartingKeys: 0
+  InGUI: false
+  Slot: 14
+  OpeningBroadCast: false
+  BroadCast: ''
+  Item: '380'
+  Glowing: false
+  Name: '§l入手可能アタッチメント'
+  PhysicalKey:
+    Name: '&6汚れたアタッチメント&6'
+    Lore:
+      - '&r瓶詰のアタッチメント。'
+      - '&r洗濯すればきれいなものが取り出せる。'
+    Item: '437'
+    Glowing: false
+  Prizes:
+    DoubleBarrel-RB[装填数]:
+      DisplayName: '&cDoubleBarrel-RB[装填数]'
+      DisplayItem: '359'
+      Lore:
+        - '&c高レアリティ'
+      DisplayAmount: 1
+      MaxRange: 100
+      Chance: 5
+      Firework: true
+      Messages:
+        - '&a高レアリティ！！'
+      Commands:
+        - 'shot give %player% DoubleBarrel-RB[装填数]'
+        - 'attachmentaciuwafvbaswfgeywaoudgfywaeeeee %player%'
+    M76[射程]:
+      DisplayName: '&cM76[射程]'
+      DisplayItem: '359'
+      Lore:
+        - '&c中レアリティ'
+      DisplayAmount: 1
+      MaxRange: 100
+      Chance: 20
+      Messages:
+        - '&a中レアリティ！'
+      Commands:
+        - 'shot give %player% M76[射程]'
+        - 'attachmentaciuwafvbaswfgeywaoudgfywaeeeee %player%'
+    FA-MAS[フルオート]:
+      DisplayName: '&cFA-MAS[フルオート]'
+      DisplayItem: '359'
+      Lore:
+        - '&c中レアリティ'
+      DisplayAmount: 1
+      MaxRange: 100
+      Chance: 20
+      Messages:
+        - '&a中レアリティ！'
+      Commands:
+        - 'shot give %player% FA-MAS[フルオート]'
+        - 'attachmentaciuwafvbaswfgeywaoudgfywaeeeee %player%'
+    クイックカット[発動間隔]:
+      DisplayName: '&cクイックカット[発動間隔]'
+      DisplayItem: '359'
+      Lore:
+        - '&c中レアリティ'
+      DisplayAmount: 1
+      MaxRange: 100
+      Chance: 20
+      Messages:
+        - '&a中レアリティ！'
+      Commands:
+        - 'shot give %player% FA-MAS[フルオート]'
+        - 'attachmentaciuwafvbaswfgeywaoudgfywaeeeee %player%'
+    フック[移動距離]:
+      DisplayName: '&cフック[移動距離]'
+      DisplayItem: '359'
+      DisplayAmount: 1
+      MaxRange: 100
+      Chance: 40
+      Commands:
+        - 'shot give %player% フック[移動距離]'
+        - 'attachmentaciuwafvbaswfgeywaoudgfywaeeeee %player%'
+    SCAR-H[軽量]:
+      DisplayName: '&cSCAR-H[軽量]'
+      DisplayItem: '359'
+      DisplayAmount: 1
+      MaxRange: 100
+      Chance: 40
+      Commands:
+        - 'shot give %player% SCAR-H[軽量]'
+        - 'attachmentaciuwafvbaswfgeywaoudgfywaeeeee %player%'

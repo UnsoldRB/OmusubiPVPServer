@@ -1,0 +1,241 @@
+on script load:
+	delete {killername::*}
+	delete {KillName.Assist::*}
+	delete {kill.Assist.wait::*}
+	delete {weapontool::*}
+	delete {Deathlocation::*}
+	delete {BreakBlock.Location::*}
+	delete {BreakBlock.Type::*}
+
+on damage of player:
+	if {team::%victim%} is not {team::%attacker%}:
+		if attacker is a player:
+			set {killername::%victim%} to attacker
+		else if name of attacker contains "§9" or "§c":
+			set {killername::%victim%} to (uncolored name of attacker) parsed as player
+		wait 1 ticks
+		if {kill.Assist.wait::%victim%} is set:
+			set {kill.Assist.wait::%victim%} to 15
+		else:
+			if "%{KillName.Assist::%victim%}%" does not contain "%attacker%":
+				set {KillName.Assist::%victim%} to "%{KillName.Assist::%victim%}%,%attacker%"
+				set {kill.Assist.wait::%victim%} to 15
+				loop 600 times:
+					wait 1 seconds
+					remove 1 from {kill.Assist.wait::%victim%}
+					if 1 is more than {kill.Assist.wait::%victim%}:
+						replace "%attacker%" in {KillName.Assist::%victim%} with ""
+						delete {kill.Assist.wait::%victim%}
+						wait 1 ticks
+						stop
+					else if {kill.Assist.wait::%victim%} is not set:
+						wait 5 ticks
+						replace "%attacker%" in {KillName.Assist::%victim%} with ""
+						delete {kill.Assist.wait::%victim%}
+						wait 1 ticks
+						stop
+	else if {team::%victim%} is {team::%attacker%} or {team::%{killername::%victim%}%}:
+		cancel event
+on crackshot shoot:
+	if event-string does not contain "Last-":
+		set {weapontool::%player%} to player's selected hotbar slot
+	else:
+		set {weapontool::%player%} to CheckWeaponSlot(player, "/Last")
+
+on leftclick holding a stone sword:
+	set {weapontool::%player%} to player's selected hotbar slot
+
+
+on death of player:
+	if {killername::%victim%} is set:
+		if victim is not {killername::%victim%}:
+			if {weapontool::%{killername::%victim%}%} is not "<none>":
+				if {team::%victim%} is set:
+					if {team::%victim%} is "blue":
+						set death message to "§9%victim%&7は&c%{killername::%victim%}%&7に%name of slot {weapontool::%{killername::%victim%}%} of {killername::%victim%}%§7で倒された。"
+					else if {team::%victim%} is "red":
+						set death message to "§c%victim%&7は&9%{killername::%victim%}%&7に%name of slot {weapontool::%{killername::%victim%}%} of {killername::%victim%}%§7で倒された。"
+				else:
+					set death message to "§7%victim%は%{killername::%victim%}%に%name of slot {weapontool::%{killername::%victim%}%} of {killername::%victim%}%§7で倒された。"
+			else:
+				set death message to "§7%victim%は%{killername::%victim%}%に倒された。"
+		else:
+			set death message to "§7%victim%は自害した。"
+	else:
+		set death message to "§7%victim%は自害した。"
+	if {team::%victim%} is set:
+		OnDeathEvent({killername::%victim%}, victim)
+		play "BLOCK_NOTE_HARP" to {killername::%victim%} at volume 1 with pitch 2
+		set {Deathlocation::%victim%} to location of victim
+		if {KillName.Assist::%victim%} is not set:
+			set {_Oneshot} to true
+		if lore of slot {weapontool::%{killername::%victim%}%} of {killername::%victim%} contains "/GRN/Grenade":
+			add "Grenade +30" to {_GotPoints::*}
+			add 30 to {_point}
+		if facing of {killername::%victim%} is victim's facing:
+			add "Assasin +80" to {_GotPoints::*}
+			add 80 to {_point}
+		if name of slot {weapontool::%{killername::%victim%}%} of {killername::%victim%} contains "Last-":
+			add "Last +100" to {_GotPoints::*}
+			add 100 to {_point}
+		set {_AutoReload} to CheckWeaponSlot({killername::%victim%}, "/Sub")
+		if lore of slot {_AutoReload} of {killername::%victim%} contains "/Gun-HG" or "/Gun-REV" or "/Gun-CSG":
+			if lore of slot CheckWeaponSlot({killername::%victim%}, "/Main") of {killername::%victim%} contains "/Gun-AR" or "/Gun-SMG" or "/Gun-LSR" or "/Gun-LMG":
+				set {_ReloadCategory} to CheckWeaponCategory(slot {_AutoReload} of {killername::%victim%}, 4)
+				set {_ReloadName} to CheckWeaponName(name of slot {_AutoReload} of {killername::%victim%}, true)
+				set {_ReloadMax} to skutilities yaml value "%{_ReloadName}%.Reload.Reload_Amount" of file "plugins/CrackShot/weapons/%{_ReloadCategory}%.yml"
+				if "%{_ReloadMax}%" is not "%CheckWeaponAmmo(name of slot {_AutoReload} of {killername::%victim%})%":
+					SetWeaponAmmo({killername::%victim%}, {_AutoReload}, 9999)
+					add 20 to {_point}
+					add "AutoReload +20" to {_GotPoints::*}
+					Playsound({killername::%victim%}, "entity.item.break", 1, 1)
+					draw 20 blockcrack material particle made of {killername::%victim%}'s held item at location of {killername::%victim%}, speed 0.2, offset 0.5, 0.5, 0.5, keepFor 0.6 seconds
+		set {_Loc::*} to line between location 1 meter above {killername::%victim%} and location 1 meter above victim with density 1
+		loop {_Loc::*}:
+			if block at loop-value is not air or water:
+				add 1 to {_count}
+				if {_count} is more than 2:
+					add 15 to {_BeyondWall}
+		if {_BeyondWall} is set:
+			if {_BeyondWall} is more than 100:
+				set {_BeyondWall} to 100
+			add {_BeyondWall} to {_point}
+			add "Fromwall +%{_BeyondWall}%" to {_GotPoints::*}
+		add 100 to {_point}
+		force victim to respawn
+		wait 1 ticks
+		if y of velocity of {killername::%victim%} is not -0.08:
+			if block at location 1 meter below {killername::%victim%} is air:
+				if block at location 2 meter below {killername::%victim%} is air:
+					if block at location 3 meter below {killername::%victim%} is air:
+						add 80 to {_point}
+						add "FromAir +80" to {_GotPoints::*}
+		else if block at location of {killername::%victim%} is water:
+			add 30 to {_point}
+			add "Fromwater +30" to {_GotPoints::*}
+		if {_Oneshot} is true:
+			add 80 to {_point}
+			add "Oneshot +80" to {_GotPoints::*}
+		if {kills::%{killername::%victim%}%} is more than 0:
+			add {kills::%{killername::%victim%}%} * 25 to {_point}
+			add "Streak +%{kills::%{killername::%victim%}%} * 25%" to {_GotPoints::*}
+		play cloud on the victim
+		if {team::%victim%} is "red":
+			if {Gamemode} is "DeathMatch" or "SumoMatch":
+				add 1 to {Score.Blue}
+			else if {Gamemode} is "ShortDeathMatch":
+				add 1 to {Score.Blue}
+			else if {Gamemode} is "§5HardCoreMatch":
+				add 1 to {Score.Blue}
+				set gamemode of victim to spectator
+			set {_spawn} to random element of {RedSpawn::*}
+			teleport victim to {_spawn}
+		else if {team::%victim%} is "blue":
+			if {Gamemode} is "DeathMatch" or "SumoMatch":
+				add 1 to {Score.Red}
+			else if {Gamemode} is "ShortDeathMatch":
+				add 1 to {Score.Red}
+			else if {Gamemode} is "§5HardCoreMatch":
+				add 1 to {Score.Red}
+				set gamemode of victim to spectator
+			set {_spawn} to random element of {BlueSpawn::*}
+			teleport victim to {_spawn}
+		set {LockMove::%victim%} to true
+		replace "<none>/" in {BreakBlock.Location::%victim%} with ""
+		replace "<none>/" in {BreakBlock.Type::%victim%} with ""
+		set {_blocklocation::*} to {BreakBlock.Location::%victim%} split by "/"
+		set {_blocktype::*} to {BreakBlock.Type::%victim%} split by "/"
+		loop {_blocklocation::*}:
+			set {_blocklocation.temp::*} to loop-value split by ","
+			RepairBlock({_blocklocation.temp::1} parsed as number, {_blocklocation.temp::2} parsed as number, {_blocklocation.temp::3} parsed as number, {_blocktype::%loop-index%} parsed as number)
+		delete {BreakBlock.Location::%victim%}
+		delete {BreakBlock.Type::%victim%}
+		apply potion of blindness of tier 1 to the victim for 60 ticks
+		apply potion of night vision of tier 1 to the victim for 60 ticks
+		SkillTrigger("Trigger", {killername::%victim%}, {killername::%victim%}, "Kill")
+		LastCharge("Death", victim)
+		send victim title "§3Respawning..." with subtitle "" for 112 ticks with 5 ticks fade in and 10 ticks fade out
+		if {killername::%victim%} is set:
+			message "§c§l死亡しました(%{killername::%victim%}%→%name of slot {weapontool::%{killername::%victim%}%} of {killername::%victim%}%)" to victim
+		add 1 to {kills::%{killername::%victim%}%}
+		if {killgetmoney::%victim%} is set:
+			add {killgetmoney::%victim%} to {TeamBattle.Score::%{killername::%victim%}%}
+			broadcast "§7 %{killername::%victim%}%が%{killgetmoney::%victim%}%の賞金を入手しました"
+			delete {killgetmoney::%victim%}
+			delete {killstreak::%{killername::%victim%}%}
+
+		set {_killedweapon} to CheckWeaponName(name of slot {weapontool::%{killername::%victim%}%} of {killername::%victim%}, true)
+		set {_ymlvalue} to skutilities yaml value "%{killername::%victim%}%.%{_killedweapon}%" of file "plugins/Skript/yml/WeaponStat.yml"
+		set {_ymlvalue} to {_ymlvalue} + 1
+		set skutilities yaml value "%{killername::%victim%}%.%{_killedweapon}%" of file "plugins/Skript/yml/WeaponStat.yml" to {_ymlvalue}
+
+		add 1 to {TeamBattle.Kill::%{killername::%victim%}%}
+		add 1 to {TeamBattle.Death::%victim%}
+		delete {kills::%victim%}
+		if {kills::%{killername::%victim%}%} is more than 4:
+			add 1 to {killstreak::%{killername::%victim%}%}
+			wait 1 ticks
+			if {killername::%victim%} is set:
+				add 100 to {_point}
+				add "Rampage +100" to {_GotPoints::*}
+				add 200 * {killstreak::%{killername::%victim%}%} to {killgetmoney::%{killername::%victim%}%}
+				broadcast "§7 %{killername::%victim%}%に%{killgetmoney::%{killername::%victim%}%}%の賞金が設けられました"
+				wait 1 ticks
+		send {killername::%victim%} title "" with subtitle "§3      Killed %victim% +§6%{_point}%" for 1.5 seconds
+		loop {_GotPoints::*}:
+			message "§6(%loop-value%)" to {killername::%victim%}
+		DeleteWeaponsVariables(victim)
+		add {_point} to {TeamBattle.Score::%{killername::%victim%}%}
+		if {KillName.Assist::%victim%} is set:
+			set {_AssMember::*} to {KillName.Assist::%victim%} split by ","
+			loop {_AssMember::*}:
+				"%loop-value%" is not "" or " " or "<none>" or "tnt"
+				if "%loop-value%" is not "%{killername::%victim%}%":
+					broadcast "§8  %loop-value%が%{killername::%victim%}%をアシストした。"
+					set {_AssPoint} to 100
+					set {_ymlvalue} to skutilities yaml value "%loop-value%.Assist" of file "plugins/Skript/yml/PlayerStat.yml"
+					set {_ymlvalue} to {_ymlvalue} + 1
+					set skutilities yaml value "%loop-value%.Assist" of file "plugins/Skript/yml/PlayerStat.yml" to {_ymlvalue}
+					set {_assistweapon} to slot {weapontool::%loop-value%} of loop-value parsed as player
+					message "§6(Assist +100)" to loop-value parsed as player
+					if lore of {_assistweapon} contains "/Gun-LSR":
+						message "§6(LSRAssist +30)" to loop-value parsed as player
+						add 30 to {_AssPoint}
+					else if lore of {_assistweapon} contains "/Gun-LMG":
+						message "§6(LMGAssist +80)" to loop-value parsed as player
+						add 80 to {_AssPoint}
+					else if lore of {_assistweapon} contains "/Magic-":
+						message "§6(MagicAssist +100)" to loop-value parsed as player
+						add 100 to {_AssPoint}
+					send loop-value parsed as player title "" with subtitle "§3AssistKilled %victim%§7 +%{_AssPoint}%" for 1 seconds
+					add {_AssPoint} to {TeamBattle.Score::%loop-value parsed as player%}
+			delete {KillName.Assist::%victim%}
+		delete {kill.Assist.wait::%victim%}
+		wait 10 ticks
+		delete {Deathlocation::%victim%}
+		delete {killername::%victim%}
+		loop integers from 0 to 8:
+			if slot loop-int-1 of inventory of victim is not air:
+				if name of slot loop-int-1 of inventory of victim contains "«":
+					wait 1 ticks
+					set {_name} to subtext of (name of slot loop-int-1 of inventory of victim) from characters 1 to (length of (name of slot loop-int-1 of inventory of victim) - 2)
+					loop 10 times:
+						if last 1 character of {_name} is "«":
+							exit 2 sections
+						else:
+							set {_name} to subtext of {_name} from characters 1 to (length of {_name} - 1)
+					set {_name2} to CheckWeaponName(name of slot loop-int-1 of inventory of victim, true)
+					set {_category} to CheckWeaponCategory(slot loop-int-1 of inventory of victim, 4)
+					set {_ammo} to skutilities yaml value "%{_name2}%.Reload.Reload_Amount" of file "plugins/CrackShot/weapons/%{_category}%.yml"
+					if {_ammo} is set:
+						set name of slot loop-int-1 of inventory of victim to "%{_name}%%{_ammo}%»"
+		wait 3.5 seconds
+		send victim title "§b>>Ready<<" with subtitle "" for 1 ticks with 10 ticks fade in and 3 ticks fade out
+		heal victim
+		execute console command "/effect %victim% clear"
+		DeleteWeaponsVariables(victim)
+		delete {LockMove::%victim%}
+	else:
+		add 100 to account of {killername::%victim%}
+		send {killername::%victim%} title "" with subtitle "§eKilled %victim%§7 +100水晶" for 1 seconds
+	AdvancementCheck({killername::%victim%}, "ididit")

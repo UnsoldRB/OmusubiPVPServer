@@ -1,0 +1,248 @@
+Glock18:
+    Item_Information:
+        Item_Name: "&eGlock18"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 2.00|&f連射速度: 13.00|&fリロード: 4.70|&f弾のブレ: 1.40|&fアドオン: なし|&bAmmo: Normal|&bバランス型/Gun-HG/Sub|||&7安心と弾切れのﾌﾙｵｰﾄ式ﾊﾝﾄﾞｶﾞﾝ。|&7火力・ﾉｯｸﾊﾞｯｸともに優秀であり、|&7初心者にもお勧めできる一品。|&7しかし遠距離は対応できないのでSR等には気を付けたい。"
+        Inventory_Control: sub
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: Snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 2
+        Bullet_Spread: 1.4
+        Sounds_Shoot: ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 13
+    Reload:
+        Enable: true
+        Reload_Amount: 20
+        Reload_Duration: 94
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 1.1
+    Sneak:
+        Enable: true
+        No_Recoil: true
+        Bullet_Spread: 1.1
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+DesertEagle:
+    Item_Information:
+        Item_Name: "&eDesert Eagle"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 5.00|&f発射間隔: 0.25|&fリロード: 3.15|&f弾のブレ: 0.30|&fアドオン: なし|&bAmmo: Normal|&bバランス型/Gun-HG/Sub||||&7火力と信頼のｾﾐｵｰﾄ式ﾊﾝﾄﾞｶﾞﾝ。|&7何を取っても劣らない圧倒的なﾊﾞﾗﾝｽを持ち、|&7初期武器だから弱いなどと言う偏見を破壊してくれる。"
+        Inventory_Control: sub
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 5
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: Snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 5
+        Bullet_Spread: 0.3
+        Sounds_Shoot: ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 8
+        Reload_Duration: 63
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 0.1
+    Sneak:
+        Enable: true
+        No_Recoil: true
+        Bullet_Spread: 0.1
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+M1911A1:
+    Item_Information:
+        Item_Name: "&eM1911A1"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 3.60|&f発射間隔: 0.20|&fリロード: 2.50|&f弾のブレ: 0.20|&fアドオン: なし|&bAmmo: Normal|&b防衛型/Gun-HG/Sub||||&7変わり者がｶｽﾀﾏｲｽﾞしたM1911A1。|&7ﾀﾞﾒｰｼﾞを犠牲にﾌﾞﾚとﾘﾛｰﾄﾞ速度が極端に良くなった。|&7火力以外は非常に取り回しの良い武器。"
+        Inventory_Control: sub
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 4
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: Snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 3
+        Bullet_Spread: 0.2
+        Sounds_Shoot: ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 7
+        Reload_Duration: 50
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Reloading: BLOCK_WOODEN_DOOR_OPEN-1-1.8-4,BLOCK_WOODEN_DOOR_OPEN-1-2-6,BLOCK_WOODEN_DOOR_CLOSE-1-2-23,ITEM_FLINTANDSTEEL_USE-1-0.6-33
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 0.1
+    Sneak:
+        Enable: true
+        No_Recoil: true
+        Bullet_Spread: 0.1
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 60
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+FNFive-seveN:
+    Item_Information:
+        Item_Name: "&eFN Five-seveN"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 3.80|&f発射間隔: 0.25|&fリロード: 5.02|&f弾のブレ: 0.70|&fアドオン: なし|&bAmmo: Normal|&b攻撃型/Gun-HG/Sub|||&7ﾀﾞﾒｰｼﾞ特化のﾊﾝﾄﾞｶﾞﾝ。|&7中程度のﾀﾞﾒｰｼﾞ・発射間隔を持っており、|&7ﾏｶﾞｼﾞﾝも少し拡張されている。|&7ただし弾のﾌﾞﾚとﾘﾛｰﾄﾞ速度は頼りない。"
+        Inventory_Control: sub
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 5
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: Snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 3
+        Bullet_Spread: 0.7
+        Sounds_Shoot: ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 12
+        Reload_Duration: 104
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 0.4
+    Sneak:
+        Enable: true
+        No_Recoil: true
+        Bullet_Spread: 0.4
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 80
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+M93R:
+    Item_Information:
+        Item_Name: "&eM93R"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 1.55|&f発射間隔: 0.30(3)|&fリロード: 4.50|&f弾のブレ: 0.45|&fアドオン: なし|&bAmmo: Normal|&b防衛型/Gun-HG/Sub||||&7敵を追い返すのに特化されたﾊﾞｰｽﾄ銃。|&7ﾀﾞﾒｰｼﾞは一見低いが一回の射撃で4.65与えられる。|&7弾持ちとﾉｯｸﾊﾞｯｸ性能に優れた代物。"
+        Inventory_Control: sub
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 6
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 1
+        Bullet_Spread: 0.45
+        Sounds_Shoot: ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 0.05
+    Sneak:
+        Enable: true
+        No_Recoil: true
+        Bullet_Spread: 0.05
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 27
+        Reload_Duration: 90
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Burstfire:
+        Enable: true
+        Shots_Per_Burst: 3
+        Delay_Between_Shots_In_Burst: 1
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 55
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true

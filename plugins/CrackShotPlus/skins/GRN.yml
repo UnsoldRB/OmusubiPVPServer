@@ -1,0 +1,24 @@
+﻿スタンダードグレネード_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_PICKAXE"
+軽量グレネード_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_PICKAXE"
+フレイミーグレネード_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_PICKAXE"
+ダッシュグレネード_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_PICKAXE"
+アイスCグレネード_default:
+    Durability: 3
+    Change_Item_Type: "GOLD_PICKAXE"
+ジャンプグレネード_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_PICKAXE"
+対空グレネード_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_PICKAXE"
+追尾ミサイル_default:
+    Durability: 2
+    Change_Item_Type: "GOLD_PICKAXE"

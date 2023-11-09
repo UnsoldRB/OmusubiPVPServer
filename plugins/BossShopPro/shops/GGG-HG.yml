@@ -1,0 +1,97 @@
+ShopName: birlsnbsihur
+DisplayName: '&9&lHGShop'
+signs:
+  text: '[HGShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  Desert Eagle:
+    RewardType: playercommand
+    PriceType: money
+    Price: 5000
+    Reward: brsbrbrbrbrbrbbb DesertEagle 1
+    MenuItem:
+    - hideflags:all
+    - type:IRON_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9Desert Eagle
+    - 'lore:&f安定してる武器#&fなんか迷ったらこれ使えばいい#&7初期武器##&b必要水晶 : 5000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  Glock18:
+    RewardType: playercommand
+    PriceType: money
+    Price: 7000
+    Reward: brsbrbrbrbrbrbbb Glock18 1
+    MenuItem:
+    - hideflags:all
+    - type:IRON_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:2
+    - name:&9Glock18
+    - 'lore:&f安定した火力が出せるがリロードが長い武器#&7初期武器##&b必要水晶 : 7000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  M93R:
+    RewardType: playercommand
+    PriceType: money
+    Price: 9600
+    Reward: brsbrbrbrbrbrbbb M93R 1
+    MenuItem:
+    - hideflags:all
+    - type:IRON_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9M93R
+    - 'lore:&f威力が低いものの#&f三点バーストで精度もある程度高い武器#&f防衛等で役に立つ##&b必要水晶 : 9600'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 3
+    ExtraPermission: ''
+  FN Five-seveN:
+    RewardType: playercommand
+    PriceType: money
+    Price: 9900
+    Reward: brsbrbrbrbrbrbbb FNFive-seveN 1
+    MenuItem:
+    - hideflags:all
+    - type:IRON_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9FN Five-seveN
+    - 'lore:&f段数が高めで#&fダメージもある程度期待できる武器##&b必要水晶 : 9900'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 4
+    ExtraPermission: ''
+  M1911A1:
+    RewardType: playercommand
+    PriceType: money
+    Price: 9000
+    Reward: brsbrbrbrbrbrbbb M1911A1 1
+    MenuItem:
+    - hideflags:all
+    - type:IRON_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9M1911A1
+    - 'lore:&fリロードが非常に速い武器##&b必要水晶 : 9000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 5
+    ExtraPermission: ''
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: onvlaebvyulearh
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

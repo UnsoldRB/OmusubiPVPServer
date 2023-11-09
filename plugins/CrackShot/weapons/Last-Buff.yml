@@ -1,0 +1,42 @@
+Last-クイックダッシュ:
+    Item_Information:
+        Item_Name: "&eLast-クイックダッシュ"
+        Item_Type: 399
+        Item_Lore: "&f発動効果: 前方に少しﾃﾚﾎﾟｰﾄする∴45|&f効果詳細: ∴20|&f時間経過: 0.30%|&f蓄積効率: 0.20%|&f上書き先: SP-MOVE|&f装備条件: なし(r)|&f逑逑逑逑: なし(r)|&b攻撃型/Last-Buff/Last||||&7とても滑らかなLast。|&7手に持った途端に体が軽くなる。|&7ストレスなんて消えてなくなりそうだ。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Disable: true
+
+Last-クイックダッシュREADY:
+    Item_Information:
+        Item_Name: "&dLast-クイックダッシュ"
+        Item_Type: 138
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 2
+        Projectile_Amount: 1
+        Projectile_Type: egg
+        Sounds_Shoot: ENTITY_ENDERMEN_TELEPORT-1-0-0,ENTITY_ENDERMEN_TELEPORT-1-1-2,ENTITY_ENDERMEN_TELEPORT-1-2-4
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: SPEED-1-10
+    Extras:
+        One_Time_Use: true
+    Particles:
+        Enable: true
+        Particle_Player_Shoot: block_break-219
+
+Last-JHガード:
+    Item_Information:
+        Item_Name: "&eLast-JHガード"
+        Item_Type: 399
+        Item_Lore: "&f発動効果: 被弾数×2 回復する|&f効果詳細: 効果時間0.35s|&f時間経過: 5.00%|&f蓄積効率: 0.00%|&f上書き先: なし|&f装備条件: なし(r)|&f逑逑逑逑: なし(r)|&b攻撃型/Last-Buff/Last||||&7勇気を感じるLast。|&7最後まで諦めない心を具現化する。|&7かなりの玄人でないと扱えないだろう。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Disable: true

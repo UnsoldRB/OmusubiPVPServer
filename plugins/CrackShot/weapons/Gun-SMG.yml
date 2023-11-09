@@ -1,0 +1,304 @@
+P90:
+    Item_Information:
+        Item_Name: "&eP90"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 3.40|&f連射速度: 10.00|&fリロード: 4.50|&f弾のブレ: 2.00|&fアドオン: なし|&bAmmo: Normal|&bバランス型/Gun-SMG/Main||||&7装填数に見合わない短いﾘﾛｰﾄﾞが魅力の銃。|&7どうでもいいが鯖主はこれが普通だと思っていた。|&7今でもMP5のようなSMGを変わった形の銃だと思っている。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 80
+        Projectile_Damage: 3
+        Bullet_Spread: 2.0
+        Removal_Or_Drag_Delay: 4-true
+        Sounds_Shoot: ENTITY_PLAYER_BIG_FALL-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 6
+    Scope:
+        Enable: true
+        Zoom_Amount: 4
+        Zoom_Bullet_Spread: 1.55
+    Reload:
+        Enable: true
+        Reload_Amount: 50
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Reload_Duration: 90
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 40
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+MP5:
+    Item_Information:
+        Item_Name: "&eMP5"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 3.60|&f連射速度: 12.00|&fリロード: 4.00|&f弾のブレ: 1.80|&fアドオン: なし|&bAmmo: Normal|&bバランス型/Gun-SMG/Main|||||&7高い精度と速いﾘﾛｰﾄﾞ速度のﾊｲﾌﾞﾘｯﾄﾞ(?)。|&7とぉってもとぉっても扱いやすい。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 80
+        Projectile_Damage: 3
+        Bullet_Spread: 1.8
+        Removal_Or_Drag_Delay: 4-true
+        Sounds_Shoot: ENTITY_PLAYER_BIG_FALL-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 8
+    Scope:
+        Enable: true
+        Zoom_Amount: 4
+        Zoom_Bullet_Spread: 1.35
+    Reload:
+        Enable: true
+        Reload_Amount: 30
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Reload_Duration: 80
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 60
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+M76:
+    Item_Information:
+        Item_Name: "&eM76"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 3.55|&f連射速度: 13.00|&fリロード: 4.40|&f弾のブレ: 2.00|&fアドオン: 透明化効果(ｽﾆｰｸ)|&bAmmo: Normal|&b攻撃型/Gun-SMG/Main|||&7なかなかなﾀﾞﾒｰｼﾞを誇る銃。|&7日陰で暮らす呪術師が趣味で作ってしまった。|&7存在を消せるｱﾄﾞｵﾝが付いている。|&7お手製故かﾏｶﾞｼﾞﾝのｻｲｽﾞが曖昧である。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 80
+        Projectile_Damage: 3
+        Bullet_Spread: 2.0
+        Removal_Or_Drag_Delay: 4-true
+        Sounds_Shoot: ENTITY_PLAYER_BIG_FALL-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 9
+    Reload:
+        Enable: true
+        Reload_Amount: 32
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Reload_Duration: 88
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 4
+        Zoom_Bullet_Spread: 1.55
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 55
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+UMP45:
+    Item_Information:
+        Item_Name: "&aUMP45"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 4.20|&f連射速度: 8.00|&fリロード: 5.00|&f弾のブレ: 0.50|&fアドオン: HP小減少, 射程無限|&bAmmo: Normal|&bバランス型/Gun-SMG/Main|||&7ﾀﾞﾒｰｼﾞを犠牲に射程を得たｻﾌﾞﾏｼﾝｶﾞﾝ。|&7射程を得ただけあって高い安定性を誇る。|&7なぜM76からUMPが作られたのかは謎。|&7本当に謎。|&eBefore: M76[射程]"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 80
+        Projectile_Damage: 4
+        Bullet_Spread: 0.5
+        Sounds_Shoot: ENTITY_PLAYER_BIG_FALL-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 4
+    Reload:
+        Enable: true
+        Reload_Amount: 36
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Reload_Duration: 100
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 4
+        Zoom_Bullet_Spread: 0.1
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 20
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+
+KRISSVector:
+    Item_Information:
+        Item_Name: "&eKRISS Vector"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 3.60|&f連射速度: 18.00|&fリロード: 6.50|&f弾のブレ: 2.30|&fアドオン: なし|&bAmmo: Normal|&b攻撃型/Gun-SMG/Main||||&7瞬間火力でﾄｯﾌﾟを目指した銃。|&7敵も驚きのﾀﾞﾒｰｼﾞを誇るが、|&7弾がなくなったらもうそれで終わりである。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 80
+        Projectile_Damage: 3
+        Bullet_Spread: 2.3
+        Removal_Or_Drag_Delay: 4-true
+        Sounds_Shoot: ENTITY_PLAYER_BIG_FALL-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 13
+    Reload:
+        Enable: true
+        Reload_Amount: 30
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Reload_Duration: 130
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 60
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 4
+        Zoom_Bullet_Spread: 1.85
+
+BDisturb:
+    Item_Information:
+        Item_Name: "&eBDisturb"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 1.90|&f発射間隔: 1.50(10)|&fリロード: 4.00|&f弾のブレ: 1.60|&fアドオン: 鈍足効果(ﾀﾞﾒｰｼﾞ)|&bAmmo: Normal|&b防衛型/Gun-SMG/Main|||&7氷を弾として扱う武器。|&7当たった敵は走れなくなってしまい、|&7当たり所が悪ければ一瞬動けなくなってしまうほど。|&7威力はもう他人任せって感じで作られている。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Delay_Between_Shots: 30
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 80
+        Projectile_Damage: 1
+        Bullet_Spread: 1.6
+        Removal_Or_Drag_Delay: 4-true
+        Sounds_Shoot: ENTITY_PLAYER_BIG_FALL-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 60
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Reload_Duration: 80
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 4
+        Zoom_Bullet_Spread: 1.25
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Burstfire:
+        Enable: true
+        Shots_Per_Burst: 10
+        Delay_Between_Shots_In_Burst: 1
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 90
+    Potion_Effects:
+        Activation: hit
+        Potion_Effect_Victim: BLINDNESS-20-2

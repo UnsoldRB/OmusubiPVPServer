@@ -1,0 +1,33 @@
+ShopName: dhxgaregew34re
+DisplayName: '&lMainMagicShop - Souls'
+signs:
+  text: '[MainMagicShop - Souls]'
+  NeedPermissionToCreateSign: true
+shop:
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: vesbesvredverd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''
+  レーザー:
+    RewardType: playercommand
+    PriceType: money
+    Price: 13300
+    Reward: brsbrbrbrbrbrbbb レーザー 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:1241
+    - name:&9レーザー
+    - 'lore:&f安定した火力の弾を撃ち出す。#&f十分な性能。##&f&b必要水晶 : 13300'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''

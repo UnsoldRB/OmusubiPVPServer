@@ -1,0 +1,20 @@
+アースウォール:
+    Shoot:
+        Trails:
+            Default_Trail: "Freeze-MobSpell"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Recall"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"
+クエイグ:
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"

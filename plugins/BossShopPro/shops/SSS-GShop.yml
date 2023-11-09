@@ -1,0 +1,130 @@
+ShopName: fbdbstbzs
+DisplayName: '&9&lグレネードShop'
+signs:
+  text: '[グレネードShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  スタンダードグレネード:
+    RewardType: playercommand
+    PriceType: money
+    Price: 5000
+    Reward: brsbrbrbrbrbrbbb スタンダードグレネード 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_PICKAXE
+    - unbreakable:true
+    - amount:1
+    - durability:1
+    - name:&9スタンダードグレネード
+    - 'lore:&fとりあえず持っておいて損はしないアイテム#&7初期武器##&b必要水晶 : 5000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  軽量グレネード:
+    RewardType: playercommand
+    PriceType: money
+    Price: 12000
+    Reward: brsbrbrbrbrbrbbb 軽量グレネード 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_PICKAXE
+    - unbreakable:true
+    - amount:1
+    - durability:1
+    - name:&9軽量グレネード
+    - 'lore:&fダメージが少ないが#&f爆発までの遅延が短いグレネード##&b必要水晶 : 12000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  アイスCグレネード:
+    RewardType: playercommand
+    PriceType: money
+    Price: 8000
+    Reward: brsbrbrbrbrbrbbb アイスCグレネード 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_PICKAXE
+    - unbreakable:true
+    - amount:1
+    - durability:3
+    - name:&9アイスCグレネード
+    - 'lore:&f相手の機動力を削ぐグレネード#&f多少の鈍足を与える##&b必要水晶 : 8000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 3
+    ExtraPermission: ''
+  フレイミーグレネード:
+    RewardType: playercommand
+    PriceType: money
+    Price: 10300
+    Reward: brsbrbrbrbrbrbbb フレイミーグレネード 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_PICKAXE
+    - unbreakable:true
+    - amount:1
+    - durability:1
+    - name:&9フレイミーグレネード
+    - 'lore:&f着火が可能なグレネード#&fダメージは控えめ##&b必要水晶 : 10300'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 4
+    ExtraPermission: ''
+  ダッシュグレネード:
+    RewardType: playercommand
+    PriceType: money
+    Price: 17000
+    Reward: brsbrbrbrbrbrbbb ダッシュグレネード 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_PICKAXE
+    - unbreakable:true
+    - amount:1
+    - durability:1
+    - name:&9ダッシュグレネード
+    - 'lore:&fテレポートが可能なグレネード#&fダメージは無い##&b必要水晶 : 17000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 5
+    ExtraPermission: ''
+  ジャンプグレネード:
+    RewardType: playercommand
+    PriceType: money
+    Price: 11000
+    Reward: brsbrbrbrbrbrbbb ジャンプグレネード 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_PICKAXE
+    - unbreakable:true
+    - amount:1
+    - durability:1
+    - name:&9ジャンプグレネード
+    - 'lore:&f跳躍力が上昇するグレネード#&fダメージは無い##&b必要水晶 : 11000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 6
+    ExtraPermission: ''
+  対空グレネード:
+    RewardType: playercommand
+    PriceType: money
+    Price: 17000
+    Reward: brsbrbrbrbrbrbbb 対空グレネード 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9対空グレネード
+    - 'lore:&f浮いている敵に使うグレネード#&f高ダメージ##&b必要水晶 : 17000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 7
+    ExtraPermission: ''
+
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: gfhnfdghndhdythtd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

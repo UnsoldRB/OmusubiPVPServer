@@ -1,0 +1,112 @@
+﻿######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&1Fish Menu'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 3
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: 'belsiunvbhsieul.'
+
+  # auto-refresh - OPTIONAL
+  # How frequently the menu will be refreshed, in seconds.
+  # Useful if you have variables in items' descriptions.
+  auto-refresh: 5
+
+  # This command command will be execute when the menu is opened.
+  # Supports all the icon command types.
+  open-action: 'sound: BLOCK_NOTE_PLING'
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    id: wool:1
+    left-click: false
+    right-click: false
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+Sell:
+  COMMAND: 'fishlist Sell'
+  NAME: '&e魚を食べさせる'
+  LORE:
+    - 'インベントリ内の魚§r§l全て§r§7を水晶に交換します。'
+    - '§c§l>交換したくない魚は倉庫に預けましょう<'
+  ID: 350
+  POSITION-X: 1
+  POSITION-Y: 1
+CommonFish:
+  COMMAND: 'fishlist Common'
+  NAME: '&e手に入れた魚'
+  LORE:
+    - 'Common一覧'
+  ID: 257
+  POSITION-X: 1
+  POSITION-Y: 3
+  KEEP-OPEN: true
+UnCommonFish:
+  COMMAND: 'fishlist UnCommon'
+  NAME: '&e手に入れた魚'
+  LORE:
+    - 'UnCommon一覧'
+  ID: 257
+  POSITION-X: 2
+  POSITION-Y: 3
+  KEEP-OPEN: true
+RareFish:
+  COMMAND: 'fishlist Rare'
+  NAME: '&e手に入れた魚'
+  LORE:
+    - 'Rare一覧'
+  ID: 257
+  POSITION-X: 3
+  POSITION-Y: 3
+  KEEP-OPEN: true
+EpicFish:
+  COMMAND: 'fishlist Epic'
+  NAME: '&e手に入れた魚'
+  LORE:
+    - 'Epic一覧'
+  ID: 257
+  POSITION-X: 4
+  POSITION-Y: 3
+  KEEP-OPEN: true
+LegendaryFish:
+  COMMAND: 'fishlist Legendary'
+  NAME: '&e手に入れた魚'
+  LORE:
+    - 'Legendary一覧'
+  ID: 257
+  POSITION-X: 5
+  POSITION-Y: 3
+  KEEP-OPEN: true
+FantasyFish:
+  COMMAND: 'fishlist Fantasy'
+  NAME: '&e手に入れた魚'
+  LORE:
+    - 'Fantasy一覧'
+  ID: 257
+  POSITION-X: 6
+  POSITION-Y: 3
+  KEEP-OPEN: true
+UnrealFish:
+  COMMAND: 'fishlist Unreal'
+  NAME: '&e手に入れた魚'
+  LORE:
+    - 'Unreal一覧'
+  ID: 257
+  POSITION-X: 7
+  POSITION-Y: 3
+  KEEP-OPEN: true

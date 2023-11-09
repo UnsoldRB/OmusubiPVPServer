@@ -1,0 +1,81 @@
+ShopName: bethrsdbthrsefbvsrf
+DisplayName: '&9&lREVShop'
+signs:
+  text: '[REVShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  コルト・パイソン357Magnum:
+    RewardType: playercommand
+    PriceType: money
+    Price: 11200
+    Reward: brsbrbrbrbrbrbbb コルト・パイソン357Magnum 1
+    MenuItem:
+    - hideflags:all
+    - type:IRON_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:64
+    - name:&9コルト・パイソン.357 Magnum
+    - 'lore:&f高い威力を持つリボルバー##&b必要水晶 : 11200'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  M500:
+    RewardType: playercommand
+    PriceType: money
+    Price: 15400
+    Reward: brsbrbrbrbrbrbbb M500 1
+    MenuItem:
+    - hideflags:all
+    - type:IRON_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:64
+    - name:&9M500
+    - 'lore:&f高いヘッドショットの威力を持つリボルバー##&b必要水晶 : 15400'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  FlipShot:
+    RewardType: playercommand
+    PriceType: money
+    Price: 13000
+    Reward: brsbrbrbrbrbrbbb FlipShot 1
+    MenuItem:
+    - hideflags:all
+    - type:IRON_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:64
+    - name:&9FlipShot
+    - 'lore:&f相手の視点の向きを反転させる#&fうざいハンドガン##&b必要水晶 : 13000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 3
+    ExtraPermission: ''
+  Longer:
+    RewardType: playercommand
+    PriceType: money
+    Price: 29200
+    Reward: brsbrbrbrbrbrbbb Longer 1
+    MenuItem:
+    - hideflags:all
+    - type:IRON_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:64
+    - name:&9Longer
+    - 'lore:&f超射程リボルバー##&b必要水晶 : 29200'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 4
+    ExtraPermission: ''
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: onvlaebvyulearh
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

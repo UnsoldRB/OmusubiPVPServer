@@ -1,0 +1,41 @@
+groups:
+  User:
+    options:
+      default: true
+      prefix: §a[user]§f
+      suffix: ''
+    permissions:
+    - endercontainers.cmd.enderchests
+    - trading.trade
+    - BossShop.open
+    - mycommand.cmd.*
+    - chestcommands.open.*
+    - csp.use.*
+    - csp.attachment.*
+    - -inventory.save.death
+    - -fe.balance.other
+    - -fe.send
+    - -fe.?
+    - -worldedit.*
+    - -worldguard.*
+  Owner:
+    options:
+      default: false
+      prefix: §e[Operator]§f
+      suffix: §7(owner)§f
+    permissions:
+    - '*'
+schema-version: 1
+users:
+  02d4d7b5-160e-4740-a4f9-2b95466d36d2:
+    permissions:
+    - crackshot.use.all
+    group:
+    - Owner
+    options:
+      name: RiceBallSouls
+  1dede87f-8fb0-4342-aaa5-b9494d3a493f:
+    permissions:
+    - endercontainers.open.4
+    options:
+      name: [伏せ]

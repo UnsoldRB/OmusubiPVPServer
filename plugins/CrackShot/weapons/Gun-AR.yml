@@ -1,0 +1,479 @@
+AK-47:
+    Item_Information:
+        Item_Name: "&eAK-47"
+        Item_Type: 138
+        Inventory_Control: main
+        Item_Lore: "&fダメージ: 4.12|&f連射速度: 7.00|&fリロード: 5.00|&f弾のブレ: 0.63|&fアドオン: なし|&bAmmo: Normal|&bバランス型/Gun-AR/Main|||||&7量産型の威力重視なｱｻﾙﾄﾗｲﾌﾙ。|&7ﾊﾞﾗﾝｽ型となっているだけあり、扱いやすい。"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 4
+        Bullet_Spread: 0.63
+        Removal_Or_Drag_Delay: 5-true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,BLOCK_NOTE_SNARE-1-1.8-0,ENTITY_GENERIC_BIG_FALL-0.4-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 30
+        Reload_Duration: 100
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Sneak:
+        Enable: true
+        Bullet_Spread: 0.6
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 3
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 12
+
+SCAR-H:
+    Item_Information:
+        Item_Name: "&eSCAR-H"
+        Item_Type: 138
+        Inventory_Control: main
+        Melee_Attachment: Disable
+        Item_Lore: "&fダメージ: 3.30|&f連射速度: 10.00|&fリロード: 6.00|&f弾のブレ: 0.67|&fアドオン: ﾘﾛｰﾄﾞ速度6秒間上昇(Kill)|&bAmmo: Normal|&b攻撃型/Gun-AR/Main|||&7対1性能に特化した代物。|&7どういうわけか、|&7不思議なｱﾄﾞｵﾝが付いているため、|&7継続戦闘能力もある程度補われている。"
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 3
+        Bullet_Spread: 0.67
+        Removal_Or_Drag_Delay: 5-true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,BLOCK_NOTE_SNARE-1-1.8-0,ENTITY_GENERIC_BIG_FALL-0.4-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 30
+        Reload_Duration: 128
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Sneak:
+        Enable: true
+        Bullet_Spread: 0.64
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 6
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 30
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+FA-MAS:
+    Item_Information:
+        Item_Name: "&eFA-MAS"
+        Item_Type: 138
+        Inventory_Control: main
+        Item_Lore: "&fダメージ: 3.20|&f発射間隔: 0.30(3)|&fリロード: 4.30|&f弾のブレ: 0.61|&fアドオン: なし|&bAmmo: Normal|&b攻撃型/Gun-AR/Main||||&7瞬間火力だけを求め、ｶｽﾀﾏｲｽﾞされたｱｻﾙﾄﾗｲﾌﾙ。|&7ﾌﾙｵｰﾄでの射撃が不可能な代わりに、|&7火力と精度が高められ、また射程も少し伸びている。"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Delay_Between_Shots: 6
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 3
+        Bullet_Spread: 0.61
+        Removal_Or_Drag_Delay: 7-true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,BLOCK_NOTE_SNARE-1-1.8-0,ENTITY_GENERIC_BIG_FALL-0.4-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 30
+        Reload_Duration: 86
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Sneak:
+        Enable: true
+        Bullet_Spread: 0.58
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Burstfire:
+        Enable: true
+        Shots_Per_Burst: 3
+        Delay_Between_Shots_In_Burst: 1
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 20
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+G36C:
+    Item_Information:
+        Item_Name: "&eG36C"
+        Item_Type: 138
+        Inventory_Control: main
+        Item_Lore: "&fダメージ: 3.10|&f連射速度: 10.00|&fリロード: 4.90|&f弾のブレ: 0.70|&fアドオン: 透明化効果(ｽﾆｰｸ)|&bAmmo: Normal|&b攻撃型/Gun-AR/Main||||&7人に見られるのを嫌う魔術師が護身用に作ったもの。|&7性能は低めだが、便利なｱﾄﾞｵﾝが付いている。|&7心細かったのかﾏｶﾞｼﾞﾝが少し拡張されている。"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 3
+        Bullet_Spread: 0.7
+        Removal_Or_Drag_Delay: 4-true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,BLOCK_NOTE_SNARE-1-1.8-0,ENTITY_GENERIC_BIG_FALL-0.4-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 33
+        Reload_Duration: 98
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Sneak:
+        Enable: true
+        Bullet_Spread: 0.67
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 6
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 10
+
+IMITavorTAR-21:
+    Item_Information:
+        Item_Name: "&eIMI Tavor TAR-21"
+        Item_Type: 138
+        Inventory_Control: main
+        Item_Lore: "&fダメージ: 3.56|&f連射速度: 10.00|&fリロード: 5.52|&f弾のブレ: 0.63|&fアドオン: なし|&bAmmo: Normal|&bバランス型/Gun-AR/Main|||||&7全体的にﾊﾞﾗﾝｽの取れたｱｻﾙﾄﾗｲﾌﾙ。|&7AK-47に次いで安定した戦いが可能。"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 3
+        Bullet_Spread: 0.63
+        Removal_Or_Drag_Delay: 5-true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,BLOCK_NOTE_SNARE-1-1.8-0,ENTITY_GENERIC_BIG_FALL-0.4-1-0
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 6
+    Reload:
+        Enable: true
+        Reload_Amount: 37
+        Reload_Duration: 114
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Sneak:
+        Enable: true
+        Bullet_Spread: 0.6
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 56
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+TCt-72:
+    Item_Information:
+        Item_Name: "&eTCt-72"
+        Item_Type: 138
+        Inventory_Control: main
+        Item_Lore: "&fダメージ: 1.80|&f連射速度: 9.00|&fリロード: 2.50|&f弾のブレ: 0.72|&fアドオン: 射程が少し長い|&bAmmo: Normal|&b防衛型/Gun-AR/Main|||&7脅威のﾘﾛｰﾄﾞ速度を秘める銃。|&7また弾持ちと射程も良く仕上がっており、|&7まさに防衛向きの銃と言える。|&7が、低威力故に敵を逃すこともしばしば。"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 1
+        Bullet_Spread: 0.72
+        Removal_Or_Drag_Delay: 7-true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,BLOCK_NOTE_SNARE-1-1.8-0,ENTITY_GENERIC_BIG_FALL-0.4-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 36
+        Reload_Duration: 50
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Sneak:
+        Enable: true
+        Bullet_Spread: 0.69
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 5
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 80
+
+アサルトアビリティ:
+    Item_Information:
+        Item_Name: "&eアサルトアビリティ"
+        Item_Type: 293
+        Remove_Unused_Tag: true
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 15
+        Projectile_Type: snowball
+        Projectile_Speed: 70
+        Projectile_Damage: 1
+        Delay_Between_Shots: 5
+        Bullet_Spread: 1.7
+        Removal_Or_Drag_Delay: 6-true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_ZOMBIE_ATTACK_DOOR_WOOD-1-1-0,ENTITY_GENERIC_EXPLODE-1-2-0,ITEM_FIRECHARGE_USE-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 5
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+Risk-Line:
+    Item_Information:
+        Item_Name: "&6Risk-Line"
+        Item_Type: 138
+        Inventory_Control: main
+        Item_Lore: "&fダメージ: 6.80|&f連射速度: 9.00|&fリロード: 2.00|&f弾のブレ: 0.40|&fアドオン: HP大幅減少, HS時ﾀﾞﾒｰｼﾞ+2, ｽｺｰﾌﾟ|&bAmmo: Normal|&b攻撃型/Gun-AR/Main|||&7誰かが持ち込んだ在り得ない武器。|&7明らかにこの世界の武器ではない性能。|&7ﾘｽｸの大きい戦闘がしたいなら使えばいい。|&7それ相応の見返りが返ってくる。"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 80
+        Projectile_Damage: 6
+        Bullet_Spread: 0.4
+        Removal_Or_Drag_Delay: 4-true
+        Sounds_Shoot: BLOCK_FIRE_EXTINGUISH-0.5-2-0,ENTITY_FIREWORK_BLAST-1-0-2,ENTITY_FIREWORK_BLAST-1-0.6-0,ENTITY_FIREWORK_BLAST-1-0.6-0,ENTITY_FIREWORK_BLAST-1-0.6-0,ENTITY_FIREWORK_BLAST-1-2-0
+    Reload:
+        Enable: true
+        Reload_Amount: 25
+        Reload_Duration: 40
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Sneak:
+        Enable: true
+        Bullet_Spread: 0.37
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 5
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 80
+    Headshot:
+        Enable: true
+        Bonus_Damage: 2
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 0.1
+
+FA-MASG2COMMAND:
+    Item_Information:
+        Item_Name: "&aFA-MAS G2 COMMAND"
+        Item_Type: 138
+        Inventory_Control: main
+        Item_Lore: "&fダメージ: 3.20|&f連射速度: 12.00|&fリロード: 5.20|&f弾のブレ: 0.79|&fアドオン: なし|&bAmmo: Normal|&b攻撃型/Gun-AR/Main||||&7瞬間火力だけを求め、再度ｶｽﾀﾏｲｽﾞされたｱｻﾙﾄﾗｲﾌﾙ。|&7ﾌﾙｵｰﾄでの射撃が可能になったが、|&7精度が大幅に低下した。"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 3
+        Bullet_Spread: 0.79
+        Removal_Or_Drag_Delay: 7-true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,BLOCK_NOTE_SNARE-1-1.8-0,ENTITY_GENERIC_BIG_FALL-0.4-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 30
+        Reload_Duration: 104
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Sneak:
+        Enable: true
+        Bullet_Spread: 0.76
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 8
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 20
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+SCAR-L:
+    Item_Information:
+        Item_Name: "&aSCAR-L"
+        Item_Type: 138
+        Inventory_Control: main
+        Item_Lore: "&fダメージ: 2.40|&f連射速度: 10.00|&fリロード: 3.40|&f弾のブレ: 0.03|&fアドオン: 移動速度上昇|&bAmmo: Normal|&bバランス型/Gun-AR/Main||||&7大幅な軽量化が図られた一品。|&7その軽い体からは、|&7真っすぐな弾丸が発射される。"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 2
+        Bullet_Spread: 0.03
+        Removal_Or_Drag_Delay: 7-true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0,BLOCK_NOTE_SNARE-1-1.8-0,ENTITY_GENERIC_BIG_FALL-0.4-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 34
+        Reload_Duration: 68
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Sneak:
+        Enable: true
+        Bullet_Spread: 0.0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 6
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 40

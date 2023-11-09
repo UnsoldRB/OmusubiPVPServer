@@ -1,0 +1,33 @@
+﻿フック_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_HOE"
+モア・フック_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_HOE"
+花火_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_HOE"
+簡易テレポート_default:
+    Durability: 6
+    Change_Item_Type: "GOLD_HOE"
+バックステップ_default:
+    Durability: 4
+    Change_Item_Type: "GOLD_HOE"
+ショートダッシュ_default:
+    Durability: 3
+    Change_Item_Type: "GOLD_HOE"
+クイックカット_default:
+    Durability: 2
+    Change_Item_Type: "GOLD_HOE"
+スピードカット_default:
+    Durability: 2
+    Change_Item_Type: "GOLD_HOE"
+SnowWalk_default:
+    Durability: 8
+    Change_Item_Type: "GOLD_HOE"
+フェイクムーブ_default:
+    Durability: 5
+    Change_Item_Type: "GOLD_HOE"
+フロウ_default:
+    Durability: 7
+    Change_Item_Type: "GOLD_HOE"

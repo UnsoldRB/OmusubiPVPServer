@@ -1,0 +1,49 @@
+ShopName: dhxgaergrgfrerg4r4
+DisplayName: '&lSideMagicShop - Souls'
+signs:
+  text: '[SubMagicShop - Souls]'
+  NeedPermissionToCreateSign: true
+shop:
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: vesbesvredverd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''
+  スピード・ブースト:
+    RewardType: playercommand
+    PriceType: money
+    Price: 16100
+    Reward: brsbrbrbrbrbrbbb スピード・ブースト 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:1242
+    - name:&9スピード・ブースト
+    - 'lore:&f自身の移動速度を底上げする。#&f使い方いろいろ。##&f&b必要水晶 : 16100'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  ヘルスヒール:
+    RewardType: playercommand
+    PriceType: money
+    Price: 22300
+    Reward: brsbrbrbrbrbrbbb ヘルスヒール 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:1241
+    - name:&9ヘルスヒール
+    - 'lore:&f自身以外のプレイヤーを回復する。#&fタイミングを考えればかなり強い。##&f&b必要水晶 : 22300'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''

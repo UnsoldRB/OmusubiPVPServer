@@ -1,0 +1,60 @@
+﻿######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&1Server Menu'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 3
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: 'varvkjihrev.redvferaegfvr'
+
+  # auto-refresh - OPTIONAL
+  # How frequently the menu will be refreshed, in seconds.
+  # Useful if you have variables in items' descriptions.
+  auto-refresh: 5
+
+  # This command command will be execute when the menu is opened.
+  # Supports all the icon command types.
+  open-action: 'console: execute {player} ~ ~ ~ /playsound minecraft:block.chest.open master {player} ~ ~ ~ 1 0'
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    id: wool:1
+    left-click: false
+    right-click: false
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+
+join:
+  NAME: '&e参加/退出'
+  LORE:
+    - 'TeamBattleに参加/退出します'
+  COMMAND: 'snjedtgnhsrjtsfjgnmstefjygftd'
+  ID: IRON_SWORD
+  KEEP-OPEN: false
+  POSITION-X: 4
+  POSITION-Y: 2
+rejoin:
+  NAME: '&e途中参加'
+  LORE:
+    - 'TeamBattleに途中参加します'
+  COMMAND: 'drtsergsreysrtbhsrtbhtrdgds'
+  ID: 261
+  KEEP-OPEN: false
+  POSITION-X: 6
+  POSITION-Y: 2

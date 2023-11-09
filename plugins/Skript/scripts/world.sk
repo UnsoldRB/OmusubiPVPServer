@@ -1,0 +1,338 @@
+on join:
+	if skutilities yaml value "%player%.FirstJoin" from file "plugins/Skript/yml/PlayerStat.yml" exists:
+		set join message to "&e%player%がサーバーにやってきた"
+	wait 1 ticks
+	if "%event-player%" is "RiceBallSouls":
+		set join message to ""
+		if skutilities yaml path "Report" in file "plugins/Skript/yml/Report.yml" doesn't exist:
+			message "Report does not exist."
+		else:
+			message "§c§l§n!!!Reported Alive!!!"
+			message "§c§l§n!!!Reported Alive!!!"
+			message "§c§l§n!!!Reported Alive!!!"
+			message "§c§l§n!!!Reported Alive!!!"
+			message "§c§l§n!!!Reported Alive!!!"
+	teleport player to location -12, 13.1, -107 in world "world"
+	delete {LockMove::*}
+	set {say} to 0
+	execute console command "/effect %player% clear"
+	wait 2 ticks
+	execute console command "/effect %player% minecraft:instant_health 1 10 true"
+	execute console command "/effect %player% minecraft:resistance 8 3"
+	set maximum damage delay of player to 1 ticks
+	set the maximum health of the player to 20
+	set {pvp::%player%} to 1
+	set player's tablist name to "%player%"
+	set the player's walk speed to 0.2
+	delete {Swim::%player%}
+
+on packet event play_client_resource_pack_status:
+	if "%""ResourcePackStatus"" pinfo 0 of event-packet%" = "DECLINED":
+		wait 1 ticks
+		kick event-player by reason of "サーバーリソースパックを適応してください"
+
+command /report <player> <text>:
+	usage: /report <Player> <Reason>
+	trigger:
+		set skutilities yaml value "Report.Reported-from-%player%.%arg-1%" from file "plugins/Skript/yml/Report.yml" to arg-2
+		message "§c§l§n!!!Reported from %player%!!!" to "RiceBallSouls" parsed as player
+		message "§c§l§n!!!Reported from %player%!!!" to "RiceBallSouls" parsed as player
+		message "§c§l§n!!!Reported from %player%!!!" to "RiceBallSouls" parsed as player
+		message "§c§l§n!!!Reported from %player%!!!" to "RiceBallSouls" parsed as player
+		message "§c§l§n!!!Reported from %player%!!!" to "RiceBallSouls" parsed as player
+		message "§cReported."
+
+command /tell <player> <text>:
+	usage: "&c使用法:/tell <プレイヤー> <プライベートメッセージ ...>"
+	trigger:
+		execute player command "/minecraft:tell %arg-1% %arg-2%"
+		if player is not op:
+			if arg-1 is not op:
+				loop all players:
+					if loop-player is arg-1:
+						message "%player%→%arg-1%/(%arg-2%)" to "RiceBallSouls" parsed as player
+						set skutilities yaml value "%now%" of file "plugins/Skript/yml/TellLog.yml" to "%player%→%arg-1%/(%arg-2%)"
+						stop
+
+on respawn:
+	if "%player's world%" is "FFA" or "world":
+		teleport the player to world's spawn point
+		set {LockMove::%player%} to true
+		apply potion of blindness of tier 1 to the player for 60 ticks
+		apply potion of night vision of tier 1 to the player for 40 ticks
+		wait 2 ticks
+		loop 10 times:
+			send player title "§fRespawning..." with subtitle "" for 0 ticks with 1 ticks fade in and 1 ticks fade out
+			wait 1 ticks
+		set player's gamemode to survival
+		send player title "§b>>Ready<<" with subtitle "" for 1 ticks with 10 ticks fade in and 3 ticks fade out
+		execute console command "/effect %player% minecraft:instant_health 1 10 true"
+		execute console command "/effect %player% minecraft:resistance 7 3"
+		delete {LockMove::%player%}
+
+command /spawn:
+	trigger:
+		if skutilities yaml value "%player%.FirstJoin" from file "plugins/Skript/yml/PlayerStat.yml" is true:
+			set {LockMove::%player%} to true
+			set {_Loc::*} to line between location 5 below player and location 50 above player with density 1
+			drawDot count 3, particle "endRod", speed 0.05, RGB 1, 1, 1, center {_Loc::*}, visibleRange 64, pulseDelay 2, keepFor 0.5 seconds
+			apply potion of blindness of tier 1 to the player for 30 ticks
+			apply potion of glowing of tier 1 to the player for 10 ticks
+			if "%player's world%" is "TeamBattle" or "FFA":
+				apply potion of blindness of tier 1 to the player for 101 ticks
+				apply potion of glowing of tier 1 to the player for 91 ticks
+				set {_count} to 0.0
+				loop 111 times:
+					send player title "§e§l%{_count}%%%" with subtitle "§7Teleporting..." for 0 ticks with 0 ticks fade in and 25 ticks fade out
+					wait 1 ticks
+					add 0.9 to {_count}
+				set {_count} to 100.0
+				teleport player to location -12, 13.1, -107 in world "world"
+			else:
+				wait 10 ticks
+				teleport player to location -11.5, 13.1, -106.5 in world "world"
+			send player title "§e§l100.0%%" with subtitle "§7Teleporting..." for 25 ticks with 0 ticks fade in and 5 ticks fade out
+			delete {LockMove::%player%}
+		else:
+			message "&c権限がありません" to player
+
+on entity target:
+	if target is not a player:
+		cancel event
+	else if name of event-entity contains "§9":
+		if {team::%target%} is "blue":
+			cancel event
+	else if name of event-entity contains "§c":
+		if {team::%target%} is "red":
+			cancel event
+
+command /veroivherihhiesdgrggggggggggggg:
+	trigger:
+		give 3 orange stained glass named "§9仕分けガラス" with lore "§7ｲﾝﾍﾞﾝﾄﾘに境界線を引くためのもの||§7特にこれといった効果はない||§0%random integer between 0 and 9999999999999999999999999999999999%" to player
+
+command /jail <player>:
+	trigger:
+		loop 2000 times:
+			teleport arg to location 0, 10000, 0 in world "FFA"
+			set block at location at 0, 10000, 0 in world "FFA" to web
+			wait 1 ticks
+
+on block form:
+	cancel event
+
+
+on block physics:
+	if block is farmland:
+		cancel event
+	else if block is grass path:
+		cancel event
+
+
+on sneak toggle:
+	wait 1 ticks
+	if the block at location of player is water:
+		if {Swim::%player%} is not set:
+			if player's chestplate is air:
+				if player is sneaking:
+					set {Swim::%player%} to true
+					set {_breath} to tag "Air" of nbt of player
+					remove 50 from {_breath}
+					if {_breath} is less than 0:
+						set {_breath} to 0
+					add "{Air:%{_breath}%}" to nbt of player
+					Playsound(player, "entity.player.swim", 5, 1)
+					apply potion of speed of tier 1 to the player for 0.3 seconds
+					apply potion of night vision of tier 1 to the player for 0.4 seconds
+					set player's chestplate to elytra
+					player.setGliding(true)
+					loop 20 times:
+						set {_pitch} to pitch of player
+						if "%{_pitch}%" contains "-":
+							set {_pitch} to {_pitch} * -1
+						set {_pitch} to (120 - {_pitch}) / 50
+						set {_pitch} to {_pitch} / 20
+						execute console command "/execute %player% ~ ~1 ~ /particle bubble %Location(player)% 0.3 0.1 0.3 0.1 5"
+						if {_pitch} is less than 0.08:
+							set {_pitch} to 0.08
+						push player forwards at speed {_pitch}
+						if block at player is not water:
+							wait 3 ticks
+							exit 2 sections
+						wait 1 ticks
+					set player's chestplate to air
+					player.setGliding(false)
+					delete {Swim::%player%}
+
+on script load:
+	delete {Swim::*}
+	delete {pvp::*}
+	wait 10 seconds
+	execute console command "skript reload function"
+
+on skript load:
+	wait 1 seconds
+	execute console command "/whitelist on"
+
+every 20 minutes:
+	if number of all players is more than 2:
+		set {_number} to random integer between 0 and 8
+		if {_number} is 0:
+			broadcast "§e[Tips]§r§o性能が異常に高い武器は装備すると体力が減少する..."
+		else if {_number} is 1:
+			broadcast "§e[Tips]§r§o素材が手に入らないならプレイヤーに売ってもらおう..."
+		else if {_number} is 2:
+			broadcast "§e[Tips]§r§o仲間とはぐれないように戦うだけでも勝率は上昇する..."
+		else if {_number} is 3:
+			broadcast "§e[Tips]§r§o魔法は扱いずらい。慣れないうちは銃を使おう..."
+		else if {_number} is 4:
+			broadcast "§e[Tips]§r§oクラフト武器は作ってみるまでどういう武器なのかがわからない。他のプレイヤーに教えてもらってから作ろう..."
+		else if {_number} is 5:
+			broadcast "§e[Tips]§r§oSub武器は侮れない..."
+		else if {_number} is 6:
+			broadcast "§e[Tips]§r§o遠距離武器は距離を詰められると戦いにくくなる..."
+		else if {_number} is 7:
+			broadcast "§e[Tips]§r§oタクティカルな戦闘ができるようになるクラフト武器があるらしい..."
+		else if {_number} is 8:
+			broadcast "§e[Tips]§r§o水中でスニークすると泳げる。水平方向に大きく進むため、垂直方向へは進みにくい..."
+		else if {_number} is 9:
+			broadcast "§e[Tips]§r§o釣りをしないなら「すばらしい釣り竿」をほかのプレイヤーに売ってあげよう..."
+
+every 1 hours:
+	set {_time} to "%now%"
+#	if {_time} contains "17:":
+#		execute console command "/whitelist off"
+	if {_time} contains "16:":
+		if {_time} contains "Saturday" or "Sunday":
+			execute console command "/whitelist off"
+	else if {_time} contains "22:":
+		broadcast "§9[WorldSaver] サーバーが30分後に再起動されます..."
+		wait 20 minutes
+		broadcast "§9[WorldSaver] サーバーが10分後に再起動されます..."
+		wait 7 minutes
+		broadcast "§9[WorldSaver] サーバーが3分後に再起動されます..."
+		wait 2 minutes
+		broadcast "§9[WorldSaver] サーバーが1分後に再起動されます..."
+		wait 30 seconds
+		broadcast "§9[WorldSaver] サーバーが30秒後に再起動されます..."
+		wait 20 seconds
+		broadcast "§9[WorldSaver] サーバーが10秒後に再起動されます..."
+		wait 7 seconds
+		broadcast "§9[WorldSaver] サーバーが3秒後に再起動されます..."
+		wait 1 seconds
+		broadcast "§9[WorldSaver] サーバーが2秒後に再起動されます..."
+		wait 1 seconds
+		broadcast "§9[WorldSaver] サーバーが1秒後に再起動されます..."
+		wait 1 seconds
+		broadcast "§9[WorldSaver] サーバーが再起動されます..."
+		execute console command "/restart"
+
+
+
+on spawn of chicken:
+	if "%spawn reason%" is "EGG":
+		cancel event
+
+on drop:
+	player's gamemode is not creative
+	cancel event
+
+on inventory click:
+	player is not op
+	if clicked item is enchanted with efficiency 1:
+		cancel event
+		close player's inventory
+		message "その状態のアイテムは移動できません。"
+	else if inventory name of player's current inventory contains "container.crafting":
+		if clicked slot is 40 or 36 or 38 or 39:
+			cancel event
+	else if name of clicked item contains " §r▪" or " §7▫":
+		cancel event
+		close player's inventory
+
+on shoot:
+	if shooter's held item is bow:
+		cancel event
+
+on block place:
+	if player's gamemode is not creative:
+		cancel event
+
+on inventory drag:
+	player is not op
+	if inventory name of player's current inventory contains "container.crafting":
+		if "%dragged top slots%%dragged bottom slots%" contains "40" or "36":
+			cancel event
+
+on player's tool changing:
+	if {HotbarSwitch.%player%} is true:
+		cancel event
+#ブロック設置阻止
+	wait 1 ticks
+	if player's held item is beacon:
+		if player's gamemode is not creative:
+			set player's gamemode to adventure
+	else:
+		if player's gamemode is adventure:
+			if player's gamemode is not creative:
+				set player's gamemode to survival
+
+
+command /ping:
+	trigger:
+		message "" to player
+		message "§l %player's ping%" to player
+
+
+on right click on sign:
+	if line 2 of event-block is "音ブロック":
+		if line 3 of event-block is "§l/リセット/":
+			execute console command "/execute %player% ~ ~ ~ /playsound minecraft:entity.firework.blast master @a[r=16] ~ ~ ~ 1 0"
+			loop all blocks in radius 8 around event-block:
+				if type of loop-block is note block:
+					add location of loop-block to {_NOTELOCATION.console::*}
+					set the block at loop-block to wool
+			wait 10 ticks
+			loop {_NOTELOCATION.console::*}:
+				set the block at loop-value to note block
+			execute console command "/execute %player% ~ ~ ~ /playsound minecraft:entity.firework.blast master @a[r=16] ~ ~ ~ 1 1"
+	else if line 2 of event-block is "PVPマネージャー":
+		execute console command "/npc spawn PVPマネージャー"
+		Playsound(player, "entity.endermen.teleport", 1, 1)
+
+command /chat reset:
+	trigger:
+		player is op
+		loop 80 times:
+			message ""
+		message "チャット欄をきれいにしました。"
+
+command /allkick:
+	trigger:
+		player is op
+		loop all players:
+			loop-player is not op
+			kick loop-player
+
+
+on click on hopper:
+	if block below clicked block is end gateway:
+		cancel event
+		wait 1 ticks
+		open chest with 1 row named "<blue>ゴミ箱" to player
+
+on inventory open:
+	wait 1 ticks
+	if name of player's current inventory contains "総合情報処理センター":
+		set {_Kill} to skutilities yaml value "%player%.Kill" of file "plugins/Skript/yml/PlayerStat.yml"
+		set {_Death} to skutilities yaml value "%player%.Death" of file "plugins/Skript/yml/PlayerStat.yml"
+		set {_Assist} to skutilities yaml value "%player%.Assist" of file "plugins/Skript/yml/PlayerStat.yml"
+		set {_Win} to skutilities yaml value "%player%.Win" of file "plugins/Skript/yml/PlayerStat.yml"
+		set {_Lose} to skutilities yaml value "%player%.Lose" of file "plugins/Skript/yml/PlayerStat.yml"
+		set {_Point} to skutilities yaml value "%player%.TotalPoint" of file "plugins/Skript/yml/PlayerStat.yml"
+		set {_Fishing} to skutilities yaml value "%player%.TotalFishing" of file "plugins/Skript/yml/PlayerStat.yml"
+		set {_KD} to ({_Kill} / {_Death}) * 100
+		round({_KD})
+		set {_item} to slot 26 of player's current inventory
+		set lore of {_item} to "§eKills: %{_Kill}%||§eDeaths: %{_Death}%||§eAssists: %{_Assist}%||§eKD(Kills÷Deaths): %{_KD} / 100%||§eWins: %{_Win}%||§eLoses: %{_Lose}%||§eTotalPoints: %{_Point}%||§eTotalFishing: %{_Fishing}%"
+		set slot 26 of player's current inventory to {_item}
+		set slot 25 of player's current inventory to emerald named "§e所持金" with lore "§e%player's account%"

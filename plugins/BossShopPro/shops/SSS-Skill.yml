@@ -1,0 +1,194 @@
+ShopName: ftnjtfnjrfgtnhrtjfgn
+DisplayName: '&9&lSkillShop'
+signs:
+  text: '[SkillShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  Skill-アルリジェネ:
+    RewardType: playercommand
+    PriceType: money
+    Price: 5000
+    Reward: brsbrbrbrbrbrbbb Skill-アルリジェネ 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9Skill-アルリジェネ
+    - 'lore:&f自身に再生能力を付与する#&7初期武器##&b必要水晶 : 5000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  Skill-GRマスタリー:
+    RewardType: playercommand
+    PriceType: money
+    Price: 15000
+    Reward: brsbrbrbrbrbrbbb Skill-GRマスタリー 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:3
+    - name:&9Skill-GRマスタリー
+    - 'lore:&fグレネードの性能を上げる##&b必要水晶 : 15000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  Skill-キルリジェネブースト:
+    RewardType: playercommand
+    PriceType: money
+    Price: 45000
+    Reward: brsbrbrbrbrbrbbb Skill-キルリジェネブースト 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:2
+    - name:&9Skill-キルリジェネブースト
+    - 'lore:&fKill時に体力を回復する##&b必要水晶 : 45000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 3
+    ExtraPermission: ''
+  Skill-ジャンプパッド:
+    RewardType: playercommand
+    PriceType: money
+    Price: 30000
+    Reward: brsbrbrbrbrbrbbb Skill-ジャンプパッド 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:4
+    - name:&9Skill-ジャンプパッド
+    - 'lore:&fジャンプパッドを設置する##&b必要水晶 : 30000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 4
+    ExtraPermission: ''
+
+  Skill-Thirdフック:
+    RewardType: playercommand
+    PriceType: money
+    Price: 32000
+    Reward: brsbrbrbrbrbrbbb Skill-Thirdフック 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:7
+    - name:&9Skill-Thirdフック
+    - 'lore:&f少し前に飛ぶ##&b必要水晶 : 28000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 5
+    ExtraPermission: ''
+  Skill-ProjectileLevitation:
+    RewardType: playercommand
+    PriceType: money
+    Price: 41000
+    Reward: brsbrbrbrbrbrbbb Skill-ProjectileLevitation 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:5
+    - name:&9Skill-ProjectileLevitation
+    - 'lore:&f周囲の弾丸を止める#&f扱いにくい##&b必要水晶 : 41000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 6
+    ExtraPermission: ''
+  Skill-GorillaSouls:
+    RewardType: playercommand
+    PriceType: money
+    Price: 26000
+    Reward: brsbrbrbrbrbrbbb Skill-GorillaSouls 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:8
+    - name:&9Skill-GorillaSouls
+    - 'lore:&f素手のダメージが上昇する##&b必要水晶 : 26000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 7
+    ExtraPermission: ''
+  Skill-ステルス:
+    RewardType: playercommand
+    PriceType: money
+    Price: 34000
+    Reward: brsbrbrbrbrbrbbb Skill-ステルス 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:6
+    - name:&9Skill-ステルス
+    - 'lore:&f透明化する##&b必要水晶 : 34000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 8
+    ExtraPermission: ''
+  Skill-フレッシュレーダー:
+    RewardType: playercommand
+    PriceType: money
+    Price: 37000
+    Reward: brsbrbrbrbrbrbbb Skill-フレッシュレーダー 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9Skill-フレッシュレーダー
+    - 'lore:&f広範囲の敵の位置を一瞬把握する##&b必要水晶 : 37000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 10
+    ExtraPermission: ''
+  Skill-アーツバーン:
+    RewardType: playercommand
+    PriceType: money
+    Price: 29000
+    Reward: brsbrbrbrbrbrbbb Skill-アーツバーン 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9Skill-アーツバーン
+    - 'lore:&f周囲の敵を着火する##&b必要水晶 : 29000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 11
+    ExtraPermission: ''
+  Skill-トグルグラヴィティ:
+    RewardType: playercommand
+    PriceType: money
+    Price: 34000
+    Reward: brsbrbrbrbrbrbbb Skill-トグルグラヴィティ 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9Skill-トグルグラヴィティ
+    - 'lore:&f浮遊する##&b必要水晶 : 34000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 12
+    ExtraPermission: ''
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: gfhnfdghndhdythtd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

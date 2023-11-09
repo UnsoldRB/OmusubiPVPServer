@@ -1,0 +1,10 @@
+light-cooldown: 500
+hide-nametags: false
+hide-nametags-world-blacklist:
+- ""
+modifications:
+  PGMHecateII:
+    type: WEAPON
+    strong-zoom:
+      enabled: true
+      type: SECOND

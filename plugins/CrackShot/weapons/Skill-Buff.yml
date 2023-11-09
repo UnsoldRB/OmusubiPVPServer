@@ -1,0 +1,116 @@
+Skill-アルリジェネ:
+    Item_Information:
+        Item_Name: "&eSkill-アルリジェネ"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 再生能力付与|&f逑逑逑逑: なし|&f逑逑逑逑: なし|&f装備条件: なし(r)|&f逑逑逑逑: なし(r)|&bバランス型/Skill-Buff/Skill|||||&7優しい手触りのSkill。|&7装備すると暖かさを感じる。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Disable: true
+Skill-GRマスタリー:
+    Item_Information:
+        Item_Name: "&eSkill-GRマスタリー"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: ｸﾞﾚﾈｰﾄﾞの投擲速度上昇|&f逑逑逑逑: ｸﾞﾚﾈｰﾄﾞのﾀﾞﾒｰｼﾞ+20%|&f逑逑逑逑: なし|&f装備条件: Grenade(r)|&f逑逑逑逑: HSR(d)|&b攻撃型/Skill-Buff/Skill|||||&7持つと力を感じるSkill。|&7装備中のｸﾞﾚﾈｰﾄﾞに違和感を感じる。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Disable: true
+Skill-GorillaSouls:
+    Item_Information:
+        Item_Name: "&eSkill-GorillaSouls"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 素手の時のﾀﾞﾒｰｼﾞ上昇|&f逑逑逑逑: 騒音を発生させる(素手で殴る)|&f逑逑逑逑: なし|&f装備条件: SG, LSR(d)|&f逑逑逑逑: なし(r)|&b攻撃型/Skill-Buff/Skill|||||&7圧倒的な力を感じるSkill。|&7装備すると筋肉ムキムキ。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Disable: true
+Skill-キルリジェネブースト:
+    Item_Information:
+        Item_Name: "&eSkill-キルリジェネブースト"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 体力の回復(Kill)|&f逑逑逑逑: なし|&f逑逑逑逑: なし|&f装備条件: SG(d)|&f逑逑逑逑: なし(r)|&bバランス型/Skill-Buff/Skill|||&7ぬくもりを感じるが、|&7殺意も感じるSkill。|&7殺し屋の魂でも入ってるんじゃないか？"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Disable: true
+Skill-Thirdフック:
+    Item_Information:
+        Item_Name: "&eSkill-Thirdフック"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 前に飛ぶ∴12(ｸﾘｯｸ)|&f逑逑逑逑: なし|&f逑逑逑逑: なし|&f装備条件: なし(r)|&f逑逑逑逑: なし(r)|&bバランス型/Skill-Buff/Skill|||||&7謎の慣性が働き続けているSkill。|&7いつでも飛んでいける。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Disable: true
+Skill-ProjectileLevitation:
+    Item_Information:
+        Item_Name: "&eSkill-ProjectileLevitation"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 周囲の敵の弾丸を止める∴10(ｸﾘｯｸ)|&f逑逑逑逑: なし|&f逑逑逑逑: なし|&f装備条件: Magic(d)|&f逑逑逑逑: なし(r)|&b防衛型/Skill-Buff/Skill|||||&7不思議な結界が張られたSkill。|&7握りつぶすとその力を開放する。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Disable: true
+Skill-ステルス:
+    Item_Information:
+        Item_Name: "&eSkill-ステルス"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 最大20秒透明化する∴40(ｸﾘｯｸ)|&f逑逑逑逑: 透明化が解除される(持ち替え)|&f逑逑逑逑: 透明化が解除される(10block以上の移動)|&f装備条件: AR(d)|&f逑逑逑逑: Gun(r)|&b攻撃型/Skill-Buff/Skill||||&7不安な見た目をしたSkill。|&7手に持っても実感が沸かず、|&7今すぐにでも消えていきそうだ。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Disable: true
+Skill-アイスフリーディア:
+    Item_Information:
+        Item_Name: "&6Skill-アイスフリーディア"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 前方に斬撃を3回飛ばす∴40(ｸﾘｯｸ)|&f逑逑逑逑: 半径6blockの爆発を起こす。(着弾)|&f逑逑逑逑: 5ﾀﾞﾒｰｼﾞ+一定間隔で8回動きを止める(爆発)|&f装備条件: Magic(r)|&f逑逑逑逑: なし|&b攻撃型/Skill-Buff/Skill|||&7ひやひやしているSkill。|&7すっごいひやひやする。|&7まじでひやひや。|&7いつまでもひやひや。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 1
+        Delay_Between_Shots: 800
+        Projectile_Amount: 1
+        Projectile_Type: egg
+        Projectile_Speed: 40
+        Projectile_Damage: 0
+        Bullet_Spread: 0.2
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Burstfire:
+        Enable: true
+        Shots_Per_Burst: 3
+        Delay_Between_Shots_In_Burst: 4
+Skill-アーツバーン:
+    Item_Information:
+        Item_Name: "&eSkill-アーツバーン"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 半径7blockにいる敵を5秒間着火∴15(ｸﾘｯｸ)|&f逑逑逑逑: なし|&f逑逑逑逑: なし|&f装備条件: なし(r)|&f逑逑逑逑: なし(r)|&b攻撃型/Skill-Buff/Skill|||&7なんか既に燃えてるSkill。|&7マジ熱い。|&7空に掲げると、|&7周りの可燃物が全て燃える。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Disable: true
+Skill-トグルグラヴィティ:
+    Item_Information:
+        Item_Name: "&eSkill-トグルグラヴィティ"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 最大30秒自身に対する重力を無効化する∴10(ｸﾘｯｸ)|&f逑逑逑逑: 効果が強制的に切れる(HPが半分以下まで減少)|&f逑逑逑逑: 効果が強制的に切れる(着地)|&f装備条件: なし(r)|&f逑逑逑逑: なし(r)|&bバランス型/Skill-Buff/Skill|||&7重さを感じないSkill。|&7なんか若干上に動き続けている。|&7握りつぶそうとすると、|&7くしゃくしゃになる。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Disable: true
+Skill-フィリアージュ:
+    Item_Information:
+        Item_Name: "&6Skill-フィリアージュ"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 体が弾丸に引っ張られる(発射)|&f逑逑逑逑: HP小減少|&f逑逑逑逑: なし|&f装備条件: HSR, LSR(a)|&f逑逑逑逑: なし(r)|&b攻撃型/Skill-Buff/Skill||||&7すごい角が鋭利なSkill。|&7どっかの魚の魂が入っているらしい。|&7投げると全ての物に突き刺さる。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Disable: true
+
+
+
+

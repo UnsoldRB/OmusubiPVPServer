@@ -1,0 +1,149 @@
+on script load:
+	delete {AntiBreakGrenade::*}
+	delete {AirGrenade::*}
+
+function Grenade(p:player, g:entity):
+	set {_fire} to 0
+	set {_WeaponName} to uncolored name of {_p}'s held item
+	set {_hotbarslot} to {_p}'s selected hotbar slot
+	set {_item} to CheckWeaponSlot({_p}, "/Grenade")
+	set {_lore} to skutilities yaml value "%CheckWeaponName(name of slot {_item} of {_p}, true)%.Item_Information.Item_Lore" of file "plugins/CrackShot/weapons/GRN.yml"
+	set {_item2::*} to {_lore} split by "|"
+	set {_damage} to subtext of {_item2::1} from characters 9 to length of {_item2::1}
+	set {_damage} to {_damage} parsed as number
+	set {_range} to subtext of {_item2::3} from characters 9 to length of {_item2::3}
+	set {_delay} to subtext of {_item2::4} from characters 9 to length of {_item2::4}
+	set {_boost} to SkillTrigger("Trigger", {_p}, {_p}, "Grenade", "ExplodeDamageBoost")
+	if {_boost} is set:
+		set {_damage} to {_damage} * {_boost} parsed as number
+	set {_cooldown} to skutilities yaml value "%CheckWeaponName(name of slot {_item} of {_p}, true)%.Shooting.Delay_Between_Shots" of file "plugins/CrackShot/weapons/GRN.yml"
+	set {_cooldown} to "%{_cooldown}%" parsed as number
+	{_p}.setCooldown({_p}.getItemInHand().getType(), {_cooldown})
+	set {_delay} to ({_delay} parsed as number) * 20
+	loop 500 times:
+		wait 1 ticks
+		add 1 to {_count}
+		if {_count} is 2:
+			delete {_count}
+			spawn an armor stand at location 50 meter above location of {_p}
+			add spawned armor stand to {_armorstand::*}
+			set {_pitch} to "%{_p}'s pitch%"
+			Add "{CustomName:""Grenade"",NoGravity:1b,Small:1,Marker:1b,Invisible:1,NoBasePlate:1}" To nbt of spawned armor stand
+			teleport spawned armor stand to {_g}
+			set {_packet} to new play_server_entity_equipment packet
+			set int pnum 0 of {_packet} to id of spawned armor stand
+			set "ItemSlots" penum 0 of {_packet} to "HEAD"
+			set "ItemModifier" pinfo 0 of {_packet} to unbreakable iron hoe:1
+			send {_p} packet {_packet}
+		loop all blocks in radius 1 around {_g}:
+			if loop-block is not air:
+				exit 3 sections
+	loop {_delay} times:
+		Playsound({_g}, "block.fire.extinguish", 0.4, 2)
+		wait 1 ticks
+	if {_WeaponName} contains "フレイミーグレネード":
+		add 100 to {_fire}
+	else if {_WeaponName} contains "アイスCグレネード":
+		Explosion({_p}, {_g}, 0, {_range} parsed as number, {_fire}, false, {_hotbarslot})
+		loop all players in radius ({_range} parsed as number) around location of {_g}:
+			if {team::%{_p}%} is not {team::%loop-player%}:
+				add loop-player to {_players::*}
+		loop 7 times:
+			loop {_players::*}:
+				Playsound(loop-value-2, "entity.wither.shoot", 1, 2)
+				Playsound(loop-value-2, "block.glass.break", 1, 0)
+				loop 10 times:
+					set {_a} to random integer between 7 and -7
+					set {_b} to random integer between 7 and -7
+					draw 10 blue scale 7 colored directional itemcrack particles at location 7 meter above, {_a} meter north, {_b} meter west {_p} with direction new vector random number between 1.00 and -1.00, -2, random number between 1.00 and -1.00 and speed 0.4
+				if {team::%loop-value-2%} is not {team::%{_p}%}:
+					delete velocity of loop-value-2
+					Damage({_p}, loop-value-2, 0.5, {_p}'s selected hotbar slot)
+					draw 20 blockcrack material particle made of ice at location 0.5 meter above location of loop-value-2, speed 0.2, offset 0, 0, 0, keepFor 0.2 seconds
+				wait 12 ticks
+		kill {_g}
+		loop {_armorstand::*}:
+			kill loop-value
+		loop {_cooldown} - {_delay} times:
+			wait 1 ticks
+		SendSidebar({_p}, "§a§lREADY:§r§l//%CheckWeaponCharacter(""スタンダードグレネード"")%//", 1, 40)
+		play "BLOCK_GLASS_BREAK" to {_p} at volume 10
+		stop
+	Explosion({_p}, {_g}, {_damage}, {_range} parsed as number, {_fire}, false, {_hotbarslot})
+	kill {_g}
+	loop {_armorstand::*}:
+		kill loop-value
+	loop {_cooldown} - {_delay} times:
+		wait 1 ticks
+	SendSidebar({_p}, "§a§lREADY:§r§l//%CheckWeaponCharacter(""スタンダードグレネード"")%//", 1, 40)
+	play "BLOCK_GLASS_BREAK" to {_p} at volume 10
+
+on crackshot shoot:
+	if lore of player's held item contains "/Grenade":
+		drop player's held item
+		make last dropped item to ride event-projectile
+		set {_Grenade} to last dropped item
+		add "{PickupDelay:20000f}" to nbt of {_Grenade}
+		SkillTrigger("Trigger", player, vehicle of {_Grenade}, "Grenade")
+		if name of player's held item contains "ダッシュグレネード":
+			add "%event-projectile.getUniqueId()%" to {CollideProjectile::*}
+			set {_item} to CheckWeaponSlot(player, "/Grenade")
+			set {_cooldown} to skutilities yaml value "%CheckWeaponName(name of slot {_item} of player, true)%.Shooting.Delay_Between_Shots" of file "plugins/CrackShot/weapons/GRN.yml"
+			set {_cooldown} to "%{_cooldown}%" parsed as number
+			player.setCooldown(player.getItemInHand().getType(), {_cooldown})
+			loop 10 times:
+				show witch spell at {_Grenade}
+				if block at location of {_Grenade} and block at location 1 meter above {_Grenade} is air or water:
+					set {_dashB.%player%} to true
+				if {_dashB.%player%} is true:
+					set {_dashG.%player%} to location of {_Grenade}
+					delete {_dashB.%player%}
+				wait 1 ticks
+			set {_yaw} to yaw of player
+			set {_pitch} to pitch of player
+			set yaw of {_dashG.%player%} to {_yaw}
+			set pitch of {_dashG.%player%} to {_pitch}
+			Playsound(player, "entity.endermen.teleport", 2, 1)
+			teleport the player to location at {_dashG.%player%}
+			Playsound(player, "entity.endermen.teleport", 2, 1)
+			kill {_Grenade}
+			loop {_cooldown} - 10 times:
+				wait  1 ticks
+			play "BLOCK_GLASS_BREAK" to player at volume 10
+		else if name of player's held item contains "フレイミーグレネード":
+			add "%event-projectile.getUniqueId()%" to {CollideProjectile::*}
+			Grenade(player, {_Grenade})
+		else if name of player's held item contains "対空グレネード":
+			set {_cooldown} to skutilities yaml value "%CheckWeaponName(name of player's held item, true)%.Shooting.Delay_Between_Shots" of file "plugins/CrackShot/weapons/GRN.yml"
+			player.setCooldown(player.getItemInHand().getType(), {_cooldown})
+			kill {_Grenade}
+			set {AirGrenade::%projectile%} to true
+			wait 3 seconds
+			delete {AirGrenade::%projectile%}
+		else if name of player's held item contains "ジャンプグレネード":
+			launch "BALL" firework at location above player timed 0 coloured "lime"
+			loop firework rockets in radius 1 of location above player:
+				add "{LifeTime:1}" to nbt of loop-entity
+				exit 1 sections
+			loop 160 times:
+				execute console command "/execute %player% ~ ~ ~ /particle endRod ~ ~0.15 ~ 0 0 0 0 1 force"
+				wait 1 ticks
+		else:
+			add "%event-projectile.getUniqueId()%" to {CollideProjectile::*}
+			Grenade(player, {_Grenade})
+
+
+
+
+on damage of player:
+#{対空グレネード}
+	if {AirGrenade::%projectile%} is true:
+		delete {AirGrenade::%projectile%}
+		block Below victim is air
+		block at location 2 meter below location of victim is air
+		block at location 3 meter below location of victim is air
+		block at location 4 meter below location of victim is air
+		launch "BALL" firework at location above victim timed 0 coloured "white"
+		Damage(attacker, victim, 3.5, attacker's selected hotbar slot)
+		delete velocity of victim
+		set velocity of victim to new Vector 0, -2, 0

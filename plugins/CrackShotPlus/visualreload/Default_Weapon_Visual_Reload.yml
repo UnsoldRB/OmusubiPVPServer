@@ -1,0 +1,33 @@
+﻿Reload:
+    Left_Color: "&a&l"
+    Right_Color: "&c"
+    Symbol: "/"
+    Symbol_Amount: 40
+    Reload_Message:
+        Action_Bar: "&7#BAR# &7&l#TIME#s"
+    Reload_Complete_Message:
+        Action_Bar: "Reload Completed"
+        Title: ""
+        Subtitle: ""
+Recall:
+    Left_Color: "&a&l"
+    Right_Color: "&c"
+    Symbol: ">"
+    Symbol_Amount: 40
+    Reload_Message:
+        Action_Bar: "&7#BAR# &7&l#TIME#s"
+    Reload_Complete_Message:
+        Action_Bar: "Recall Completed"
+        Title: ""
+        Subtitle: ""
+Charge:
+    Left_Color: "&a&l"
+    Right_Color: "&c"
+    Symbol: "≫"
+    Symbol_Amount: 6
+    Reload_Message:
+        Action_Bar: "&7#BAR# &7&l#TIME#s"
+    Reload_Complete_Message:
+        Action_Bar: "&7&nCharge Completed"
+        Title: ""
+        Subtitle: ""

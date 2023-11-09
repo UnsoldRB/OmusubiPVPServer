@@ -1,0 +1,30 @@
+﻿on script load:
+	loop {Armorstand::*}:
+		kill loop-value
+	delete {Armorstand::*}
+
+on crackshot shoot:
+	if name of player's held item contains "RealizationKnife":
+		spawn an armor stand at location 50 meter below location of shooter
+		set {Armorstand::%projectile%} to spawned armor stand
+		set {_pitch} to "%shooter's pitch%"
+		Add "{CustomName:""Projectile"",NoGravity:1b,Small:1,Marker:1b,Invisible:1,NoBasePlate:1,Silent:1,ArmorItems:[{},{},{},{id:""minecraft:apple"",Count:1b}],Pose:{Head:[%{_pitch}%f,0f,0f]}}" To nbt of spawned armor stand
+		set spawned armor stand's helmet to unbreakable stone hoe:1
+		make spawned armor stand ride projectile
+	else if event-string is "アイスボール":
+		spawn an armor stand at location 50 meter below location of shooter
+		set {Armorstand::%projectile%} to spawned armor stand
+		set {_pitch} to "%shooter's pitch%"
+		Add "{CustomName:""Projectile"",NoGravity:1b,Small:1,Marker:1b,Invisible:1,NoBasePlate:1,Silent:1,ArmorItems:[{},{},{},{id:""minecraft:apple"",Count:1b}],Pose:{Head:[%{_pitch}%f,0f,0f]}}" To nbt of spawned armor stand
+		set spawned armor stand's helmet to unbreakable iron hoe:4
+		make spawned armor stand ride projectile
+
+
+	wait 60 seconds
+	if {Armorstand::%projectile%} exists:
+		kill {Armorstand::%projectile%}
+		delete {Armorstand::%projectile%}
+on projectile hit:
+	projectile is egg
+	kill {Armorstand::%projectile%}
+	delete {Armorstand::%projectile%}

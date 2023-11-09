@@ -1,0 +1,59 @@
+アースウォール:
+    Item_Information:
+        Item_Name: "&eアースウォール"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: 正面に壁を形成|&f効果強度: 15.00(t)|&f逑逑逑逑: なし|&f使用間隔: 0.50|&f充填詠唱: 2.00∴35.00(c)|&fウェイト: 0.00%|&fアドオン: 壁は破壊可能|&bCost: 1|&bAmmo: Crystal|&b防衛型/SideMagic-Creation/Sub||&7視点の先に土を噴出させる。|&7ｱｲｽｳｫｰﾙの親戚みたいな立ち位置である。|&7あちらとは違い、全ての飛翔物を防ぎきる。|&7爆発も1度なら防いでくれる。|&7自分を守る、硬固な魔法だ。"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 10
+        Recoil_Amount: 0
+        Projectile_Amount: 15
+        Projectile_Type: snowball
+        Projectile_Speed: 10
+        Bullet_Spread: 5
+        Sounds_Shoot: ENTITY_GENERIC_EXPLODE-1-2-3
+    Reload:
+        Enable: true
+        Reload_Amount: 2
+        Reload_Duration: 40
+        Reload_Shoot_Delay: 700
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 296
+        Ammo_Name_Check: 弾薬 -Crystal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+
+クエイグ:
+    Item_Information:
+        Item_Name: "&eクエイグ"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: 前方の地面にいる敵にﾀﾞﾒｰｼﾞ(打ち上げ)|&f効果強度: 8.00(p), 6.00(d)|&f逑逑逑逑: 1.50(p)|&f使用間隔: 15.00|&f即時詠唱: 0.00|&fウェイト: 0.00%|&fアドオン: なし|&bCost: 1|&bAmmo: Crystal|&bバランス型/SideMagic-Creation/Sub||||&7視点の先の大地を爆破する。|&7炎魔法「ラヴァ」の派生形。|&7その攻撃は、全てを打ち上げる。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 300
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 0-true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true

@@ -1,0 +1,81 @@
+ShopName: jdrthrt6rdyt45rffff
+DisplayName: '&9&lKnifeShop'
+signs:
+  text: '[KnifeShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  ポイズンソード:
+    RewardType: playercommand
+    PriceType: money
+    Price: 14000
+    Reward: brsbrbrbrbrbrbbb ポイズンダガー 1
+    MenuItem:
+    - hideflags:all
+    - type:STONE_SWORD
+    - amount:1
+    - unbreakable:true
+    - durability:2
+    - name:&9ポイズンダガー
+    - 'lore:&f普通に戦える武器##&b必要水晶 : 14000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  アサシンダガー:
+    RewardType: playercommand
+    PriceType: money
+    Price: 16000
+    Reward: brsbrbrbrbrbrbbb アサシンダガー 1
+    MenuItem:
+    - hideflags:all
+    - type:STONE_SWORD
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9アサシンダガー
+    - 'lore:&f敵の背後を取りに行く武器##&b必要水晶 : 16000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  コールドレイピア:
+    RewardType: playercommand
+    PriceType: money
+    Price: 20000
+    Reward: brsbrbrbrbrbrbbb コールドレイピア 1
+    MenuItem:
+    - hideflags:all
+    - type:STONE_SWORD
+    - amount:1
+    - unbreakable:true
+    - durability:4
+    - name:&9コールドレイピア
+    - 'lore:&f一人でも戦いやすい武器##&b必要水晶 : 20000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 3
+    ExtraPermission: ''
+  フライパン:
+    RewardType: playercommand
+    PriceType: money
+    Price: 19000
+    Reward: brsbrbrbrbrbrbbb フライパン 1
+    MenuItem:
+    - hideflags:all
+    - type:STONE_SWORD
+    - amount:1
+    - unbreakable:true
+    - durability:6
+    - name:&9フライパン
+    - 'lore:&fヘイトを集めやすい武器##&b必要水晶 : 19000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 4
+    ExtraPermission: ''
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: nvskeibvlnseurgglensdjkvnszfkjvbhsueil
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

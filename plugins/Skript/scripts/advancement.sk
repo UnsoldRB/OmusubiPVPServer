@@ -1,0 +1,32 @@
+﻿command /test2:
+	trigger:
+		execute console command "/advancement revoke %player% everything"
+		wait 1 seconds
+		execute console command "/advancement grant %player% only default:root"
+
+command /testing:
+	trigger:
+		AdvancementCheck(player, "amature")
+
+on player advancement complete:
+	if "%advancement key of event-advancement%" contains "default:":
+		message "§a§l|||||||||||||||||||||||||||||||||||||||||"
+		set skutilities yaml value "%player%.CompletedAdvancements.%advancement key of event-advancement%" from file "plugins/Skript/yml/Advancements.yml" to "Complete"
+		wait 1 ticks
+		message ""
+		add 100 to {_Money}
+		if "%advancement key of event-advancement%" is "default:amateur":
+			message "§a§lレシピ「ダガー」が解放されました。"
+			add 200 to {_Money}
+
+		add {_Money} to the event-player's account
+		message "§a§l          %{_Money}%水晶を入手しました。"
+
+
+		message ""
+		message ""
+		message "§a§l|||||||||||||||||||||||||||||||||||||||||"
+
+function AdvancementCheck(p:player, t:text):
+	if skutilities yaml path "%{_p}%.CompletedAdvancements.default:%{_t}%" in file "plugins/Skript/yml/Advancements.yml" doesn't exist:
+		execute console command "/advancement grant %{_p}% only default:%{_t}%"

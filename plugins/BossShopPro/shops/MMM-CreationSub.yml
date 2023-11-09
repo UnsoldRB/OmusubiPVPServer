@@ -1,0 +1,49 @@
+ShopName: dhdyjdfgynsra3w2
+DisplayName: '&lSideMagicShop - Creation'
+signs:
+  text: '[SideMagicShop - Creation]'
+  NeedPermissionToCreateSign: true
+shop:
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: vesbesvredverd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''
+  アースウォール:
+    RewardType: playercommand
+    PriceType: money
+    Price: 17300
+    Reward: brsbrbrbrbrbrbbb アースウォール 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - durability:0
+    - unbreakable:true
+    - name:&9アースウォール
+    - 'lore:&fその場に土の壁を形成する魔法。#&f戦略的な用法にて力を発揮する。##&f&b必要水晶 : 17300'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  クエイグ:
+    RewardType: playercommand
+    PriceType: money
+    Price: 14000
+    Reward: brsbrbrbrbrbrbbb クエイグ 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - durability:0
+    - unbreakable:true
+    - name:&9クエイグ
+    - 'lore:&f前方の敵に対して打ち上げを行う。#&fダメージも稼げる。##&f&b必要水晶 : 14000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''

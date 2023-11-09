@@ -1,0 +1,667 @@
+
+
+
+
+
+M4A1カービン:
+    Item_Information:
+        Item_Name: "&eM4A1カービン"
+        Item_Type: 138
+        Melee_Attachment: Disable
+        Item_Lore: "&fDamage: 3|&fFirerate: 9|&fReload: 4.25s|&fAccuracy: 0.81|&fSpeed: 120||&fType: バランス型/CAR|&fAmmo: Normal|&bMain Weapon"
+        Inventory_Control: main
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 120
+        Projectile_Damage: 5
+        Bullet_Spread: 0.71
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_GENERIC_EXTINGUISH_FIRE-1-2-0,ENTITY_FIREWORK_BLAST_FAR-1-1.5-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 26
+        Reload_Duration: 95
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Reloading: ITEM_FLINTANDSTEEL_USE-1-1-4,BLOCK_WOODEN_DOOR_OPEN-1-2-10,ITEM_FLINTANDSTEEL_USE-1-1-36,ENTITY_PLAYER_HURT-1-0-37,BLOCK_WOODEN_DOOR_CLOSE-1-2-38
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Firearm_Action:
+        Type: slide
+        Close_Duration: 10
+        Close_Shoot_Delay: 12
+        Sound_Close: BLOCK_PISTON_CONTRACT-1-2-0,BLOCK_PISTON_CONTRACT-1-2-3
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Sneak:
+        Enable: true
+        No_Recoil: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 9
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 0.51
+    Damage_Based_On_Flight_Time:
+        Enable: true
+        Bonus_Damage_Per_Tick: -2
+        Maximum_Damage: -4
+
+
+
+
+
+
+レールガン:
+    Item_Information:
+        Item_Name: "&eレールガン"
+        Item_Type: 269~2
+        Item_Lore: "&fDamage: 1|&fCoolDown: 0s|&fReload: 2.5s|&fAccuracy: 6|&fHeadShot: 4|&aExplode: 20-3-1|&fType: バランス型/Mainガチャ|&fAmmo: Arrow|&bMain Weapon"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Delay_Between_Shots: 1
+        Recoil_Amount: 1
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 300
+        Projectile_Damage: 1
+        Bullet_Spread: 6
+        Sounds_Shoot: BLOCK_GLASS_BREAK-1-0-0,ENTITY_BLAZE_DEATH-1-0-0,ENTITY_BAT_TAKEOFF-1-2-0,ENTITY_GENERIC_EXPLODE-1-2-0
+    Reload:
+        Enable: true
+        Reload_Amount: 3
+        Reload_Duration: 60
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Reload_Bullets_Individually: true
+        Sounds_Reloading: BLOCK_PORTAL_TRIGGER-1-1.5-0,ENTITY_BLAZE_HURT-1-0-0,ENTITY_BLAZE_HURT-1-0-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Burstfire:
+        Enable: true
+        Shots_Per_Burst: 3
+        Delay_Between_Shots_In_Burst: 0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 262
+        Ammo_Name_Check: 弾薬 -Arrow-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Sneak:
+        Enable: true
+        No_Recoil: true
+        Bullet_Spread: 6
+    Scope:
+        Enable: true
+        Zoom_Amount: 10
+        Zoom_Bullet_Spread: 0.0
+    Explosions:
+        Enable: true
+        Damage_Multiplier: 25
+        Enable_Owner_Immunity: true
+        Explosion_No_Grief: true
+        Explosion_Radius: 2
+        On_Impact_With_Anything: true
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: SLOW-10-2
+    Firearm_Action:
+        Type: slide
+        Close_Duration: 5
+        Close_Shoot_Delay: 2
+        Sound_Close: BLOCK_PISTON_CONTRACT-1-2-0,BLOCK_PISTON_CONTRACT-1-2-3
+    Headshot:
+        Enable: true
+        Bonus_Damage: 5
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+
+
+
+DualEagle:
+    Item_Information:
+        Item_Name: "&eDual Eagle"
+        Item_Type: 293~1
+        Item_Lore: "&fDamage: 4|&fCoolDown: 0.3s|&fReload: 5s|&fAccuracy: 0.3|&aStep: Horizontal-Sneak||&fType: バランス型/Mainガチャ|&fAmmo: Normal|&bMain Weapon"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+
+        Delay_Between_Shots: 5
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: Snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 4
+        Bullet_Spread: 0.3
+        Sounds_Shoot: ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 16
+        Reload_Duration: 100
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Reloading: BLOCK_WOODEN_DOOR_OPEN-1-2-4,BLOCK_WOODEN_DOOR_OPEN-1-2-8,BLOCK_WOODEN_DOOR_CLOSE-1-2-23,BLOCK_WOODEN_DOOR_CLOSE-1-2-38
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Firearm_Action:
+        Type: slide
+        Close_Duration: 10
+        Close_Shoot_Delay: 12
+        Sound_Close: BLOCK_PISTON_CONTRACT-1-2-0,BLOCK_PISTON_CONTRACT-1-2-3
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 0.1
+    Sneak:
+        Enable: true
+        No_Recoil: true
+        Bullet_Spread: 0.1
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Burstfire:
+        Enable: true
+        Shots_Per_Burst: 2
+        Delay_Between_Shots_In_Burst: 2
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 10
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+
+
+
+RPG-7:
+    Item_Information:
+        Item_Name: "&eRPG-7"
+        Item_Type: 269
+        Item_Lore: "&fDamage: 2|&fCooldown: 0s|&fReload: 6s|&fAccuracy: 0.6|&aExplode: 25-5-35/Break: leaves||&fType: バランス型/Mainガチャ|&fAmmo: Pro|&bMain Weapon"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 1
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 20
+        Projectile_Damage: 2
+        Remove_Bullet_Drop: true
+        Bullet_Spread: 0.6
+        Sounds_Shoot: ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_IRONGOLEM_HURT-1-1-0,ENTITY_IRONGOLEM_HURT-1-0-0,BLOCK_IRON_DOOR_OPEN-1-0.6-1,BLOCK_IRON_DOOR_OPEN-1-1.6-1
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Explosions:
+        Enable: true
+        Knockback: 35
+        Damage_Multiplier: 25
+        Explosion_No_Grief: true
+        Explosion_Radius: 5
+        On_Impact_With_Anything: true
+    Reload:
+        Enable: true
+        Reload_Amount: 1
+        Reload_Duration: 120
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Reloading: ENTITY_GENERIC_EXTINGUISH_FIRE-1-0-0,BLOCK_PISTON_CONTRACT-1-0-20,BLOCK_PISTON_EXTEND-1-0-40,BLOCK_PISTON_EXTEND-1-2-90,BLOCK_PISTON_EXTEND-1-2-95
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 337
+        Ammo_Name_Check: 弾薬 -Pro-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 5
+        Zoom_Bullet_Spread: 0.0
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: SLOW-70-3,BLINDNESS-20-1
+
+
+Twin-MG:
+    Item_Information:
+        Item_Name: "&eTwin-MG"
+        Item_Type: 138
+        Item_Lore: "&fDamage: 1|&fFirerate: 10|&fReload: 0.1s×44|&fAccuracy: 1.9|&fAbility:|&f -リロード時80%の確率で弾薬入手|&f -空中で使用するとその場に滞在できる|&f -2block浮いて左ｸﾘｯｸすると前方に飛ぶ|&f  -精度が少々上昇する|&f -地表で使用すると鈍足Ⅱが付く||&fType: バランス型/Mainガチャ|&fAmmo: Normal|&bMain Weapon"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 80
+        Projectile_Damage: 2
+        Bullet_Spread: 1.3
+        Removal_Or_Drag_Delay: 4-true
+        Sounds_Shoot: ENTITY_PLAYER_BIG_FALL-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 10
+    Reload:
+        Enable: true
+        Reload_Amount: 44
+        Reload_Duration: 2
+        Sounds_Reloading: ENTITY_VEX_DEATH-0.4-0-0
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Reload_Bullets_Individually: true
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Firearm_Action:
+        Type: slide
+        Close_Duration: 10
+        Close_Shoot_Delay: 12
+        Sound_Close: BLOCK_PISTON_CONTRACT-1-2-0,BLOCK_PISTON_CONTRACT-1-2-3
+    Sneak:
+        Enable: true
+        Bullet_Spread: 1
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 50
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+ミニガン:
+    Item_Information:
+        Item_Name: "&eミニガン"
+        Item_Type: 278~5
+        Inventory_Control: main
+        Item_Lore: "&fDamage: 1|&fFirerate: 1-16|&fReload: 11s|&fAccuracy: 0.7||&fType: 防衛型/Mainガチャ|&fAmmo: Normal|&bMain Weapon"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Recoil_Amount: 1
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 60
+        Remove_Bullet_Drop: true
+        Projectile_Damage: 1
+        Bullet_Spread: 0.7
+        Removal_Or_Drag_Delay: 15-true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0-0,BLOCK_STONE_PLACE-1-0-0,BLOCK_STONE_PLACE-1-0-0,BLOCK_STONE_BREAK-1-0-0,ENTITY_GENERIC_BIG_FALL-1-0.2-0
+    Reload:
+        Enable: true
+        Reload_Amount: 170
+        Reload_Duration: 220
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Reloading: ITEM_FLINTANDSTEEL_USE-1-1-4,BLOCK_WOODEN_DOOR_OPEN-1-2-6,ITEM_FLINTANDSTEEL_USE-1-1-36,ENTITY_PLAYER_HURT-1-0-37,BLOCK_WOODEN_DOOR_CLOSE-1-2-38
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 6
+        Zoom_Bullet_Spread: 0.4
+    Sneak:
+        Enable: true
+        No_Recoil: true
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 1
+    Firearm_Action:
+        Type: slide
+        Close_Duration: 10
+        Close_Shoot_Delay: 12
+        Sound_Close: BLOCK_PISTON_CONTRACT-1-2-0,BLOCK_PISTON_CONTRACT-1-2-3
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 35
+
+DED-アサルトライフル:
+    Item_Information:
+        Item_Name: "&eDED-アサルトライフル"
+        Item_Type: 138
+        Melee_Attachment: Disable
+        Item_Lore: "&fDamage: 5|&fFirerate: 9|&fReload: 2.8s|&fAccuracy: 1.02|&fHeadShot: 1||&fType: 攻撃型/DED|&fAmmo: Normal|&bMain Weapon"
+        Inventory_Control: main
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 90
+        Removal_Or_Drag_Delay: 3-true
+        Projectile_Damage: 5
+        Bullet_Spread: 1.02
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_GENERIC_EXTINGUISH_FIRE-1-2-0,ENTITY_FIREWORK_BLAST_FAR-1-1.5-0,ENTITY_FIREWORK_BLAST_FAR-1-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 26
+        Reload_Duration: 58
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Reloading: ITEM_FLINTANDSTEEL_USE-1-1-4,BLOCK_WOODEN_DOOR_OPEN-1-2-10,ITEM_FLINTANDSTEEL_USE-1-1-36,ENTITY_PLAYER_HURT-1-0-37,BLOCK_WOODEN_DOOR_CLOSE-1-2-38
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Firearm_Action:
+        Type: slide
+        Close_Duration: 10
+        Close_Shoot_Delay: 12
+        Sound_Close: BLOCK_PISTON_CONTRACT-1-2-0,BLOCK_PISTON_CONTRACT-1-2-3
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Sneak:
+        Enable: true
+        No_Recoil: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 9
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 20
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 0.71
+    Headshot:
+        Enable: true
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+        Bonus_Damage: 1
+DED-サブマシンガン:
+    Item_Information:
+        Item_Name: "&eDED-サブマシンガン"
+        Item_Type: 258~2
+        Item_Lore: "&fDamage: 4|&fFirerate: 16|&fReload: 3s|&fAccuracy: 1.2|&fHeadShot: 1||&fType: 攻撃型/DED|&fAmmo: Normal|&bMain Weapon"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 80
+        Projectile_Damage: 4
+        Bullet_Spread: 1.2
+        Removal_Or_Drag_Delay: 2-true
+        Sounds_Shoot: ENTITY_PLAYER_BIG_FALL-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 16
+    Reload:
+        Enable: true
+        Reload_Amount: 36
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Reload_Duration: 60
+        Sounds_Reloading: ITEM_FLINTANDSTEEL_USE-1-1-4,BLOCK_IRON_DOOR_OPEN-1-2-6,ITEM_FLINTANDSTEEL_USE-1-0-37,BLOCK_IRON_DOOR_OPEN-1-2-38
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Firearm_Action:
+        Type: slide
+        Close_Duration: 10
+        Close_Shoot_Delay: 12
+        Sound_Close: BLOCK_PISTON_CONTRACT-1-2-0,BLOCK_PISTON_CONTRACT-1-2-3
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 10
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+
+
+
+Nagant-R1895:
+    Item_Information:
+        Item_Name: "&eNagant-R1895"
+        Item_Type: 269
+        Melee_Attachment: Disable
+        Item_Lore: "&fDamage: 5|&fCoolDown: 0.25s|&fReload: 6s|&fAccuracy: 0.3|&fAbility:|&f -HeadShot: 3|&f -弾速が早い|&f -距離減衰|&f -スニーク時発砲音抑制||&fType: 攻撃型/Mainガチャ|&fAmmo: Normal|&bMain Weapon"
+        Inventory_Control: main
+    Shooting:
+        Right_Click_To_Shoot: true
+
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Delay_Between_Shots: 3
+        Projectile_Speed: 130
+        Projectile_Damage: 6
+        Bullet_Spread: 0.3
+        Removal_Or_Drag_Delay: 5-true
+    Reload:
+        Enable: true
+        Reload_Amount: 7
+        Reload_Duration: 120
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Reloading: ITEM_FLINTANDSTEEL_USE-1-1-4,BLOCK_WOODEN_DOOR_OPEN-1-2-10,ITEM_FLINTANDSTEEL_USE-1-0-20,ITEM_FLINTANDSTEEL_USE-1-0-32,ITEM_FLINTANDSTEEL_USE-1-0-44,ITEM_FLINTANDSTEEL_USE-1-0-56,ITEM_FLINTANDSTEEL_USE-1-0-68,ITEM_FLINTANDSTEEL_USE-1-0-80,ITEM_FLINTANDSTEEL_USE-1-0-92
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Damage_Based_On_Flight_Time:
+        Enable: true
+        Bonus_Damage_Per_Tick: -1
+        Maximum_Damage: -4
+    Firearm_Action:
+        Type: revolver
+        Close_Duration: 10
+        Close_Shoot_Delay: 12
+        Sound_Close: BLOCK_WOODEN_DOOR_CLOSE-1-2-0
+    Headshot:
+        Enable: true
+        Bonus_Damage: 3
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 0.1
+    Sneak:
+        Enable: true
+        Bullet_Spread: 0.1
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 80
+
+
+
+
+DED-HGSH-GR:
+    Item_Information:
+        Item_Name: "§eDED-HGSH-GR"
+        Item_Type: 138
+        Remove_Unused_Tag: true
+        Inventory_Control: main,sub
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 2
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: Snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 2
+        Bullet_Spread: 1.5
+        Sounds_Shoot: ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 16
+        Reload_Duration: 80
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Reloading: BLOCK_WOODEN_DOOR_OPEN-1-2-4,BLOCK_WOODEN_DOOR_OPEN-1-2-8,BLOCK_WOODEN_DOOR_CLOSE-1-2-23,BLOCK_WOODEN_DOOR_CLOSE-1-2-38
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Firearm_Action:
+        Type: slide
+        Close_Duration: 10
+        Close_Shoot_Delay: 12
+        Sound_Close: BLOCK_PISTON_CONTRACT-1-2-0,BLOCK_PISTON_CONTRACT-1-2-3
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 1
+        Ammo_Name_Check: None
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 85
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Riot_Shield:
+        Enable: true
+        Sounds_Blocked: ENTITY_SHULKER_BULLET_HURT-1-0-0
+
+DED-HGSH:
+    Item_Information:
+        Item_Name: "§eDED-HGSH"
+        Item_Type: 293
+        Remove_Unused_Tag: true
+        Item_Lore: "&fDamage: 2|&fCoolDown: 0.15s|&fReload: 4s|&fAccuracy: 0.3|&fAccuracy: 0.2|&fAbility:|&f -スニークで切り替え|&f  -切り替え中は上に向けない|&f  -切り替え中は武器の精度が低下する||&fType: 防衛型/HG|&fAmmo: Normal|&bMain,Sub Weapon"
+        Inventory_Control: main,sub
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 2
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: Snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 2
+        Bullet_Spread: 0.2
+        Sounds_Shoot: ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 16
+        Reload_Duration: 80
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Reloading: BLOCK_WOODEN_DOOR_OPEN-1-2-4,BLOCK_WOODEN_DOOR_OPEN-1-2-8,BLOCK_WOODEN_DOOR_CLOSE-1-2-23,BLOCK_WOODEN_DOOR_CLOSE-1-2-38
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Firearm_Action:
+        Type: slide
+        Close_Duration: 10
+        Close_Shoot_Delay: 12
+        Sound_Close: BLOCK_PISTON_CONTRACT-1-2-0,BLOCK_PISTON_CONTRACT-1-2-3
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 0.1
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 85
+    Particles:
+        Enable: true
+        Particle_Terrain: true

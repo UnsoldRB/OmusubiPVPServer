@@ -1,0 +1,691 @@
+ハンドリボル-H:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 12
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+ハンドリボル-R:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Shoot:
+        Trails:
+            Trail: "コルト・パイソン"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot！"
+
+
+ヘルスヒール:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+ChargeShooter:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Charge"
+    Held:
+        Hide_Attributes: true
+
+LastAmmo:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+燎原の火:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Invisible_Projectiles: true
+        Trails:
+            Trail: "燎原の火"
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+黒い音色:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Invisible_Projectiles: true
+        Trails:
+            Trail: "黒い音色"
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+こたつ:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Invisible_Projectiles: true
+        Trails:
+            Trail: "燎原の火"
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+
+XP-BALL:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Trails:
+            Trail: "XP-BALL"
+        Bouncing_Projectiles:
+            Decrese_Velocity_Per_Bounce: 0.9
+            Minium_Velocity: 0.0
+            Bounce_Amount: 10
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+
+デストレイザ:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Invisible_Projectiles: true
+        Trails:
+            Trail: "デストレイザ"
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+
+
+魔導グレネード:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Trails:
+            Trail: "魔導グレネード"
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+    Damage:
+        Spawn_Firework:
+            Shape: "BALL"
+            Color: "10-105-250"
+            Flicker: false
+        Title_And_Subtitle:
+            Shooter:
+                Hit:
+                    Subtitle: "&7Hit&l！"
+        Run_Command:
+            Hit:
+                Command: "#C#execute #PLAYER# ~ ~ ~ /effect #PLAYER# speed 3 2"
+弾幕-扇-:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+        Custom_Bullet_Spread:
+            Maxium_Y_Spread_Lower: 0.0
+            Maxium_Y_Spread_Higher: 0.0
+            Minium_Starting_Y_Spread: 25.0
+            Maxium_Starting_Y_Spread: 25.0
+            Decrease_Spread_Back_to_Normal:
+                Minium_Milliseconds: 1000
+                Maxium_Milliseconds: 1000
+            While_Zooming:
+                ZX_Spread: 0.55
+                Increase_Y_Spread_Per_Shot: 0.15
+            While_Sneaking:
+                ZX_Spread: 0.55
+                Increase_Y_Spread_Per_Shot: 0.15
+            While_Standing_Or_Walking:
+                ZX_Spread: 0.55
+                Increase_Y_Spread_Per_Shot: 0.15
+            While_Sprinting:
+                ZX_Spread: 0.55
+                Increase_Y_Spread_Per_Shot: 0.15
+            While_Not_Touching_Ground:
+                ZX_Spread: 0.55
+                Increase_Y_Spread_Per_Shot: 0.15
+ファイアショット:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Shoot:
+        Trails:
+            Trail: "ファイアショット"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+弾幕-レイン-:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Shoot:
+        Custom_Bullet_Spread:
+            Maxium_Y_Spread_Lower: 3.5
+            Maxium_Y_Spread_Higher: 3.5
+            Minium_Starting_Y_Spread: 25.0
+            Maxium_Starting_Y_Spread: 25.0
+            Decrease_Spread_Back_to_Normal:
+                Minium_Milliseconds: 1000
+                Maxium_Milliseconds: 1000
+            While_Zooming:
+                ZX_Spread: 0.40
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Sneaking:
+                ZX_Spread: 0.40
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Standing_Or_Walking:
+                ZX_Spread: 0.40
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Sprinting:
+                ZX_Spread: 0.40
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Not_Touching_Ground:
+                ZX_Spread: 0.40
+                Increase_Y_Spread_Per_Shot: 0.01
+        Trails:
+            Trail: "弾幕レイン"
+        Projectile_Control:
+            Velocity_Update_Interval: 1
+            Control_Access_After: 20
+            Lose_Control_Distance: 100
+            Lose_Control_Time: 140
+            Lost_Control_Message: "&7弾のコントロールを失った！"
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Hit:
+                    Subtitle: "&7Hit！"
+RealizationKnife:
+    Skin:
+        Skins: ""
+        Default_Skin: "default"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot!"
+RealizationKnifeT:BURST:
+    Skin:
+        Skins: ""
+        Default_Skin: "default"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Shoot:
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot!"
+Trapofblast:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: 0.02
+TheMeteor:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+        Trails:
+            Trail: "The Meteor"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Damage:
+        Spawn_Firework:
+            Shape: "BALL"
+            Color: "255-255-255"
+            Flicker: false
+        Title_And_Subtitle:
+            Shooter:
+                Hit:
+                    Subtitle: "&7Hit&l！"
+ArrowFall:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Shoot:
+        Custom_Bullet_Spread:
+            Maxium_Y_Spread_Lower: 2.9
+            Maxium_Y_Spread_Higher: 2.9
+            Minium_Starting_Y_Spread: 25.0
+            Maxium_Starting_Y_Spread: 25.0
+            Decrease_Spread_Back_to_Normal:
+                Minium_Milliseconds: 1000
+                Maxium_Milliseconds: 1000
+            While_Zooming:
+                ZX_Spread: 0.45
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Sneaking:
+                ZX_Spread: 0.45
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Standing_Or_Walking:
+                ZX_Spread: 0.45
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Sprinting:
+                ZX_Spread: 0.45
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Not_Touching_Ground:
+                ZX_Spread: 0.45
+                Increase_Y_Spread_Per_Shot: 0.01
+        Trails:
+            Trail: "フック"
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Hit:
+                    Subtitle: "&7Hit！"
+アースウォール:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Shoot:
+        Trails:
+            Trail: "フック"
+        Custom_Bullet_Spread:
+            Maxium_Y_Spread_Lower: 0.0
+            Maxium_Y_Spread_Higher: 0.0
+            Minium_Starting_Y_Spread: 0.1
+            Maxium_Starting_Y_Spread: 0.1
+            Decrease_Spread_Back_to_Normal:
+                Minium_Milliseconds: 1000
+                Maxium_Milliseconds: 1000
+            While_Zooming:
+                ZX_Spread: 0.9
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Sneaking:
+                ZX_Spread: 0.9
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Standing_Or_Walking:
+                ZX_Spread: 0.9
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Sprinting:
+                ZX_Spread: 0.9
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Not_Touching_Ground:
+                ZX_Spread: 0.9
+                Increase_Y_Spread_Per_Shot: 0.01
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+アースウォール:Black:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Shoot:
+        Trails:
+            Trail: "フック"
+        Custom_Bullet_Spread:
+            Maxium_Y_Spread_Lower: 0.0
+            Maxium_Y_Spread_Higher: 0.0
+            Minium_Starting_Y_Spread: 0.1
+            Maxium_Starting_Y_Spread: 0.1
+            Decrease_Spread_Back_to_Normal:
+                Minium_Milliseconds: 1000
+                Maxium_Milliseconds: 1000
+            While_Zooming:
+                ZX_Spread: 0.9
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Sneaking:
+                ZX_Spread: 0.9
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Standing_Or_Walking:
+                ZX_Spread: 0.9
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Sprinting:
+                ZX_Spread: 0.9
+                Increase_Y_Spread_Per_Shot: 0.1
+            While_Not_Touching_Ground:
+                ZX_Spread: 0.9
+                Increase_Y_Spread_Per_Shot: 0.01
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+カースボム:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Invisible_Projectiles: true
+        Trails:
+            Trail: "カースボム"
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10

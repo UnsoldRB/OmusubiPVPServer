@@ -1,0 +1,33 @@
+﻿サイス_default:
+    Durability: 4
+    Change_Item_Type: "STONE_SWORD"
+レイピア_default:
+    Durability: 6
+    Change_Item_Type: "STONE_SWORD"
+PVE-ソード_default:
+    Durability: 5
+    Change_Item_Type: "STONE_SWORD"
+PVE-ソード-LongSword_default:
+    Durability: 5
+    Change_Item_Type: "STONE_SWORD"
+PVE-ソード-Dagger_default:
+    Durability: 5
+    Change_Item_Type: "STONE_SWORD"
+PVE-ソード-Scythe_default:
+    Durability: 5
+    Change_Item_Type: "STONE_SWORD"
+DED-アサルトライフル_default:
+    Durability: 11
+    Change_Item_Type: "DIAMOND_PICKAXE"
+M4A1カービン_default:
+    Durability: 13
+    Change_Item_Type: "DIAMOND_PICKAXE"
+Twin-MG_default:
+    Durability: 1
+    Change_Item_Type: "IRON_AXE"
+HGSG_default:
+    Durability: 1
+    Change_Item_Type: "DIAMOND_HOE"
+水のスナイパーライフル_default:
+    Durability: 1
+    Change_Item_Type: "DIAMOND_AXE"

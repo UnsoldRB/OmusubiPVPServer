@@ -1,0 +1,313 @@
+DSR-1:
+    Item_Information:
+        Item_Name: "&eDSR-1"
+        Item_Type: 138
+        Melee_Attachment: Disable
+        Item_Lore: "&fダメージ: 15.00|&f発射間隔: 4.50|&fリロード: 5.00|&f頭部補正: 32.00|&fアドオン: なし|&bAmmo: Normal|&bバランス型/Gun-HSR/Main|||&7標準的な性能を持つ武器。|&7中でも発射間隔はかなり優秀。|&7装填数が心許無く見えるかもしれないが、|&7ﾘﾛｰﾄﾞと発射間隔からして問題ないといえるだろう。"
+        Inventory_Control: main
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 3
+        Projectile_Amount: 1
+        Delay_Between_Shots: 90
+        Projectile_Type: snowball
+        Projectile_Speed: 110
+        Projectile_Damage: 15
+        Bullet_Spread: 8
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_TWINKLE_FAR-0.3-0-12,BLOCK_PISTON_CONTRACT-1-2-24,BLOCK_PISTON_CONTRACT-1-1.6-20,BLOCK_PISTON_CONTRACT-1-1.6-28,BLOCK_PISTON_EXTEND-1-2-32
+    Reload:
+        Enable: true
+        Reload_Amount: 3
+        Reload_Duration: 100
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Particles:
+        Enable: true
+        Particle_Player_Shoot: SMOKE
+        Particle_Terrain: true
+    Headshot:
+        Enable: true
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+        Bonus_Damage: 32
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 10
+        Zoom_Bullet_Spread: 0.0
+        Sounds_Toggle_Zoom: ENTITY_HORSE_ARMOR-1-2-0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: BLINDNESS-17-1
+
+L96:
+    Item_Information:
+        Item_Name: "&eL96"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 20.00|&f発射間隔: 6.00|&fリロード: 6.50|&f頭部補正: 54.00|&fアドオン: なし|&bAmmo: Normal|&b攻撃型/Gun-HSR/Main||||&7基礎ﾀﾞﾒｰｼﾞに優れる優秀ｱﾆｷ。|&7ﾉｯｸﾊﾞｯｸ、頭部補正も共に高く、かなりお強いご様子。|&7ｽﾅｲﾊﾟｰﾗｲﾌﾙの中で最も初心者にお勧めできる。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 3
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Delay_Between_Shots: 120
+        Projectile_Speed: 110
+        Projectile_Damage: 20
+        Bullet_Spread: 8
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_TWINKLE_FAR-0.3-0-12,BLOCK_PISTON_CONTRACT-1-2-24,BLOCK_PISTON_CONTRACT-1-1.6-20,BLOCK_PISTON_CONTRACT-1-1.6-28,BLOCK_PISTON_EXTEND-1-2-32
+    Reload:
+        Enable: true
+        Reload_Amount: 4
+        Reload_Duration: 130
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+        Knockback: 4
+    Particles:
+        Enable: true
+        Particle_Player_Shoot: SMOKE
+        Particle_Terrain: true
+    Headshot:
+        Enable: true
+        Bonus_Damage: 54
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 10
+        Zoom_Bullet_Spread: 0.0
+        Sounds_Toggle_Zoom: ENTITY_HORSE_ARMOR-1-2-0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: BLINDNESS-17-1
+
+ENDER-SNIPER:
+    Item_Information:
+        Item_Name: "&eENDER-SNIPER"
+        Item_Type: 138
+        Melee_Attachment: Disable
+        Item_Lore: "&fダメージ: 14.00|&f発射間隔: 7.00|&fリロード: 6.00|&f頭部補正: 43.00|&fアドオン: 敵と位置を入れ替える(ﾀﾞﾒｰｼﾞ)|&bAmmo: Normal|&b攻撃型/Gun-HSR/Main|||&7ｴﾝﾀﾞｰﾏﾝが親友にお願いして作られたもの。|&7彼の能力を受けたこの銃は|&7それにちなんだｱﾄﾞｵﾝを持つ。|&7性能は低めなのでそれなりの技術を要する。"
+        Inventory_Control: main
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 3
+        Projectile_Amount: 1
+        Delay_Between_Shots: 140
+        Projectile_Type: snowball
+        Projectile_Speed: 110
+        Projectile_Damage: 14
+        Bullet_Spread: 8
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_TWINKLE_FAR-0.3-0-12,BLOCK_PISTON_CONTRACT-1-2-24,BLOCK_PISTON_CONTRACT-1-1.6-20,BLOCK_PISTON_CONTRACT-1-1.6-28,BLOCK_PISTON_EXTEND-1-2-32
+    Reload:
+        Enable: true
+        Reload_Amount: 3
+        Reload_Duration: 120
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Reloading: ENTITY_ENDERMEN_STARE-1-2-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Particles:
+        Enable: true
+        Particle_Player_Shoot: SMOKE
+        Particle_Terrain: true
+    Headshot:
+        Enable: true
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+        Bonus_Damage: 43
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 10
+        Zoom_Bullet_Spread: 0.0
+        Sounds_Toggle_Zoom: ENTITY_HORSE_ARMOR-1-2-0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: BLINDNESS-17-1
+
+M40A1:
+    Item_Information:
+        Item_Name: "&eM40A1"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 10.00|&f発射間隔: 5.00|&fリロード: 8.00|&f頭部補正: 31.00|&fアドオン: 暗視効果(構え)|&bAmmo: Normal|&bバランス型/Gun-HSR/Main|||&7装填数に優れる一品。|&7ｽｺｰﾌﾟには猫が吐いた毛玉が付いていた、|&7覗くととても明るく見える。|&7また、改造が施されており弾速が少し速い。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 3
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Delay_Between_Shots: 100
+        Projectile_Speed: 130
+        Projectile_Damage: 10
+        Bullet_Spread: 8
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_TWINKLE_FAR-0.3-0-12,BLOCK_PISTON_CONTRACT-1-2-24,BLOCK_PISTON_CONTRACT-1-1.6-20,BLOCK_PISTON_CONTRACT-1-1.6-28,BLOCK_PISTON_EXTEND-1-2-32
+    Reload:
+        Enable: true
+        Reload_Amount: 6
+        Reload_Duration: 160
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Particles:
+        Enable: true
+        Particle_Player_Shoot: SMOKE
+        Particle_Terrain: true
+    Headshot:
+        Enable: true
+        Bonus_Damage: 31
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 10
+        Night_Vision: true
+        Zoom_Bullet_Spread: 0.0
+        Sounds_Toggle_Zoom: ENTITY_HORSE_ARMOR-1-2-0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: BLINDNESS-17-1
+
+ScoutRifle:
+    Item_Information:
+        Item_Name: "&eScoutRifle"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 9.00|&f発射間隔: 6.50|&fリロード: 7.00|&f頭部補正: 40.00|&fアドオン: 構えなくても弾がまっすぐ飛ぶ|&bAmmo: Normal|&b攻撃型/Gun-HSR/Main|||&7突撃部隊が機動力不足を感じて使い始めた銃。|&7ｽﾄｯｸがｽﾗｲﾑﾎﾞｰﾙ(無添加)で作られており、|&7体にぴったりﾌｨｯﾄする。|&7使用者曰く「ﾘﾛｰﾄﾞが弱点だが先に敵を消せば問題ない」とのこと。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 3
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Delay_Between_Shots: 130
+        Projectile_Speed: 110
+        Projectile_Damage: 9
+        Bullet_Spread: 0.2
+        Sounds_Shoot: ENTITY_WITHER_SHOOT-1-2-0,ENTITY_IRONGOLEM_ATTACK-1-0-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_GENERIC_EXTINGUISH_FIRE-1-1.7-0,BLOCK_PISTON_CONTRACT-1-2-24,BLOCK_PISTON_CONTRACT-1-1.6-20,BLOCK_PISTON_CONTRACT-1-1.6-28,BLOCK_PISTON_EXTEND-1-2-32
+    Reload:
+        Enable: true
+        Reload_Amount: 3
+        Reload_Duration: 140
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Particles:
+        Enable: true
+        Particle_Player_Shoot: SMOKE
+        Particle_Terrain: true
+    Headshot:
+        Enable: true
+        Bonus_Damage: 40
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 10
+        Zoom_Bullet_Spread: 0.0
+        Sounds_Toggle_Zoom: ENTITY_HORSE_ARMOR-1-2-0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: BLINDNESS-17-1
+
+PGMHecateII:
+    Item_Information:
+        Item_Name: "&ePGM Hecate II"
+        Item_Type: 138
+        Item_Lore: "&fダメージ: 30.00|&f発射間隔: 11.00|&fリロード: 12.00|&f頭部補正: 250.00|&fアドオン: 弾がばらける(空中)|&bAmmo: Normal|&b防衛型/Gun-HSR/Main|||&7誰かがつぶやいた。|&7「やっぱ火力は3桁行かないとね」と。|&7火力に全てを捧げたこの銃は玄人向けであり、|&7使用感が異常なほど悪く、特に空中では使い物にならない。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 12
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Delay_Between_Shots: 220
+        Projectile_Speed: 130
+        Projectile_Damage: 30
+        Bullet_Spread: 8
+    Reload:
+        Enable: true
+        Reload_Amount: 7
+        Reload_Duration: 240
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: SLOW-10-2,BLINDNESS-17-1
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Particles:
+        Enable: true
+        Particle_Player_Shoot: SMOKE
+        Particle_Terrain: true
+    Headshot:
+        Enable: true
+        Bonus_Damage: 250
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 10
+        Zoom_Bullet_Spread: 0.0
+        Sounds_Toggle_Zoom: ENTITY_HORSE_ARMOR-1-2-0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0

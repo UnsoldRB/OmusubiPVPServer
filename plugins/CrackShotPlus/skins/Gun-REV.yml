@@ -1,0 +1,12 @@
+﻿コルト・パイソン357Magnum_default:
+    Durability: 64
+    Change_Item_Type: "IRON_AXE"
+M500_default:
+    Durability: 64
+    Change_Item_Type: "IRON_AXE"
+FlipShot_default:
+    Durability: 64
+    Change_Item_Type: "IRON_AXE"
+Longer_default:
+    Durability: 64
+    Change_Item_Type: "IRON_AXE"

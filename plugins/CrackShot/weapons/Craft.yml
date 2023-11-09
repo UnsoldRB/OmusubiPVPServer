@@ -1,0 +1,16 @@
+すばらしい釣り竿:
+    Item_Information:
+        Item_Name: "&bすばらしい釣り竿"
+        Item_Type: 346~64
+        Remove_Unused_Tag: true
+        Item_Lore: "&fSpeed: 300|&fLuck: 170|&fDrops: 0|&fDurability: 0|&7----------|||&f名の通りすばらしい釣り竿。|&f幸せなひと時を与えてくれる。"
+    Shooting:
+        Disable: true
+ボロ釣り竿:
+    Item_Information:
+        Item_Name: "&bボロ釣り竿"
+        Item_Type: 346~60
+        Remove_Unused_Tag: true
+        Item_Lore: "&fSpeed: 250|&fLuck: 80|&fDrops: 100|&fDurability: 50|&7----------|||&fボロッボロ。超ボロッボロ。|&fでも釣れるの早い。"
+    Shooting:
+        Disable: true

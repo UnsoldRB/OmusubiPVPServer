@@ -1,0 +1,213 @@
+VSS:
+    Item_Information:
+        Item_Name: "&eVSS"
+        Item_Type: 138
+        Melee_Attachment: Disable
+        Item_Lore: "&fダメージ: 8.00|&f発射間隔: 0.70|&fリロード: 4.00|&f頭部補正: 16.00|&fアドオン: 弾道が控え目|&bAmmo: Normal|&bバランス型/Gun-LSR/Main||||&7内部が少々破損したVSS。|&7破損してはいるもののその隠密性は未だに健在、|&7火力も安定。技術さえあれば十分に使える性能だ。"
+        Inventory_Control: main
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 3
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 160
+        Delay_Between_Shots: 14
+        Projectile_Damage: 8
+        Bullet_Spread: 8
+        Sounds_Shoot: ENTITY_WITHER_SHOOT-0.3-2-0,ENTITY_IRONGOLEM_ATTACK-0.5-0-0
+    Reload:
+        Enable: true
+        Reload_Amount: 4
+        Reload_Duration: 80
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Particles:
+        Enable: true
+        Particle_Player_Shoot: SMOKE
+        Particle_Terrain: true
+    Sneak:
+        Enable: true
+        No_Recoil: true
+    Headshot:
+        Enable: true
+        Bonus_Damage: 16
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 10
+        Zoom_Bullet_Spread: 0.0
+        Sounds_Toggle_Zoom: ENTITY_HORSE_ARMOR-1-2-0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: BLINDNESS-16-1
+
+BST-6:
+    Item_Information:
+        Item_Name: "&eBST-6"
+        Item_Type: 138
+        Melee_Attachment: Disable
+        Item_Lore: "&fダメージ: 4.00|&f発射間隔: 3.00(3)|&fリロード: 4.00|&f頭部補正: 6.00|&fアドオン: 弾速が早い|&bAmmo: Normal|&b攻撃型/Gun-LSR/Main||||&7鯖主がFA-MASで遊んでいたら誕生した銃。|&7弾持ちが良く、威力も最大30と優れている方である。|&7適当に作った割には十分扱える性能になっている。"
+        Inventory_Control: main
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 9
+        Projectile_Amount: 1
+        Delay_Between_Shots: 60
+        Projectile_Type: snowball
+        Projectile_Speed: 150
+        Projectile_Damage: 4
+        Bullet_Spread: 8
+        Sounds_Shoot: ENTITY_WITHER_SHOOT-1-2-0,ENTITY_IRONGOLEM_ATTACK-1-0-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_GENERIC_EXTINGUISH_FIRE-1-1.7-0,BLOCK_PISTON_CONTRACT-1-2-24,BLOCK_PISTON_CONTRACT-1-1.6-20,BLOCK_PISTON_CONTRACT-1-1.6-28,BLOCK_PISTON_EXTEND-1-2-32
+    Reload:
+        Enable: true
+        Reload_Amount: 15
+        Reload_Duration: 80
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Sneak:
+        Enable: true
+        No_Recoil: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Particles:
+        Enable: true
+        Particle_Player_Shoot: SMOKE
+        Particle_Terrain: true
+    Headshot:
+        Enable: true
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+        Bonus_Damage: 6
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 10
+        Zoom_Bullet_Spread: 0.0
+        Sounds_Toggle_Zoom: ENTITY_HORSE_ARMOR-1-2-0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Burstfire:
+        Enable: true
+        Shots_Per_Burst: 3
+        Delay_Between_Shots_In_Burst: 1
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: BLINDNESS-16-1
+
+FLY-1967:
+    Item_Information:
+        Item_Name: "&eFLY-1967"
+        Item_Type: 138
+        Melee_Attachment: Disable
+        Item_Lore: "&fダメージ: 8.00|&f発射間隔: 1.00|&fリロード: 5.00|&f頭部補正: 5.00|&fアドオン: 前に飛ぶ(左ｸﾘｯｸ)|&bAmmo: Normal|&b攻撃型/Gun-LSR/Main|||&7全長1967mm、そのうち967mmはﾊﾞﾚﾙの異端児。|&7ｼｭﾙｶｰの素材がﾊﾞﾚﾙに使われており、|&7適当に撃っても視点の先に正確に飛んで行く。|&7ｼｭﾙｶｰの影響か、この銃を振ると自身が前方に飛んで行く。"
+        Inventory_Control: main
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 8
+        Projectile_Amount: 1
+        Delay_Between_Shots: 20
+        Projectile_Type: snowball
+        Projectile_Speed: 120
+        Projectile_Damage: 8
+        Bullet_Spread: 0.2
+        Sounds_Shoot: ENTITY_WITHER_SHOOT-1-2-0,ENTITY_IRONGOLEM_ATTACK-1-0-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_FIREWORK_BLAST-1-1-0,ENTITY_GENERIC_EXTINGUISH_FIRE-1-1.7-0,BLOCK_PISTON_CONTRACT-1-2-24,BLOCK_PISTON_CONTRACT-1-1.6-20,BLOCK_PISTON_CONTRACT-1-1.6-28,BLOCK_PISTON_EXTEND-1-2-32
+    Reload:
+        Enable: true
+        Reload_Amount: 6
+        Reload_Duration: 100
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Particles:
+        Enable: true
+        Particle_Player_Shoot: SMOKE
+        Particle_Terrain: true
+    Sneak:
+        Enable: true
+        No_Recoil: true
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Headshot:
+        Enable: true
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+        Bonus_Damage: 5
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: BLINDNESS-16-1
+
+クラフターの弓:
+    Item_Information:
+        Item_Name: "&6クラフターの弓"
+        Item_Type: 261
+        Item_Lore: "&fダメージ: 3.85|&f発射間隔: 1.50(3)|&fリロード: 2.00|&f頭部補正: 3.00|&fアドオン: 弾速が遅い, ﾉｯｸﾊﾞｯｸ|&bAmmo: Arrow|&b攻撃型/Gun-LSR/Special||&7オークの木材が使用されたであろう弓。|&7すごく一般的な洋物の弓であり、|&7ある程度の技術があればだれでも使える重さ。|&7だがなぜだろうか。|&7異様なほど魚臭い。"
+        Inventory_Control: sp
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Delay_Between_Shots: 30
+        Projectile_Amount: 3
+        Projectile_Type: arrow
+        Projectile_Speed: 40
+        Projectile_Damage: 3
+        Bullet_Spread: 0.2
+        Sounds_Shoot: ENTITY_WITHER_SHOOT-1-2-0
+    Reload:
+        Enable: true
+        Reload_Amount: 4
+        Reload_Duration: 40
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Reloading: ENTITY_HORSE_ARMOR-1-0-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+        Knockback: 1
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 262
+        Ammo_Name_Check: 弾薬 -Arrow-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Headshot:
+        Enable: true
+        Bonus_Damage: 3
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 85
+    Particles:
+        Enable: true
+        Particle_Terrain: true

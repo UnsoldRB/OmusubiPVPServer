@@ -1,0 +1,49 @@
+ShopName: dtymhdzgtnrtjnzdnja
+DisplayName: '&lSideMagicShop - Blaze'
+signs:
+  text: '[SideMagicShop - Blaze]'
+  NeedPermissionToCreateSign: true
+shop:
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: vesbesvredverd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''
+  放炎:
+    RewardType: playercommand
+    PriceType: money
+    Price: 11000
+    Reward: brsbrbrbrbrbrbbb 放炎 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9放炎
+    - 'lore:&f近距離に特化した魔法。#&fサブ武器の中で上位の火力を誇る。##&f&b必要水晶 : 11000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  ラヴァ:
+    RewardType: playercommand
+    PriceType: money
+    Price: 11000
+    Reward: brsbrbrbrbrbrbbb ラヴァ 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:2
+    - name:&9ラヴァ
+    - 'lore:&f壁越しの敵に有効な魔法。##&f&b必要水晶 : 11000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''

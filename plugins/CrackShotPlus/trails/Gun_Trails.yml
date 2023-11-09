@@ -1,0 +1,125 @@
+﻿AR:
+    Trail: "REDSTONE"
+    Trail_Color: "255-255-255"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+SMG:
+    Trail: "CRIT"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+LMG:
+    Trail: "REDSTONE"
+    Trail_Color: "255-160-16"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 2.0
+SP-MOVE:
+    Trail: "REDSTONE"
+    Trail_Color: "0-255-255"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+SR:
+    Trail: "FIREWORKS_SPARK"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+SRSilent:
+    Trail: "SMOKE_NORMAL"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 3.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+フック:
+    Trail: "COLOURED_DUST"
+    Trail_Color: "200-170-255"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+水のスナイパーライフル:
+    Trail: "COLOURED_DUST"
+    Trail_Color: "0-0-220"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+弾幕レイン:
+    Trail: "INSTANT_SPELL"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+デストレイザ:
+    Trail: "INSTANT_SPELL"
+    Trail_Catch:
+        Space_Between_Trails: 1.0
+    Trail_Settings:
+        Speed: 0.1
+        Particle_Count: 1
+
+燎原の火:
+    Trail: "FLAME"
+    Radius: 5
+    Trail_Settings:
+        Speed: 0.1
+        Particle_Count: 1
+    Trail_Catch:
+        Required_Distance_To_Catch: 0.5
+        Space_Between_Trails: 0.6
+RPG-7:
+    Trail: "LARGE_SMOKE"
+    Trail_Settings:
+        Speed: 0.02
+        Particle_Count: 3
+魔導グレネード:
+    Trail: "MAGIC_CRIT"
+    Trail_Settings:
+        Speed: 0.2
+        Particle_Count: 1
+ショートダッシュ:
+    Trail: "WITCH_MAGIC"
+    Trail_Settings:
+        Speed: 0.1
+        Particle_Count: 2
+追尾ミサイル:
+    Trail: "CLOUD"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+XP-BALL:
+    Trail: "COLOURED_DUST"
+    Trail_Color: "71-234-126"
+    Trail_Catch:
+        Required_Distance_To_Catch: 0.5
+        Space_Between_Trails: 0.5
+レールガン:
+    Trail: "SPELL"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+The Meteor:
+    Trail: "MAGIC_CRIT"
+    Trail_Settings:
+        Speed: 0.8
+        Particle_Count: 8
+カースボム:
+    Trail: "WITCH_MAGIC"
+    Trail_Catch:
+        Space_Between_Trails: 1.0
+黒い音色:
+    Trail: "NOTE"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0

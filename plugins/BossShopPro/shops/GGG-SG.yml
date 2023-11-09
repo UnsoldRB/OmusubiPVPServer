@@ -1,0 +1,113 @@
+ShopName: libnrdgdiubh
+DisplayName: '&9&lSGShop'
+signs:
+  text: '[SGShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  レミントンM870:
+    RewardType: playercommand
+    PriceType: money
+    Price: 8200
+    Reward: brsbrbrbrbrbrbbb レミントンM870 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:917
+    - name:&9レミントンM870
+    - 'lore:&f高い威力と早いリロードを持つ武器#&7初期武器##&b必要水晶 : 8200'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  s12k:
+    RewardType: playercommand
+    PriceType: money
+    Price: 9300
+    Reward: brsbrbrbrbrbrbbb s12k 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:918
+    - name:&9s12k
+    - 'lore:&fリロードが遅い代わりに#&fクールダウンが少し短い武器##&b必要水晶 : 9300'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  EnduranTN7:
+    RewardType: playercommand
+    PriceType: money
+    Price: 7900
+    Reward: brsbrbrbrbrbrbbb EnduranTN7 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:919
+    - name:&9Enduran TN7
+    - 'lore:&f多い段数と早いリロードを持つ武器##&b必要水晶 : 7900'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 3
+    ExtraPermission: ''
+  MAG-7:
+    RewardType: playercommand
+    PriceType: money
+    Price: 8800
+    Reward: brsbrbrbrbrbrbbb MAG-7 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:917
+    - name:&9MAG-7
+    - 'lore:&f安定した精度を持つ武器##&b必要水晶 : 8800'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 4
+    ExtraPermission: ''
+  DoubleBarrel-RB:
+    RewardType: playercommand
+    PriceType: money
+    Price: 15000
+    Reward: brsbrbrbrbrbrbbb DoubleBarrel-RB 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:917
+    - name:&9DoubleBarrel-RB
+    - 'lore:&f他のSGとは一風変わった銃#&f弾速が早いためある程度の距離に対応可能##&b必要水晶 : 15000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 5
+    ExtraPermission: ''
+  無尽蔵:
+    RewardType: playercommand
+    PriceType: money
+    Price: 12700
+    Reward: brsbrbrbrbrbrbbb 無尽蔵 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:917
+    - name:&9無尽蔵
+    - 'lore:&f買って損する武器No.1#&f無尽蔵に弾丸を打ち出す#&f弾薬消費が頭おかしいレベルである##&b必要水晶 : 12700'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 6
+    ExtraPermission: ''
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: onvlaebvyulearh
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

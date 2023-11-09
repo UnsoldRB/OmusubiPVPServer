@@ -1,0 +1,79 @@
+﻿######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&1Info Menu'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 6
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: 'nhrjgftjnxdfjngnjfrgnjfrjgn'
+
+  # auto-refresh - OPTIONAL
+  # How frequently the menu will be refreshed, in seconds.
+  # Useful if you have variables in items' descriptions.
+  auto-refresh: 5
+
+  # This command command will be execute when the menu is opened.
+  # Supports all the icon command types.
+  open-action: 'sound: BLOCK_NOTE_PLING'
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    id: wool:1
+    left-click: false
+    right-click: false
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+back:
+  COMMAND: 'menu'
+  NAME: '&cBack'
+  ID: red_stone
+  POSITION-X: 9
+  POSITION-Y: 1
+  KEEP-OPEN: true
+stats:
+  COMMAND: 'fdefbebefdrbtd'
+  NAME: '&e所持金確認'
+  LORE:
+  ID: 370
+  POSITION-X: 1
+  POSITION-Y: 1
+report:
+  COMMAND: ''
+  NAME: '&cReport'
+  LORE:
+    - '&c!!不必要な時に使用しないでください!!'
+    - '/report <MinecraftID> <理由>'
+    - '迷惑者を発見した際にこの形で入力すれば完了。'
+    - '証拠がある場合は++で囲って<理由>にURLで入力してください。'
+    - '理由を細かく伝えたい場合はDiscordの使用を推奨します。'
+    - '※複数人いた場合は数回に分けてコマンドを実行してください。'
+    - '例: /report RiceBallSouls 権限乱用+www.buyop.com+'
+  ID: 262
+  POSITION-X: 9
+  POSITION-Y: 2
+  KEEP-OPEN: true
+
+money_ranking:
+  COMMAND: 'vvesvsergvedvrgev'
+  NAME: '&e所持金ランキング'
+  LORE: '所持金TopPlayerが確認できます'
+  ID: 388
+  POSITION-X: 2
+  POSITION-Y: 1
+  KEEP-OPEN: true

@@ -1,0 +1,102 @@
+import:
+	com.shampaggon.crackshot.CSUtility
+
+on script load:
+	delete {Tutorial::*}
+
+on join:
+	if skutilities yaml value "%player%.FirstJoin" from file "plugins/Skript/yml/PlayerStat.yml" does not exist:
+		delete {Tutorial::%player%}
+		set join message to "&e&l%player%がサーバーに初めてやってきた"
+		wait 2 ticks
+		give player written book titled "ようこそ。", by "RiceBallSouls", pages "はいどうも。%nl%§8サーバーオーナー、おむすびさんです。§r%nl%えー、ではまずね、先に言いたいことを。%nl%§8あぁ、§r%nl%「こういうサーバーに参加するのは初めてだよ」%nl%§8って方は4ページまで飛ばしていただいて大丈夫です。§r%nl%では、サーバーの人達に挨拶でもしてから次のページへお進みください。", "で、何が言いたいかっていうとですね。%nl%§8このサーバー、よくあるｻｸっと敵を倒したり倒されたりするサーバーではないんですね。§r%nl%少し前に、%nl%§8「銃はおもちゃか」§r%nl%って言われたことがあります。", "この後初期武器としてAk-47が配布されますが、%nl%§8敵を倒すのに最低10回ダメージを与える必要があります。§r%nl%ここまで説明した時点で%nl%§8「このサーバーは自分に合わない」§r%nl%と思った人は静かにログアウトをお願いします。%nl%§8言いたいことは以上です。", "ここからはあなたが今いるこの場所について説明します。%nl%§8この場所では§r%nl%§7「問題への回答」%nl%「初期武器の選択」%nl%「注意事項の確認」§r%nl%を行っていただきます。%nl%§8問題への回答はサーバールールについてを3つ、中学1年生の数学の問題を1つ回答していただきます。", "数学の問題については、解けなければ周りの方々に答えを求めていただいて大丈夫です。%nl%%nl%§8まぁ、初期武器とかはなんとかなるでしょ。§r%nl%では、よろしくおねがいします。%nl%%nl%§8ようこそ、おむすびへ。" and "オーナー(おむすびさん)について%nl%%nl%ID: RiceBallSouls%nl%§8変な人ですが悪気はありません。%nl%そういう人なんだと思って接してあげてください。%nl%「接してあげてください」って他人が書いたみたいになってますけど、%nl%書いたの本人なんですよね。げへへw"
+		teleport player to location at 92, 5, -216 of the world "world"
+
+
+on right click on sign:
+	if line 4 of clicked block contains "<<クリック>>":
+		play "BLOCK_GLASS_BREAK" to player at volume 10
+		if line 2 of clicked block contains "本は読みましたか？":
+			teleport player to location at 79, 5, -216 of the world "world"
+		else if line 1 of clicked block contains "Ｑｕｅｓｔｉｏｎ" and "１":
+			teleport player to location at 69, 5, -216 of the world "world"
+			if line 2 of clicked block contains "FFAで仲間を作る":
+				add 1 to {Tutorial::%player%}
+		else if line 1 of clicked block contains "Ｑｕｅｓｔｉｏｎ" and "２":
+			teleport player to location at 59, 5, -216 of the world "world"
+			if line 2 of clicked block contains "他人を煽る":
+				add 1 to {Tutorial::%player%}
+		else if line 1 of clicked block contains "Ｑｕｅｓｔｉｏｎ" and "３":
+			teleport player to location at 49, 5, -216 of the world "world"
+			if line 2 of clicked block contains "Ｓｐａｍ":
+				add 1 to {Tutorial::%player%}
+		else if line 1 of clicked block contains "Ｑｕｅｓｔｉｏｎ" and "４":
+			if line 2 of clicked block contains "５":
+				if {Tutorial::%player%} is 3:
+					teleport player to location at 43, 5, -216 of the world "world"
+					play "ENTITY_PLAYER_LEVELUP" to player at volume 10
+					delete {Tutorial::%player%}
+					message "&a完答を確認しました。お疲れ様です。%nl%&f&l手元に新しく本を配布しました。&r%nl%&f確認をお願いします。" to player
+					execute console command "/clear %player%"
+					wait 1 ticks
+					give player written book titled "武器を選ぼうか。", by "RiceBallSouls", pages "はいどうも。%nl%§8サーバーオーナー、おむすびさんです。§r%nl%えー、ではまずね、先に言いたいことを。%nl%§84つのクイズに答えてくださり感謝します。&r%nl%4問目の意味を知りたいって人はおむすびさんに聞いてください。%nl%&8では、本題に進みましょうか。&r", "で、何をするかと言うとですね。%nl%§8始めに入手する「武器セット」を選択していただきます。§r%nl%固定で配布される「近・中距離用セット」に加えて、近距離用と遠距離用セットの内1つをお選びください。%nl%§8次のページより、各セットの特徴を説明します。", "まず、固定配布のものから。%nl%§8>AK-47(main)。高火力の万能ｱｻﾙﾄﾗｲﾌﾙ。§r%nl%>DesertEagle(sub)。火力特化のﾊﾝﾄﾞｶﾞﾝ。%nl%&8>フック(sp)。ﾊﾞﾗﾝｽ特化のｽﾍﾟｼｬﾙ&r%nl%>ｽﾀﾝﾀﾞｰﾄﾞｸﾞﾚﾈｰﾄﾞ(grn)。高火力広範囲のｸﾞﾚﾈｰﾄﾞ。%nl%&8>ｱﾙﾘｼﾞｪﾈ(skill)。生存に特化したｽｷﾙ&r%nl%>グレネード(last)。とりあえずな性能。", "次に近距離用のセットについてです。%nl%%nl%>レミントンM870(main)。最高クラスの威力を持つ。%nl%§8>クイックカット(sp)。ﾌｯｸよりも小回りが効く。" and "最後に遠距離用セットです。このような類のサーバーに慣れている人向けのセットになります。%nl%%nl%§8DSR-1(main)。ﾍｯﾄﾞｼｮｯﾄ一撃のｽﾅｲﾊﾟｰ。&r%nl%M1911A1(sub)。ﾘﾛｰﾄﾞ速度特化のﾊﾝﾄﾞｶﾞﾝ。%nl%&8簡易テレポート(sp)。高い汎用性を誇る長距離ﾃﾚﾎﾟｰﾄ。", "以上です。%nl%&8近距離と遠距離セットは§c「どちらか1つだけ」§8お選びいただけます。&r%nl%選び直しはできませんので自分に合ったものを選びましょう。%nl%&8どちらが良いかわからない場合は近距離用をおすすめします。"
+					stop
+			delete {Tutorial::%player%}
+			message "&c完答を確認できませんでした。%nl%&fやり直してください。" to player
+			teleport player to location at 79, 5, -216 of the world "world"
+		else if line 3 of clicked block contains "を受け取る":
+			execute console command "/clear %player%"
+			wait 1 ticks
+			teleport player to location at 38, 10, -216 of the world "world"
+			play "ENTITY_PLAYER_LEVELUP" to player at volume 10
+			set skutilities yaml value "%player%.FirstJoin" of file "plugins/Skript/yml/PlayerStat.yml" to true
+			set skutilities yaml value "%player%.Kill" of file "plugins/Skript/yml/PlayerStat.yml" to 0
+			set skutilities yaml value "%player%.Death" of file "plugins/Skript/yml/PlayerStat.yml" to 0
+			set skutilities yaml value "%player%.Win" of file "plugins/Skript/yml/PlayerStat.yml" to 0
+			set skutilities yaml value "%player%.Lose" of file "plugins/Skript/yml/PlayerStat.yml" to 0
+			set skutilities yaml value "%player%.TotalPoint" of file "plugins/Skript/yml/PlayerStat.yml" to 0
+			set skutilities yaml value "%player%.TotalFishing" of file "plugins/Skript/yml/PlayerStat.yml" to 0
+			execute console command "/fe create %player%"
+			execute console command "/fe set %player% 15000"
+			broadcast "&d&l%player%がサーバーで遊べる状態になりました！"
+			set {_cs} to new CSUtility()
+			{_cs}.giveWeapon(player, "AK-47", 1)
+			{_cs}.giveWeapon(player, "DesertEagle", 1)
+			{_cs}.giveWeapon(player, "フック", 1)
+			{_cs}.giveWeapon(player, "スタンダードグレネード", 1)
+			give 64 cooked beef named "ただのおむすび" with lore "&fほんとにただのおむすび。" to player
+			give a light gray window glass named "§8-" to player
+			give a light gray window glass named "§8=" to player
+			{_cs}.giveWeapon(player, "Skill-アルリジェネ", 1)
+			{_cs}.giveWeapon(player, "Last-グレネード", 1)
+			loop 17 times:
+				add 1 to {_count}
+				give a light gray window glass named "§8A%{_count}%" to player
+			{_cs}.giveWeapon(player, "Normal", 64)
+			give player written book titled "操作方法と注意事項", by "RiceBallSouls", pages "はいどうも。%nl%§8サーバーオーナー、おむすびさんです。§r%nl%えー、ではまずね、先に言いたいことを。%nl%§8このサーバー、&c名前(MinecraftID)を変更すると情報が初期化されます。&r%nl%名前を変更した場合は、%nl%&8事後でも良いのでオーナーにお声がけいただければ&r%nl%統計情報を更新しますので、覚えておいてください。", "では、次に操作方法を記述します。%nl%&8この操作方法は一部を除き武器全般に有効となっています。&r%nl%%nl%アイテムを捨てる(Q)=リロード/チャージ%nl%&8右クリック=使用&r%nl%左クリック=構える(一部武器種限定)%nl%&8左クリック=投げる(グレネード)", "最後に。%nl%&8このサーバーにはWiki、&r%nl%つまり遊び方の情報がたっぷりと詰まったサイトがあるんですね。%nl%&8/menuコマンドの看板にURLが格納されているので、&r%nl%何か困ったら覗いてみてください。%nl%§8あ、Discordもあるのでよければどうぞ"
+			loop 7 times:
+				add 1 to {_count}
+				give a light gray window glass named "§8A%{_count}%" to player
+			{_cs}.giveWeapon(player, "Air", 64)
+			remove 28 light gray window glass from inventory of player
+			delete {_count}
+			give a light gray window glass named "§8-" to player
+			give a light gray window glass named "§8=" to player
+			if line 2 of clicked block contains "近距離用":
+				{_cs}.giveWeapon(player, "レミントンM870", 1)
+				{_cs}.giveWeapon(player, "クイックカット", 1)
+				{_cs}.giveWeapon(player, "軽量グレネード", 1)
+				loop 17 times:
+					add 1 to {_count}
+					give a light gray window glass named "§8A%{_count}%" to player
+				{_cs}.giveWeapon(player, "ShotShell", 64)
+				loop 6 times:
+					add 1 to {_count}
+					give a light gray window glass named "§8%{_count}%" to player
+				{_cs}.giveWeapon(player, "ShotShell", 32)
+				remove 23 light gray window glass from inventory of player
+			else if line 2 of clicked block contains "遠距離用":
+				{_cs}.giveWeapon(player, "DSR-1", 1)
+				{_cs}.giveWeapon(player, "M1911A1", 1)
+				{_cs}.giveWeapon(player, "簡易テレポート", 1)
+				remove 2 light gray window glass from inventory of player

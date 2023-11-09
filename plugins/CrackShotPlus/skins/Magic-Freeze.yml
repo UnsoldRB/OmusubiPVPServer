@@ -1,0 +1,6 @@
+﻿アイスボール_default:
+    Durability: 305
+    Change_Item_Type: "DIAMOND_HOE"
+スプレッドアイス_default:
+    Durability: 306
+    Change_Item_Type: "DIAMOND_HOE"

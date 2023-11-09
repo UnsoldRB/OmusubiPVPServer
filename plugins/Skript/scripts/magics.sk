@@ -1,0 +1,282 @@
+import:
+	com.shampaggon.crackshot.CSUtility
+
+Options:
+	block: bedrock or sea lantern
+
+on script load:
+	delete {CheckSingleFire::*}
+	delete {SpellArrow::*}
+
+
+on crackshot shoot:
+	if event-string is "ミーティア":
+		set {_loc} to location 30 meter above location of target block
+		set {_slot} to player's selected hotbar slot
+		execute console command "/execute %player% ~ ~ ~ /particle flame %Location(location 1 meter above location of target block)% 2 2 2 0.1 8"
+		spawn an armor stand at {_loc}
+		add spawned armor stand to {_armorstand::*}
+		Add "{CustomName:""ミーティア"",Small:1,Marker:1b,Silent:1,Invisible:1,NoBasePlate:1}" to nbt of spawned armor stand
+		set helmet of spawned armor stand to black wool
+		Playsound({_loc}, "entity.blaze.shoot", 2, 0)
+		Playsound({_loc}, "block.fire.ambient", 2, 2)
+		Playsound({_loc}, "block.portal.trigger", 2, 2)
+		loop 3 times:
+			wait 3 ticks
+			set {_loc2} to location random number between 4 and -4 north, random number between 4 and -4 west and random number between 0.0 and 4.0 below {_loc}
+			spawn an armor stand at {_loc2}
+			add spawned armor stand to {_armorstand::*}
+			Add "{CustomName:""ミーティア"",Small:1,Marker:1b,Silent:1,Invisible:1,NoBasePlate:1}" to nbt of spawned armor stand
+			set helmet of spawned armor stand to black wool
+			Playsound({_loc2}, "entity.blaze.shoot", 2, 0)
+			Playsound({_loc2}, "block.fire.ambient", 2, 2)
+			Playsound({_loc2}, "block.portal.trigger", 2, 2)
+		loop 100 times:
+			wait 1 ticks
+			set {_count} to 0
+			loop 4 times:
+				add 1 to {_count}
+				if {_armorstand::%{_count}%} is alive:
+					execute console command "/execute %player% ~ ~ ~ /particle lava %Location({_armorstand::%{_count}%})% 0 0 0 0.1 2"
+					push {_armorstand::%{_count}%} downwards at speed 0.016
+					if block at location 1 meter below {_armorstand::%{_count}%} is not air or water:
+						Explosion(player, location of {_armorstand::%{_count}%}, 30, 3, 0, false, {_slot})
+						kill {_armorstand::%{_count}%}
+						add 1 to {_explode}
+			if {_explode} is 4:
+				stop
+	else if event-string is "ラヴァ":
+		set {_Damaged::1} to "A"
+		if {pvp::%player%} is 0:
+			set {_loc} to location 4 meter forwards player
+			loop all blocks in radius 3 around {_loc}:
+				if loop-block is not air:
+					if block at location 1 meter above loop-block is air:
+						add loop-block to {_Blocks::*}
+						add type of loop-block to {_BlockTypes::*}
+			drawLine particle flame, center location 1.5 meter above player, target {_loc}, id "%player%.Lava", density 5, visibleRange 32
+			loop {_Blocks::*}:
+				set block at loop-value to magma block
+				loop all players in radius 1.5 around location 1.5 meter above loop-value:
+					if {team::%loop-player%} is not {team::%player%}:
+						if {_Damaged::*} does not contain loop-player:
+							add loop-player to {_Damaged::*}
+							Damage(player, loop-player, 4, player's selected hotbar slot)
+							ignite the loop-player for 2 seconds
+							set velocity of loop-player to new Vector 0, -0.2, 0
+				draw 4 blockcrack material particle made of magma block at location 0.5 meter above location of loop-value, speed 0.1, offset 0, 0, 0, keepFor 0.5 seconds
+			wait 51 ticks
+			stopEffect "%player%.Lava"
+			loop {_Blocks::*}:
+				set block at loop-value to {_BlockTypes::%loop-index%}
+				execute console command "/execute %player% ~ ~ ~ /particle smoke %Location(location 1 meter above loop-value)% 0 0 0 0.05 2"
+		else:
+			message "このエリアでは使用できません" to player
+
+
+
+
+
+
+
+
+	else if event-string is "スプレッドアイス":
+		loop 30 times:
+			wait 1 ticks
+			draw 1 blockcrack particle made of ice at location of event-projectile, speed 0.1
+			if DetectEntity(event-projectile, 0.2, event-projectile) is false:
+				stop
+	else if event-string is "ウォータースタンス":
+		add 0.6 to {ExplosionResistance::%player%}
+		execute console command "/execute %player% ~ ~ ~ /particle wake ~ ~ ~ 10 8 10 0 40"
+		Playsound(player, "item.bucket.fill", 1, 0.9)
+		Playsound(player, "item.bucket.fill", 1, 0.1)
+		loop all players in radius 8 around player:
+			if {team::%loop-player%} is {team::%player%}:
+				if loop-player is burning:
+					extinguish loop-player
+					Playsound(loop-player, "block.fire.extinguish", 1, 1.6)
+					add 20 to {_point}
+					message "§6ウォータースタンス(%player%)" to loop-player
+					draw 20 blockcrack particle made of water at location of loop-player
+		loop 104 times:
+			wait 5 ticks
+			if {_healend} is not true:
+				add 1 to {_count}
+				if {_count} is 2:
+					add 1 to {_count2}
+					if {_count2} is less than 9:
+						heal player by 0.5 hearts
+						draw 20 blockcrack particle made of water at location 2 meter above player
+					else:
+						set {_healend} to true
+					delete {_count}
+			Playsound(player, "entity.guardian.ambient", 0.4, 2)
+			draw 10 blockcrack particle made of water at location 0.5 meter above player
+			execute console command "/execute %player% ~ ~ ~ /particle wake ~ ~1 ~ 1 1 1 0 4"
+			loop all players in radius 8 around player:
+				if {team::%loop-player%} is {team::%player%}:
+					if loop-player is burning:
+						extinguish loop-player
+						Playsound(loop-player, "block.fire.extinguish", 1, 1.6)
+						add 20 to {_point}
+						message "§6ウォータースタンス(%player%)" to loop-player
+						draw 20 blockcrack particle made of water at location of loop-player
+		SendSidebar(player, "§6§lEND:§r§l//ウォータースタンス//", 1, 40)
+		if {_point} is set:
+			AddPoint(player, {_point}, "ウォータースタンス")
+		play "BLOCK_GLASS_BREAK" to player at volume 10
+		remove 0.6 from {ExplosionResistance::%player%}
+
+
+
+
+
+
+	else if event-string is "ウィンド":
+		set {_slot} to player's selected hotbar slot
+		execute console command "/execute %player% ~ ~ ~ /particle cloud %Location(location 1 meter forwards, 1.5 meter above player)% 0 0 0 0.1 10"
+		loop 40 times:
+			wait 2 ticks
+			execute console command "/execute %player% ~ ~ ~ /particle sweepAttack %Location(event-projectile)% 0.5 0.5 0.5 0.1 4"
+			Playsound(event-projectile, "entity.irongolem.attack", 1, 2)
+			loop all players in radius 2.5 around location of event-projectile:
+				if {team::%player%} is not {team::%loop-player%}:
+					execute console command "/execute %loop-player% ~ ~1 ~ /particle sweepAttack ~ ~ ~ 0.1 0.1 0.1 0.1 4"
+					Damage(player, loop-player, 0.5, {_slot})
+
+	else if event-string is "蜃気楼":
+		execute console command "/execute %player% ~ ~ ~ /particle hugeexplosion ~ ~ ~ 3 2 3 2.0 10"
+		set {_vector} to velocity of player
+		set {_vector} to normalize {_vector}
+		add 9 to standard length of {_vector}
+		set velocity of player to {_vector}
+		wait 2 ticks
+		set {_vector} to velocity of player
+		set {_vector} to normalize {_vector}
+		add -9 to standard length of {_vector}
+		set velocity of player to {_vector}
+		execute console command "/execute %player% ~ ~ ~ /particle hugeexplosion ~ ~ ~ 3 2 3 2.0 10"
+		Playsound(event-projectile, "entity.endermen.teleport", 1, 2)
+
+
+
+	else if event-string is "チャージア":
+		if name of player's held item contains "29":
+			wait 1 ticks
+			make a fake explosion at location 1 meter forwards, 1.5 meter above player
+
+	else if event-string is "スペルアロー":
+		set {_cs} to new CSUtility()
+		if {SpellArrow::%player%} is not set:
+			set {SpellArrow::%player%} to true
+			teleport projectile to location 1 meter above, 0.5 meter right, 1 meter backwards player
+		else:
+			delete {SpellArrow::%player%}
+			teleport projectile to location 1 meter above, 0.5 meter left, 1 meter backwards player
+
+
+	else if event-string is "クエイグ":
+		set {_Damaged::1} to "A"
+		loop 6 times:
+			wait 1 ticks
+			add 1 to {_count}
+			set {_count2} to -2
+			loop 5 times:
+				set {_l} to location of block at location {_count} meter forwards, {_count2} meter right, 0.3 meter below player
+				add 1 to {_count2}
+				if block at {_l} is not air or water:
+					make a fake explosion at location 0.5 meter above {_l}
+					set {_vector} to vector between {_l} and location 5 meter above {_l}
+					draw 2 directional blockdust particles made of dirt block at location of {_l} with direction {_vector} and speed 0.2
+					loop all players in radius 2 around location 1 meter above {_l}:
+						if {team::%loop-player%} is not {team::%player%}:
+							if loop-player is not event-player:
+								if {_Damaged::*} does not contain loop-player:
+									add loop-player to {_Damaged::*}
+									Damage(player, loop-player, 4, player's selected hotbar slot)
+									delete velocity of loop-player
+									set velocity of loop-player to new Vector 0, 1.5, 0
+	else if event-string is "アースウォール":
+		if "%player's world%" is "TeamBattle":
+			wait 3 ticks
+			set velocity of projectile to new Vector 0, -2, 0
+			loop 30 times:
+				wait 1 ticks
+				if block at location 0.2 meter below projectile is not air or water:
+					if block at location of projectile is air or water:
+						set {_l} to location of block at location of projectile
+					else if block at location 1 meter above projectile is air or water:
+						set {_l} to location of block at location 1 meter above projectile
+					exit 2 sections
+			if {_l} is set:
+				set {_count} to 0
+				loop 6 times:
+					wait 2 ticks
+					if block at location {_count} meter above {_l} is air or water:
+						PlaceBlock(player, (location {_count} meter above {_l}), 250)
+					add 1 to {_count}
+				wait 12 seconds
+				set {_count} to 0
+				loop 6 times:
+					wait 2 ticks
+					if id of block at location {_count} meter above {_l} is 250:
+						BreakBlock(player, (location {_count} meter above {_l}))
+					add 1 to {_count}
+		else:
+			message "このエリアでは使用できません" to player
+
+
+
+
+
+
+	else if event-string is "スピード・ブースト":
+		add 0.2 to player's walk speed
+		loop 99 times:
+			execute console command "/execute %player% ~ ~ ~ /particle endRod ~ ~0.15 ~ 0 0 0 0.05 5 force"
+			wait 1 ticks
+		execute console command "/execute %player% ~ ~ ~ /particle magicCrit ~ ~1 ~ 0 0 0 1 70 force"
+		remove 0.2 from player's walk speed
+		SendSidebar(player, "§6§lEND:§r§l//スピード・ブースト//", 1, 40)
+		play "BLOCK_GLASS_BREAK" to player at volume 10
+
+	else if event-string is "ヘルスヒール":
+		loop all players in radius 4.5 around player:
+			if "%loop-player%" is not "%player%":
+				if {team::%loop-player%} is {team::%player%}:
+					set {_healthheal} to location of player
+					set x-coordinate of {_healthheal} to x-coordinate of {_healthheal} - 1
+					set z-coordinate of {_healthheal} to z-coordinate of {_healthheal} - 1
+					create an animated ball effect at {_healthheal} with id "HealthHeal.%loop-player%" with particle Villager Happy
+					execute console command "/execute %loop-player% ~ ~0.5 ~ /particle happyVillager ~ ~ ~ 0.5 0.5 0.5 0.1 10"
+					heal loop-player by 9 hearts
+					add 30 to {_point}
+					message "§6ヘルスヒール(%player%)" to loop-player
+					add loop-player to {_effect::*}
+		if {_point} is set:
+			AddPoint(player, {_point}, "ヘルスヒール")
+		wait 1 seconds
+		loop {_effect::*}:
+			delete effect "HealthHeal.%loop-value%"
+
+
+on damage of player:
+	set {_cs} to new CSUtility()
+	if {_cs}.getWeaponTitle(event-projectile) is "スプレッドアイス":
+		wait 1 ticks
+		draw 15 blockcrack particle made of ice at location of victim, speed 0.8, keepFor 3 ticks
+		loop 3 times:
+			delete velocity of victim
+			wait 1 ticks
+
+
+on crackshot reload finish:
+	if event-string is "チャージア":
+		chance of 95%:
+			execute console command "/csp give Crystal %player%"
+
+
+
+
+

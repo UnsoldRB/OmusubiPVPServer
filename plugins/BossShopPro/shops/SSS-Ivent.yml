@@ -1,0 +1,92 @@
+ShopName: vzasivuhaiwruvuzivga
+DisplayName: '&9&lイベントShop'
+signs:
+  text: '[イベントShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  夏の気まぐれイベント:
+    RewardType: playercommand
+    PriceType: free
+    Reward: ivent s
+    MenuItem:
+    - hideflags:all
+    - id:272
+    - amount:1
+    - name:&9夏の気まぐれイベント(7/35まで)
+    - 'lore:&f以下の条件を満たすと限定武器(ネタ)がもらえます。#ショットガンで60Kill#スナイパーライフルで60Kill#フック・クイックカットで10Kill#グレネードで20Kill##§fクリックで詳細が確認できます'
+    InventoryLocation: 5
+    ExtraPermission: ''
+  水のスナイパーライフル:
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - durability:1
+    - unbreakable:true
+    - name:&9水のスナイパーライフル
+    - 'lore:&fノックバックを重視した武器##&b必要 : スナイパーライフルで60Kill'
+    InventoryLocation: 29
+    ExtraPermission: ''
+    PriceType: item
+    Price:
+    - - type:BEACON
+      - amount:1
+      - 'name:&e水のスナイパーライフル'
+    RewardType: playercommand
+    Reward: brsbrbrbrbrbrbbb 水のスナイパーライフル 1
+    Message: '&e交換に成功しました！'
+  スイカ:
+    MenuItem:
+    - hideflags:all
+    - type:MELON
+    - amount:1
+    - name:&9スイカ
+    - 'lore:&f食べることを重視した武器##&b必要 : ショットガンで60Kill'
+    InventoryLocation: 31
+    ExtraPermission: ''
+    PriceType: item
+    Price:
+    - - type:BEACON
+      - amount:1
+      - 'name:&eスイカ'
+    RewardType: playercommand
+    Reward: brsbrbrbrbrbrbbb スイカ 1
+    Message: '&e交換に成功しました！'
+  花火:
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_SWORD
+    - amount:1
+    - durability:1
+    - unbreakable:true
+    - name:&9花火
+    - 'lore:&f花火が付いただけのフック##&b必要 : フック・クイックカットで10Kill'
+    InventoryLocation: 33
+    ExtraPermission: ''
+    PriceType: item
+    Price:
+    - - type:BEACON
+      - amount:1
+      - 'name:&e花火'
+    RewardType: playercommand
+    Reward: brsbrbrbrbrbrbbb 花火 1
+    Message: '&e交換に成功しました！'
+  ファイアクラッカー:
+    MenuItem:
+    - hideflags:all
+    - type:WOOD_PICKAXE
+    - amount:1
+    - durability:1
+    - unbreakable:true
+    - name:&9ファイアクラッカー
+    - 'lore:&f敵の発見を重視した武器##&b必要 : グレネードで20Kill'
+    InventoryLocation: 35
+    ExtraPermission: ''
+    PriceType: item
+    Price:
+    - - type:BEACON
+      - amount:1
+      - 'name:&eファイアクラッカー'
+    RewardType: playercommand
+    Reward: brsbrbrbrbrbrbbb ファイアクラッカー 1
+    Message: '&e交換に成功しました！'

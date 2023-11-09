@@ -1,0 +1,71 @@
+アイスウォール:
+    Item_Information:
+        Item_Name: "&eアイスウォール"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: 弾丸無効化|&f効果強度: -1.00(r)|&f逑逑逑逑: なし|&f使用間隔: 0.05|&f充填詠唱: 1.50∴8.00(c)|&fウェイト: 0.00%|&fアドオン: 着弾点に氷を噴出させる|&bCost: 1|&bAmmo: Crystal|&b防衛型/SideMagic-Freeze/Sub||&7視点の先に氷を噴出させる。|&7効果はごく一時的なものだが、|&7ミサイル程度であれば|&7重ねて使用することで無効化できる。|&7味方を守る、特殊な魔法だ。"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 1
+        Recoil_Amount: 0
+        Projectile_Amount: 4
+        Projectile_Type: snowball
+        Projectile_Speed: 100
+        Projectile_Damage: 0
+        Bullet_Spread: 1.1
+        Sounds_Shoot: BLOCK_PORTAL_TRIGGER-1-2-0
+    Reload:
+        Enable: true
+        Reload_Amount: 3
+        Reload_Duration: 30
+        Reload_Shoot_Delay: 160
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Explosions:
+        Enable: true
+        Enable_Owner_Immunity: true
+        Explosion_No_Damage: true
+        Explosion_Radius: 0
+        On_Impact_With_Anything: true
+    Shrapnel:
+        Enable: true
+        Block_Type: 174
+        Amount: 15
+        Speed: 6
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 296
+        Ammo_Name_Check: 弾薬 -Crystal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+
+ウォータースタンス:
+    Item_Information:
+        Item_Name: "&eウォータースタンス"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: 範囲鎮火(爆発耐性)|&f効果強度: 16.00(d), 26.00(t)|&f逑逑逑逑: 40.00%(p), 26.00(t)|&f使用間隔: 30.00|&f即時詠唱: 1.00|&fウェイト: 20.0%|&fアドオン: 4秒かけて自身のHPを8回復(発動)|&bCost: 1C|&bAmmo: Crystal|&b防衛型/SideMagic-Freeze/Sub|||&7自身の周囲に多量の水滴を発生させる魔法。|&7周りの炎は消え去り、|&7水によって爆発に耐性を得る。|&7夏場で使うとみんなに喜ばれる。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 600
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 0-true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true

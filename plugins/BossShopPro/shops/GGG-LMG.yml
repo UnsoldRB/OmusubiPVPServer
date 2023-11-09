@@ -1,0 +1,66 @@
+ShopName: kxyhmkjctdyjcdtghjn
+DisplayName: '&9&lLMGShop'
+signs:
+  text: '[LMGShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  BrowningM1918:
+    RewardType: playercommand
+    PriceType: money
+    Price: 12400
+    Reward: brsbrbrbrbrbrbbb BrowningM1918 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - durability:1148
+    - unbreakable:true
+    - name:&9BrowningM1918
+    - 'lore:&f火力がかなり高い武器#&fLMGにしては装填数が少ない##&b必要水晶 : 12400'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 3
+    ExtraPermission: ''
+  Stoner 63:
+    RewardType: playercommand
+    PriceType: money
+    Price: 8700
+    Reward: brsbrbrbrbrbrbbb Stoner63 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - durability:1148
+    - unbreakable:true
+    - name:&9Stoner 63
+    - 'lore:&f装填数が多めの武器#&fダメージはあまり期待できない##&b必要水晶 : 8700'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  MINIMI:
+    RewardType: playercommand
+    PriceType: money
+    Price: 8400
+    Reward: brsbrbrbrbrbrbbb MINIMI 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - durability:1148
+    - unbreakable:true
+    - name:&9MINIMI
+    - 'lore:&f装填数が最高クラスの武器#&f弾をしっかり当てないとゴミと化す##&b必要水晶 : 8400'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: onvlaebvyulearh
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

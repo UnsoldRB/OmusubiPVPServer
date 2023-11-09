@@ -1,0 +1,127 @@
+ShopName: ztslibnhutiZ
+DisplayName: '&9&lMaterialShop'
+signs:
+  text: '[MaterialShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  1:
+    RewardType: item
+    PriceType: money
+    Price: 5000
+    Reward:
+    - - type:BEETROOT_SEEDS
+      - amount:1
+      - 'name:&fスティックフィッシュ'
+      - 'lore1:&7素材として利用することに特化した代物。'
+      - 'lore2:&7本物ではないがそれに近い性能を見せる。'
+    MenuItem:
+    - hideflags:all
+    - type:BEETROOT_SEEDS
+    - amount:1
+    - name:&9スティックフィッシュ
+    - 'lore:&b必要水晶 : 5000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  2:
+    RewardType: item
+    PriceType: money
+    Price: 6000
+    Reward:
+    - - type:BEETROOT_SEEDS
+      - amount:1
+      - 'name:&fアイアンフィッシュ'
+      - 'lore1:&7素材として利用することに特化した代物。'
+      - 'lore2:&7本物ではないがそれに近い性能を見せる。'
+    MenuItem:
+    - hideflags:all
+    - type:BEETROOT_SEEDS
+    - amount:1
+    - name:&9アイアンフィッシュ
+    - 'lore:&b必要水晶 : 6000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  3:
+    RewardType: item
+    PriceType: money
+    Price: 6000
+    Reward:
+    - - type:BEETROOT_SEEDS
+      - amount:1
+      - 'name:&fレザーフィッシュ'
+      - 'lore1:&7素材として利用することに特化した代物。'
+      - 'lore2:&7本物ではないがそれに近い性能を見せる。'
+    MenuItem:
+    - hideflags:all
+    - type:BEETROOT_SEEDS
+    - amount:1
+    - name:&9レザーフィッシュ
+    - 'lore:&b必要水晶 : 6000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 3
+    ExtraPermission: ''
+  4:
+    RewardType: item
+    PriceType: money
+    Price: 10000
+    Reward:
+    - - type:BEETROOT_SEEDS
+      - amount:1
+      - 'name:&fマナストーン'
+      - 'lore1:&7素材として利用することに特化した代物。'
+      - 'lore2:&7本物ではないがそれに近い性能を見せる。'
+    MenuItem:
+    - hideflags:all
+    - type:BEETROOT_SEEDS
+    - amount:1
+    - name:&9マナストーン
+    - 'lore:&b必要水晶 : 10000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 4
+    ExtraPermission: ''
+  5:
+    RewardType: item
+    PriceType: money
+    Price: 20000
+    Reward:
+    - - type:BEETROOT_SEEDS
+      - amount:1
+      - 'name:&fマッガジ'
+      - 'lore1:&7素材として利用することに特化した代物。'
+      - 'lore2:&7本物ではないがそれに近い性能を見せる。'
+    MenuItem:
+    - hideflags:all
+    - type:BEETROOT_SEEDS
+    - amount:1
+    - name:&9マッガジ
+    - 'lore:&b必要水晶 : 20000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 5
+    ExtraPermission: ''
+  6:
+    RewardType: playercommand
+    PriceType: money
+    Price: 23000
+    Reward: brsbrbrbrbrbrbbb 汚れたアタッチメント 1
+    MenuItem:
+    - hideflags:all
+    - id:437
+    - amount:1
+    - enchantment:PROTECTION#1
+    - name:&9汚れたアタッチメント
+    - 'lore:&f洗濯釜で洗うとアタッチメントが出てくる。#&fどうしても素材が集まらない人向け。##&b必要水晶 : 23000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 25
+    ExtraPermission: ''
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: gfhnfdghndhdythtd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 27
+    ExtraPermission: ''

@@ -1,0 +1,69 @@
+﻿######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&1PVPマネージャー'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 1
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: 'valivrgwseagewrgf5w'
+
+  # auto-refresh - OPTIONAL
+  # How frequently the menu will be refreshed, in seconds.
+  # Useful if you have variables in items' descriptions.
+  auto-refresh: 5
+
+  # This command command will be execute when the menu is opened.
+  # Supports all the icon command types.
+  open-action: 'sound: BLOCK_PORTAL_AMBIENT; sound: BLOCK_NOTE_PLING; tell: &ePVPMenuを開きました'
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    id: wool:1
+    left-click: false
+    right-click: false
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+
+TeamBattle:
+  COMMAND: 'varvkjihrev.redvferaegfvr'
+  NAME: '&eTeamBattle'
+  LORE:
+    - 'TeamBattleに参加できます'
+    - '§72チームに分かれて戦うミニゲームです'
+  ID: IRON_SWORD
+  POSITION-X: 1
+  POSITION-Y: 1
+  KEEP-OPEN: true
+glass:
+  COMMAND: ''
+  NAME: ''
+  LORE:
+  ID: 160
+  POSITION-X: 5
+  POSITION-Y: 1
+  KEEP-OPEN: true
+Practice:
+  COMMAND: 'bstedhsertsder'
+  NAME: '&ePractice'
+  LORE:
+    - 'Practiceに移動します'
+    - '武器の性能確認、立ち回りの練習ができます'
+  ID: BOOK
+  POSITION-X: 2
+  POSITION-Y: 1

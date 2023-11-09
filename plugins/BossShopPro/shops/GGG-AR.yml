@@ -1,0 +1,114 @@
+ShopName: vehvuyebuyvo
+DisplayName: '&9&lARShop'
+signs:
+  text: '[ARShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  AK-47:
+    RewardType: playercommand
+    PriceType: money
+    Price: 5000
+    Reward: brsbrbrbrbrbrbbb AK-47 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9AK-47
+    - 'lore:&f低レートで高火力な武器#&7初期武器##&b必要水晶 : 5000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  SCAR-H:
+    RewardType: playercommand
+    PriceType: money
+    Price: 7800
+    Reward: brsbrbrbrbrbrbbb SCAR-H 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:4
+    - name:&9SCAR-H
+    - 'lore:&f安定した火力を出せる武器##&b必要水晶 : 7800'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 4
+    ExtraPermission: ''
+  FA-MAS:
+    RewardType: playercommand
+    PriceType: money
+    Price: 8400
+    Reward: brsbrbrbrbrbrbbb FA-MAS 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:2
+    - name:&9FA-MAS
+    - 'lore:&f高い瞬間火力が期待できる武器##&b必要水晶 : 8400'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  IMITavorTAR-21:
+    RewardType: playercommand
+    PriceType: money
+    Price: 6700
+    Reward: brsbrbrbrbrbrbbb IMITavorTAR-21 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:5
+    - name:&9IMI Tavor TAR-21
+    - 'lore:&f安定した戦いができる武器##&b必要水晶 : 6700'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 3
+    ExtraPermission: ''
+  G36C:
+    RewardType: playercommand
+    PriceType: money
+    Price: 9100
+    Reward: brsbrbrbrbrbrbbb G36C 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:3
+    - name:&9G36C
+    - 'lore:&f裏を取りやすい武器##&b必要水晶 : 9100'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 5
+    ExtraPermission: ''
+  TCt-72:
+    RewardType: playercommand
+    PriceType: money
+    Price: 7000
+    Reward: brsbrbrbrbrbrbbb TCt-72 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:7
+    - name:&9TCt-72
+    - 'lore:&f防衛特化の武器##&b必要水晶 : 7000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 6
+    ExtraPermission: ''
+
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: onvlaebvyulearh
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

@@ -1,0 +1,266 @@
+import:
+	com.shampaggon.crackshot.CSUtility
+	java.util.UUID
+
+Options:
+	block: bedrock or pumpkin or melon
+
+on script load:
+	delete {CheckSingleFire::*}
+	delete {CollideProjectile::*}
+	set {CollideProjectile::*} to "none"
+	delete {HotbarSwitch::*}
+	delete {FakeMove::*}
+
+function DeleteWeaponsVariables(p:player):
+	delete {FakeMove::%{_p}%}
+	delete {SCAR-H::%{_p}%}
+	delete {MainStep::%{_p}%}
+	delete {Fly-1967::%{_p}%}
+	delete {fryingpan::%{_p}%}
+
+function HookEfffect(p:player):
+	if name of {_p}'s held item contains "フック":
+		set {_p}'s offhand to unbreakable iron hoe:3 named ""
+		wait 10 ticks
+	else if name of {_p}'s held item contains "簡易テレポート":
+		set {_p}'s offhand to unbreakable iron hoe:3 named ""
+		wait 18 ticks
+	else if name of {_p}'s held item contains "バックステップ":
+		set {_p}'s offhand to unbreakable iron hoe:3 named ""
+		wait 10 ticks
+	else if name of {_p}'s held item contains "クイックカット":
+		set {_p}'s offhand to unbreakable iron hoe:3 named ""
+		wait 6 ticks
+	else if name of {_p}'s held item contains "ショートダッシュ":
+		set {_p}'s offhand to unbreakable iron hoe:3 named ""
+		wait 6 ticks
+	if {_p}'s offhand is unbreakable iron hoe:3:
+		set {_p}'s offhand to air
+
+
+
+function SnowWalk(p:player):
+	loop all blocks in radius 3 around {_p}:
+		if loop-block is {@block}:
+			set {_snowffCh} to true
+	if {_snowffCh} is not set:
+		set {_snowff} to location 1 meter below {_p}
+		if the block at {_snowff} is air:
+			set the block at {_snowff} to snow
+			add {_snowff} to {_loc::*}
+		set {_snowff2} to location 1 meter north {_snowff}
+		if the block at {_snowff2} is air:
+			set the block at {_snowff2} to snow
+			add {_snowff2} to {_loc::*}
+		set {_snowff2} to location 1 meter east {_snowff}
+		if the block at {_snowff2} is air:
+			set the block at {_snowff2} to snow
+			add {_snowff2} to {_loc::*}
+		set {_snowff2} to location 1 meter west {_snowff}
+		if the block at {_snowff2} is air:
+			set the block at {_snowff2} to snow
+			add {_snowff2} to {_loc::*}
+		set {_snowff2} to location 1 meter south {_snowff}
+		if the block at {_snowff2} is air:
+			set the block at {_snowff2} to snow
+			add {_snowff2} to {_loc::*}
+		wait 400 ticks
+		loop {_loc::*}:
+			set the block at loop-value to air
+			loop random integer between 0 and 2 times:
+				wait 1 ticks
+
+
+function FakeMove(p:player):
+	set {_floc.%{_p}%} to location of {_p}
+	if {_p} is sneaking:
+		if {FakeMove::%{_p}%} is not set:
+			set {FakeMove::%{_p}%} to location of {_p}
+			set yaw of {FakeMove::%{_p}%} to yaw of {_p}
+			set pitch of {FakeMove::%{_p}%} to pitch of {_p}
+			play "BLOCK_IRON_DOOR_CLOSE" to {_p} at volume 10 with pitch 0.3
+			play "BLOCK_IRON_DOOR_CLOSE" to {_p} at volume 10 with pitch 0.5
+			send {_p} title "" with subtitle "    座標を記憶" for 20 ticks with 1 ticks fade in and 5 ticks fade out
+			loop 30 times:
+				add 0.1 to {_count}
+				loop 4 times:
+					set {_loc} to location 3 - {_count} meter above {FakeMove::%{_p}%}
+					add random number between -1.0 and 1.0 to x-coord of {_loc}
+					add random number between -1.0 and 1.0 to z-coord of {_loc}
+					draw 1 fireworkspark particles at location at {_loc} with direction vector 0, 0, 0 and speed 0.01, offset 0, 0, 0, keepFor 0.1 second
+				wait 1 ticks
+		else:
+			set {_location} to {FakeMove::%{_p}%}
+			delete {FakeMove::%{_p}%}
+			execute console command "/execute %{_p}% ~ ~ ~ /particle portal ~ ~1 ~ 1 0.5 1 1 3000"
+			play "BLOCK_FIRE_EXTINGUISH" to {_p} at volume 10 with pitch 2.0
+			set {_distance} to round(distance between {_p} and {_location})
+			if {_distance} is more than 200:
+				set {_distance} to 200
+			loop {_distance} times:
+				wait 1 ticks
+				if {Deathlocation::%{_p}%} is set:
+					play "BLOCK_FIRE_EXTINGUISH" to {_p} at volume 10 with pitch 0.0
+					stop
+				else if {_distance} is less than {_count}:
+					stop loop
+				else:
+					add 1 to {_count}
+					set {_count2} to {_distance}
+					remove {_count} from {_count2}
+					send action bar "§6移動中...%{_count2}%" to {_p}
+			send action bar "§6移動中...0" to {_p}
+			Playsound({_p}, "entity.endermen.teleport", 2, 0)
+			teleport {_p} to {_location}
+			Playsound({_p}, "entity.endermen.teleport", 2, 0)
+	else:
+		wait 1 ticks
+		delete velocity of {_p}
+		set y-coord of {_floc.%{_p}%} to y-coord of {_p}
+		push {_p} upwards at speed 0.3
+		push {_p} direction from {_p} to location at {_floc.%{_p}%} at speed 1.7
+
+on player item damage:
+	if event-item is bow:
+		cancel event
+
+on crackshot shoot:
+#{遅延処理が入る/同時処理が必要なもの}
+#{フックエフェクト}
+	if player's held item is golden hoe:
+		if player's offhand is air:
+			HookEfffect(player)
+
+#{フェイクムーブ}
+	if name of player's held item contains "フェイクムーブ":
+		FakeMove(player)
+
+#{SnowWalk}
+	if name of player's held item contains "SnowWalk":
+		loop 100 times:
+			if {pvp::%player%} is 0:
+				SnowWalk(player)
+				wait 1 ticks
+			else:
+				message "このエリアでは使用できません" to player
+				stop
+
+
+#{レーダー}
+	else if name of player's held item contains "レーダー":
+		if {pvp::%player%} is 0:
+			if {team::%player%} is "red":
+				loop all players:
+					if {team::%loop-player%} is "blue":
+						apply potion of glowing of tier 1 to the loop-player for 4 ticks
+						send loop-player title "" with subtitle "§c%player%§4がレーダーを使用しました"
+					if {team::%loop-player%} is "red":
+						send loop-player title "" with subtitle "§9%player%§aがレーダーを使用しました"
+					wait 1 ticks
+			if {team::%player%} is "blue":
+				loop all players:
+					if {team::%loop-player%} is "red":
+						apply potion of glowing of tier 1 to the loop-player for 4 ticks
+						send loop-player title "" with subtitle "§9%player%§4がレーダーを使用しました"
+					if {team::%loop-player%} is "blue":
+						send loop-player title "" with subtitle "§c%player%§aがレーダーを使用しました"
+					wait 1 ticks
+			if {team::%player%} is not set:
+				loop all players in the world "FFA":
+					send loop-player title "" with subtitle "§7%player%がレーダーを使用しました"
+					wait 1 ticks
+
+			loop 7 times:
+				if {team::%player%} is "red":
+					loop all players in radius 240 around player:
+						if {team::%loop-player%} is "blue":
+							apply potion of glowing of tier 1 to the loop-player for 4 ticks
+						wait 1 ticks
+				if {team::%player%} is "blue":
+					loop all players in radius 240 around player:
+						if {team::%loop-player%} is "red":
+							apply potion of glowing of tier 1 to the loop-player for 4 ticks
+						wait 1 ticks
+				if {team::%player%} is not set:
+					loop all players in radius 240 around player:
+						if {team::%loop-player%} is not set:
+							apply potion of glowing of tier 1 to the loop-player for 4 ticks
+						wait 1 ticks
+				wait 26 ticks
+		else:
+			send player title "" with subtitle "PVPが許可されていない場所では使用できません"
+
+#{ショートダッシュ}
+	else if name of player's held item contains "ショートダッシュ":
+		loop 10 times:
+			draw 1 fireworkspark particles at location 1 meter left, 0.5 meter above player with direction vector 0, 0, 0 and speed 0.01, offset 0, 0, 0, keepFor 1 second
+			draw 1 fireworkspark particles at location 1 meter right, 0.5 meter above player with direction vector 0, 0, 0 and speed 0.01, offset 0, 0, 0, keepFor 1 second
+			execute console command "/execute %player% ~ ~ ~ /particle portal ~ ~1 ~ 0 0 0 0.05 15 force"
+			wait 1 ticks
+		set {_vector} to velocity of player
+		add -0.2 to standard length of {_vector}
+		set velocity of player to {_vector}
+
+
+#{フロウ}
+	else if name of player's held item contains "フロウ":
+		if the block at location 1 meter below player is air or water:
+			if the block at location 1.6 meter below player is air or water:
+				add "{NoGravity:true}" to nbt of player
+				set {_count} to 10
+				delete velocity of player
+				set velocity of player to new Vector 0, 0.05, 0
+				Playsound(player, "entity.enderdragon.flap", 5, 1)
+				loop 40 times:
+					remove 1 from {_count}
+					if {_count} is 0:
+						set {_count} to 10
+						Playsound(player, "entity.enderdragon.flap", 5, 0.4)
+					execute console command "/execute %player% ~ ~ ~ /particle snowballpoof ~ ~0.15 ~ 1 0 1 0.05 1 force"
+					wait 1 ticks
+				add "{NoGravity:false}" to nbt of player
+			else:
+				Playsound(player, "entity.enderdragon.flap", 5, 0)
+				delete velocity of player
+				set velocity of player to new Vector 0, 0.05, 0
+				push the player upwards at speed 2
+				loop 20 times:
+					execute console command "/execute %player% ~ ~ ~ /particle snowballpoof ~ ~0.15 ~ 0 0 0 0.05 5 force"
+					wait 1 ticks
+		else:
+			Playsound(player, "entity.enderdragon.flap", 5, 0)
+			delete velocity of player
+			set velocity of player to new Vector 0, 0.05, 0
+			push the player upwards at speed 2
+			loop 20 times:
+				execute console command "/execute %player% ~ ~ ~ /particle snowballpoof ~ ~0.15 ~ 0 0 0 0.05 5 force"
+				wait 1 ticks
+
+
+
+#{簡易テレポート}
+	else if name of player's held item contains "簡易テレポート":
+		wait 1 ticks
+		Invisible(player, 10)
+		loop 4 times:
+			push the player horizontally forwards at speed 0.15
+			push the player upwards at speed 0.05
+			wait 3 ticks
+			draw 10 blockcrack material particle made of nether brick block at location 1.5 meter above player, speed 0.1, offset 0, 0, 0, keepFor 0.1 seconds
+
+
+
+
+on left click:
+#{おむすび}
+	if player's held item is cooked beef:
+		if name of player's held item contains "助けを乞う":
+			execute player command "/tdm chat 助けて！"
+		else if name of player's held item contains "蔓延の笑みの":
+			execute player command "/tdm chat ありがとう"
+		else if name of player's held item contains "何かを悟った":
+			execute player command "/tdm chat ごめん..."
+		else if name of player's held item contains "勇敢な魂の":
+			execute player command "/tdm chat 攻めるぞ！"
+

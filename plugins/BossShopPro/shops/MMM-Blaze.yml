@@ -1,0 +1,49 @@
+ShopName: dtymhtfyndtghnjtgnhycgf
+DisplayName: '&lMainMagicShop - Blaze'
+signs:
+  text: '[MainMagicShop - Blaze]'
+  NeedPermissionToCreateSign: true
+shop:
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: vesbesvredverd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''
+  ファイアショット:
+    RewardType: playercommand
+    PriceType: money
+    Price: 12800
+    Reward: brsbrbrbrbrbrbbb ファイアショット 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9ファイアショット
+    - 'lore:&f高い火力を持つ魔法#&f中距離～遠距離において強力。##&f&b必要水晶 : 12800'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  ミーティア:
+    RewardType: playercommand
+    PriceType: money
+    Price: 16000
+    Reward: brsbrbrbrbrbrbbb ミーティア 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:3
+    - name:&9ミーティア
+    - 'lore:&f強力な火力を誇る隕石を落とす。##&f&b必要水晶 : 16000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''

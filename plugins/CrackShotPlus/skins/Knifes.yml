@@ -1,0 +1,15 @@
+﻿ダガー_default:
+    Durability: 5
+    Change_Item_Type: "STONE_SWORD"
+アサシンダガー_default:
+    Durability: 1
+    Change_Item_Type: "STONE_SWORD"
+ポイズンダガー_default:
+    Durability: 2
+    Change_Item_Type: "STONE_SWORD"
+フライパン_default:
+    Durability: 6
+    Change_Item_Type: "STONE_SWORD"
+コールドレイピア_default:
+    Durability: 4
+    Change_Item_Type: "STONE_SWORD"

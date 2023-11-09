@@ -1,0 +1,367 @@
+on script load:
+	wait 2 seconds
+	delete {FishingCooldown::*}
+	delete {Fishing.speed::*}
+	delete {Fishing.luck::*}
+	delete {Fishing.drops::*}
+	delete {Fishing.ended::*}
+	delete {FishingExecute::*}
+	delete {CommonFish::*}
+	delete {UnCommonFish::*}
+	delete {RareFish::*}
+	delete {EpicFish::*}
+	delete {LegendaryFish::*}
+	delete {FantasyFish::*}
+	delete {UnrealFish::*}
+	delete {FishingReady::*}
+	set {CommonFish::*} to skutilities yaml nodes "Common" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+	set {UnCommonFish::*} to skutilities yaml nodes "UnCommon" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+	set {RareFish::*} to skutilities yaml nodes "Rare" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+	set {EpicFish::*} to skutilities yaml nodes "Epic" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+	set {LegendaryFish::*} to skutilities yaml nodes "Legendary" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+	set {FantasyFish::*} to skutilities yaml nodes "Fantasy" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+	set {UnrealFish::*} to skutilities yaml nodes "Unreal" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+
+
+on fishing:
+	delete {FishingReady::%player%}
+	if "%fishing state%" is "FISHING":
+		set {Fishing.speed::%player%} to 1st line of lore of player's held item
+		replace "&fSpeed: " in {Fishing.speed::%player%} with ""
+		set {Fishing.speed::%player%} to 300 - {Fishing.speed::%player%} parsed as integer
+		set {Fishing.luck::%player%} to 2st line of lore of player's held item
+		replace "&fLuck: " in {Fishing.luck::%player%} with ""
+		set {Fishing.luck::%player%} to {Fishing.luck::%player%} parsed as number
+		set {Fishing.drops::%player%} to 3st line of lore of player's held item
+		replace "&fDrops: " in {Fishing.drops::%player%} with ""
+		set {Fishing.drops::%player%} to {Fishing.drops::%player%} parsed as integer
+		set {Fishing.durability::%player%} to 4st line of lore of player's held item
+		replace "&fDurability: " in {Fishing.durability::%player%} with ""
+		set {Fishing.durability::%player%} to {Fishing.durability::%player%} parsed as integer
+		set {FishingReady::%player%} to true
+		loop 200 times:
+			wait 1 ticks
+			if the block at location 1 meter below location of fishing hook is water:
+				loop {Fishing.speed::%player%} times:
+					add 1 to {_count}
+					set {_NowChance} to {Fishing.speed::%player%} - {_count} + random integer between -20 and 20
+					if {_NowChance} is less than 1:
+						set {_NowChance} to 0
+						add random integer between 0 and 20 to {_NowChance}
+					send player title "" with subtitle "&b           %{_NowChance}%..." for 2 ticks with 0 ticks fade in and 0 ticks fade out
+					execute console command "/execute %player% ~ ~1 ~ /particle wake %Location(fishing hook)% 5 1 5 0.1 5"
+					if {Fishing.ended::%player%} is true:
+						delete {Fishing.ended::%player%}
+						kill fishing hook
+						stop
+					wait 1 ticks
+					chance of {Fishing.speed::%player%} * 0.1%:
+						wait 1 ticks
+				set {FishingExecute::%player%} to true
+				delete {Fishing.speed::%player%}
+				delete velocity of fishing hook
+				push fishing hook downwards at speed 0.8
+				execute console command "/execute %player% ~ ~1 ~ /particle wake %Location(fishing hook)% 0.3 1 0.3 0.1 100"
+				execute console command "/execute %player% ~ ~1 ~ /particle bubble %Location(fishing hook)% 0.3 1 0.3 0.1 20"
+				Playsound(fishing hook, "entity.generic.splash", 2, 0.8)
+				loop 12 times:
+					set {_visual.R} to "§c"
+					set {_visual.S} to "§b"
+					loop 13 - loop-number-2 times:
+						set {_visual.S} to "%{_visual.S}%>"
+					loop loop-number-2 times:
+						set {_visual.R} to "%{_visual.R}%>"
+					send player title "" with subtitle "&b     %{_visual.R}%%{_visual.S}%" for 2 ticks with 0 ticks fade in and 0 ticks fade out
+					wait 1 ticks
+				delete {FishingExecute::%player%}
+				stop
+	else if "%fishing state%" is "FAILED_ATTEMPT":
+		if name of player's held item contains "すばらしい釣り竿":
+			set {_GodlyFishing} to true
+		damage player's held item by 1
+		remove 100 from {Fishing.durability::%player%}
+		if {Fishing.durability::%player%} is more than 100:
+			remove 100 from {Fishing.durability::%player%}
+			repair player's held item by 1
+		chance of {Fishing.durability::%player%}%:
+			repair player's held item by 1
+		if {FishingExecute::%player%} is true:
+			cancel event
+			if player has enough space for 1 stone shovel:
+				set {_Luck.Unreal} to 0.08 / 100
+				set {_Luck.Fantasy} to 0.12 / 100
+				set {_Luck.Legendary} to 0.7 / 100
+				set {_Luck.Epic} to 15.0 / 100
+				set {_Luck.Rare} to  30.0 / 100
+				set {_Luck.Uncommon} to 60.0 / 100
+				if {FishingCooldown::%player%} is not set:
+
+
+
+					if {_GodlyFishing} is true:
+						loop 4 times:
+							if player has enough space for 1 stone shovel:
+								if chance of ({Fishing.luck::%player%} * {_Luck.Unreal})%:
+									Fish(player, "Unreal")
+									broadcast "§b[釣り堀]§r%player%が§4§lUnreal§rを入手しました"
+									loop 10 times:
+										wait 2 ticks
+										Playsound(player, "ambient.cave", 0.8, random number between 0.0 and 2.0)
+								else if chance of ({Fishing.luck::%player%} * {_Luck.Fantasy})%:
+									Fish(player, "Fantasy")
+									broadcast "§b[釣り堀]§r%player%が§b§lFantasy§rを入手しました"
+									set {_pitch} to 2
+									loop 10 times:
+										wait 2 ticks
+										remove 0.2 from {_pitch}
+										Playsound(player, "entity.skeleton.death", 0.8, {_pitch})
+								else if chance of ({Fishing.luck::%player%} * {_Luck.Legendary})%:
+									Fish(player, "Legendary")
+									broadcast "§b[釣り堀]§r%player%が§6§lLegendary§rを入手しました"
+									loop 10 times:
+										wait 2 ticks
+										Playsound(player, "entity.player.levelup", 0.8, 2)
+								else if chance of ({Fishing.luck::%player%} * {_Luck.Epic})%:
+									Fish(player, "Epic")
+									Playsound(player, "entity.player.levelup", 0.8, 2)
+								else if chance of ({Fishing.luck::%player%} * {_Luck.Rare})%:
+									Fish(player, "Rare")
+								else if chance of ({Fishing.luck::%player%} * {_Luck.Uncommon})%:
+									Fish(player, "UnCommon")
+								else:
+									Fish(player, "Common")
+								set {FishingCooldown::%player%} to true
+							else:
+								message "インベントリがいっぱいだった..."
+							wait 10 ticks
+
+
+
+
+					else:
+						if chance of ({Fishing.luck::%player%} * {_Luck.Unreal})%:
+							Fish(player, "Unreal")
+							broadcast "§b[釣り堀]§r%player%が§4§lUnreal§rを入手しました"
+							loop 10 times:
+								wait 2 ticks
+								Playsound(player, "ambient.cave", 0.8, random number between 0.0 and 2.0)
+						else if chance of ({Fishing.luck::%player%} * {_Luck.Fantasy})%:
+							Fish(player, "Fantasy")
+							broadcast "§b[釣り堀]§r%player%が§b§lFantasy§rを入手しました"
+							set {_pitch} to 2
+							loop 10 times:
+								wait 2 ticks
+								remove 0.2 from {_pitch}
+								Playsound(player, "entity.skeleton.death", 0.8, {_pitch})
+						else if chance of ({Fishing.luck::%player%} * {_Luck.Legendary})%:
+							Fish(player, "Legendary")
+							broadcast "§b[釣り堀]§r%player%が§6§lLegendary§rを入手しました"
+							loop 10 times:
+								wait 2 ticks
+								Playsound(player, "entity.player.levelup", 0.8, 2)
+						else if chance of ({Fishing.luck::%player%} * {_Luck.Epic})%:
+							Fish(player, "Epic")
+							Playsound(player, "entity.player.levelup", 0.8, 2)
+						else if chance of ({Fishing.luck::%player%} * {_Luck.Rare})%:
+							Fish(player, "Rare")
+						else if chance of ({Fishing.luck::%player%} * {_Luck.Uncommon})%:
+							Fish(player, "UnCommon")
+						else:
+							Fish(player, "Common")
+					set {FishingCooldown::%player%} to true
+					delete velocity of fishing hook
+					push fishing hook (direction from player to location of fishing hook) at speed -3
+					loop 10 times:
+						execute console command "/execute %player% ~ ~ ~ /particle wake %Location(fishing hook)% 1 1 1 1 100"
+						set velocity of fishing hook to new Vector 0, 1.8, 0
+						push fishing hook (direction from player to location of fishing hook) at speed -1.2
+						wait 3 ticks
+					chance of ({Fishing.drops::%player%} - 100)%:
+						message "&l>>ONE MORE!!<<" to player
+						play "ENTITY_PLAYER_LEVELUP" to player at volume 1
+						set velocity of fishing hook to new Vector 0, 1.8, 0
+						wait 0.5 seconds
+						if chance of ({Fishing.luck::%player%} * {_Luck.Unreal})%:
+							Fish(player, "Unreal")
+							broadcast "§b[釣り堀]§r%player%が§4§lUnreal§rを入手しました"
+							loop 10 times:
+								wait 2 ticks
+								Playsound(player, "ambient.cave", 0.8, random number between 0.0 and 2.0)
+						else if chance of ({Fishing.luck::%player%} * {_Luck.Fantasy})%:
+							Fish(player, "Fantasy")
+							broadcast "§b[釣り堀]§r%player%が§b§lFantasy§rを入手しました"
+							set {_pitch} to 2
+							loop 10 times:
+								wait 2 ticks
+								remove 0.2 from {_pitch}
+								Playsound(player, "entity.skeleton.death", 0.8, {_pitch})
+						else if chance of ({Fishing.luck::%player%} * {_Luck.Legendary})%:
+							Fish(player, "Legendary")
+							broadcast "§b[釣り堀]§r%player%が§6§lLegendary§rを入手しました"
+							loop 10 times:
+								wait 2 ticks
+								Playsound(player, "entity.player.levelup", 0.8, 2)
+						else if chance of ({Fishing.luck::%player%} * {_Luck.Epic})%:
+							Fish(player, "Epic")
+							Playsound(player, "entity.player.levelup", 0.8, 2)
+						else if chance of ({Fishing.luck::%player%} * {_Luck.Rare})%:
+							Fish(player, "Rare")
+						else if chance of ({Fishing.luck::%player%} * {_Luck.Uncommon})%:
+							Fish(player, "UnCommon")
+						else:
+							Fish(player, "Common")
+					delete {FishingCooldown::%player%}
+					delete {Fishing.luck::%player%}
+					delete {Fishing.drops::%player%}
+					kill fishing hook
+
+			else:
+				message "インベントリがいっぱいだった..."
+				kill fishing hook
+		else:
+			set {Fishing.ended::%player%} to true
+			wait 0.2 seconds
+			if {Fishing.ended::%player%} is set:
+				delete {Fishing.ended::%player%}
+
+on tool changing:
+	if {FishingReady::%player%} is true:
+		cancel event
+
+command /fishtest <text>:
+	trigger:
+		player is op
+		wait 3 ticks
+		Fish(player, arg-1)
+
+
+command /fishlist <text>:
+	trigger:
+		if arg is "sell":
+			loop integers from 0 to 35:
+				if slot loop-int of player is iron pickaxe:
+					play "ENTITY_GENERIC_EAT" to player at volume 1
+					set {_value} to 2st line of lore of slot loop-int of player
+					replace "§r価値: " and "水晶" in {_value} with ""
+					add {_value} parsed as number to player's account
+					add {_value} parsed as number to {_total}
+					add 1 to {_amount}
+					delete slot loop-int of player
+					wait 1 ticks
+			if {_total} is set:
+				message "%{_amount}%匹の魚が%{_total}%水晶になった！"
+			else:
+				message "交換できるものがなかった..."
+
+	
+
+		else:
+			open chest with 6 row named "<blue>Caught Fish-%arg%" to player
+			wait 1 ticks
+			loop size of {%arg%Fish::*} times:
+				set {_slot} to loop-number - 1
+				set slot {_slot} of player's current inventory to stone shovel with custom nbt "{display:{Name:""§cUnknown fish""},Unbreakable:1b,HideFlags:7}"
+			set {_slot} to -1
+			set {_Fishnames::*} to skutilities yaml nodes "%player%.CaughtFish.%arg%" of file "plugins/Skript/yml/FishStat.yml"
+			loop {_Fishnames::*}:
+				set {_FishItemID} to skutilities yaml value "%arg%.%loop-value%.ItemData" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+				set {_FishColor} to skutilities yaml value "Options.%arg%" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+				set {_FishSize} to skutilities yaml value "%player%.CaughtFish.%arg%.%loop-value%.Size" of file "plugins/Skript/yml/FishStat.yml"
+				set {_FishDate} to skutilities yaml value "%player%.CaughtFish.%arg%.%loop-value%.Date" of file "plugins/Skript/yml/FishStat.yml"
+				set {_FishCount} to skutilities yaml value "%player%.CaughtFish.%arg%.%loop-value%.Count" of file "plugins/Skript/yml/FishStat.yml"
+				set {_FishItemData} to {_FishItemID} parsed as item with custom nbt "{Unbreakable:1b,HideFlags:7}"
+				set {_FishLore} to skutilities yaml value "%arg%.%loop-value%.Lore" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+				replace "||" in {_FishLore} with "||§r"
+				set display name of {_FishItemData} to "%{_FishColor}%%loop-value%"		
+				set lore of {_FishItemData} to "§7%{_FishDate}% Caught.||§r最高サイズ: §r%{_FishSize}%cm||§r入手数: §r%{_FishCount}%回||§7----------||§r%{_FishLore}%"
+				if skutilities yaml value "%player%.CaughtFish.%arg%.%loop-value%.Complete" of file "plugins/Skript/yml/FishStat.yml" is true:
+					set lore of {_FishItemData} to "§a§lComplete！||%lore of {_FishItemData}%"
+				add 1 to {_slot}
+				set slot {_slot} of player's current inventory to {_FishItemData}
+				if skutilities yaml value "%player%.CaughtFish.%arg%.%loop-value%.Complete" of file "plugins/Skript/yml/FishStat.yml" is true:
+					enchant slot {_slot} of player's current inventory with efficiency 1
+
+on inventory click:
+	if name of player's current inventory contains "<blue>Caught Fish-":
+		cancel event
+		set {_Rarity} to name of player's current inventory
+		replace "<blue>Caught Fish-" in {_Rarity} with ""
+		close player's inventory
+		execute player command "/fishlist %{_Rarity}%"
+
+
+command /vgwrhlwuiesrngsli <text>:
+	trigger:
+		if arg is "シンプルつりざお":
+			give fishing rod:14 with custom nbt "{display:{Name:""§9シンプルつりざお"",Lore:[""&fSpeed: 100"",""&fLuck: 100"",""&fDrops: 100"",""&fDurability: 150"",""&7----------"","""","""",""&fフツーのつりざお。"",""&f何か効果があるわけでもない。""]},ench:[{id:62s,lvl:1s}]}" to player
+		else if arg is "ビーキューつりざお":
+			give fishing rod:29 with custom nbt "{display:{Name:""§9ビーキューつりざお"",Lore:[""&fSpeed: 100"",""&fLuck: 120"",""&fDrops: 105"",""&fDurability: 100"",""&7----------"","""","""",""&fちょっと強いつりざお。"",""&f少しだけ良いものが釣れるかも？""]},ench:[{id:62s,lvl:1s}]}" to player
+		else if arg is "ファストつりざお":
+			give fishing rod:29 with custom nbt "{display:{Name:""§9ファストつりざお"",Lore:[""&fSpeed: 150"",""&fLuck: 100"",""&fDrops: 100"",""&fDurability: 100"",""&7----------"","""","""",""&f少々せっかちなつりざお。"",""&f数を釣るならもってこい。""]},ench:[{id:62s,lvl:1s}]}" to player
+		else if arg is "OPつりざお":
+			give fishing rod:29 with custom nbt "{display:{Name:""§9OPつりざお"",Lore:[""&fSpeed: 300"",""&fLuck: 1500"",""&fDrops: 100"",""&fDurability: 100"",""&7----------"","""","""",""&fOP。""]},ench:[{id:62s,lvl:1s}]}" to player
+
+
+function Fish(p:player, t:text):
+	wait 1 seconds
+	set {_FishData} to random element out of {%{_t}%Fish::*}
+	set {_FishItemID} to skutilities yaml value "%{_t}%.%{_FishData}%.ItemData" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+	set {_LootItem} to {_FishItemID} parsed as item with custom nbt "{Unbreakable:1b,HideFlags:7}"
+	set {_FishLore} to skutilities yaml value "%{_t}%.%{_FishData}%.Lore" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+	set {_FishLore} to "§7----------||%{_FishLore}%"
+	set {_FishMinimumSize} to skutilities yaml value "%{_t}%.%{_FishData}%.MinSize" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+	if {_FishMinimumSize} is "Material":
+		set {_FishSize} to skutilities yaml value "%{_t}%.%{_FishData}%.MaxSize" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+		set {_FishIfMaterial} to "§d§lMaterial||"
+	else:
+		set {_FishIfMaterial} to ""
+		set {_FishMaximumSize} to skutilities yaml value "%{_t}%.%{_FishData}%.MaxSize" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+		set {_FishSize} to random integer between {_FishMinimumSize} and {_FishMaximumSize}
+	set {_FishSell} to skutilities yaml value "%{_t}%.%{_FishData}%.Sell" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+	set {_FishValue} to ({_FishSize} * {_FishSell}) * 2.5
+	set {_FishColor} to skutilities yaml value "Options.%{_t}%" of file "plugins/Skript/yml/configs/FishLoottable.yml"
+	replace "||" in {_FishLore} with "||§r"
+	set display name of {_LootItem} to "%{_FishColor}%%{_FishData}%"
+	set {_ymlvalue} to skutilities yaml value "%{_p}%.TotalFishing" of file "plugins/Skript/yml/PlayerStat.yml"
+	set {_ymlvalue} to {_ymlvalue} + 1
+	set skutilities yaml value "%{_p}%.TotalFishing" of file "plugins/Skript/yml/PlayerStat.yml" to {_ymlvalue}
+	set lore of {_LootItem} to "§rサイズ: %{_FishSize}%cm||§r価値: %{_FishValue}%水晶||%{_FishIfMaterial}%§r%{_FishColor}%%{_t}%||%{_FishLore}%"
+	give {_LootItem} to {_p}
+	message "§f-----" to {_p}
+	message "%{_FishColor}%%{_FishData}% §r- %{_FishColor}%%{_t}%" to {_p}
+	message "§f%{_FishSize}%cm" to {_p}
+	message "" to {_p}
+	if {_FishMinimumSize} is "Material":
+		if skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Complete" from file "plugins/Skript/yml/FishStat.yml" is not true:
+			set skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Size" from file "plugins/Skript/yml/FishStat.yml" to {_FishSize}
+			set skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Date" from file "plugins/Skript/yml/FishStat.yml" to "%now%"
+			set skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Count" from file "plugins/Skript/yml/FishStat.yml" to 1
+			set skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Complete" from file "plugins/Skript/yml/FishStat.yml" to true
+			message "§d新しい素材を手に入れました！" to {_p}
+			execute console command "/execute %{_p}% ~ ~ ~ /playsound minecraft:entity.player.levelup master %{_p}% ~ ~ ~ 1 0"
+	else:
+		if skutilities yaml path "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%" in file "plugins/Skript/yml/FishStat.yml" doesn't exist:
+			set skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Size" from file "plugins/Skript/yml/FishStat.yml" to {_FishSize}
+			set skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Date" from file "plugins/Skript/yml/FishStat.yml" to "%now%"
+			set skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Count" from file "plugins/Skript/yml/FishStat.yml" to 1
+			set skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Complete" from file "plugins/Skript/yml/FishStat.yml" to false
+			message "§a新しい魚を手に入れました。" to {_p}
+			execute console command "/execute %{_p}% ~ ~ ~ /playsound minecraft:entity.player.levelup master %{_p}% ~ ~ ~ 1 1"
+		else:
+			set {_OldSize} to skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Size" from file "plugins/Skript/yml/FishStat.yml"
+		if skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Complete" from file "plugins/Skript/yml/FishStat.yml" is not true:
+			if {_FishSize} is {_FishMaximumSize}:
+				set skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Size" from file "plugins/Skript/yml/FishStat.yml" to {_FishMaximumSize}
+				set skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Complete" from file "plugins/Skript/yml/FishStat.yml" to true
+				message "" to {_p}
+				message "§d最大サイズの%{_FishData}%を手に入れました！" to {_p}
+				execute console command "/execute %{_p}% ~ ~ ~ /playsound minecraft:entity.player.levelup master %{_p}% ~ ~ ~ 1 0"
+			else if {_OldSize} is less than {_FishSize}:
+				set skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Size" from file "plugins/Skript/yml/FishStat.yml" to {_FishSize}
+				execute console command "/execute %{_p}% ~ ~ ~ /playsound minecraft:entity.player.levelup master %{_p}% ~ ~ ~ 1 1"
+				message "§aより大きな%{_FishData}%を手に入れました。§f(%{_OldSize}%cm → %{_FishSize}%cm)" to {_p}
+	set {_FishCount} to skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Count" from file "plugins/Skript/yml/FishStat.yml"
+	set skutilities yaml value "%{_p}%.CaughtFish.%{_t}%.%{_FishData}%.Count" from file "plugins/Skript/yml/FishStat.yml" to {_FishCount} parsed as integer + 1
+
+
+	message "§f-----" to {_p}

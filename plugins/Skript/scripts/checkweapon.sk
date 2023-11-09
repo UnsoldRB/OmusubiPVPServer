@@ -1,0 +1,290 @@
+﻿import:
+	com.shampaggon.crackshot.CSUtility
+on script load:
+	delete {Weapons::*}
+	delete {Skills::*}
+
+on inventory close:
+	if {Deathlocation::%player%} is not set:
+		if player's gamemode is not creative:
+			set {Skills::%player%} to ""
+			set {_Maximumcost} to 2
+			set {_Maximumskill} to 1
+			set {_EquipCategory::1} to "なし"
+			loop integers from 0 to 8:
+				set {_prelore::*} to lore of slot loop-int of player split by "|"
+				loop {_prelore::*}:
+					if loop-value-2 contains "Cost: ":
+						if last 1 character of loop-value-2 is "C":
+							set {_CostC} to loop-value-2
+							replace "C" in {_CostC} with ""
+							add last 1 character of {_CostC} parsed as number to {_Finalcost}
+							set {_Cost::%loop-int-1%} to last 1 character of {_CostC} parsed as number
+							set {_CostCCheck::%loop-int-1%} to last 1 character of {_CostC} parsed as number
+						else:
+							add last 1 character of loop-value-2 parsed as number to {_Finalcost}
+							set {_Cost::%loop-int-1%} to last 1 character of loop-value-2 parsed as number
+					else if loop-value-2 contains "/Magic" and "/Main":
+						add 1 to {_Maximumcost}
+						set {_EquipMainMagic} to true
+					else if loop-value-2 contains "/Gun-LMG":
+						add 1 to {_Maximumskill}
+					if loop-value-2 contains "/":
+						set {_Requests::%loop-int-1%} to slot loop-int-1 of player
+			loop {_Requests::*}:
+				set {_nowcategory} to CheckWeaponCategory(loop-value, 3)
+				if {_category::*} contains {_nowcategory}:
+					if lore of loop-value does not contain "Cost: " or "/Skill" or "/Last":
+						if lore of loop-value contains "/Magic" and "/Main":
+							remove 1 from {_Maximumcost}
+						else if CheckWeaponCategory(loop-value, 2) contains "/Gun-LMG":
+							remove 1 from {_Maximumskill}
+						message "§b§n%{_nowcategory}%§rはこれ以上持てません。"
+						OnInvClickSortWeapons(player, loop-index parsed as number)
+				else:
+					if lore of loop-value contains "Cost: ":
+						if {_CostCCheck::%loop-index%} is set:
+							if {_EquipMainMagic} is true:
+								set {_CheckCosts::%loop-index%} to loop-value
+							else:
+								message "§b§nSub(Magic)§rはMainがMagicでないため、装備できません。"
+								delete {_Cost::%loop-index%}
+								remove {_CostCCheck::%loop-index%} from {_Finalcost}
+								OnInvClickSortWeapons(player, loop-index parsed as number)
+						else:
+							set {_CheckCosts::%loop-index%} to loop-value
+					else if lore of loop-value contains "/Skill" or "/Last":
+						set {_CheckConditions::%loop-index%} to loop-value
+					else:
+						set {_category::%loop-index%} to {_nowcategory}
+			loop {_CheckCosts::*}:
+				if lore of loop-value contains "Cost: ":
+					if {_Finalcost} is more than {_Maximumcost}:
+						remove {_Cost::%loop-index%} from {_Finalcost}
+						message "§b§nSub(Magic)§rはコストが大きすぎるため、これ以上持てません。"
+						OnInvClickSortWeapons(player, loop-index parsed as number)
+					else if {_magics::*} contains name of loop-value:
+						remove {_Cost::%loop-index%} from {_Finalcost}
+						message "同名の§b§nSub(Magic)§rは同時に装備できません。"
+						OnInvClickSortWeapons(player, loop-index parsed as number)
+					else:
+						add name of loop-value to {_magics::*}
+						set {_category::%loop-index%} to CheckWeaponCategory(loop-value, 3)
+			loop {_CheckConditions::*}:
+				set {_name1} to CheckWeaponName(name of slot loop-index parsed as integer of player, true)
+				set {_name2} to CheckWeaponCategory(loop-value, 3)
+				set {_row} to 4
+				set {_nextrow} to 5
+				set {_lore} to skutilities yaml value "%{_name1}%.Item_Information.Item_Lore" of file "plugins/CrackShot/weapons/%CheckWeaponCategory(loop-value, 4)%.yml"
+				set {_lore2::*} to {_lore} split by "|"
+				set {_CanEquip.Last} to true
+				set {_EquipName} to ""
+				loop {_category::*}:
+					set {_EquipItem} to slot loop-index-2 parsed as integer of player
+					add loop-value-2 to {_EquipCategory::*}
+					add CheckWeaponCategory({_EquipItem}, 1) to {_EquipCategory::*}
+					add CheckWeaponCategory({_EquipItem}, 2) to {_EquipCategory::*}
+					add CheckWeaponCategory({_EquipItem}, 3) to {_EquipCategory::*}
+					add CheckWeaponCategory({_EquipItem}, 4) to {_EquipCategory::*}
+					set {_EquipName} to "%CheckWeaponName(display name of {_EquipItem}, true)%,.,%{_EquipName}%"
+				if {_name2} contains "Last":
+					add 2 to {_row} and {_nextrow}
+					replace "(", ")", "f上書き先: " and "&" in {_lore2::5} with ""
+					if {_lore2::5} is not "なし":
+						set {_LastCondition::*} to {_lore2::5} split by ", "
+						set {_CanEquip.Last} to false
+				replace "(", ")", "f逑逑逑逑: ", "f装備条件: " and "&" in {_lore2::%{_row}%} and {_lore2::%{_nextrow}%} with ""
+				if {_lore2::%{_row}%} is "なしr":
+					set {_CanEquip.1} and {_CanEquip.2} to true
+				else:
+					set {_lore3::*} to subtext of {_lore2::%{_row}%} from characters 1 to (length of {_lore2::%{_row}%} - 1) split by ", "
+					set {_CanEquip.1} to OnInvClickCheckConditions({_lore3::*}, {_EquipCategory::*}, {_EquipName}, last 1 character of {_lore2::%{_row}%})
+					if {_lore2::%{_nextrow}%} is "なしr":
+						set {_CanEquip.2} to true
+					else:
+						set {_lore3::*} to subtext of {_lore2::%{_nextrow}%} from characters 1 to (length of {_lore2::%{_nextrow}%} - 1) split by ", "
+						set {_CanEquip.2} to OnInvClickCheckConditions({_lore3::*}, {_EquipCategory::*}, {_EquipName}, last 1 character of {_lore2::%{_nextrow}%})
+				if {_CanEquip.Last} is false:
+					loop {_LastCondition::*}:
+						if {_EquipCategory::*} contains loop-value-2:
+							set {_CanEquip.Last} to true
+				if {_CanEquip.1}, {_CanEquip.2} and {_CanEquip.Last} is true:
+					if {_name2} is "Skill":
+						if {Skills::%player%} contains {_name1}:
+							OnInvClickSortWeapons(player, loop-index parsed as number)
+							message "同名の§b§nSkill§rは同時に装備できません。"
+						else if {_Maximumskill} is 0:
+							OnInvClickSortWeapons(player, loop-index parsed as number)
+							message "§b§nSkill§rはこれ以上装備できません。"
+						else:
+							remove 1 from {_Maximumskill}
+							replace "Skill-" in {_name1} with ""
+							set {Skills::%player%} to "%{Skills::%player%}%%{_name1}%"
+					else if {_name2} is "Last":
+						if {_Last} is set:
+							OnInvClickSortWeapons(player, loop-index parsed as number)
+							message "§b§nLast§rはこれ以上装備できません。"
+						else:
+							set {_Last} to subtext of name of slot loop-index parsed as integer of player from characters 1 to (length of name of slot loop-index parsed as integer of player - 5)
+					delete {_CanEquip.1}
+					delete {_CanEquip.2}
+				else:
+					OnInvClickSortWeapons(player, loop-index parsed as number)
+					message "§b§n%{_name2}%§rの装備条件を満たしていません。"
+			wait 2 ticks
+			set player's maximum health to 20
+			loop integers from 0 to 8:
+				set {_lore} to skutilities yaml value "%CheckWeaponName(name of slot loop-int of player, true)%.Item_Information.Item_Lore" of file "plugins/CrackShot/weapons/%CheckWeaponCategory(slot loop-int of player, 4)%.yml"
+				if {_lore} contains "HP大幅減少":
+					set maximum health of player to 3
+				else if {_lore} contains "HP減少":
+					if maximum health of player is more than 8:
+						set maximum health of player to 8
+				else if {_lore} contains "HP小減少":
+					if maximum health of player is more than 12:
+						set maximum health of player to 12
+				else if {_lore} contains "HP極小減少":
+					if maximum health of player is more than 16:
+						set maximum health of player to 16
+				else if {_lore} contains "HP小増加":
+					if maximum health of player is more than 19.5:
+						set maximum health of player to 25
+
+function OnInvClickCheckConditions(Conditions:texts, Equipments:texts, EquipmentsName:text, Type:text) :: boolean: 
+	if {_Type} is "a":
+		loop {_Conditions::*}:
+			if {_Equipments::*} contains loop-value:
+				return true
+				stop
+		return false
+		stop
+	else if {_Type} is "r":
+		if {_Equipments::*} does not contain {_Conditions::*}:
+			return false
+			stop
+	else if {_Type} is "d":
+		loop {_Conditions::*}:
+			if {_Equipments::*} contains loop-value:
+				return false
+				stop
+	else if {_Type} is "n":
+		if {_EquipmentsName} does not contain {_Conditions::*}:
+			return false
+			stop
+	return true
+
+
+function OnInvClickSortWeapons(p:player, s:number):
+	wait 1 ticks
+	set {_item} to slot {_s} of {_p}
+	delete slot {_s} of {_p}
+	loop integers from 0 to 8:
+		if slot loop-int of {_p} is air:
+			set slot loop-int of {_p} to light gray window glass named ""
+			add loop-int to {_Bslot::*}
+	if next empty slot of {_p} is -1:
+		message "§dホットバー以外のインベントリに空きが無かったため、アイテムを§n""/itemsbox""§r§dに格納しました。" to {_p}
+		set {_item} to CheckWeaponName(display name of {_item}, true)
+		set {_amount} to item amount of slot {_s} of {_p}
+		add "%{_item}% Amount:%{_amount}%" to skutilities yaml list "%{_p}%" of file "plugins/Skript/yml/FunctionDatas/OnInvClickSortWeapons.yml"
+	else:	
+		give {_item} to {_p}
+	loop {_Bslot::*}:
+		set slot loop-value of {_p} to air
+
+command /itemsbox:
+	aliases: /ibox
+	trigger:
+		if "%player's world%" is "world":
+			loop integers from 0 to 8:
+				if slot loop-int of player is air:
+					set slot loop-int of player to light gray window glass named ""
+					add loop-int to {_Bslot::*}
+			set {_Weapons::*} to skutilities yaml list "%player%" of file "plugins/Skript/yml/FunctionDatas/OnInvClickSortWeapons.yml"
+			if {_Weapons::1} is set:
+				if next empty slot of player is -1:
+					message "ホットバー以外のインベントリに空きを作ってください。"
+				else:
+					set {_item::*} to {_Weapons::1} split by " Amount:"
+					set {_cs} to new CSUtility()
+					{_cs}.giveWeapon(player, {_item::1}, {_item::2} parsed as integer)
+					remove {_Weapons::1} from skutilities yaml list "%player%" of file "plugins/Skript/yml/FunctionDatas/OnInvClickSortWeapons.yml"
+					message "§b§n%{_item::1}%§rを取り出しました。"
+					loop {_Weapons::*}:
+						add 1 to {_count}
+					message "§7(あと%{_count} - 1%個のアイテムが格納されています。)"
+					if {_Weapons::2} is not set:
+						delete skutilities yaml list "%player%" of file "plugins/Skript/yml/FunctionDatas/OnInvClickSortWeapons.yml"
+			else:
+				message "武器が格納されていませんでした。"
+			loop {_Bslot::*}:
+				set slot loop-value of player to air
+		else:
+			message "このエリアでは使えないコマンドです。"
+command /brsbrbrbrbrbrbbb <text> <integer>:
+	trigger:
+		loop integers from 0 to 8:
+			if slot loop-int of player is air:
+				set slot loop-int of player to light gray window glass named ""
+				add loop-int to {_Bslot::*}
+		if next empty slot of player is -1:
+			add "%arg-1% Amount:%arg-2%" to skutilities yaml list "%player%" of file "plugins/Skript/yml/FunctionDatas/OnInvClickSortWeapons.yml"
+			wait 1 ticks
+			message "§dホットバー以外のインベントリに空きが無かったため、アイテムを§n""/itemsbox""§r§dに格納しました。"
+		else:
+			set {_cs} to new CSUtility()
+			{_cs}.giveWeapon(player, arg-1, arg-2)
+		loop {_Bslot::*}:
+			set slot loop-value of player to air
+
+on inventory click:
+	if player's gamemode is not creative:
+		if clicked item is light gray window glass:
+			cancel event
+		else if clicked item is enchanted with efficiency 10:
+			cancel event
+		else if display name of clicked item is "":
+			cancel event
+on inventory drag:
+	if player's gamemode is not creative:
+		if event-item is light gray window glass:
+			cancel event
+		else if event-item is enchanted with efficiency 10:
+			cancel event
+		else if display name of event-item is "":
+			cancel event
+
+command /weaponupdater.gergsezyhzrfdbhnj:
+	trigger:
+		loop all items in player's inventory:
+			if name of loop-item contains "メイス":
+				set {_name} to name of loop-item
+				remove 1 of loop-item from player's inventory
+				add 1 to {_deleteweapons}
+			if lore of loop-item contains "/":
+				if name of loop-item does not contain " §r▪" or " §7▫":
+					if loop-item is not enchanted with efficiency 1:
+						add CheckWeaponName(name of loop-item, true) to {_updates::*}
+						delete loop-item
+						add 1 to {_updateweapons}
+						wait 1 ticks
+			else if lore of loop-item contains "Attachment":
+				add uncolored name of loop-item to {_updatesATC::*}
+				delete loop-item
+				add 1 to {_updateweapons}
+		if {_deleteweapons} is set:
+			add {_deleteweapons} * 8000 to the player's account
+			message "§7廃止されていた%{_deleteweapons}%個のアイテムを%{_deleteweapons} * 8000%売却しました。" to player
+		if {_updateweapons} is set:
+			set {_cs} to new CSUtility()
+			loop {_updates::*}:
+				{_cs}.giveWeapon(player, loop-value, 1)
+			loop {_updatesATC::*}:
+				execute console command "/csp item give %loop-value% %player%"
+			message "§7%{_updateweapons}%個のアイテムを更新しました。" to player
+		if {_deleteweapons} and {_updateweapons} is not set:
+			message "§7更新・売却できるアイテムが検出されませんでした。" to player
+		execute console command "/execute %player% ~ ~ ~ /playsound block.piston.extend block %player% ~ ~ ~ 1 1"
+		wait 0.3 seconds
+		execute console command "/execute %player% ~ ~ ~ /playsound block.piston.contract block %player% ~ ~ ~ 1 1"
+

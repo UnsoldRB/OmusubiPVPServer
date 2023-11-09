@@ -1,0 +1,167 @@
+ShopName: vesbesvredverd
+DisplayName: '&lMagicShop'
+signs:
+  text: '[MagicShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  BlazeShop:
+    RewardType: shop
+    PriceType: free
+    Reward: dtymhtfyndtghnjtgnhycgf
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_HOE
+    - amount:1
+    - durability:1
+    - unbreakable:true
+    - name:&9&lMain MagicShop - Blaze
+    - 'lore:&8火炎系の魔術が販売されています#&8高い火力が特徴です'
+    Message: ''
+    InventoryLocation: 1
+    ExtraPermission: ''
+  SideBlazeShop:
+    RewardType: shop
+    PriceType: free
+    Reward: dtymhdzgtnrtjnzdnja
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - durability:1
+    - unbreakable:true
+    - name:&9&lSide MagicShop - Blaze
+    - 'lore:&8火炎系の魔術が販売されています#&8多彩な特徴を持っています'
+    Message: ''
+    InventoryLocation: 10
+    ExtraPermission: ''
+  FreezeShop:
+    RewardType: shop
+    PriceType: free
+    Reward: dhthnngfxsynyjrfgftfty
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_HOE
+    - amount:1
+    - durability:305
+    - unbreakable:true
+    - name:&9&lMain MagicShop - Freeze
+    - 'lore:&8氷結系の魔術が販売されています#&8継続戦闘能力が特徴です'
+    Message: ''
+    InventoryLocation: 2
+    ExtraPermission: ''
+  SideFreezeShop:
+    RewardType: shop
+    PriceType: free
+    Reward: dhthnjfrtgnxftrdgtxrg
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - durability:306
+    - unbreakable:true
+    - name:&9&lSide MagicShop - Freeze
+    - 'lore:&8氷結系の魔術が販売されています#&8多彩な特徴を持っています'
+    Message: ''
+    InventoryLocation: 11
+    ExtraPermission: ''
+  StormShop:
+    RewardType: shop
+    PriceType: free
+    Reward: dhtgtnjgtbnfrgthrte5
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_HOE
+    - amount:1
+    - durability:617
+    - unbreakable:true
+    - name:&9&lMain MagicShop - Storm
+    - 'lore:&8嵐系の魔術が販売されています#&8奇襲・牽制能力が特徴です'
+    Message: ''
+    InventoryLocation: 3
+    ExtraPermission: ''
+  SideStormShop:
+    RewardType: shop
+    PriceType: free
+    Reward: dhxgaerggedrgegggggr4
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - durability:617
+    - unbreakable:true
+    - name:&9&lSide MagicShop - Storm
+    - 'lore:&8嵐系の魔術が販売されています#&8多彩な特徴を持っています'
+    Message: ''
+    InventoryLocation: 12
+    ExtraPermission: ''
+  CreationShop:
+    RewardType: shop
+    PriceType: free
+    Reward: dhxfgnrthrstrgs
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_HOE
+    - amount:1
+    - durability:0
+    - unbreakable:true
+    - name:&9&lMain MagicShop - Creation
+    - 'lore:&8創造系の魔術が販売されています#&8魔法の中でも一風変わった性能が特徴です'
+    Message: ''
+    InventoryLocation: 4
+    ExtraPermission: ''
+  SideCreationShop:
+    RewardType: shop
+    PriceType: free
+    Reward: dhdyjdfgynsra3w2
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - durability:0
+    - unbreakable:true
+    - name:&9&lSide MagicShop - Creation
+    - 'lore:&8創造系の魔術が販売されています#&8多彩な特徴を持っています'
+    Message: ''
+    InventoryLocation: 13
+    ExtraPermission: ''
+  SoulsShop:
+    RewardType: shop
+    PriceType: free
+    Reward: dhxgaregew34re
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_HOE
+    - amount:1
+    - durability:1241
+    - unbreakable:true
+    - name:&9&lMain MagicShop - Souls
+    - 'lore:&8魂系の魔術が販売されています#&8後方からの支援能力が特徴です'
+    Message: ''
+    InventoryLocation: 5
+    ExtraPermission: ''
+  SideSoulsShop:
+    RewardType: shop
+    PriceType: free
+    Reward: dhxgaergrgfrerg4r4
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - durability:1241
+    - unbreakable:true
+    - name:&9&lSide MagicShop - Souls
+    - 'lore:&8魂系の魔術が販売されています#&8多彩な特徴を持っています'
+    Message: ''
+    InventoryLocation: 14
+    ExtraPermission: ''
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: nvskeibvlnseurgglensdjkvnszfkjvbhsueil
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

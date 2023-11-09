@@ -1,0 +1,363 @@
+on script load:
+	delete {SkillCooldown::*}
+	delete {Last.BeforeReplaceName::*}
+
+on world change:
+	delete {SkillCooldown::*}
+
+function SkillTrigger(Case:text, p:player, Entity:entity, Limit:text = "none", option:text = "none") :: text:
+	if {SkillCooldown::%{_p}%} is not set:
+		set {_slot} to {_p}.getItemInHand().getType()
+		if {_Case} is "Time":
+			if {Skills::%{_p}%} contains "アルリジェネ":
+				if {_p} exist:
+					heal {_p} by 0.25 hearts
+		else if {_Case} is "Use":
+			if name of {_p}'s held item contains "ジャンプパッド":
+				if "%world of {_p}%" is "TeamBattle":
+					set {SkillCooldown::%{_p}%} to 40
+					shoot an armor stand from {_p} at speed 1
+					set {_en} to last shot armor stand
+					Add "{CustomName:""Jumppad"",Small:1,Invisible:1,Marker:1b,NoBasePlate:1}" To nbt of {_en}
+					set {_en}'s helmet to {_p}'s held item
+					Playsound({_p}, "entity.snowball.throw", 1, 1)
+					wait 0.8 seconds
+					add location of {_en} to {_block::*}
+					add location 1 meter right of {_en} to {_block::*}
+					add location 1 meter left of {_en} to {_block::*}
+					kill {_en}
+					Playsound({_p}, "block.anvil.use", 1, 0.7)
+					Playsound({_p}, "entity.vex.hurt", 1, 0.2)
+					AddPoint({_p}, 50, "ジャンプパッド")
+					loop {_block::*}:
+						drawLine particle cloud, center location 0.5 meter below loop-value, target location 1.5 meter above loop-value, id "%{_p}%.Jumppad", density 5, visibleRange 32
+						PlaceBlock({_p}, location 1 meter below loop-value, 22)
+						PlaceBlock({_p}, loop-value, 148)
+					wait 2 ticks
+					stopEffect "%{_p}%.Jumppad"					
+				else:
+					message "このエリアでは使用できません" to {_p}
+			else if name of {_p}'s held item contains "Thirdフック":
+				set {SkillCooldown::%{_p}%} to 12
+				delete velocity of {_p}
+				set velocity of {_p} to new Vector 0, 0.5, 0
+				set {_p}'s offhand to unbreakable iron hoe:3 named ""
+				Playsound({_p}, "entity.blaze.shoot", 1, 0.4)
+				Playsound({_p}, "entity.blaze.shoot", 1, 1)
+				push {_p} horizontally forwards at speed 1.3
+				loop 10 times:
+					execute console command "/execute %{_p}% ~ ~ ~ /particle snowballpoof ~ ~0.15 ~ 1 0 1 0.05 1 force"
+					wait 1 ticks
+				if {_p}'s offhand is unbreakable iron hoe:3:
+					set {_p}'s offhand to air
+			else if name of {_p}'s held item contains "ProjectileLevitation":
+				set {SkillCooldown::%{_p}%} to 10
+				Playsound({_p}, "entity.endermen.hurt", 1, 0)
+				loop 5 times:
+					loop all projectiles in radius 6 around {_p}:
+						if {team::%loop-projectile%} is not {team::%{_p}%}:
+							delete velocity of loop-projectile
+							set velocity of loop-projectile to new Vector 0, 1, 0
+							Playsound(loop-projectile, "entity.elder_guardian.curse", 0.2, 2)
+							execute console command "/execute %{_p}% ~ ~ ~ /particle endRod %Location(location of {_p})% 0.2 0.2 0.2 0 15 force @a"
+					wait 1 ticks
+			else if name of {_p}'s held item contains "ステルス":
+				set {SkillCooldown::%{_p}%} to 40
+				Invisible({_p}, 400)
+				Playsound({_p}, "entity.vex.death", 1, 1)
+				Playsound({_p}, "entity.vex.death", 1, 1)
+				set {_loc} to location of {_p}
+				loop 400 times:
+					wait 1 ticks
+					if name of {_p}'s held item does not contain "ステルス":
+						Playsound({_p}, "entity.vex.death", 1, 0)
+						remove invisibility from {_p}
+						stop
+					else if distance between {_loc} and {_p} is more than 10:
+						Playsound({_p}, "entity.vex.death", 1, 0)
+						remove invisibility from {_p}
+						stop
+			else if name of {_p}'s held item contains "フレッシュレーダー":
+				set {SkillCooldown::%{_p}%} to 30
+				Playsound({_p}, "block.portal.travel", 1, 2)
+				broadcast " §7§l   CAST %{_p}%/%uncolored name of {_p}'s held item%"
+				loop all players in radius 100 around {_p}:
+					if {team::%loop-player%} is not {team::%{_p}%}:
+						apply potion of glowing of tier 1 to loop-player for 10 ticks
+						add 1 to {_count}
+						set {_ID::%{_count}%} to random integer between 0 and 999999
+						drawLine particle crit, center (location 1.5 meter above {_p}), target (location 1.5 meter above loop-player), id "FreshRadar.%{_ID::%{_count}%}%", density 5, visibleRange 32
+				wait 20 ticks
+				loop {_ID::*}:
+					stopEffect "FreshRadar.%loop-value%"
+			else if name of {_p}'s held item contains "アーツバーン":
+				set {SkillCooldown::%{_p}%} to 20
+				Playsound({_p}, "entity.ghast.shoot", 1, 0)
+				Playsound({_p}, "entity.ghast.shoot", 1, 0.1)
+				AreaEffect({_p}, {_p}, "flame", 7, 0.2, 25)
+				draw 60 blockcrack material particle made of fire at location 0.5 meter above location of {_p}, speed 0.4, offset 7, 7, 7, keepFor 1.5 seconds
+				loop all players in radius 7 around {_p}:
+					if {team::%loop-player%} is not {team::%{_p}%}:
+						ignite loop-player for 5 seconds
+			else if name of {_p}'s held item contains "サモン・スケルトン":
+			else if name of {_p}'s held item contains "フォリアス":
+			else if name of {_p}'s held item contains "トグルグラヴィティ":
+				set {SkillCooldown::%{_p}%} to 10
+				Playsound({_p}, "entity.vex.death", 1, 1)
+				add "{NoGravity:true}" to nbt of {_p}
+				set {_health} to {_p}'s maximum health / 2
+				loop 300 times:
+					wait 2 ticks
+					Playsound({_p}, "entity.vex.ambient", 1, 1)
+					loop 2 times:
+						set {_a} to random integer between 2 and -2
+						set {_b} to random integer between 2 and -2
+						draw 5 shade scale 7 colored directional itemcrack particles at location {_a} meter north, {_b} meter west {_p} with direction new vector random number between 1.00 and -1.00, -2, random number between 1.00 and -1.00 and speed 0.2
+					if block at location 0.1 meter below {_p} is not air or water:
+						add "{NoGravity:false}" to nbt of {_p}
+						stop
+					else if {_p}'s health is less than {_health}:
+						add "{NoGravity:false}" to nbt of {_p}
+						stop
+				add "{NoGravity:false}" to nbt of {_p}
+
+		else if {_Case} is "Trigger":
+			if {_Limit} is "Kill":
+				if {Skills::%{_p}%} contains "キルリジェネブースト":
+					loop 5 times:
+						if {_p} exist:
+							heal {_p} by 1 hearts
+							execute console command "/execute %{_p}% ~ ~ ~ /particle heart %Location(location of {_p})% 0.2 0.2 0.2 0 1 force @a"
+							wait 2 ticks
+			else if {_Limit} is "Punch":
+				if {Skills::%{_p}%} contains "GorillaSouls":
+					if {_p}'s held item is air:
+						if {team::%{_Entity}%} is not {team::%{_p}%}:
+							set {_slot} to CheckWeaponSlotWithName({_p}, "Skill-GorillaSouls")
+							Damage({_p}, {_Entity}, 1, {_slot})
+							Playsound({_p}, "entity.ghast.hurt", 0.7, 2)
+							make safe explosion with force 1 at {_Entity}
+							draw 10 blockcrack particle made of redstone block at location of {_Entity}
+							stop
+			else if {_Limit} is "Grenade":
+				if {Skills::%{_p}%} contains "GRマスタリー":
+					if {_option} is "ExplodeDamageBoost":
+						return "1.2"
+					else:
+						set {_vector} to velocity of {_Entity}
+						add 0.5 to standard length of {_vector}
+						set velocity of {_Entity} to {_vector}
+			else if {_Limit} is "Shoot":
+				if {Skills::%{_p}%} contains "フィリアージュ":
+					if lore of {_p}'s held item contains "/Main":
+						loop 30 times:
+							set {_loc} to location of {_Entity}
+							push {_p} direction from {_p} to {_Entity} at speed 1
+							draw 10 blockcrack particle made of emerald block at location of {_Entity}
+							wait 1 ticks
+							if {_loc} is location of {_Entity}:
+								stop					
+		if {SkillCooldown::%{_p}%} is set:
+			set {_cooldown} to {SkillCooldown::%{_p}%} * 20
+			{_p}.setCooldown({_slot}, {_cooldown})
+			loop {SkillCooldown::%{_p}%} times:
+				wait 1 seconds
+			SendSidebar({_p}, "§a§lREADY:§r§l//%CheckWeaponCharacter(""Skill-アルリジェネ"")%//", 1, 40)
+			play "BLOCK_GLASS_BREAK" to {_p} at volume 10
+			delete {SkillCooldown::%{_p}%}
+
+
+on right click:
+	if lore of player's held item contains "/Skill":
+		SkillTrigger("Use", player, player)
+
+on damage of player:
+	if damage was caused by attack:
+		SkillTrigger("Trigger", attacker, victim, "Punch")
+
+on crackshot shoot:
+	SkillTrigger("Trigger", player, event-projectile, "Shoot")
+	if event-string is "Skill-アイスフリーディア":
+		if "%{SkillCooldown::%player%}%" is "<none>" or "アイスフリーディア1" or "アイスフリーディア2":
+			Playsound(player, "entity.wither.shoot", 0.3, 1.3)
+			Playsound(player, "entity.blaze.hurt", 1, 1)
+			set {_hotbarslot} to player's selected hotbar slot
+			if {SkillCooldown::%player%} is not set:
+				set {SkillCooldown::%player%} to "アイスフリーディア1"
+				set {_firstshoot} to true
+			else if {SkillCooldown::%player%} is "アイスフリーディア1":
+				set {SkillCooldown::%player%} to "アイスフリーディア2"
+			else if {SkillCooldown::%player%} is "アイスフリーディア2":
+				set {SkillCooldown::%player%} to 1
+			spawn an armor stand at location 50 meter below location of player
+			set {Armorstand::%projectile%} to spawned armor stand
+			set {_pitch} to "%player's pitch%"
+			if {SkillCooldown::%player%} is "アイスフリーディア1":
+				Add "{CustomName:""Projectile"",NoGravity:1b,Small:1,Marker:1b,Invisible:1,NoBasePlate:1,Silent:1,ArmorItems:[{},{},{},{id:""minecraft:apple"",Count:1b}],Pose:{Head:[%{_pitch}%f,0f,0f]}}" To nbt of {Armorstand::%projectile%}
+			else if {SkillCooldown::%player%} is "アイスフリーディア2":
+				Add "{CustomName:""Projectile"",NoGravity:1b,Small:1,Marker:1b,Invisible:1,NoBasePlate:1,Silent:1,ArmorItems:[{},{},{},{id:""minecraft:apple"",Count:1b}],Pose:{Head:[%{_pitch}%f,0f,-45f]}}" To nbt of {Armorstand::%projectile%}
+			else if {SkillCooldown::%player%} is 1:
+				Add "{CustomName:""Projectile"",NoGravity:1b,Small:1,Marker:1b,Invisible:1,NoBasePlate:1,Silent:1,ArmorItems:[{},{},{},{id:""minecraft:apple"",Count:1b}],Pose:{Head:[%{_pitch}%f,0f,45f]}}" To nbt of {Armorstand::%projectile%}
+			set {Armorstand::%projectile%}'s helmet to unbreakable iron hoe:9
+			make {Armorstand::%projectile%} ride projectile
+			loop 400 times:
+				set {_l} to location of projectile
+				wait 1 ticks
+				if location of projectile is {_l}:
+					kill {Armorstand::%projectile%}
+					delete {Armorstand::%projectile%}
+					set {_victims::*} to Explosion(player, {_l}, 2.5, 6, 0, true, {_hotbarslot})
+					loop 8 times:
+						loop {_victims::*}:
+							delete velocity of loop-value-3
+							Playsound(loop-value-3, "entity.wither.shoot", 1, 2)
+							Playsound(loop-value-3, "block.glass.break", 1, 0)
+							draw 20 blockcrack material particle made of ice at location 0.5 meter above location of loop-value-3, speed 0.2, offset 0, 0, 0, keepFor 0.2 seconds
+						wait 10 ticks
+					if {_firstshoot} is true:
+						player.setCooldown(player.getItemInHand().getType(), 800)
+						wait 40 seconds
+						SendSidebar(player, "§a§lREADY:§r§l//%CheckWeaponCharacter(""Skill-アルリジェネ"")%//", 1, 40)
+						play "BLOCK_GLASS_BREAK" to player at volume 10
+						delete {SkillCooldown::%player%}
+					stop
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function LastCharge(Case:text, p:player, Point:number = 0):
+	if {LastCharge::%{_p}%} is not set:
+		set {LastCharge::%{_p}%} to 0
+	if {LastCharge::%{_p}%} is not true:
+		set {_slot} to CheckWeaponSlot({_p}, "/Last")
+		set {_lore::1} to skutilities yaml value "%CheckWeaponName(name of slot {_slot} of {_p}, true)%.Item_Information.Item_Lore" of file "plugins/CrackShot/weapons/%CheckWeaponCategory(slot {_slot} of {_p}, 4)%.yml"
+		set {_lore::*} to {_lore::1} split by "|"
+		replace "%%", "&", "§", "f時間経過: ", "f蓄積効率: " in {_lore::3} and {_lore::4} with ""
+		if {_Case} is "Time":
+			add {_lore::3} parsed as number to {LastCharge::%{_p}%}
+		else if {_Case} is "Death":
+			add 10 to {LastCharge::%{_p}%}
+		else if {_Case} is "Point":
+			add ({_Point} * {_lore::4} parsed as number) / 10 to {LastCharge::%{_p}%}
+		set level progress of {_p} to {LastCharge::%{_p}%} * 0.01
+	if {LastCharge::%{_p}%} is more than 100:
+		set {LastCharge::%{_p}%} to true
+		play "BLOCK_GLASS_BREAK" to {_p} at volume 10
+		message "§d<<LAST READY>>" to {_p}
+		send {_p} title "" with subtitle "§d<<LAST READY>>" for 1 seconds
+		set level progress of {_p} to 0.99
+
+
+on right click:
+	if lore of player's held item contains "/Last":
+		if {LastCharge::%player%} contains "false":
+			set slot last 1 character of {LastCharge::%player%} parsed as number of player to air
+			wait 2 ticks
+			add 10 to {LastCharge::%player%}
+			set level progress of player to 10
+		else if {LastCharge::%player%} is true:
+			Playsound(player, "entity.horse.saddle", 1, 2)
+			AddPoint(player, 50, "UseLast")
+			set {weapontool::%player%} to player's selected hotbar slot
+			broadcast " §d§l   CAST %player%/%uncolored name of player's held item%"
+			set {_lore::1} to skutilities yaml value "%CheckWeaponName(name of player's held item, true)%.Item_Information.Item_Lore" of file "plugins/CrackShot/weapons/%CheckWeaponCategory(player's held item, 4)%.yml"
+			set {_lore::*} to {_lore::1} split by "|"
+			if {_lore::5} does not contain "上書き先: なし":
+				set {_condition} to uncolored line 5 of lore of player's held item
+				replace "上書き先: " in {_condition} with ""
+				set {LastCharge::%player%} to "false.%{_slot}%"
+				set {_time::*} to {_lore::1} split by "∴"
+				set {_use::*} to {_lore::2} split by "∴"
+				if {_condition} contains ", ":
+					set {_selectweapon::*} to {_condition} split by ", "
+					loop {_selectweapon::*}:
+						add CheckWeaponSlot(player, loop-value) to {_slotdistance::*}
+					set {_slot} to {_slotdistance::1}
+					delete {_slotdistance::1}
+					loop {_slotdistance::*}:
+						if abs(loop-value - player's selected hotbar slot) is less than abs({_slot} - player's selected hotbar slot):
+							set {_slot} to loop-value
+						else if abs(loop-value - player's selected hotbar slot) is abs({_slot} - player's selected hotbar slot):
+							if loop-value is less than {_slot}:
+								set {_slot} to loop-value
+				else:
+					set {_slot} to CheckWeaponSlot(player, {_condition})
+				if {_time::2} is not set:
+					set {_time::2} to 1
+				if {_use::2} is not set:
+					set {_use::2} to 1
+				set {_Before} to slot {_slot} of player
+				set {_time} to 20 * {_time::2} parsed as number
+				set {_item} to type of slot {_slot} of player
+				set display name of {_item} to "&d%uncolored name of player's held item%&d"
+				set lore of {_item} to "&d//YOU GOT READY NOW.//"
+				set data value of {_item} to data value of slot {_slot} of player
+				set slot {_slot} of player to {_use::2} parsed as number of unbreakable {_item}
+				enchant slot {_slot} of player with efficiency 1
+				set {_expbar} to 1 / {_time}
+				loop {_time} times:
+					if slot {_slot} of player is not air:
+						wait 1 ticks
+						add 1 to {_count}
+						set level progress of player to 1 - ({_expbar} * {_count})
+				set slot {_slot} of player to {_Before}
+				set {LastCharge::%player%} to 0
+				set level progress of player to 0
+				remove {_item} from inventory of player
+			else:
+				if name of player's held item contains "-ライトニング":
+					loop all players in radius 20 around player:
+						if {team::%loop-player%} is not {team::%player%}:
+							strike lightning effect at loop-player
+							Playsound(player, "block.portal.travel", 1, 2)
+							Damage(player, loop-player, 10, player's selected hotbar slot)
+						set {LastCharge::%player%} to 0
+				else if name of player's held item contains "-JHガード":
+					set {LastCharge::%player%} to "JHガード"
+					Playsound(player, "block.stone.place", 1, 0)
+					wait 7 ticks
+					set {LastCharge::%player%} to 0
+
+
+on damage of player:
+	if {LastCharge::%victim%} is "JHガード":
+		cancel event
+		heal victim by 1 hearts
+		Playsound(victim, "item.totem.use", 1, 1)
+		execute console command "/execute %victim% ~ ~ ~ /particle totem ~ ~0.5 ~ 0 0 0 0.2 10"
+
+on crackshot shoot:
+	if event-string is "Last-グレネードREADY":
+		add "%event-projectile.getUniqueId()%" to {CollideProjectile::*}
+		set {_slot} to player's selected hotbar slot
+		wait 1 ticks
+		set {_useditem} to CheckWeaponSlot(player, "/Last")
+		set {weapontool::%player%} to {_useditem}
+		loop 9 times:
+			wait 2 ticks
+			execute console command "/execute %player% ~ ~ ~ /particle flame %Location(event-projectile)% 0 0 0 0 2"
+			execute console command "/execute %player% ~ ~ ~ /particle largeexplode %Location(event-projectile)% 0 0 0 0.05 1"
+		Explosion(player, location of event-projectile, 65, 7, 0, false, {_useditem})
+		kill passenger of event-projectile
+		kill event-projectile
+	if event-string contains "Last-クイックダッシュREADY":
+		set {_count} to 1
+		loop 6 times:
+			if block at location {_count} meter forwards player is air or water:
+				add 1 to {_count}
+			else:
+				remove 1 from {_count}
+				exit 2 sections
+		teleport player to block at location {_count} meter forwards player
+

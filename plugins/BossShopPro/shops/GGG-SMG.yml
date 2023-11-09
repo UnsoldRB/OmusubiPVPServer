@@ -1,0 +1,97 @@
+ShopName: b sriubhtbhnr
+DisplayName: '&9&lSMGShop'
+signs:
+  text: '[SMGShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  P90:
+    RewardType: playercommand
+    PriceType: money
+    Price: 9400
+    Reward: brsbrbrbrbrbrbbb P90 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - durability:225
+    - unbreakable:true
+    - name:&9P90
+    - 'lore:&f安定している武器##&b必要水晶 : 9400'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 3
+    ExtraPermission: ''
+  MP5:
+    RewardType: playercommand
+    PriceType: money
+    Price: 8600
+    Reward: brsbrbrbrbrbrbbb MP5 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:224
+    - name:&9MP5
+    - 'lore:&fリロード速度を重視した武器##&b必要水晶 : 8600'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  KRISSVector:
+    RewardType: playercommand
+    PriceType: money
+    Price: 13600
+    Reward: brsbrbrbrbrbrbbb KRISSVector 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:227
+    - name:&9KRISSVector
+    - 'lore:&fSMG中最高クラスのレートを誇る武器##&b必要水晶 : 13600'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 4
+    ExtraPermission: ''
+  M76:
+    RewardType: playercommand
+    PriceType: money
+    Price: 11600
+    Reward: brsbrbrbrbrbrbbb M76 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:226
+    - name:&9M76
+    - 'lore:&f敵の裏を取りやすく、#&f精度もそれなりに良い武器##&b必要水晶 : 11600'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  BDisturb:
+    RewardType: playercommand
+    PriceType: money
+    Price: 14200
+    Reward: brsbrbrbrbrbrbbb BDisturb 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:224
+    - name:&9BDisturb
+    - 'lore:&f足止めに特化したサポート武器##&b必要水晶 : 14200'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 5
+    ExtraPermission: ''
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: onvlaebvyulearh
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

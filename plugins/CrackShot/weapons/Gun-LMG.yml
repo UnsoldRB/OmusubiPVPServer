@@ -1,0 +1,156 @@
+BrowningM1918:
+    Item_Information:
+        Item_Name: "&eBrowning M1918"
+        Item_Type: 138
+        Inventory_Control: main
+        Item_Lore: "&fダメージ: 4.30|&f連射速度: 4.00|&fリロード: 6.50|&fリコイル: 1.20|&fアドオン: なし|&bAmmo: Normal|&b攻撃型/Gun-LMG/Main||||&7「LMGというかちょっと弾速速いAR。」|&7そう言われる通りの性能をしている。|&7その威力は敵の殲滅にもってこいだ。"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 1
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 45
+        Projectile_Damage: 4
+        Bullet_Spread: 1
+        Remove_Bullet_Drop: true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0-0,BLOCK_STONE_PLACE-1-0-0,BLOCK_STONE_PLACE-1-0-0,BLOCK_STONE_BREAK-1-0-0,ENTITY_GENERIC_BIG_FALL-1-0.2-0
+    Reload:
+        Enable: true
+        Reload_Amount: 20
+        Reload_Duration: 130
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 6
+        Zoom_Bullet_Spread: 0.15
+    Sneak:
+        Enable: true
+        No_Recoil: true
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 4
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 30
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+Stoner63:
+    Item_Information:
+        Item_Name: "&eStoner 63"
+        Item_Type: 138
+        Inventory_Control: main
+        Item_Lore: "&fダメージ: 2.20|&f連射速度: 6.00|&fリロード: 5.00|&fリコイル: 0.40|&fアドオン: なし|&bAmmo: Normal|&bバランス型/Gun-LMG/Main|||||&7LMGの中では最も安定した銃。|&7多人数で戦う際に真価を発揮する。"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 1
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 45
+        Projectile_Damage: 2
+        Bullet_Spread: 1
+        Remove_Bullet_Drop: true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0-0,BLOCK_STONE_PLACE-1-0-0,BLOCK_STONE_PLACE-1-0-0,BLOCK_STONE_BREAK-1-0-0,ENTITY_GENERIC_BIG_FALL-1-0.2-0
+    Reload:
+        Enable: true
+        Reload_Amount: 75
+        Reload_Duration: 100
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 6
+        Zoom_Bullet_Spread: 0.15
+    Sneak:
+        Enable: true
+        No_Recoil: true
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 6
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 20
+MINIMI:
+    Item_Information:
+        Item_Name: "&eMINIMI"
+        Item_Type: 138
+        Inventory_Control: main
+        Item_Lore: "&fダメージ: 1.50|&f連射速度: 9.00|&fリロード: 7.00|&fリコイル: 0.80|&fアドオン: なし|&bAmmo: Normal|&b防衛型/Gun-LMG/Main||||&7圧倒的な装填数を持つLMG。|&7連射速度も優秀でLMGらしいといえばLMGらしいのだが...|&7威力が物足りない。圧倒的に。"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 1
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 45
+        Remove_Bullet_Drop: true
+        Projectile_Damage: 1
+        Bullet_Spread: 1
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0-0,BLOCK_STONE_PLACE-1-0-0,BLOCK_STONE_PLACE-1-0-0,BLOCK_STONE_BREAK-1-0-0,ENTITY_GENERIC_BIG_FALL-1-0.2-0
+    Reload:
+        Enable: true
+        Reload_Amount: 200
+        Reload_Duration: 140
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Scope:
+        Enable: true
+        Zoom_Amount: 6
+        Zoom_Bullet_Spread: 0.15
+    Sneak:
+        Enable: true
+        No_Recoil: true
+    Fully_Automatic:
+        Enable: true
+        Fire_Rate: 9
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Critical_Hits:
+        Enable: true
+        Bonus_Damage: 1
+        Chance: 50

@@ -1,0 +1,26 @@
+{
+    "fallingsword": {
+      "category": "ambient",
+      "sounds": [
+        "fallingsword"
+      ]
+    },
+    "step": {
+      "category": "ambient",
+      "sounds": [
+        "step"
+      ]
+    },
+    "heavyattack": {
+      "category": "ambient",
+      "sounds": [
+        "heavyattack"
+      ]
+    },
+    "hsr_heavy": {
+      "category": "ambient",
+      "sounds": [
+        "hsr_heavy"
+      ]
+    }
+  }

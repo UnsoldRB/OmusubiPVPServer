@@ -1,0 +1,258 @@
+P90/Custom-Ammo:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Shoot:
+        Custom_Bullet_Spread:
+            Maxium_Y_Spread_Lower: 1.1
+            Maxium_Y_Spread_Higher: 1.1
+            Minium_Starting_Y_Spread: 0.0
+            Maxium_Starting_Y_Spread: 0.1
+            Decrease_Spread_Back_to_Normal:
+                Minium_Milliseconds: 100
+                Maxium_Milliseconds: 100
+            While_Zooming:
+                ZX_Spread: 0.08
+                Increase_Y_Spread_Per_Shot: 0.01
+            While_Sneaking:
+                ZX_Spread: 0.08
+                Increase_Y_Spread_Per_Shot: 0.01
+            While_Standing_Or_Walking:
+                ZX_Spread: 0.08
+                Increase_Y_Spread_Per_Shot: 0.01
+            While_Sprinting:
+                ZX_Spread: 0.08
+                Increase_Y_Spread_Per_Shot: 0.01
+            While_Not_Touching_Ground:
+                ZX_Spread: 0.08
+                Increase_Y_Spread_Per_Shot: 0.01
+        Invisible_Projectiles: true
+        Trails:
+            Trail: "コルト・パイソン"
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 12
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+            End_Subtitle: ""
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+アサシンダガー/Custom-Backstab:
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+
+    Skin:
+        Skins: ""
+        Default_Skin: "default"
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: -0.022
+    Attachment:
+        Attachments: "アサシンダガー-Backstab"
+        Maxium_Amount_Of_Attachments: 2
+アサシンダガーmelee/Custom-Backstab:
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+        Title_And_Subtitle:
+            Shooter:
+                Backstab:
+                    Subtitle: "&4&lBackStab！"
+
+DSR-1/Custom-Ammo:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: -0.03
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Shoot:
+        Trails:
+            Trail: "DSR-1"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot!"
+DesertEagle/Custom-Reload:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 12
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+
+Twin-MG/Custom-Reload:
+    Skin:
+        Skins: ""
+        Default_Skin: "default"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+        Copy_Weapon_To_Off_Hand: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Shoot:
+        Custom_Bullet_Spread:
+            Maxium_Y_Spread_Lower: 0.6
+            Maxium_Y_Spread_Higher: 0.6
+            Minium_Starting_Y_Spread: 0.0
+            Maxium_Starting_Y_Spread: 0.005
+            Decrease_Spread_Back_to_Normal:
+                Minium_Milliseconds: 100
+                Maxium_Milliseconds: 100
+            While_Zooming:
+                ZX_Spread: 0.10
+                Increase_Y_Spread_Per_Shot: 0.01
+            While_Sneaking:
+                ZX_Spread: 0.10
+                Increase_Y_Spread_Per_Shot: 0.01
+            While_Standing_Or_Walking:
+                ZX_Spread: 0.10
+                Increase_Y_Spread_Per_Shot: 0.01
+            While_Sprinting:
+                ZX_Spread: 0.10
+                Increase_Y_Spread_Per_Shot: 0.01
+            While_Not_Touching_Ground:
+                ZX_Spread: 0.08
+                Increase_Y_Spread_Per_Shot: 0.01
+        Invisible_Projectiles: true
+        Trails:
+            Trail: "コルト・パイソン"
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 12
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+            End_Subtitle: ""
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+
+アイスボール/Custom-Bounce:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Bouncing_Projectiles:
+            Decrese_Velocity_Per_Bounce: 0.5
+            Minium_Velocity: 0.0
+            Bounce_Amount: 2
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Recharge"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+フック/Custom-Speed:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Invisible_Projectiles: true
+        Trails:
+            Trail: "フック"
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10

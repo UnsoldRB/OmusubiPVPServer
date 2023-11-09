@@ -1,0 +1,62 @@
+放炎:
+    Item_Information:
+        Item_Name: "&e放炎"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: ダメージ×15(着火)|&f効果強度: 15.00(p)|&f逑逑逑逑: 1.50(t)|&f使用間隔: 3.50|&f充填詠唱: 5.00|&fウェイト: 60.00%|&fアドオン: 弱いﾉｯｸﾊﾞｯｸが追加で発生|&bCost: 2|&bAmmo: Crystal|&b攻撃型/SideMagic-Blaze/Sub||||&7とても熱い炎を前方に放つ。|&7習得しやすく、基本となる魔法|&7それでも効果は十分にある。"
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 15
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 1
+        Delay_Between_Shots: 70
+        Bullet_Spread: 2.2
+        Projectile_Flames: true
+        Projectile_Incendiary:
+            Enable: true
+            Duration: 30
+        Removal_Or_Drag_Delay: 4-true
+        Sounds_Shoot: ENTITY_WITHER_SHOOT-1-0-0,ENTITY_FIREWORK_BLAST-1-0-2,ENTITY_FIREWORK_BLAST-1-1-2
+    Reload:
+        Enable: true
+        Reload_Amount: 2
+        Reload_Duration: 100
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+        Knockback: 1
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 296
+        Ammo_Name_Check: 弾薬 -Crystal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+ラヴァ:
+    Item_Information:
+        Item_Name: "&eラヴァ"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: 継続範囲ダメージ(着火)|&f効果強度: 4.00(p), 8.00(d)|&f逑逑逑逑: 2.50(t)|&f使用間隔: 11.00|&f即時詠唱: 0.00|&fウェイト: 0.00%|&fアドオン: 視点の4Block先に効果発生|&bCost: 1|&bAmmo: Crystal|&b防衛型/SideMagic-Blaze/Sub||||&7大地に炎を巡らせる魔法。|&7敵への牽制を目的としたものであり、|&7威力を期待してよいものではない。"
+        Remove_Unused_Tag: true
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 220
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 0-true
+        Sounds_Shoot: ENTITY_BLAZE_SHOOT-1-0-0,ENTITY_BLAZE_SHOOT-1-0.4-2
+    Abilities:
+        Reset_Hit_Cooldown: true

@@ -1,0 +1,34 @@
+﻿Cloud:
+    Trail: "CLOUD"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+
+BDisturb:
+    Trail: "REDSTONE"
+    Trail_Color: "0-50-255"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+
+Chargea:
+    Trail: "REDSTONE"
+    Trail_Color: "255-50-50"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+
+FlipShot:
+    Trail: "SPELL_WITCH"
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 1.0
+
+ENDER-SNIPER:
+    Trail: "PORTAL"
+    Trail_Settings:
+        Speed: 0.0
+        Particle_Count: 2
+    Trail_Catch:
+        Required_Distance_To_Catch: 1.0
+        Space_Between_Trails: 0.8

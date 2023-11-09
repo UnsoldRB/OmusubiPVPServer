@@ -1,0 +1,217 @@
+AK-47:        
+    Shoot:
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.8
+                Maxium: 0.8
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+SCAR-H:
+    Shoot:
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.8
+                Maxium: 0.8
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+G36C:
+    Shoot:
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.8
+                Maxium: 0.8
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+TCt-72:
+    Shoot:
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.8
+                Maxium: 0.8
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+IMITavorTAR-21:
+    Shoot:
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.8
+                Maxium: 0.8
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+FA-MAS:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.8
+                Maxium: 0.8
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+アサルトアビリティ:
+    Shoot:
+        Invisible_Projectiles: true
+        Trails:
+            Default_Trail: "AR"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+
+Risk-Line:        
+    Shoot:
+        Trails:
+            Default_Trail: "SMG"
+        Invisible_Projectiles: true
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.8
+                Maxium: 0.8
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+FA-MASG2COMMAND:
+    Shoot:
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.8
+                Maxium: 0.8
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+SCAR-L:
+    Shoot:
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.8
+                Maxium: 0.8
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: 0.03
+    Skin:
+        Default_Skin: "default"

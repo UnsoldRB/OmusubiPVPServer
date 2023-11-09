@@ -1,0 +1,192 @@
+NPCS:
+  '1':
+    Commands:
+    - 1~~~dyjkdhyktfykhmrsxfyjsrnjrcfhdhgdhffrj~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '3':
+    Commands:
+    - 1~~~nvskeibvlnseurgglensdjkvnszfkjvbhsueil~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+    - 2~~~shop nvskeibvlnseurgglensdjkvnszfkjvbhsueil~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '4':
+    Commands:
+    - 1~~~shop jnvhaukivlgyr~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '6':
+    Commands:
+    - 1~~~shop nvskeibvlnseurgglensdjkvnszfkjvbhsueil~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '7':
+    Commands:
+    - 1~~~shop nvskeibvlnseurgglensdjkvnszfkjvbhsueil~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '8':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '12':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '11':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '13':
+    Commands: []
+  '15':
+    Commands: []
+  '16':
+    Commands: []
+  '14':
+    Commands:
+    - 1~~~vavaiuvhea 4~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '17':
+    Commands: []
+  '18':
+    Commands: []
+  '19':
+    Commands:
+    - 1~~~sfvrsrsfvrgsfvrvfsfvr~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '20':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '21':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '22':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '23':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '24':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '25':
+    Commands:
+    - 1~~~belsiunvbhsieul.~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '26':
+    Commands:
+    - 1~~~shop erhedtrstgtfr~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '28':
+    Commands:
+    - 1~~~recipesfsefwefsdfsdvthtyj~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '29':
+    Commands:
+    - 1~~~shop jnvhaukivlgyr~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '32':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '31':
+    Commands:
+    - 1~~~levelvfafvsgeargsaegraezgrasdgte~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '30':
+    Commands:
+    - 1~~~shop vervesrvesvg~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '35':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '36':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '50':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '51':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '52':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '53':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '54':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '55':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '70':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '71':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '72':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '73':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '74':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '75':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '76':
+    Commands:
+    - 1~~~vesvsvervsevsevrgbhrnsngyst~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '80':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '82':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '83':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+    - 2~~~vsfvsrvfsrfervf~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '85':
+    Commands:
+    - 1~~~sbstgsdfbgrtbsd~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '86':
+    Commands:
+    - 1~~~mleave~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+    - 2~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '87':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '88':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '91':
+    Commands:
+    - 1~~~shop nvskeibvlnseurgglensdjkvnszfkjvbhsueil~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '93':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+    - 2~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '92':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '94':
+    Commands:
+    - 1~~~sfvrsrsfvrgsfvrvfsfvr~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '98':
+    Commands:
+    - 1~~~valivrgwseagewrgf5w~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '129':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '131':
+    Commands:
+    - 1~~~shop vzasivuhaiwruvuzivga~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '135':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '138':
+    Commands:
+    - 1~~~avgeriugswefws~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '140':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '142':
+    Commands:
+    - 1~~~vaejrhvbuaegkrv~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '143':
+    Commands:
+    - 1~~~teeeeeeeeeeeeeeeeeeeeeest~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '148':
+    Commands:
+    - 1~~~shop nvskeibvlnseurgglensdjkvnszfkjvbhsueil~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '2':
+    Commands:
+    - 1~~~avgeriugswefws~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false
+  '5':
+    Commands:
+    - 1~~~valivrgwseagewrgf5w~~~noPerm~~~BOTH~~~~~~false~~~false~~~false~~~0.0~~~0~~~0~~~false~~~false

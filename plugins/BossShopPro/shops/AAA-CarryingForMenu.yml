@@ -1,0 +1,265 @@
+ShopName: jndvisubvuoalrgggggggggggggeeeee
+DisplayName: '&9&lCarryingShop'
+signs:
+  text: '[CarryingShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  1:
+    RewardType: playercommand
+    PriceType: money
+    Price: 100
+    Reward: brsbrbrbrbrbrbbb Normal 16
+    MenuItem:
+    - hideflags:all
+    - type:SEEDS
+    - amount:16
+    - name:&9弾薬 -Normal- ×16
+    - 'lore:&r銃器に使用される主な弾#&b必要水晶 : 100'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  2:
+    RewardType: playercommand
+    PriceType: money
+    Price: 400
+    Reward: brsbrbrbrbrbrbbb Normal 64
+    MenuItem:
+    - hideflags:all
+    - type:SEEDS
+    - amount:64
+    - name:&9弾薬 -Normal- ×64
+    - 'lore:&r銃器に使用される主な弾#&b必要水晶 : 400'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  3:
+    RewardType: playercommand
+    PriceType: money
+    Price: 100
+    Reward: brsbrbrbrbrbrbbb Crystal 16
+    MenuItem:
+    - hideflags:all
+    - type:WHEAT
+    - amount:16
+    - name:&9弾薬 -Crystal- ×16
+    - 'lore:&r主な魔法のリチャージに必要な弾#&b必要水晶 : 100'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 5
+    ExtraPermission: ''
+  4:
+    RewardType: playercommand
+    PriceType: money
+    Price: 400
+    Reward: brsbrbrbrbrbrbbb Crystal 64
+    MenuItem:
+    - hideflags:all
+    - type:WHEAT
+    - amount:64
+    - name:&9弾薬 -Crystal- ×64
+    - 'lore:&r主な魔法のリチャージに必要な弾#&b必要水晶 : 400'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 6
+    ExtraPermission: ''
+  5:
+    RewardType: playercommand
+    PriceType: money
+    Price: 100
+    Reward: brsbrbrbrbrbrbbb Air 16
+    MenuItem:
+    - hideflags:all
+    - type:CHORUS_FRUIT_POPPED
+    - amount:16
+    - name:&9弾薬 -Air- ×16
+    - 'lore:&r飛行武器に使用される特殊な弾#&b必要水晶 : 100'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 10
+    ExtraPermission: ''
+  6:
+    RewardType: playercommand
+    PriceType: money
+    Price: 400
+    Reward: brsbrbrbrbrbrbbb Air 64
+    MenuItem:
+    - hideflags:all
+    - type:CHORUS_FRUIT_POPPED
+    - amount:64
+    - name:&9弾薬 -Air- ×64
+    - 'lore:&r飛行武器に使用される特殊な弾#&b必要水晶 : 400'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 11
+    ExtraPermission: ''
+  7:
+    RewardType: playercommand
+    PriceType: money
+    Price: 350
+    Reward: brsbrbrbrbrbrbbb Pro 16
+    MenuItem:
+    - hideflags:all
+    - type:CLAY_BALL
+    - amount:16
+    - name:&9弾薬 -Pro- ×16
+    - 'lore:&r特殊な武器に使用される希少な弾#&b必要水晶 : 350'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 14
+    ExtraPermission: ''
+  8:
+    RewardType: playercommand
+    PriceType: money
+    Price: 100
+    Reward: brsbrbrbrbrbrbbb ShotShell 32
+    MenuItem:
+    - hideflags:all
+    - type:SUGAR
+    - amount:32
+    - name:&9弾薬 -ShotShell- ×32
+    - 'lore:&rショットガンに使用される若干安い弾#&b必要水晶 : 100'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 19
+    ExtraPermission: ''
+  9:
+    RewardType: playercommand
+    PriceType: money
+    Price: 200
+    Reward: brsbrbrbrbrbrbbb ShotShell 64
+    MenuItem:
+    - hideflags:all
+    - type:SUGAR
+    - amount:64
+    - name:&9弾薬 -ShotShell- ×64
+    - 'lore:&rショットガンに使用される若干安い弾#&b必要水晶 : 200'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 20
+    ExtraPermission: ''
+  10:
+    RewardType: playercommand
+    PriceType: money
+    Price: 50
+    Reward: brsbrbrbrbrbrbbb Arrow 16
+    MenuItem:
+    - hideflags:all
+    - type:ARROW
+    - amount:16
+    - name:&9弾薬 -Arrow- ×16
+    - 'lore:&r四角いクラフターが使っていた丈夫な矢#&b必要水晶 : 50'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 23
+    ExtraPermission: ''
+  11:
+    RewardType: playercommand
+    PriceType: money
+    Price: 200
+    Reward: brsbrbrbrbrbrbbb Arrow 64
+    MenuItem:
+    - hideflags:all
+    - type:ARROW
+    - amount:64
+    - name:&9弾薬 -Arrow- ×64
+    - 'lore:&r四角いクラフターが使っていた丈夫な矢#&b必要水晶 : 200'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 24
+    ExtraPermission: ''
+  12:
+    RewardType: item
+    PriceType: money
+    Price: 200
+    Reward:
+    - - type:COOKED_BEEF
+      - amount:16
+      - 'name:&f勇敢な魂のおむすび'
+      - 'lore1:&7死を恐れず、'
+      - 'lore2:&7絶えず最前線に立ったおむすび。'
+      - 'lore3:&7その熱い意思は時として戦況を覆す。'
+      - 'lore4:&7振ると「攻めるぞ！」と発する。'
+    MenuItem:
+    - hideflags:all
+    - type:COOKED_BEEF
+    - amount:16
+    - name:&9勇敢な魂のおむすび
+    - 'lore:&b必要水晶 : 200'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 8
+    ExtraPermission: ''
+  13:
+    RewardType: item
+    PriceType: money
+    Price: 200
+    Reward:
+    - - type:COOKED_BEEF
+      - amount:16
+      - 'name:&f何かを悟ったおむすび'
+      - 'lore1:&7自分の価値を知り、'
+      - 'lore2:&7覚悟を決めたおむすび。'
+      - 'lore3:&7その覚悟は価値以上の物だった。'
+      - 'lore4:&7振ると「ごめん...」と発する。'
+    MenuItem:
+    - hideflags:all
+    - type:COOKED_BEEF
+    - amount:16
+    - name:&9何かを悟ったおむすび
+    - 'lore:&b必要水晶 : 200'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 9
+    ExtraPermission: ''
+  14:
+    RewardType: item
+    PriceType: money
+    Price: 200
+    Reward:
+    - - type:COOKED_BEEF
+      - amount:16
+      - 'name:&f蔓延の笑みのおむすび'
+      - 'lore1:&7何があっても笑って生きた、'
+      - 'lore2:&7我慢強くやさしいおむすび。'
+      - 'lore3:&7その笑顔は多少のやすらぎを与える。'
+      - 'lore4:&7振ると「ありがとう」と発する。'
+    MenuItem:
+    - hideflags:all
+    - type:COOKED_BEEF
+    - amount:16
+    - name:&9蔓延の笑みのおむすび
+    - 'lore:&b必要水晶 : 200'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 17
+    ExtraPermission: ''
+  15:
+    RewardType: item
+    PriceType: money
+    Price: 200
+    Reward:
+    - - type:COOKED_BEEF
+      - amount:16
+      - 'name:&f助けを乞うおむすび'
+      - 'lore1:&7全てを失い、'
+      - 'lore2:&7何もできなくなってしまったおむすび。'
+      - 'lore3:&7それでもなお、生きる意志だけは残っている。'
+      - 'lore4:&7振ると「助けて！」と発する。'
+    MenuItem:
+    - hideflags:all
+    - type:COOKED_BEEF
+    - amount:16
+    - name:&9助けを乞うおむすび
+    - 'lore:&b必要水晶 : 200'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 18
+    ExtraPermission: ''
+  16:
+    RewardType: item
+    PriceType: money
+    Price: 150
+    Reward:
+    - - type:COOKED_BEEF
+      - amount:16
+      - 'name:&fただのおむすび'
+      - 'lore1:&7何も持たないおむすび。'
+      - 'lore2:&7何もないからこそ、'
+      - 'lore3:&7それを何かで埋めることができる。'
+      - 'lore4:&7振っても何も起こらない。'
+    MenuItem:
+    - hideflags:all
+    - type:COOKED_BEEF
+    - amount:16
+    - name:&9ただのおむすび
+    - 'lore:&b必要水晶 : 150'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 27
+    ExtraPermission: ''

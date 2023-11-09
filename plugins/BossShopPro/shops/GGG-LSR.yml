@@ -1,0 +1,67 @@
+ShopName: abhergfvsrfgsr
+DisplayName: '&9&lLSRShop'
+signs:
+  text: '[LSRShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  BST-6:
+    RewardType: playercommand
+    PriceType: money
+    Price: 11900
+    Reward: brsbrbrbrbrbrbbb BST-6 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:687
+    - name:&9BST-6
+    - 'lore:&f高いノックバック性能を持つ武器##&b必要水晶 : 11900'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  VSS:
+    RewardType: playercommand
+    PriceType: money
+    Price: 12100
+    Reward: brsbrbrbrbrbrbbb VSS 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:686
+    - name:&9VSS
+    - 'lore:&f性能のバランスが良い武器##&b必要水晶 : 12100'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+
+  FLY-1967:
+    RewardType: playercommand
+    PriceType: money
+    Price: 18000
+    Reward: brsbrbrbrbrbrbbb FLY-1967 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:686
+    - name:&9FLY-1967
+    - 'lore:&f高い機動力を持つ武器##&b必要水晶 : 18000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 3
+    ExtraPermission: ''
+
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: onvlaebvyulearh
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

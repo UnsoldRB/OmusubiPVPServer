@@ -1,0 +1,45 @@
+エアプレッジ:
+    Item_Information:
+        Item_Name: "&eエアプレッジ"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: ダメージ(ﾉｯｸﾊﾞｯｸ)|&f効果強度: 5.00(p), 5.00(r)|&f逑逑逑逑: 6.00(p)|&f使用間隔: 12.00|&f即時詠唱: 1.00|&fウェイト: 40.00%|&fアドオン: なし|&bCost: 1|&bAmmo: Crystal|&b防衛型/SideMagic-Storm/Sub|||&7やべえ気圧を発生させる魔法。|&7食らうとｹﾞﾌってなる。|&7酒を飲んだ人に対して使うと、|&7確実に吐かせることが可能。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 240
+        Recoil_Amount: 0
+        Projectile_Amount: 20
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 1
+        Bullet_Spread: 4
+        Removal_Or_Drag_Delay: 5-true
+        Sounds_Shoot: BLOCK_SNOW_BREAK-1-0-0,ENTITY_ENDERDRAGON_FLAP-1-1.4-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+        Knockback: 7
+
+蜃気楼:
+    Item_Information:
+        Item_Name: "&e蜃気楼"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: 短距離を高速で移動する|&f効果強度: なし|&f逑逑逑逑: なし|&f使用間隔: 10.00|&f即時詠唱: 0.00|&fウェイト: 0.00%|&fアドオン: 空中で発動すると上手く動作する|&bCost: 1C|&bAmmo: Crystal|&b攻撃型/SideMagic-Storm/Sub||||&7概念を魔法にしちゃった。|&7蜃気楼という名前だがそんなキレイじゃない。|&7作った人のやる気がなかったようだ。"
+        Melee_Attachment: Disable
+        Remove_Unused_Tag: true
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 200
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 0-true
+        Sounds_Shoot: BLOCK_PORTAL_AMBIENT-1-2-0,ENTITY_PLAYER_ATTACK_SWEEP-1-0-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Particles:
+        Enable: true
+        Particle_Terrain: true

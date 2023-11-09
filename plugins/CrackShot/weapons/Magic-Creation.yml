@@ -1,0 +1,87 @@
+チャージア:
+    Item_Information:
+        Item_Name: "&eチャージア"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: ダメージ|&f効果強度: 30.00(p)|&f逑逑逑逑: なし|&f使用間隔: 0.40|&f充填詠唱: 0.15(m)|&fウェイト: 0.00%|&fアドオン: 95%の確率で弾薬入手(ﾘﾁｬｰｼﾞ)|&bAmmo: Crystal|&b攻撃型/Magic-Creation/Main||&7一度に大量の弾を放つ魔法。|&7ﾁｬｰｼﾞするだけあってそれなりの火力を誇る。|&7ﾁｬｰｼﾞしなくても牽制くらいはこなしてくれる。|&7基本的に弾切れを起こさないため、|&7どんな場面でも粘り強く戦える優秀な魔法。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Delay_Between_Shots: 8
+        Projectile_Type: snowball
+        Projectile_Speed: 40
+        Projectile_Damage: 1
+        Bullet_Spread: 1.5
+        Sounds_Shoot: ENTITY_GENERIC_EXPLODE-0.1-2-0,ENTITY_GHAST_AMBIENT-0.1-0.5-0
+    Reload:
+        Enable: true
+        Reload_Amount: 30
+        Reload_Duration: 3
+        Sounds_Reloading: ENTITY_SHULKER_HURT_CLOSED-0.5-0-0
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Reload_Bullets_Individually: true
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Burstfire:
+        Enable: true
+        Shots_Per_Burst: 30
+        Delay_Between_Shots_In_Burst: 0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 296
+        Ammo_Name_Check: 弾薬 -Crystal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+
+スペルアロー:
+    Item_Information:
+        Item_Name: "&eスペルアロー"
+        Item_Type: 138
+        Item_Lore: "&f発生効果: ダメージ×2|&f効果強度: 4.00(p)|&f逑逑逑逑: なし|&f使用間隔: 0.20|&f充填詠唱: 3.50(s)|&fウェイト: 0.00%|&fアドオン: 自身の左右から弾丸が発射される|&bAmmo: Crystal|&b攻撃型/Magic-Creation/Main||||&7すっごく単純な矢の魔法。|&7しかし矢自体そのままでも十分痛いので、|&7この魔法はかなり強い分類に入るはずだ。"
+        Inventory_Control: main
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Delay_Between_Shots: 4
+        Projectile_Type: arrow
+        Projectile_Speed: 35
+        Projectile_Damage: 2
+        Bullet_Spread: 0
+        Sounds_Shoot: ENTITY_SKELETON_SHOOT-1-1-0,BLOCK_ENCHANTMENT_TABLE_USE-1-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 40
+        Reload_Duration: 70
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Burstfire:
+        Enable: true
+        Shots_Per_Burst: 2
+        Delay_Between_Shots_In_Burst: 2
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 296
+        Ammo_Name_Check: 弾薬 -Crystal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0

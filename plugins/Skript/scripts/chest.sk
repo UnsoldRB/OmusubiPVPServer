@@ -1,0 +1,38 @@
+on rightclick on a enchantment table:
+	cancel event
+	if block below is purple stained glass:
+		open chest with 1 row named "<blue>BookContainer" to player
+		play "BLOCK_ENDERCHEST_OPEN" to player at volume 10 with pitch 0
+		wait 1 tick
+		format slot 0 of player with ender chest named "<yellow>エンダーチェスト" with lore "<gray>ｴﾝﾀﾞｰﾁｪｽﾄを開きます||<gray>ﾁｰﾑﾊﾞﾄﾙに持ち込みが可能です" to run [execute player command "/bgelrghsgvkushgkegrvet Enderchest"]
+		format slot 1 of player with chest named "<yellow>倉庫" with lore "<gray>倉庫を開きます||<gray>ｼｮｯﾌﾟで倉庫の追加が可能です" to run [execute player command "/bgelrghsgvkushgkegrvet Container"]
+		format slot 2 of player with unbreakable iron hoe:5 with no nbt named "§r" to run ""
+		format slot 3 of player with gunpowder named "<yellow>簡易ショップ" with lore "<gray>簡易ｼｮｯﾌﾟを開きます" to run [execute player command "/shop jndvisubvuoalrgggggggggggggeeeee"]
+		format slot 4 of player with bed item named "<yellow>メニュー" with lore "<gray>メニューを開きます" to run [execute player command "/menu"]
+		set {_count} to 4
+		loop 4 times:
+			add 1 to {_count}
+			format slot {_count} of player with unbreakable iron hoe:5 with no nbt named "§r" to run ""
+	else:
+		open ender chest of player to player
+		play "BLOCK_ENDERCHEST_OPEN" to player at volume 10
+
+
+command /bgelrghsgvkushgkegrvet <text>:
+	trigger:
+		close player's inventory
+		if arg is "Enderchest":
+			open ender chest of player to player
+			play "BLOCK_ENDERCHEST_OPEN" to player at volume 10
+		else if arg is "Container":
+			execute player command "/gargesfesgfrveasrfgsdrgfer"
+			play "BLOCK_ENDERCHEST_CLOSE" to player at volume 10 with pitch 0
+		else if arg is "Buy":
+			set {_count} to 4
+			loop 6 times:
+				if player doesn't have permission "endercontainers.open.%{_count}%":
+					execute console command "/pex user %player% add endercontainers.open.%{_count}%"
+					stop
+				add 1 to {_count}
+			message "§cこれ以上倉庫を追加できません。50000水晶を返還します。"
+			add 50000 to player's account

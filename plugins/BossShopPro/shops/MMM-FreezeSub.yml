@@ -1,0 +1,49 @@
+ShopName: dhthnjfrtgnxftrdgtxrg
+DisplayName: '&lSubMagicShop - Freeze'
+signs:
+  text: '[SubMagicShop - Freeze]'
+  NeedPermissionToCreateSign: true
+shop:
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: vesbesvredverd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''
+  アイスウォール:
+    RewardType: playercommand
+    PriceType: money
+    Price: 13000
+    Reward: brsbrbrbrbrbrbbb アイスウォール 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:306
+    - name:&9アイスウォール
+    - 'lore:&f氷を噴出させる。#&f大振りな攻撃であればほとんど防げる。##&f&b必要水晶 : 13000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  ウォータースタンス:
+    RewardType: playercommand
+    PriceType: money
+    Price: 21000
+    Reward: brsbrbrbrbrbrbbb ウォータースタンス 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:305
+    - name:&9ウォータースタンス
+    - 'lore:&f爆発と炎に対する耐性を得て、#&f少量の回復を行う。##&f&b必要水晶 : 21000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''

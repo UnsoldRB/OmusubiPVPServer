@@ -1,0 +1,212 @@
+レミントンM870:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.2
+                Maxium: 0.2
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: 0.012
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"
+
+s12k:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.2
+                Maxium: 0.2
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: 0.012
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"
+
+EnduranTN7:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.2
+                Maxium: 0.2
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: 0.012
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"
+
+MAG-7:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.2
+                Maxium: 0.2
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: 0.012
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"
+
+無尽蔵:
+    Shoot:
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.4
+                Maxium: 0.4
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: 0.012
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"
+
+DoubleBarrel-RB:
+    Shoot:
+        Trails:
+            Default_Trail: "AR"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.9
+                Maxium: 0.9
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: 0.012
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"
+SeptupleBarrel-RB:
+    Shoot:
+        Trails:
+            Default_Trail: "AR"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.9
+                Maxium: 0.9
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: 0.012
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"

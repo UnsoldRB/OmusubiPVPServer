@@ -1,0 +1,14 @@
+エアプレッジ:
+    Shoot:
+        Trails:
+            Default_Trail: "Storm-Normal"
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+蜃気楼:
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"

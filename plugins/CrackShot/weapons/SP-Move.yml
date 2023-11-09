@@ -1,0 +1,423 @@
+フック:
+    Item_Information:
+        Item_Name: "&eフック"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 前に飛ぶ|&f逑逑逑逑: なし|&f発動間隔: 3.50|&fリロード: 3.00|&bAmmo: Air|&bバランス型/SP-Move/Special|||||&7最もｽﾀﾝﾀﾞｰﾄﾞなｽﾍﾟｼｬﾙ。|&7「愛され続けて50周年」と書いてある。"
+        Inventory_Control: sp
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 70
+        Recoil_Amount: -12
+        Projectile_Amount: 1
+        Projectile_Type: arrow
+        Projectile_Speed: -300
+        Projectile_Damage: 15
+        Bullet_Spread: 0
+        Sounds_Shoot: ENTITY_SKELETON_DEATH-1-2-0,ENTITY_RABBIT_ATTACK-1-2-0
+        Remove_Arrows_On_Impact: true
+        Reset_Fall_Distance: true
+    Reload:
+        Enable: true
+        Reload_Amount: 5
+        Reload_Duration: 22
+        Reload_Shoot_Delay: 60
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 433
+        Ammo_Name_Check: 弾薬 -Air-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+
+モア・フック:
+    Item_Information:
+        Item_Name: "&aモア・フック"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 前に少し大きく飛ぶ|&f逑逑逑逑: なし|&f発動間隔: 3.50|&fリロード: 6.00|&bAmmo: Air|&bバランス型/SP-Move/Special||||&7かなりｽﾀﾝﾀﾞｰﾄﾞなｽﾍﾟｼｬﾙ。|&7「愛され続けて100周年」と書いてある。|&7ちょっとだけサビている...?|&eBefore: フック[移動距離]"
+        Inventory_Control: sp
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 70
+        Recoil_Amount: -15
+        Projectile_Amount: 1
+        Projectile_Type: arrow
+        Projectile_Speed: -300
+        Projectile_Damage: 15
+        Bullet_Spread: 0
+        Sounds_Shoot: ENTITY_SKELETON_DEATH-1-2-0,ENTITY_RABBIT_ATTACK-1-2-0
+        Remove_Arrows_On_Impact: true
+        Reset_Fall_Distance: true
+    Reload:
+        Enable: true
+        Reload_Amount: 3
+        Reload_Duration: 22
+        Reload_Shoot_Delay: 120
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 433
+        Ammo_Name_Check: 弾薬 -Air-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+
+
+簡易テレポート:
+    Item_Information:
+        Item_Name: "&e簡易テレポート"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 前方斜め上に大きく飛ぶ|&f逑逑逑逑: なし|&f発動間隔: 9.00|&fリロード: 4.00|&bAmmo: Air|&bバランス型/SP-Move/Special||||&7長距離移動用のｽﾍﾟｼｬﾙ。|&7姿を消して移動できる。|&7どこの誰が作ったのかは不明。"
+        Inventory_Control: sp
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 180
+        Recoil_Amount: -17
+        Projectile_Amount: 1
+        Projectile_Type: arrow
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Sounds_Shoot: ENTITY_ZOMBIE_ATTACK_IRON_DOOR-1-0-3,BLOCK_PORTAL_TRIGGER-1-2-0
+        Remove_Arrows_On_Impact: true
+        Reset_Fall_Distance: true
+        Removal_Or_Drag_Delay: 2-true
+    Reload:
+        Enable: true
+        Reload_Amount: 2
+        Reload_Duration: 22
+        Reload_Shoot_Delay: 80
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 433
+        Ammo_Name_Check: 弾薬 -Air-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: SPEED-12-3,LEVITATION-5-35,BLINDNESS-10-1,NIGHT_VISION-10-1
+
+ショートダッシュ:
+    Item_Information:
+        Item_Name: "&eショートダッシュ"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 移動速度の急上昇|&f逑逑逑逑: なし|&f発動間隔: 7.00|&fリロード: 5.50|&bAmmo: Air|&b攻撃型/SP-Move/Special|||||&7ｴﾝﾀﾞｰﾏﾝに憧れたｴﾝｼﾞﾆｱが作ったｽﾍﾟｼｬﾙ。|&7相手の視界から瞬時に消え去る。"
+        Inventory_Control: sp
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 140
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 12
+        Bullet_Spread: 0
+        Sounds_Shoot: ENTITY_ENDERMEN_TELEPORT-1-0-0,ENTITY_ENDERMEN_TELEPORT-1-1-2,ENTITY_ENDERMEN_TELEPORT-1-2-4
+    Reload:
+        Enable: true
+        Reload_Amount: 4
+        Reload_Duration: 22
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Reload_Shoot_Delay: 110
+    Abilities:
+        Reset_Hit_Cooldown: true
+        Knockback: 1
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 433
+        Ammo_Name_Check: 弾薬 -Air-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Potion_Effects:
+        Activation: shoot
+        Potion_Effect_Shooter: SPEED-6-80
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+クイックカット:
+    Item_Information:
+        Item_Name: "&eクイックカット"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 前に飛ぶ|&f逑逑逑逑: なし|&f発動間隔: 1.70|&fリロード: 3.00|&bAmmo: Air|&b攻撃型/SP-Move/Special||||&7改良型ﾌｯｸ。|&7飛ぶ距離は小さくなるが小回りが利く。|&7ｼｮｯﾄｶﾞﾝとの相性がよさそうだ。"
+        Inventory_Control: sp
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 34
+        Recoil_Amount: -9
+        Projectile_Amount: 1
+        Projectile_Type: arrow
+        Projectile_Speed: -300
+        Projectile_Damage: 15
+        Bullet_Spread: 0
+        Sounds_Shoot: ENTITY_SKELETON_DEATH-1-2-0,ENTITY_RABBIT_ATTACK-1-2-0
+        Remove_Arrows_On_Impact: true
+        Reset_Fall_Distance: true
+    Reload:
+        Enable: true
+        Reload_Amount: 6
+        Reload_Duration: 22
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Reload_Shoot_Delay: 60
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 433
+        Ammo_Name_Check: 弾薬 -Air-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+スピードカット:
+    Item_Information:
+        Item_Name: "&eスピードカット"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 前に飛ぶ|&f逑逑逑逑: HP小減少|&f発動間隔: 0.70|&fリロード: 5.00|&bAmmo: Air|&b攻撃型/SP-Move/Special||||&7使い続けたクイックカット。|&7愛用され続けたそれは、|&7さらなる性能を発揮する。"
+        Inventory_Control: sp
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 14
+        Recoil_Amount: -9
+        Projectile_Amount: 1
+        Projectile_Type: arrow
+        Projectile_Speed: -300
+        Projectile_Damage: 15
+        Bullet_Spread: 0
+        Sounds_Shoot: ENTITY_SKELETON_DEATH-1-2-0,ENTITY_RABBIT_ATTACK-1-2-0
+        Remove_Arrows_On_Impact: true
+        Reset_Fall_Distance: true
+    Reload:
+        Enable: true
+        Reload_Amount: 5
+        Reload_Duration: 22
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Reload_Shoot_Delay: 100
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 433
+        Ammo_Name_Check: 弾薬 -Air-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+バックステップ:
+    Item_Information:
+        Item_Name: "&eバックステップ"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 後ろに飛ぶ|&f逑逑逑逑: なし|&f発動間隔: 3.00|&fリロード: 3.50|&bAmmo: Air|&b防衛型/SP-Move/Special|||&7猛者の手によって少し改造されたﾌｯｸ。|&7「相手を視認したまま距離を取れるが...|&7使うなら別にﾌｯｸで十分じゃないか？」|&7ｽｹﾙﾄﾝはそう言った。"
+        Inventory_Control: sp
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 60
+        Recoil_Amount: 14
+        Projectile_Amount: 1
+        Projectile_Type: arrow
+        Projectile_Speed: 300
+        Projectile_Damage: 2
+        Bullet_Spread: 0
+        Sounds_Shoot: ENTITY_SKELETON_DEATH-1-2-0,ENTITY_RABBIT_ATTACK-1-2-0
+        Remove_Arrows_On_Impact: true
+        Reset_Fall_Distance: true
+    Reload:
+        Enable: true
+        Reload_Amount: 4
+        Reload_Duration: 22
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Reload_Shoot_Delay: 70
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 433
+        Ammo_Name_Check: 弾薬 -Air-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+SnowWalk:
+    Item_Information:
+        Item_Name: "&eSnowWalk"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 雪の床を作る|&f逑逑逑逑: なし|&f発動間隔: 2.00|&fリロード: 22.00|&bAmmo: Air|&b攻撃型/SP-Move/Special||||&7雪国の見習い魔術師が見出した魔術。|&7本人は氷を作り出したかったらしいが、|&7技術が足りなかったのか雪が出てくる。"
+        Inventory_Control: sp
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 40
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Damage: 1
+        Bullet_Spread: 0
+        Sounds_Shoot: BLOCK_SNOW_BREAK-1-0-0,BLOCK_SNOW_BREAK-1-0-2,BLOCK_SNOW_BREAK-1-0-4,BLOCK_SNOW_BREAK-1-0-6,BLOCK_SNOW_BREAK-1-0-8,BLOCK_SNOW_BREAK-1-0-10
+        Removal_Or_Drag_Delay: 0-true
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 433
+        Ammo_Name_Check: 弾薬 -Air-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Reload:
+        Enable: true
+        Reload_Amount: 3
+        Reload_Duration: 22
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Reload_Shoot_Delay: 440
+
+フェイクムーブ:
+    Item_Information:
+        Item_Name: "&eフェイクムーブ"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 移動方向の逆に飛ぶ|&f逑逑逑逑: 指定した場所に戻る(ｽﾆｰｸ)|&f発動間隔: 2.20|&fリロード: 3.00|&bAmmo: Air|&b防衛型/SP-Move/Special|||&7ﾌｯｸにｼｮｰﾄﾀﾞｯｼｭをぶつけたら誕生した。|&7ﾃﾚﾎﾟｰﾄは距離に応じてかかる時間が変わる。|&7なぜかこの武器はｼｭﾙｶｰに大人気。|&7思い出の場所に帰れるのは幸せなことらしい。"
+        Inventory_Control: sp
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 44
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Sounds_Shoot: ENTITY_SKELETON_DEATH-1-2-0,ENTITY_RABBIT_ATTACK-1-2-0,ENTITY_SKELETON_DEATH-1-2-3,ENTITY_RABBIT_ATTACK-1-2-2,ENTITY_RABBIT_ATTACK-1-2-4
+        Removal_Or_Drag_Delay: 0-true
+    Reload:
+        Enable: true
+        Reload_Amount: 5
+        Reload_Duration: 22
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Reload_Shoot_Delay: 60
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 433
+        Ammo_Name_Check: 弾薬 -Air-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+フロウ:
+    Item_Information:
+        Item_Name: "&eフロウ"
+        Item_Type: 138
+        Item_Lore: "&f発動効果: 上に飛ぶ|&f逑逑逑逑: その場で滞空する(空中)|&f発動間隔: 2.10|&fリロード: 5.50|&bAmmo: Air|&bバランス型/SP-Move/Special|||&7風魔法を得意とする者が見出した魔術。|&7その魔法を使って見える景色は好評である。|&7英語のFlowとは無関係だと、|&7汗を流しながら本人が言っていた。"
+        Inventory_Control: sp
+        Melee_Attachment: Disable
+    Shooting:
+        Right_Click_To_Shoot: true
+        Delay_Between_Shots: 42
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Projectile_Speed: 0
+        Projectile_Damage: 0
+        Bullet_Spread: 0
+        Sounds_Shoot: ENTITY_RABBIT_ATTACK-1-2-2,ENTITY_RABBIT_ATTACK-1-2-4
+        Removal_Or_Drag_Delay: 0-true
+    Reload:
+        Enable: true
+        Reload_Amount: 5
+        Reload_Duration: 22
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+        Reload_Shoot_Delay: 110
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+    Abilities:
+        Reset_Hit_Cooldown: true
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 433
+        Ammo_Name_Check: 弾薬 -Air-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+
+
+
+
+
+
+

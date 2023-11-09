@@ -1,0 +1,30 @@
+放炎:
+    Shoot:
+        Trails:
+            Default_Trail: "Blaze-Normal"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Recall"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"
+
+ラヴァ:
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"

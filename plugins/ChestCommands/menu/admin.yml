@@ -1,0 +1,61 @@
+﻿######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&1総合情報処理センター'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 3
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: 'dyjkdhyktfykhmrsxfyjsrnjrcfhdhgdhffrj'
+
+  # auto-refresh - OPTIONAL
+  # How frequently the menu will be refreshed, in seconds.
+  # Useful if you have variables in items' descriptions.
+  auto-refresh: 5
+
+  # This command command will be execute when the menu is opened.
+  # Supports all the icon command types.
+  open-action: 'sound: BLOCK_PORTAL_AMBIENT; sound: BLOCK_NOTE_PLING; tell: &ePVPMenuを開きました'
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    id: wool:1
+    left-click: false
+    right-click: false
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+
+WeaponUpdate:
+  COMMAND: 'weaponupdater.gergsezyhzrfdbhnj'
+  NAME: '&e所持武器の更新'
+  LORE:
+    - '武器の更新・廃止済み武器の売却が行えます。'
+    - '§cインベントリ内全てが対象となります。'
+  ID: MINECART
+  POSITION-X: 1
+  POSITION-Y: 1
+  
+Stats:
+  COMMAND: ''
+  NAME: '&eあなたのステータス'
+  LORE:
+    - 'エラー'
+  ID: 386
+  POSITION-X: 9
+  POSITION-Y: 3
+  KEEP-OPEN: true

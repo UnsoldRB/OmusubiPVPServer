@@ -1,0 +1,148 @@
+ShopName: bfbsdfbsdbdbdbdbdbdbfddggd
+DisplayName: '&lSPWeaponShop'
+signs:
+  text: '[SPWeaponShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: nvskeibvlnseurgglensdjkvnszfkjvbhsueil
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''
+  フック:
+    RewardType: playercommand
+    PriceType: money
+    Price: 5000
+    Reward: brsbrbrbrbrbrbbb フック 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_HOE
+    - amount:1
+    - durability:1
+    - unbreakable:true
+    - name:&9フック
+    - 'lore:&f安定した飛行武器#&7初期武器##&b必要水晶 : 5000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  簡易テレポート:
+    RewardType: playercommand
+    PriceType: money
+    Price: 13000
+    Reward: brsbrbrbrbrbrbbb 簡易テレポート 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:6
+    - name:&9簡易テレポート
+    - 'lore:&f高く、より遠くに飛べる飛行武器#&7初期武器##&b必要水晶 : 13000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  クイックカット:
+    RewardType: playercommand
+    PriceType: money
+    Price: 7900
+    Reward: brsbrbrbrbrbrbbb クイックカット 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:2
+    - name:&9クイックカット
+    - 'lore:&fフックのクールダウンが短くなり#&f飛距離が落ちた武器#&7初期武器##&b必要水晶 : 7900'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 3
+    ExtraPermission: ''
+  ショートダッシュ:
+    RewardType: playercommand
+    PriceType: money
+    Price: 11000
+    Reward: brsbrbrbrbrbrbbb ショートダッシュ 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_HOE
+    - amount:1
+    - durability:3
+    - unbreakable:true
+    - name:&9ショートダッシュ
+    - 'lore:&fダッシュと言うよりテレポートする武器##&b必要水晶 : 11000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 4
+    ExtraPermission: ''
+  バックステップ:
+    RewardType: playercommand
+    PriceType: money
+    Price: 8200
+    Reward: brsbrbrbrbrbrbbb バックステップ 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_HOE
+    - amount:1
+    - durability:4
+    - unbreakable:true
+    - name:&9バックステップ
+    - 'lore:&f後ろに飛べる武器#&f使いにくい##&b必要水晶 : 8200'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 5
+    ExtraPermission: ''
+  SnowWalk:
+    RewardType: playercommand
+    PriceType: money
+    Price: 14000
+    Reward: brsbrbrbrbrbrbbb SnowWalk 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:8
+    - name:&9SnowWalk
+    - unbreakable:true
+    - 'lore:&f現在地に床を設置する魔法#&f狙撃などが可能になる##&b必要水晶 : 14000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 6
+    ExtraPermission: ''
+  フェイクムーブ:
+    RewardType: playercommand
+    PriceType: money
+    Price: 9600
+    Reward: brsbrbrbrbrbrbbb フェイクムーブ 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:5
+    - name:&9フェイクムーブ
+    - unbreakable:true
+    - 'lore:&f相手を翻弄しやすい武器##&b必要水晶 : 9600'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 7
+    ExtraPermission: ''
+  フロウ:
+    RewardType: playercommand
+    PriceType: money
+    Price: 7500
+    Reward: brsbrbrbrbrbrbbb フロウ 1
+    MenuItem:
+    - hideflags:all
+    - type:GOLD_HOE
+    - amount:1
+    - unbreakable:true
+    - durability:7
+    - name:&9フロウ
+    - unbreakable:true
+    - 'lore:&f空中から攻撃しやすくなる武器#&f水平方向への移動は向いていない##&b必要水晶 : 7500'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 8
+    ExtraPermission: ''

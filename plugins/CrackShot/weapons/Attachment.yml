@@ -1,0 +1,62 @@
+汚れたアタッチメント:
+    Item_Information:
+        Item_Name: "&6汚れたアタッチメント"
+        Item_Type: 437
+        Remove_Unused_Tag: true
+        Item_Lore: "&r瓶詰のアタッチメント。|&r洗濯すればきれいなものが取り出せる。"
+    Shooting:
+        Disable: true
+
+DoubleBarrel-RB[装填数]:
+    Item_Information:
+        Item_Name: "&cDoubleBarrel-RB[装填数]"
+        Item_Type: 359
+        Remove_Unused_Tag: true
+        Item_Lore: "&r金床で使用可能。"
+    Shooting:
+        Disable: true
+
+M76[射程]:
+    Item_Information:
+        Item_Name: "&cM76[射程]"
+        Item_Type: 359
+        Remove_Unused_Tag: true
+        Item_Lore: "&r金床で使用可能。"
+    Shooting:
+        Disable: true
+
+フック[移動距離]:
+    Item_Information:
+        Item_Name: "&cフック[移動距離]"
+        Item_Type: 359
+        Remove_Unused_Tag: true
+        Item_Lore: "&r金床で使用可能。"
+    Shooting:
+        Disable: true
+
+クイックカット[発動間隔]:
+    Item_Information:
+        Item_Name: "&cクイックカット[発動間隔]"
+        Item_Type: 359
+        Remove_Unused_Tag: true
+        Item_Lore: "&r金床で使用可能。"
+    Shooting:
+        Disable: true
+
+FA-MAS[フルオート]:
+    Item_Information:
+        Item_Name: "&cFA-MAS[フルオート]"
+        Item_Type: 359
+        Remove_Unused_Tag: true
+        Item_Lore: "&r金床で使用可能。"
+    Shooting:
+        Disable: true
+
+SCAR-H[軽量]:
+    Item_Information:
+        Item_Name: "&cSCAR-H[軽量]"
+        Item_Type: 359
+        Remove_Unused_Tag: true
+        Item_Lore: "&r金床で使用可能。"
+    Shooting:
+        Disable: true

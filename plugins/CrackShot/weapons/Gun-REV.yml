@@ -1,0 +1,197 @@
+コルト・パイソン357Magnum:
+    Item_Information:
+        Item_Name: "&eコルト・パイソン.357 Magnum"
+        Item_Type: 138
+        Melee_Attachment: Disable
+        Item_Lore: "&fダメージ: 5.00|&f発射間隔: 0.40|&fリロード: 4.50|&f弾のブレ: 0.20|&f頭部補正: 5.00|&f武器重量: 2.00|&fアドオン: なし|&bAmmo: Normal|&bバランス型/Gun-REV/Sub||||&7「ﾊﾝﾄﾞｶﾞﾝ...火力低いなぁ...。」|&7そう思った女の子が手にした武器。|&7性能は本人の腕次第で活きるだろう。"
+        Inventory_Control: sub
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Delay_Between_Shots: 8
+        Projectile_Speed: 150
+        Projectile_Damage: 5
+        Bullet_Spread: 8
+        Removal_Or_Drag_Delay: 2-true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_LARGE_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_LARGE_BLAST-1-0-0,ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0
+    Reload:
+        Enable: true
+        Reload_Amount: 6
+        Reload_Duration: 90
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+        Knockback: 1
+    Headshot:
+        Enable: true
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+        Bonus_Damage: 5
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 0.2
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+M500:
+    Item_Information:
+        Item_Name: "&eM500"
+        Item_Type: 138
+        Melee_Attachment: Disable
+        Item_Lore: "&fダメージ: 3.00|&f発射間隔: 0.60|&fリロード: 4.00|&f弾のブレ: 0.40|&f頭部補正: 12.00|&f武器重量: 3.00|&fアドオン: なし|&bAmmo: Normal|&b攻撃型/Gun-REV/Sub||||&7「ﾘﾎﾞﾙﾊﾞｰ...火力低いなぁ...。」|&7そう思ったOLが手にした武器。|&7威力に全てを捧げており、扱うには運も多少必要になる。"
+        Inventory_Control: sub
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Delay_Between_Shots: 12
+        Projectile_Speed: 150
+        Projectile_Damage: 3
+        Removal_Or_Drag_Delay: 3-true
+        Bullet_Spread: 8
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_LARGE_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_LARGE_BLAST-1-0-0,ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0
+    Reload:
+        Enable: true
+        Reload_Amount: 4
+        Reload_Duration: 80
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+        Knockback: 1
+    Headshot:
+        Enable: true
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+        Bonus_Damage: 12
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 0.4
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+FlipShot:
+    Item_Information:
+        Item_Name: "&eFlipShot"
+        Item_Type: 138
+        Melee_Attachment: Disable
+        Item_Lore: "&fダメージ: 4.00|&f発射間隔: 1.00|&fリロード: 3.00|&f弾のブレ: 0.00|&f頭部補正: 4.00|&f武器重量: 3.00|&fアドオン: 視点反転(ﾀﾞﾒｰｼﾞ)|&bAmmo: Normal|&b防衛型/Gun-REV/Sub|||&7ｴﾝﾀﾞｰﾏﾝが誰かにお願いして作られたもの。|&7彼の能力を受けたこの銃は|&7それにちなんだｱﾄﾞｵﾝを持つ。|&7火力は低い方ではあるが頼りないわけではない。"
+        Inventory_Control: sub
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Delay_Between_Shots: 20
+        Projectile_Speed: 120
+        Projectile_Damage: 4
+        Bullet_Spread: 0
+        Removal_Or_Drag_Delay: 3-true
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_LARGE_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_LARGE_BLAST-1-0-0,ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0
+    Reload:
+        Enable: true
+        Reload_Amount: 4
+        Reload_Duration: 60
+        Sounds_Reloading: ENTITY_ENDERMEN_STARE-1-2-0
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+        Knockback: 1
+    Headshot:
+        Enable: true
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+        Bonus_Damage: 4
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+        Sounds_Victim: ENTITY_ELDER_GUARDIAN_CURSE-1-2-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 3
+        Zoom_Bullet_Spread: 0.0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true
+
+Longer:
+    Item_Information:
+        Item_Name: "&eLonger"
+        Item_Type: 138
+        Melee_Attachment: Disable
+        Item_Lore: "&fダメージ: 4.00|&f発射間隔: 1.00|&fリロード: 4.50|&f弾のブレ: 0.10|&f頭部補正: 16.00|&f武器重量: 10.00|&fアドオン: 高倍率スコープ、高弾速|&bAmmo: Normal|&b攻撃型/Gun-REV/Sub||||&7「クソｯ！！スナイパーはどこだ！！」|&7「ここにいるさ(ﾘﾎﾞﾙﾊﾞｰを構えながら)。」|&7いったい誰がこんな武器を用意したんだろう。"
+        Inventory_Control: sub
+    Shooting:
+        Right_Click_To_Shoot: true
+        Recoil_Amount: 0
+        Projectile_Amount: 1
+        Projectile_Type: snowball
+        Delay_Between_Shots: 12
+        Projectile_Speed: 260
+        Projectile_Damage: 4
+        Removal_Or_Drag_Delay: 10-true
+        Bullet_Spread: 8
+        Sounds_Shoot: ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_LARGE_BLAST-1-0-0,ENTITY_FIREWORK_BLAST-1-0.2-0,ENTITY_FIREWORK_LARGE_BLAST-1-0-0,ENTITY_IRONGOLEM_HURT-1-2-0,ENTITY_SKELETON_HURT-1-2-0
+    Reload:
+        Enable: true
+        Reload_Amount: 4
+        Reload_Duration: 90
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Take_Ammo_As_Magazine: true
+        Take_Ammo_On_Reload: true
+    Abilities:
+        Reset_Hit_Cooldown: true
+        Knockback: 1
+    Headshot:
+        Enable: true
+        Sounds_Shooter: ENTITY_EXPERIENCE_ORB_PICKUP-1-1-0
+        Bonus_Damage: 16
+    Hit_Events:
+        Enable: true
+        Sounds_Shooter: ENTITY_SKELETON_SHOOT-1-2-0
+    Scope:
+        Enable: true
+        Zoom_Amount: 7
+        Zoom_Bullet_Spread: 0.0
+    Ammo:
+        Enable: true
+        Ammo_Item_ID: 295
+        Ammo_Name_Check: 弾薬 -Normal-
+        Sounds_Out_Of_Ammo: UI_BUTTON_CLICK-1-1-0
+        Sounds_Shoot_With_No_Ammo: UI_BUTTON_CLICK-1-1-0
+    Particles:
+        Enable: true
+        Particle_Terrain: true

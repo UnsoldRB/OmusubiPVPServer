@@ -1,0 +1,152 @@
+スタンダードグレネード:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+            End_Subtitle: ""
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Hit:
+                    Subtitle: "&7Hit&l！"
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+軽量グレネード:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+            End_Subtitle: ""
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Hit:
+                    Subtitle: "&7Hit&l！"
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+フレイミーグレネード:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+            End_Subtitle: ""
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+ダッシュグレネード:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+アイスCグレネード:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+            End_Subtitle: ""
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+ジャンプグレネード:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+            End_Subtitle: ""
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+対空グレネード:
+    Shoot:
+        Invisible_Projectiles: true
+        Trails:
+            Default_Trail: "SR"
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Hit:
+                    Subtitle: "&7Hit&l！"
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+追尾ミサイル:
+    Shoot:
+        Trails:
+            Default_Trail: "Cloud"
+        Homing_Projectiles:
+            Radius_To_Nearest_Entity: 100
+            Projectile_Turn_Ratio: 0.08
+            Message_To_Shooter: "&7Lock on！ &7#VICTIM#&7"
+            Message_To_Victim: "&c§l!!!!WARNING!!!!"
+            Crosshair_To_Lock: true
+            Lose_Control_Time: 200
+            Lost_Control_Message: "&7弾のコントロールを失った！"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Skin:
+        Default_Skin: "default"

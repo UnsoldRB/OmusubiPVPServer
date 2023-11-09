@@ -1,0 +1,88 @@
+ShopName: rgrgsfrgheghedhgedgxdegxdegseygedx5yerfgt5rgft54gft54rgft
+DisplayName: '&9&lLastShop'
+signs:
+  text: '[LastShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  Last-グレネード:
+    RewardType: playercommand
+    PriceType: money
+    Price: 21000
+    Reward: brsbrbrbrbrbrbbb Last-グレネード 1
+    MenuItem:
+    - hideflags:all
+    - type:NETHER_STAR
+    - amount:1
+    - name:&9Last-グレネード
+    - 'lore:&f軽量グレネードを3つ投げる#&7初期武器##&b必要水晶 : 21000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  Last-クイックダッシュ:
+    RewardType: playercommand
+    PriceType: money
+    Price: 32000
+    Reward: brsbrbrbrbrbrbbb Last-クイックダッシュ 1
+    MenuItem:
+    - hideflags:all
+    - type:NETHER_STAR
+    - amount:1
+    - name:&9Last-クイックダッシュ
+    - 'lore:&f短距離のテレポートを行う##&b必要水晶 : 32000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  Last-JHガード:
+    RewardType: playercommand
+    PriceType: money
+    Price: 41000
+    Reward: brsbrbrbrbrbrbbb Last-JHガード 1
+    MenuItem:
+    - hideflags:all
+    - type:NETHER_STAR
+    - amount:1
+    - name:&9Last-JHガード
+    - 'lore:&fほんの僅かな無敵時間を生み出す##&b必要水晶 : 41000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 3
+    ExtraPermission: ''
+  Last-レイドリボルバー:
+    RewardType: playercommand
+    PriceType: money
+    Price: 32000
+    Reward: brsbrbrbrbrbrbbb Last-ヘビーリボルバー 1
+    MenuItem:
+    - hideflags:all
+    - type:NETHER_STAR
+    - amount:1
+    - name:&9Last-ヘビーリボルバー
+    - 'lore:&f高威力なリボルバーを取り出す##&b必要水晶 : 32000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 4
+    ExtraPermission: ''
+  Last-ライトニング:
+    RewardType: playercommand
+    PriceType: money
+    Price: 35000
+    Reward: brsbrbrbrbrbrbbb Last-ライトニング 1
+    MenuItem:
+    - hideflags:all
+    - type:NETHER_STAR
+    - amount:1
+    - name:&9Last-ライトニング
+    - 'lore:&f周囲にそれなりのダメージを与える##&b必要水晶 : 35000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 5
+    ExtraPermission: ''
+
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: gfhnfdghndhdythtd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

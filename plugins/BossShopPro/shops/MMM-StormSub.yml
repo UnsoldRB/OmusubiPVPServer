@@ -1,0 +1,49 @@
+ShopName: dhxgaerggedrgegggggr4
+DisplayName: '&lSideMagicShop - Souls'
+signs:
+  text: '[SubMagicShop - Souls]'
+  NeedPermissionToCreateSign: true
+shop:
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: vesbesvredverd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''
+  エアプレッジ:
+    RewardType: playercommand
+    PriceType: money
+    Price: 12100
+    Reward: brsbrbrbrbrbrbbb エアプレッジ 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:617
+    - name:&9エアプレッジ
+    - 'lore:&f相手を吹き飛ばす。#&f使い方いろいろ。##&f&b必要水晶 : 12100'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  蜃気楼:
+    RewardType: playercommand
+    PriceType: money
+    Price: 22300
+    Reward: brsbrbrbrbrbrbbb 蜃気楼 1
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:0
+    - name:&9蜃気楼
+    - 'lore:&f自身の機動力を補う。#&fタイミングを考えればかなり強い。##&f&b必要水晶 : 22300'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''

@@ -1,0 +1,96 @@
+﻿######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&1The Ender Chest'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 3
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: 'oiuSDVBgrawuiosd'
+
+  # auto-refresh - OPTIONAL
+  # How frequently the menu will be refreshed, in seconds.
+  # Useful if you have variables in items' descriptions.
+  auto-refresh: 5
+
+  # This command command will be execute when the menu is opened.
+  # Supports all the icon command types.
+  open-action: 'sound: BLOCK_ENDERCHEST_OPEN; tell: &eエンダーチェストを開きました'
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    id: wool:1
+    left-click: false
+    right-click: false
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+
+ender:
+  COMMAND: 'vezasirvjngeosrvgsd'
+  NAME: '&eEnderChest'
+  LORE:
+    - '通常のエンダーチェストを開きます'
+  ID: Ender_Chest
+  POSITION-X: 5
+  POSITION-Y: 1
+  KEEP-OPEN: true
+chest1:
+  COMMAND: 'op: chest 1'
+  NAME: '&e倉庫 Ⅰ'
+  LORE:
+    - '倉庫を開きます'
+  ID: chest
+  POSITION-X: 1
+  POSITION-Y: 2
+  KEEP-OPEN: true
+chest2:
+  COMMAND: 'op: chest 2'
+  NAME: '&e倉庫 Ⅱ'
+  LORE:
+    - '倉庫を開きます'
+  ID: chest
+  POSITION-X: 3
+  POSITION-Y: 2
+  KEEP-OPEN: true
+chest3:
+  COMMAND: 'op: chest 3'
+  NAME: '&e倉庫 Ⅲ'
+  LORE:
+    - '倉庫を開きます'
+  ID: chest
+  POSITION-X: 5
+  POSITION-Y: 2
+  KEEP-OPEN: true
+chest4:
+  COMMAND: 'op: chest 4'
+  NAME: '&e倉庫 Ⅳ'
+  LORE:
+    - '倉庫を開きます'
+  ID: chest
+  POSITION-X: 7
+  POSITION-Y: 2
+  KEEP-OPEN: true
+chest5:
+  COMMAND: 'op: chest 5'
+  NAME: '&e倉庫 Ⅴ'
+  LORE:
+    - '倉庫を開きます'
+  ID: chest
+  POSITION-X: 9
+  POSITION-Y: 2
+  KEEP-OPEN: true

@@ -1,0 +1,126 @@
+on pressure plate:
+	if event-block is iron plate:
+		if block below is emerald block:
+			if {jumpcooldown.%player%} is not set:
+				set {jumpcooldown.%player%} to true
+				push the player downwards at speed 0.1
+				execute console command "/execute %player% ~ ~ ~ /playsound minecraft:entity.enderdragon.flap master @a[r=10] ~ ~ ~ 5 1"
+				wait 1 ticks
+				delete velocity of player
+				set velocity of player to new Vector 0, 2.4, 0
+				push player horizontally forwards at speed 0.08
+				JumpPad(player)
+				wait 120 ticks
+				delete {jumpcooldown.%player%}
+				send player title "" with subtitle "    使用可能: JumpPad" for 20 ticks with 1 ticks fade in and 5 ticks fade out
+				play "BLOCK_GLASS_BREAK" to player at volume 10
+	else if event-block is gold plate:
+		if block below is emerald block:
+			if {jumpcooldown.%player%} is not set:
+				set {jumpcooldown.%player%} to true
+				push the player downwards at speed 0.1
+				execute console command "/execute %player% ~ ~ ~ /playsound minecraft:entity.enderdragon.flap master @a[r=10] ~ ~ ~ 5 1"
+				wait 1 ticks
+				delete velocity of player
+				set velocity of player to new Vector 0, 3.5, 0
+				push player horizontally forwards at speed 0.08
+				JumpPad(player)
+				wait 120 ticks
+				delete {jumpcooldown.%player%}
+				send player title "" with subtitle "    使用可能: JumpPad" for 20 ticks with 1 ticks fade in and 5 ticks fade out
+				play "BLOCK_GLASS_BREAK" to player at volume 10
+		else if block above is water:
+			if {jumpcooldown.%player%} is not set:
+				set {jumpcooldown.%player%} to true
+				push the player downwards at speed 0.1
+				execute console command "/execute %player% ~ ~ ~ /playsound minecraft:entity.enderdragon.flap master @a[r=10] ~ ~ ~ 5 1"
+				wait 1 ticks
+				delete velocity of player
+				set velocity of player to new Vector 0, 1.5, 0
+				JumpPad(player)
+				apply potion of levitation of tier 10 to the player for 2.5 seconds
+				wait 100 ticks
+				delete {jumpcooldown.%player%}
+				send player title "" with subtitle "    使用可能: JumpPad" for 20 ticks with 1 ticks fade in and 5 ticks fade out
+				play "BLOCK_GLASS_BREAK" to player at volume 10
+
+	else if event-block is stone plate:
+		if block below is emerald block:
+			if {jumpcooldown.%player%} is not set:
+				set {jumpcooldown.%player%} to true
+				push the player downwards at speed 0.1
+				execute console command "/execute %player% ~ ~ ~ /playsound minecraft:entity.enderdragon.flap master @a[r=10] ~ ~ ~ 5 1"
+				wait 1 ticks
+				delete velocity of player
+				set velocity of player to new Vector 0, 1.8, 0
+				push player horizontally forwards at speed 0.08
+				JumpPad(player)
+				wait 80 ticks
+				delete {jumpcooldown.%player%}
+				send player title "" with subtitle "    使用可能: JumpPad" for 20 ticks with 1 ticks fade in and 5 ticks fade out
+				play "BLOCK_GLASS_BREAK" to player at volume 10
+
+on pressure plate:
+	if event-block is iron plate:
+		if block below is lapis block:
+			if {Ijumpcooldown.%player%} is not set:
+				wait 1 ticks
+				delete velocity of player
+				set velocity of player to new Vector 0, 0.5, 0
+				JumpPad(player)
+				push the player upwards at speed 0.9
+				push player horizontally forwards at speed 3.8
+				execute console command "/execute %player% ~ ~ ~ /playsound minecraft:entity.enderdragon.flap master @a[r=10] ~ ~ ~ 5 2"
+				wait 10 ticks
+				set {Ijumpcooldown.%player%} to true
+				wait 30 ticks
+				delete {Ijumpcooldown.%player%}
+				send player title "" with subtitle "    使用可能: JumpPad" for 20 ticks with 1 ticks fade in and 5 ticks fade out
+				play "BLOCK_GLASS_BREAK" to player at volume 10
+	else if event-block is gold plate:
+		if block below is lapis block:
+			if {Ijumpcooldown.%player%} is not set:
+				wait 1 ticks
+				delete velocity of player
+				set velocity of player to new Vector 0, 0, 0
+				JumpPad(player)
+				push the player upwards at speed 0.6
+				push player horizontally forwards at speed 3.2
+				push the player upwards at speed 0.6
+				execute console command "/execute %player% ~ ~ ~ /playsound minecraft:entity.enderdragon.flap master @a[r=10] ~ ~ ~ 5 2"
+				wait 8 ticks
+				set {Ijumpcooldown.%player%} to true
+				wait 2 ticks
+				set y-coordinate of {_jump.%player%} to y-coordinate of {_jump.%player%} + 6
+				push player horizontally forwards at speed 1.6
+				push the player upwards at speed 0.6
+				wait 10 ticks
+				set y-coordinate of {_jump.%player%} to y-coordinate of {_jump.%player%} + 2
+				push player horizontally forwards at speed 0.7
+				wait 18 ticks
+				delete {Ijumpcooldown.%player%}
+				send player title "" with subtitle "    使用可能: JumpPad" for 20 ticks with 1 ticks fade in and 5 ticks fade out
+				play "BLOCK_GLASS_BREAK" to player at volume 10
+	else if event-block is stone plate:
+		if block below is lapis block:
+			if {Ijumpcooldown.%player%} is not set:
+				wait 1 ticks
+				delete velocity of player
+				set velocity of player to new Vector 0, 0.5, 0
+				JumpPad(player)
+				push the player upwards at speed 0.6
+				push player horizontally forwards at speed 2.5
+				execute console command "/execute %player% ~ ~ ~ /playsound minecraft:entity.enderdragon.flap master @a[r=10] ~ ~ ~ 5 2"
+				wait 10 ticks
+				set {Ijumpcooldown.%player%} to true
+				wait 30 ticks
+				delete {Ijumpcooldown.%player%}
+				send player title "" with subtitle "    使用可能: JumpPad" for 20 ticks with 1 ticks fade in and 5 ticks fade out
+				play "BLOCK_GLASS_BREAK" to player at volume 10
+on join:
+	delete {jumpcooldown.%player%}
+	delete {Ijumpcooldown.%player%}
+function JumpPad(p:player):
+	loop 20 times:
+		wait 1 ticks
+		execute console command "/execute %{_p}% ~ ~0.5 ~ /particle iconcrack ~ ~ ~ 0 0 0 0.1 15 force @a 361"

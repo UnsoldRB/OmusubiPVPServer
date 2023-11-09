@@ -1,0 +1,74 @@
+command /attachmentaciuwafvbaswfgeywaoudgfywaeeeee <player>:
+	trigger:
+		Playsound(arg, "entity.generic.swim", 1, 1)
+		Playsound(arg, "item.totem.use", 0.8, 2)
+		loop all blocks in radius 3 around location 2 meter forwards arg:
+			if loop-block is cauldron:
+				draw 50 watersplash particles at location 0.5 meter above location of loop-block with direction vector 0, 2, 0 and speed 0.3, offset 0.5, 0, 0.5, keepFor 0.5 seconds
+				stop
+
+#{アタッチメント}
+on anvil rename:
+	cancel event
+	close player's inventory
+on anvil combine:
+	cancel event
+	close player's inventory
+
+on inventory click:
+	if inventory name of player's current inventory is "Repair":
+		wait 1 ticks
+		if slot 0 of player's current inventory is not shears:
+			if lore of slot 0 of player's current inventory does not contain "Before:":
+				if slot 1 of player's current inventory is shears:
+
+					if name of slot 0 of player's current inventory contains "DoubleBarrel-RB":
+						if name of slot 1 of player's current inventory contains "DoubleBarrel-RB[装填数]":
+							Atc(player, "SeptupleBarrel-RB")
+					else if name of slot 0 of player's current inventory contains "M76":
+						if name of slot 1 of player's current inventory contains "M76[射程]":
+							Atc(player, "UMP45")
+					else if name of slot 0 of player's current inventory contains "フック":
+						if name of slot 1 of player's current inventory contains "フック[移動距離]":
+							Atc(player, "モア・フック")
+					else if name of slot 0 of player's current inventory contains "クイックカット":
+						if name of slot 1 of player's current inventory contains "クイックカット[発動間隔]":
+							Atc(player, "スピードカット")
+					else if name of slot 0 of player's current inventory contains "SCAR-H":
+						if name of slot 1 of player's current inventory contains "SCAR-H[軽量]":
+							Atc(player, "SCAR-L")
+					else if name of slot 0 of player's current inventory contains "FA-MAS":
+						if name of slot 1 of player's current inventory contains "FA-MAS[フルオート]":
+							Atc(player, "FA-MASG2COMMAND")
+
+				else if slot 0 of player's current inventory is air:
+					if slot 1 of player's current inventory is air:
+						if clicked slot is 2:
+							if "%clicked inventory%" contains "inventory.CraftInventoryAnvil":
+								if lore of clicked cursor contains "Before: ":
+									set {_Atc.Lore::*} to lore of clicked cursor split by "||"
+									set {_Atc.Lore} to last element of {_Atc.Lore::*}
+									replace "Before: " in {_Atc.Lore} with ""
+									set {_Atc.Lore::*} to uncolored {_Atc.Lore} split by "["
+									execute console command "/execute %player% ~ ~ ~ /playsound minecraft:block.anvil.destroy block @a[r=16] ~ ~ ~ 5 0"
+									set {_Atc.Wep} to name of clicked cursor
+									wait 0.5 seconds
+									if inventory name of player's current inventory is "Repair":
+										close player's inventory
+									loop all items in the player's inventory:
+										if name of loop-item is {_Atc.Wep}:
+											delete loop-item
+											stop loop
+									execute console command "/shot give %player% %{_Atc.Lore::1}%"
+									execute player command "/brsbrbrbrbrbrbbb %{_Atc.Lore::1}%[%{_Atc.Lore::2}% 1"
+
+function Atc(p:player, name:text):
+	delete slot 0 of {_p}'s current inventory
+	delete slot 1 of {_p}'s current inventory
+	set slot 2 of {_p}'s current inventory to beacon named "%{_name}%"
+	execute console command "/execute %{_p}% ~ ~ ~ /playsound minecraft:block.anvil.destroy block @a[r=10] ~ ~ ~ 5 0.4"
+	wait 0.5 seconds
+	if inventory name of {_p}'s current inventory is "Repair":
+		close {_p}'s inventory
+	execute console command "/shot give %{_p}% %{_name}%"
+

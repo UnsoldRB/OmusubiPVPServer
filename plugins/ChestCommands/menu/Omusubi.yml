@@ -1,0 +1,111 @@
+﻿######################
+#+                  +#
+#   MENU SETTINGS    #
+#+                  +#
+######################
+
+menu-settings:
+
+  # name - appears as the title - REQUIRED
+  name: '&1Server Menu'
+
+  # rows - the number of rows of the chest - REQUIRED
+  rows: 3
+
+  # command - OPTIONAL (you can remove this or set it to '')
+  # Bind multiple commands using ; (command: 'menu; m; me')
+  command: 'gjnrtgjnhrdjnrtjnrtgjrje4tjn'
+
+  # auto-refresh - OPTIONAL
+  # How frequently the menu will be refreshed, in seconds.
+  # Useful if you have variables in items' descriptions.
+  auto-refresh: 5
+
+  # This command command will be execute when the menu is opened.
+  # Supports all the icon command types.
+  open-action: 'sound: BLOCK_NOTE_PLING; tell: &eメニューを開きました'
+
+  # open-with-item - OPTIONAL
+  # The menu will open only right-clicking with orange wool [35:1]
+  open-with-item:
+    id: wool:1
+    left-click: false
+    right-click: false
+
+
+######################
+#+                  +#
+#       ITEMS        #
+#+                  +#
+######################
+
+
+Info:
+  COMMAND: 'nhrjgftjnxdfjngnjfrgnjfrjgn'
+  NAME: '&eInfo'
+  LORE:
+    - '情報を確認します'
+  ID: paper
+  POSITION-X: 9
+  POSITION-Y: 3
+  KEEP-OPEN: true
+mail:
+  COMMAND: 'mail inbox'
+  NAME: '&eメールの確認'
+  LORE:
+    - 'サーバーからのメールを確認できます'
+  ID: 386
+  POSITION-X: 9
+  POSITION-Y: 2
+jms:
+  COMMAND: 'tell: https://minecraft.jp/servers/58f36ecba9b0bde6d400834d'
+  NAME: '&eJapan Minecraft Servers'
+  LORE:
+    - 'URLを表示します'
+  ID: sign
+  POSITION-X: 1
+  POSITION-Y: 3
+discord:
+  COMMAND: 'tell: https://discord.gg/KzpKtzr'
+  NAME: '&eDiscord'
+  LORE:
+    - 'URLを表示します'
+  ID: sign
+  POSITION-X: 2
+  POSITION-Y: 3
+wiki:
+  COMMAND: 'tell: https://riceballsouls.wixsite.com/omusubiserver-wiki'
+  NAME: '&eWiki'
+  LORE:
+    - 'URLを表示します'
+  ID: sign
+  POSITION-X: 3
+  POSITION-Y: 3
+log:
+  COMMAND: 'lc log'
+  NAME: '&eチャットLog'
+  LORE:
+    - '自分がログインする前を含め'
+    - 'チャットのLogを確認します'
+  ID: 341
+  POSITION-X: 9
+  POSITION-Y: 1
+AMMO:
+  NAME: '&aCarrying Shop'
+  COMMAND: 'shop jndvisubvuoalrgggggggggggggeeeee'
+  LORE:
+    - '弾薬と食料を購入できます'
+  ID: gunpowder
+  POSITION-X: 1
+  POSITION-Y: 2
+  KEEP-OPEN: true
+
+
+Lobby:
+  NAME: '&dSpawn'
+  LORE:
+    - 'ロビーに戻ります'
+  COMMAND: 'spawn'
+  ID: bed
+  POSITION-X: 4
+  POSITION-Y: 1

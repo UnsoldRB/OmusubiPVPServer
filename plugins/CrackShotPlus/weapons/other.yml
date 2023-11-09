@@ -1,0 +1,283 @@
+レーダー:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Invisible_Projectiles: true
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+        Spawn_Firework:
+            Shape: "BALL"
+            Color: "255-255-255"
+            Flicker: false
+ファイアクラッカー:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Damage:
+        Spawn_Firework:
+            Shape: "BALL"
+            Color: "225-225-225"
+            Flicker: false
+花火:
+    Shoot:
+        Trails:
+            Default_Trail: "SP-MOVE"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 12
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+    Damage:
+        Spawn_Firework:
+            Shape: "BALL"
+            Color: "225-225-225"
+            Flicker: false
+水のスナイパーライフル:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Invisible_Projectiles: true
+        Trails:
+            Trail: "水のスナイパーライフル"
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+PVE-SCAR-L:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+光り輝くかぼちゃ:
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 8
+            End_Action_Bar: ""
+            End_Subtitle: ""
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+    Reload:
+        Visual_Reload:
+            Visual_Reload: "Reload"
+    Held:
+        Hide_Attributes: true
+しゃもじ:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Held:
+        Hide_Attributes: true
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 12
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+            End_Subtitle: ""
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+
+茶色のはっぱ:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Held:
+        Hide_Attributes: true
+
+        Weapon_Weight: 0.02
+
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 12
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+            End_Subtitle: ""
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+
+羽子板:
+    Skin:
+        Skins: ""
+
+        Default_Skin: "default"
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 12
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+            End_Subtitle: ""
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+    Held:
+        Weapon_Weight: 0.01
+        Hide_Attributes: true
+PVE-ソード:
+    Skin:
+        Skins: ""
+        Default_Skin: "default"
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 12
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+            End_Subtitle: ""
+    Held:
+        Hide_Attributes: true
+PVE-ソード-LongSword:
+    Skin:
+        Skins: ""
+        Default_Skin: "default"
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 12
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+            End_Subtitle: ""
+    Held:
+        Hide_Attributes: true
+PVE-ソード-Scythe:
+    Skin:
+        Skins: ""
+        Default_Skin: "default"
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 12
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+            End_Subtitle: ""
+    Held:
+        Hide_Attributes: true
+
+PVE-ソード-Dagger:
+    Skin:
+        Skins: ""
+        Default_Skin: "default"
+    Shoot:
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 12
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+            End_Subtitle: ""
+    Held:
+        Hide_Attributes: true

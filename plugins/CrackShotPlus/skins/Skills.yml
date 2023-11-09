@@ -1,0 +1,42 @@
+﻿Skill-アルリジェネ_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_AXE"
+Skill-GRマスタリー_default:
+    Durability: 3
+    Change_Item_Type: "GOLD_AXE"
+Skill-GorillaSouls_default:
+    Durability: 8
+    Change_Item_Type: "GOLD_AXE"
+Skill-キルリジェネブースト_default:
+    Durability: 2
+    Change_Item_Type: "GOLD_AXE"
+Skill-ジャンプパッド_default:
+    Durability: 4
+    Change_Item_Type: "GOLD_AXE"
+Skill-Thirdフック_default:
+    Durability: 7
+    Change_Item_Type: "GOLD_AXE"
+Skill-ProjectileLevitation_default:
+    Durability: 5
+    Change_Item_Type: "GOLD_AXE"
+Skill-ステルス_default:
+    Durability: 6
+    Change_Item_Type: "GOLD_AXE"
+Skill-フレッシュレーダー_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_AXE"
+Skill-アイスフリーディア_default:
+    Durability: 9
+    Change_Item_Type: "GOLD_AXE"
+Skill-アーツバーン_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_AXE"
+Skill-フォリアス_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_AXE"
+Skill-トグルグラヴィティ_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_AXE"
+Skill-フィリアージュ_default:
+    Durability: 1
+    Change_Item_Type: "GOLD_AXE"

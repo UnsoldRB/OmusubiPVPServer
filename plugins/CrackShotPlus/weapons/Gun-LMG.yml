@@ -1,0 +1,83 @@
+Stoner63:
+    Shoot:
+        Invisible_Projectiles: true
+        Trails:
+            Default_Trail: "LMG"
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.02
+                Maxium: 0.04
+            Sideways:
+                Minium: -0.01
+                Maxium: 0.01
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+MINIMI:
+    Shoot:
+        Invisible_Projectiles: true
+        Trails:
+            Default_Trail: "LMG"
+        Camera_Recoil:
+            Upwards:
+                Minium: 0.06
+                Maxium: 0.08
+            Sideways:
+                Minium: -0.01
+                Maxium: 0.01
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"
+
+BrowningM1918:
+    Shoot:
+        Invisible_Projectiles: true
+        Trails:
+            Default_Trail: "LMG"
+        Camera_Recoil:
+            Upwards:
+                Minium: 1.0
+                Maxium: 1.2
+            Sideways:
+                Minium: -0.01
+                Maxium: 0.01
+    Damage:
+        No_Knockback:
+            Affect_Players: true
+            Affect_Mobs_And_Animals: true
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+    Skin:
+        Default_Skin: "default"

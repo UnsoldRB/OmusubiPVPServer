@@ -1,0 +1,152 @@
+ShopName: onvlaebvyulearh
+DisplayName: '&lGunShop'
+signs:
+  text: '[GunShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  ARShop:
+    RewardType: shop
+    PriceType: free
+    Reward: vehvuyebuyvo
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9&lARShop
+    - 'lore:&8ｱｻﾙﾄﾗｲﾌﾙが販売されています##&7安定した性能を持つ武器です#&7近～中距離で大きく活躍できます#&7詳細はWiki参照'
+    Message: ''
+    InventoryLocation: 1
+    ExtraPermission: ''
+  HGShop:
+    RewardType: shop
+    PriceType: free
+    Reward: birlsnbsihur
+    MenuItem:
+    - hideflags:all
+    - type:IRON_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:1
+    - name:&9&lHGShop(SubWeapon)
+    - 'lore:&8ﾊﾝﾄﾞｶﾞﾝが販売されています##&7安定した火力を持ち、#&7射程に限界がなく、汎用性の高い武器です'
+    Message: ''
+    InventoryLocation: 10
+    ExtraPermission: ''
+  HSRShop:
+    RewardType: shop
+    PriceType: free
+    Reward: vleberubyvnrnd
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - durability:455
+    - unbreakable:true
+    - name:&9&lHSRShop
+    - 'lore:&8ﾍﾋﾞｰｽﾅｲﾊﾟｰﾗｲﾌﾙが販売されています##&7圧倒的な火力が魅力ですが、#&7長いCoolDown・Reloadが弱点の武器です'
+    Message: ''
+    InventoryLocation: 3
+    ExtraPermission: ''
+  SGShop:
+    RewardType: shop
+    PriceType: free
+    Reward: libnrdgdiubh
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:917
+    - name:&9&lSGShop
+    - 'lore:&8ｼｮｯﾄｶﾞﾝが販売されています##&7火力、CoolDown共に安定していますが、#&7短い射程が弱点の武器です'
+    Message: ''
+    InventoryLocation: 5
+    ExtraPermission: ''
+  SMGShop:
+    RewardType: shop
+    PriceType: free
+    Reward: b sriubhtbhnr
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:224
+    - name:&9&lSMGShop
+    - 'lore:&8ｻﾌﾞﾏｼﾝｶﾞﾝが販売されています##&7安定した性能を持ちますが、精度が安定しない武器です#&7装備すると移動速度が上昇します。#&7詳細はWiki参照'
+    Message: ''
+    InventoryLocation: 2
+    ExtraPermission: ''
+  LSRShop:
+    RewardType: shop
+    PriceType: free
+    Reward: abhergfvsrfgsr
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:687
+    - name:&9&lLSRShop
+    - 'lore:&8ﾗｲﾄｽﾅｲﾊﾟｰﾗｲﾌﾙが販売されています##&7ﾍﾋﾞｰｽﾅｲﾊﾟｰﾗｲﾌﾙほどの威力はない代わりに#&7クールダウンが短く、軽い武器です#&7詳細はWiki参照'
+    Message: ''
+    InventoryLocation: 4
+    ExtraPermission: ''
+  REVShop:
+    RewardType: shop
+    PriceType: free
+    Reward: bethrsdbthrsefbvsrf
+    MenuItem:
+    - hideflags:all
+    - type:IRON_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:64
+    - name:&9&lREVShop(SubWeapon)
+    - 'lore:&8ﾘﾎﾞﾙﾊﾞｰが販売されています##&7火力が高いものの、#&7少々扱いにくさがある武器です#&7詳細はWiki参照'
+    Message: ''
+    InventoryLocation: 11
+    ExtraPermission: ''
+  CSGShop:
+    RewardType: shop
+    PriceType: free
+    Reward: birlygjrfygrds6urtfgc
+    MenuItem:
+    - hideflags:all
+    - type:IRON_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:135
+    - name:&9&lCSGShop(SubWeapon)
+    - 'lore:&8ｺﾝﾊﾟｸﾄｼｮｯﾄｶﾞﾝが販売されています##&7ｼｮｯﾄｶﾞﾝをSubに転換した武器です#&7扱いやすく、火力も保証されています'
+    Message: ''
+    InventoryLocation: 12
+    ExtraPermission: ''
+  LMGShop:
+    RewardType: shop
+    PriceType: free
+    Reward: kxyhmkjctdyjcdtghjn
+    MenuItem:
+    - hideflags:all
+    - type:DIAMOND_PICKAXE
+    - amount:1
+    - unbreakable:true
+    - durability:1148
+    - name:&9&lLMGShop
+    - 'lore:&8ﾗｲﾄﾏｼﾝｶﾞﾝが販売されています##&7高い装填数を持つ、#&7遠・中距離に特化した#&7連射系武器です。#&7また、ノックバックがなく、#&7弾速が少し早い特徴があります#&7詳細はWiki参照'
+    Message: ''
+    InventoryLocation: 6
+    ExtraPermission: ''
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: nvskeibvlnseurgglensdjkvnszfkjvbhsueil
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

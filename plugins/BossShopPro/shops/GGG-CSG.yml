@@ -1,0 +1,49 @@
+ShopName: birlygjrfygrds6urtfgc
+DisplayName: '&9&lCSGShop'
+signs:
+  text: '[CSGShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  PSR-2000:
+    RewardType: playercommand
+    PriceType: money
+    Price: 16400
+    Reward: brsbrbrbrbrbrbbb PSR-2000 1
+    MenuItem:
+    - hideflags:all
+    - type:IRON_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:135
+    - name:&9PSR-2000
+    - 'lore:&fCSGの中で最も標準的な性能の武器##&b必要水晶 : 16400'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  TH-Spread:
+    RewardType: playercommand
+    PriceType: money
+    Price: 22600
+    Reward: brsbrbrbrbrbrbbb TH-Spread 1
+    MenuItem:
+    - hideflags:all
+    - type:IRON_AXE
+    - amount:1
+    - unbreakable:true
+    - durability:135
+    - name:&9TH-Spread
+    - 'lore:&f牽制に重きを置いた武器##&b必要水晶 : 22600'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 2
+    ExtraPermission: ''
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: onvlaebvyulearh
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 9
+    ExtraPermission: ''

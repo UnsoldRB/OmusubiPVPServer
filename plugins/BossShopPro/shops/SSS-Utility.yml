@@ -1,0 +1,62 @@
+ShopName: edawefdseawfdsafasc
+DisplayName: '&9&lUtilityShop'
+signs:
+  text: '[UtilityShop]'
+  NeedPermissionToCreateSign: true
+shop:
+  1:
+    RewardType: playercommand
+    PriceType: money
+    Price: 1000
+    Reward: brsbrbrbrbrbrbbb menu 1
+    MenuItem:
+    - hideflags:all
+    - id:2267
+    - amount:1
+    - durability:0
+    - name:&9Menu
+    - 'lore:&f/menuを右クリックで開けます##&b必要水晶 : 1000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 1
+    ExtraPermission: ''
+  11:
+    RewardType: playercommand
+    PriceType: money
+    Price: 50000
+    Reward: bgelrghsgvkushgkegrvet Buy
+    MenuItem:
+    - hideflags:all
+    - id:54
+    - amount:1
+    - durability:0
+    - name:&9モア-コンテナ
+    - 'lore:&f倉庫が追加される##&b必要水晶 : 50000'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 18
+    ExtraPermission: ''
+  10:
+    RewardType: playercommand
+    PriceType: money
+    Price: 10
+    Reward: veroivherihhiesdgrggggggggggggg
+    MenuItem:
+    - hideflags:all
+    - id:95
+    - amount:3
+    - durability:1
+    - name:&9仕分けガラス
+    - 'lore:&fインベントリに#&f境目を付けるためのアイテム#&f何の効果もない##&b必要水晶 : 10'
+    Message: '&e%itemname%&eを購入しました 残りの水晶: &c%left%'
+    InventoryLocation: 38
+    ExtraPermission: ''
+  Back:
+    RewardType: shop
+    PriceType: free
+    Reward: gfhnfdghndhdythtd
+    MenuItem:
+    - hideflags:all
+    - type:REDSTONE
+    - amount:1
+    - name:&cBack
+    InventoryLocation: 46
+    ExtraPermission: ''

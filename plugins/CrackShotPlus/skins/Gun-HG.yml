@@ -1,0 +1,15 @@
+﻿DesertEagle_default:
+    Durability: 1
+    Change_Item_Type: "IRON_AXE"
+Glock18_default:
+    Durability: 2
+    Change_Item_Type: "IRON_AXE"
+M1911A1_default:
+    Durability: 1
+    Change_Item_Type: "IRON_AXE"
+FNFive-seveN_default:
+    Durability: 1
+    Change_Item_Type: "IRON_AXE"
+M93R_default:
+    Durability: 1
+    Change_Item_Type: "IRON_AXE"

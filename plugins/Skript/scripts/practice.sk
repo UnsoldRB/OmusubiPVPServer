@@ -1,0 +1,49 @@
+on script load:
+	loop all entities in the world "world":
+		if name of loop-entity contains "ビラジャーβ":
+			kill loop-entity
+
+on death of villager:
+	if attacker is in the region "practice":
+		if {timer.%attacker%} is set:
+			set {deathvillager.%attacker%} to true
+			message "§7" to attacker
+			wait 1 ticks
+			message "§7・倒すまでにかかった時間" to attacker
+			wait 1 ticks
+			message "§7    %{timer.%attacker%}%ｓ" to attacker
+			wait 1 ticks
+			message "§7・攻撃回数" to attacker
+			wait 1 ticks
+			message "§7    %{attackvillager.%attacker%}%回" to attacker
+			wait 1 ticks
+			message "§7" to attacker
+			wait 2 ticks
+			delete {timer.%attacker%}
+			delete {attackvillager.%attacker%}
+			delete {deathvillager.%attacker%}
+
+on damage of villager:
+	if attacker is in the region "practice":
+		add 1 to {attackvillager.%attacker%}
+		if {timer.%attacker%} is not set:
+			set {timer.%attacker%} to 0
+			loop 600 times:
+				if {deathvillager.%attacker%} is true:
+					stop
+				wait 2 ticks
+				add 0.1 to {timer.%attacker%}
+
+command /bstedhsertsder:
+	trigger:
+		teleport player to location at -246.5, 4, -86.5 in the world "world"
+		TeleportEffect(player)
+
+
+
+every 6 hours:
+	broadcast "&e[&fPractice&e] Practice内の""的""を初期化します..."
+	loop all villagers in the world "world":
+		wait 1 ticks
+		if loop-entity is in the region "practice":
+			kill loop-entity

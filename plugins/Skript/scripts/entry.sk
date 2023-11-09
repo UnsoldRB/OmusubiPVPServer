@@ -1,0 +1,1199 @@
+options:
+	prefix: §6[§r§lTeamBattle§r§6]
+	sign: -76, 15, -120
+	RequiredPlayers: 4
+
+
+on world change:
+	delete {HotbarSwitch.%player%}
+	DeleteWeaponsVariables(player)
+	heal player
+	wipe player's sidebar
+	set player's gamemode to survival
+	wait 10 ticks
+	if "%player's world%" is "world":
+		delete {killgetmoney::%player%}
+		delete {killstreak::%player%}
+		delete {kills::%player%}
+		if {team::%player%} is set:
+			remove player from {EntryPlayers::*}
+			delete {team::%player%}
+			set {TeamBattle.Score::%player%} to 0
+			set {TeamBattle.Kill::%player%} to 0
+			set {TeamBattle.Death::%player%} to 0
+
+on script load:
+	wait 1 seconds
+	loop all blocks in radius 1 around location at {@sign} in the world "world":
+		if loop-block is sign:
+			set {GameSign} to loop-block
+			exit 2 sections
+	execute console command "/teambattle reload"
+
+command /teambattle reload:
+	trigger:
+		loop all dropped items:
+			kill loop-dropped item
+		loop all armor stands:
+			if name of loop-value does not contain "Ornament":
+				kill loop-armor stand
+		wait 10 ticks
+		loop all players:
+			reset loop-player's nametag
+			set loop-player's tablist name to "%loop-player%"
+			set display name of loop-player to "%loop-player%"
+			set loop-player's level to -1
+			delete {BreakChain.%loop-player%}
+			set loop-player's boots to air
+			if {EntryPlayers::*} contains loop-player:
+				teleport loop-value to location -12, 13.1, -107 in world "world"
+			wait 1 ticks
+		set {EntryPlayers::*} to none
+		delete {team::*}
+		delete {BreakBlock.Location::*}
+		delete {BreakBlock.Type::*}
+		delete {EntryIF}
+		delete {tdminv::*}
+		delete {inventory.lock::*}
+		delete {Entrymidway}
+		delete {BreakedBlock::*}
+		delete {LastCharge::*}
+		delete {BlueSpawn::*}
+		delete {RedSpawn::*}
+		delete {_PointItem::*}
+		delete {healthwarning::*}
+		delete {TeamBattle.Score::*}
+		delete {TeamBattle.Kill::*}
+		delete {TeamBattle.Death::*}
+		delete {BreakChain::*}
+		delete {kills::*}
+		delete {LockMove::*}
+		delete {DamageCoolDown::*}
+		delete {ContinueDamageCoolDown::*}
+		delete {AttackDamageCoolDown::*}
+		delete {PotionDamageCoolDown::*}
+		delete {VoidLocation}
+		delete {say::*}
+		loop {RegionAmount} times:
+			add 1 to {_RegionCount}
+			remove region "Blue%{_RegionCount}%" from world "TeamBattle"
+			remove region "Red%{_RegionCount}%" from world "TeamBattle"
+		delete {RegionAmount}
+		set {Score.Red} to 0
+		set {Score.Blue} to 0
+		delete {EntryReady}
+		chance of 25%:
+			set {Gamemode} to "§5HardCoreMatch"
+		else:
+			set {Gamemode} to "ShortDeathMatch" or "ShortDeathMatch" or "ShortDeathMatch" or "AsidePointMatch" or "AsidePointMatch"#"DeathMatch" or "DeathMatch" or "DeathMatch" or "SumoMatch" or "PointMatch" or "PointMatch" or "DeathMatch" or "PointMatch" or 
+		if {Gamemode} is "AsidePointMatch":
+			set {GameMap} to "Lab"
+		else if {Gamemode} is "SumoMatch":
+			set {GameMap} to "LargeMasses" or "Plate"
+		else:
+			set {GameMap} to "Standard" or "CastleTown" or "ParkCity" or "OldCubes" or "CavesForest" or "Rooms" or "Gate" or "StandardV2" or "Simple"# or "OldStandard"
+		set 2nd line of {GameSign} to "§l%{GameMap}%"
+		set 4th line of {GameSign} to "/// §l%{Gamemode}%§r§0 ///"
+		broadcast ""
+		broadcast ""
+		broadcast ""
+		broadcast "{@prefix}ゲームの参加受付を開始します。"
+		wait 1.5 seconds
+		broadcast "§l/////////////////"
+		broadcast "§6>>Map: %{GameMap}%"
+		broadcast "§6>>Gamemode: %{Gamemode}%"
+		broadcast "§l/////////////////"
+		broadcast ""
+
+
+
+
+command /snjedtgnhsrjtsfjgnmstefjygftd:
+	trigger:
+		if {EntryIF} is not true:
+			if {EntryPlayers::*} does not contain player:
+				add player to {EntryPlayers::*}
+				broadcast "{@prefix}%player%が参加しました。"
+				set mundosk player's nametag to "§6%player%"
+				set player's tablist name to "§6%player%"
+				set display name of player to "§6%player%"
+				loop {EntryPlayers::*}:
+					play sound "block.note.pling" with volume 1 and pitch 2 at loop-value for loop-value
+#							------------最大人数
+				if size of {EntryPlayers::*} is more than {@RequiredPlayers}:
+					if {EntryReady} is not set:
+						set {EntryReady} to true
+						broadcast "{@prefix}人数が揃いました。25秒後に試合を開始します。"
+						loop 250 times:
+							wait 2 ticks
+							loop {EntryPlayers::*}:
+								set {_Number} to (250 - loop-number) / 10
+								send loop-value-2 title "" with subtitle "§6                            開始まで: %{_Number}%s" for 3 ticks with 1 ticks fade in and 0 ticks fade out
+#								------------最小人数
+							if size of {EntryPlayers::*} is less than ({@RequiredPlayers} + 1):
+								broadcast "{@prefix}必要な人数が足りません。"
+								delete {EntryReady}
+								loop {EntryPlayers::*}:
+									play sound "block.note.pling" with volume 1 and pitch 0 at loop-value-2 for loop-value-2
+								stop
+						set {EntryIF} to true
+						loop {EntryPlayers::*}:
+							apply potion of blindness of tier 1 to the loop-value for 3.5 seconds
+							send loop-value title "" with subtitle "§6                            開始まで: 0.0s" for 20 ticks with 3 ticks fade in and 5 ticks fade out
+						wait 1 seconds
+						broadcast "{@prefix}試合が開始されます..."
+						remove air from {EntryPlayers::*}
+						remove none from {EntryPlayers::*}
+						loop {EntryPlayers::*}:
+							add loop-value's ping to {_ping::%loop-value%}
+							apply potion of night vision of tier 1 to the loop-value for 2.5 seconds
+							send loop-value title "§6§l             READY..." with subtitle "" for 35 ticks with 3 ticks fade in and 0 ticks fade out
+						wait 1.5 seconds
+						loop {EntryPlayers::*}:
+							teleport loop-value to location at -52, 19, 135 of the world "FFA"
+							apply potion of night vision of tier 120 to the loop-value for 16 seconds
+							apply potion of resistance of tier 4 to the loop-value for 16 seconds
+							apply potion of regeneration of tier 6 to the loop-value for 16 seconds
+							apply potion of water breathing of tier 1 to the loop-value for 16 seconds
+							delete {killgetmoney.%loop-value%}
+							delete {killstreak::%loop-value%}
+							delete {kills.%loop-value%}
+							wipe loop-value's sidebar
+							wait 2 ticks
+						wait 2 seconds
+						loop {EntryPlayers::*}:
+							message "{@prefix}前回のMapを初期化しています..." to loop-value
+						execute console command "/mv unload TeamBattle"
+						wait 0.5 seconds
+						delete directory "/TeamBattle"
+						wait 1.5 seconds
+						loop {EntryPlayers::*}:
+							message "{@prefix}今回使用するMapを読み込んでいます..." to loop-value
+						copy directory "/TeamBattleMAPs/%{GameMap}%/TeamBattle" to ""
+						wait 3 seconds
+						execute console command "/mv load TeamBattle"
+						wait 6 seconds
+						execute console command "/skript reload function"
+						execute console command "/skript reload skills"
+						loop {EntryPlayers::*}:
+							message "{@prefix}プレイヤーの設定を行っています..." to loop-value
+							add loop-value to {_TeamSetting::*}
+							set {TeamBattle.Score::%loop-value%} to 0
+							set {TeamBattle.Kill::%loop-value%} to 0
+							set {TeamBattle.Death::%loop-value%} to 0
+							set {_BeforePoint.%loop-value%} to 0
+						wait 0.8 seconds
+						loop {EntryPlayers::*}:
+							add 1 to {_teamsetcount}
+							set {_red} to 0
+							set {_blue} to 0
+							add loop-value to {_TeamSetting::*}
+							if {_teamsetcount} is 1:
+								set {_randomteam} to "red" or "blue"
+								if {_randomteam} is "red":
+									set {team::%loop-value%} to "red"
+									set mundosk loop-value's nametag to "§c%loop-value%"
+									set loop-value's tablist name to "§c%loop-value%"
+									set display name of "%loop-value%" parsed as player to "§c%loop-value%"
+									send loop-value title "" with subtitle "§c赤チームに参加しました" for 40 ticks with 3 ticks fade in and 3 ticks fade out
+								else if {_randomteam} is "blue":
+									set {team::%loop-value%} to "blue"
+									set mundosk loop-value's nametag to "§9%loop-value%"
+									set loop-value's tablist name to "§9%loop-value%"
+									set display name of "%loop-value%" parsed as player to "§9%loop-value%"
+									send loop-value title "" with subtitle "§9青チームに参加しました" for 40 ticks with 3 ticks fade in and 3 ticks fade out
+							else:
+								loop {_TeamSetting::*}:
+									if {team::%loop-value-2%} is "red":
+										add 1 to {_red}
+									else if {team::%loop-value-2%} is "blue":
+										add 1 to {_blue}
+								set {_randomteam} to "red" or "blue"
+								if {_red} is less than {_blue}:
+									set {team::%loop-value%} to "red"
+									set mundosk loop-value's nametag to "§c%loop-value%"
+									set loop-value's tablist name to "§c%loop-value%"
+									set display name of "%loop-value%" parsed as player to "§c%loop-value%"
+									send loop-value title "" with subtitle "§c赤チームに参加しました" for 40 ticks with 3 ticks fade in and 3 ticks fade out
+								else if {_blue} is less than {_red}:
+									set {team::%loop-value%} to "blue"
+									set mundosk loop-value's nametag to "§9%loop-value%"
+									set loop-value's tablist name to "§9%loop-value%"
+									set display name of "%loop-value%" parsed as player to "§9%loop-value%"
+									send loop-value title "" with subtitle "§9青チームに参加しました" for 40 ticks with 3 ticks fade in and 3 ticks fade out
+								else if {_randomteam} is "red":
+									set {team::%loop-value%} to "red"
+									set mundosk loop-value's nametag to "§c%loop-value%"
+									set loop-value's tablist name to "§c%loop-value%"
+									set display name of "%loop-value%" parsed as player to "§c%loop-value%"
+									send loop-value title "" with subtitle "§c赤チームに参加しました" for 40 ticks with 3 ticks fade in and 3 ticks fade out
+								else if {_randomteam} is "blue":
+									set {team::%loop-value%} to "blue"
+									set mundosk loop-value's nametag to "§9%loop-value%"
+									set loop-value's tablist name to "§9%loop-value%"
+									set display name of "%loop-value%" parsed as player to "§9%loop-value%"
+									send loop-value title "" with subtitle "§9青チームに参加しました" for 40 ticks with 3 ticks fade in and 3 ticks fade out
+							play sound "block.note.snare" with volume 1 and pitch 1 at loop-value for loop-value
+							set {_weaponname} to CheckWeaponSlot(loop-value, "/Main")
+							set {_weapontype} to CheckWeaponCategory(slot {_weaponname} of loop-value, 2)
+							set {_weaponname} to CheckWeaponName(name of slot {_weaponname} of loop-value, true)
+							if {_ping::%loop-value%} is more than 99:
+								message "{@prefix}§cPingが100を超えています。" to loop-value
+							else:
+								message "{@prefix}§6Ping --- %loop-value's ping%" to loop-value
+							if {_weaponname} is not set:
+								set {_weaponname} to "無し"
+								message "{@prefix}§cMainを装備していません。" to loop-value
+							else:
+								message "{@prefix}§6Main --- %uncolored {_weaponname}%" to loop-value
+							if {team::%loop-value%} is "red":
+								message "{@prefix}§6Team --- Red" to loop-value
+							else if {team::%loop-value%} is "blue":
+								message "{@prefix}§6Team --- Blue" to loop-value
+							set {_EquippedWeapon.%{team::%loop-value%}%::%loop-value%} to "§7%loop-value%§6→§7%{_weaponname}%(%{_weapontype}%)"
+							wait 2 ticks
+						wait 1 seconds
+						loop {EntryPlayers::*}:
+							message "{@prefix}試合に移動します..." to loop-value
+						wait 2 seconds
+						loop {EntryPlayers::*}:
+							wait 2 ticks
+							teleport loop-value to location at 0, 2000, 0 of the world "TeamBattle"
+						wait 10 ticks
+						loop {EntryPlayers::*}:
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§7§lLoading..." at line 20 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§7§lLoading..." at line 19 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§7§lLoading..." at line 18 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§7§lLoading..." at line 17 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§7§lLoading..." at line 16 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§7§lLoading..." at line 15 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§7§lLoading..." at line 14 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§7§lLoading..." at line 13 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§7§lLoading..." at line 12 to loop-value
+							set loop-value's gamemode to spectator
+							send loop-value title "§6             %{GameMap}%" with subtitle "§6         %{GameMode}%" for 200 ticks with 10 ticks fade in and 20 ticks fade out
+							if {team::%loop-value%} is "red":
+								execute console command "/replaceitem entity %loop-value% slot.armor.feet minecraft:leather_boots 1 0 {display:{Name:""§c赤チーム"",color:16727614},Unbreakable:1b,ench:[{id:10s,lvl:1s}],AttributeModifiers:[{Name:""HaruEditor"",UUIDLeast:1900837528l,UUIDMost:1900837528l,Operation:0,AttributeName:""generic.armor"",Amount:0d,Slot:""feet""}],HideFlags:7}"
+							else if {team::%loop-value%} is "blue":
+								execute console command "/replaceitem entity %loop-value% slot.armor.feet minecraft:leather_boots 1 0 {display:{Name:""§9青チーム"",color:1402879},Unbreakable:1b,ench:[{id:10s,lvl:1s}],AttributeModifiers:[{Name:""HaruEditor"",UUIDLeast:1900837528l,UUIDMost:1900837528l,Operation:0,AttributeName:""generic.armor"",Amount:0d,Slot:""feet""}],HideFlags:7}"
+							loop {EntryPlayers::*}:
+								if {team::%loop-value-1%} is not {team::%loop-value-2%}:
+									set mundosk loop-value-1's nametag for loop-value-2 to "§8§lX"
+									wait 2 ticks
+							wait 2 ticks
+						wait 10 ticks
+						execute console command "/execute %player% ~ ~ ~ /gamerule reducedDebugInfo true"
+						delete {_count}
+						set {_NodeValue} to skutilities yaml value "%{GameMap}%.BlueSpawn" from file "plugins/Skript/yml/configs/TeamBattleMAPLocations.yml"
+						set {_SpawnLocations.Splited::*} to {_NodeValue} split by "//"
+						set {_NowSetting} to "Blue"
+						loop (size of {_SpawnLocations.Splited::*} * 2) times:
+							if {_count} is size of {_SpawnLocations.Splited::*}:
+								set {_NowSetting} to "Red"
+								set {_NodeValue} to skutilities yaml value "%{GameMap}%.RedSpawn" from file "plugins/Skript/yml/configs/TeamBattleMAPLocations.yml"
+								set {_SpawnLocations.Splited::*} to {_NodeValue} split by "//"
+								delete {_count}
+							add 1 to {_count}
+							set {_SpawnLocations.MoreSplited::*} to {_SpawnLocations.Splited::%{_count}%} split by ", "
+							set {_SpawnLocations.SpecialSplited::*} to {_SpawnLocations.MoreSplited::3} split by "/"
+							set {_SpawnLocations.MoreSplited::3} to {_SpawnLocations.SpecialSplited::1}
+							set {%{_NowSetting}%Spawn::%{_count}%} to location at {_SpawnLocations.MoreSplited::1} parsed as number, {_SpawnLocations.MoreSplited::2} parsed as number, {_SpawnLocations.MoreSplited::3} parsed as number
+							set {_SpawnLocations.MoreSplited::*} to {_SpawnLocations.Splited::%{_count}%} split by "/"
+							set pitch of {%{_NowSetting}%Spawn::%{_count}%} to {_SpawnLocations.MoreSplited::2} parsed as number
+							set yaw of {%{_NowSetting}%Spawn::%{_count}%} to {_SpawnLocations.MoreSplited::3} parsed as number
+							set world of {%{_NowSetting}%Spawn::%{_count}%} to world "TeamBattle"
+							wait 1 ticks
+							add 0.5 to {RegionAmount}
+							set {_loc1} to {%{_NowSetting}%Spawn::%{_count}%}
+							set {_loc2} to {%{_NowSetting}%Spawn::%{_count}%}
+							add 4 to the x-coordinate of {_loc1}
+							add 4 to the y-coordinate of {_loc1}
+							add 4 to the z-coordinate of {_loc1}
+							add -4 to the x-coordinate of {_loc2}
+							add -4 to the y-coordinate of {_loc2}
+							add -4 to the z-coordinate of {_loc2}
+							if all worldguard regions in world "TeamBattle" does not contain "%{_NowSetting}%%{_count}%":
+								create region "%{_NowSetting}%%{_count}%" between {_loc1} and {_loc2} in world "TeamBattle"
+								execute console command "/rg flag %{_NowSetting}%%{_count}% pvp -w TeamBattle deny"
+								execute console command "/rg flag %{_NowSetting}%%{_count}% chest-access -w TeamBattle allow"
+								execute console command "/rg flag %{_NowSetting}%%{_count}% use -w TeamBattle allow"
+								execute console command "/rg flag %{_NowSetting}%%{_count}% interact -w TeamBattle allow"
+						delete {_count}
+						if {Gamemode} is not "SumoMatch":
+							set {_NodeValue} to skutilities yaml value "%{GameMap}%.BlueCore" from file "plugins/Skript/yml/configs/TeamBattleMAPLocations.yml"
+							set {_PointLocations.Splited::*} to {_NodeValue} split by "/"
+							if {Gamemode} is "AsidePointMatch":
+								loop size of {_PointLocations.Splited::*} times:
+									add 1 to {_count}
+									set {_PointLocations.MoreSplited::*} to {_PointLocations.Splited::%{_count}%} split by ", "
+									add location at {_PointLocations.MoreSplited::1} parsed as number, {_PointLocations.MoreSplited::2} parsed as number, {_PointLocations.MoreSplited::3} parsed as number to {_Cores::*}
+									wait 1 ticks
+								set {_PointLocation} to random integer between 1 and size of {_Cores::*}
+								loop all blocks in radius 5 around location at {_Cores::%{_PointLocation}%}:
+									if type of loop-block is bedrock:
+										set loop-block to melon
+										spawn an slime at location 0.5 meter below loop-block
+										add spawned slime to {_PointSignal::*}
+										Add "{NoGravity:1b,Size:0,Invulnerable:1,PersistenceRequired:1,NoAI:1,Silent:1}" To nbt of spawned slime
+										wait 1 ticks
+								remove {_Cores::%{_PointLocation}%} from {_Cores::*}
+								if size of {_Cores::*} is not 0:
+									chance of 30%:
+										set {_PointLocation} to random integer between 1 and size of {_Cores::*}
+										loop all blocks in radius 5 around location at {_Cores::%{_PointLocation}%}:
+											if type of loop-block is bedrock:
+												set loop-block to melon
+												spawn an slime at location 0.5 meter below loop-block
+												add spawned slime to {_PointSignal::*}
+												Add "{NoGravity:1b,Size:0,Invulnerable:1,PersistenceRequired:1,NoAI:1,Silent:1}" To nbt of spawned slime
+												wait 1 ticks
+										remove {_Cores::%{_PointLocation}%} from {_Cores::*}
+							else:
+								loop (size of {_PointLocations.Splited::*} * 2) times:
+									if {_count} is size of {_PointLocations.Splited::*}:
+										set {_NodeValue} to skutilities yaml value "%{GameMap}%.RedCore" from file "plugins/Skript/yml/configs/TeamBattleMAPLocations.yml"
+										set {_PointLocations.Splited::*} to {_NodeValue} split by "/"
+										delete {_count}
+									add 1 to {_count}
+									set {_PointLocations.MoreSplited::*} to {_PointLocations.Splited::%{_count}%} split by ", "
+									add location at {_PointLocations.MoreSplited::1} parsed as number, {_PointLocations.MoreSplited::2} parsed as number, {_PointLocations.MoreSplited::3} parsed as number to {_Cores::*}
+									wait 1 ticks
+								if {Gamemode} is "PointMatch":
+									set {_PointLocation} to random integer between 1 and size of {_Cores::*} / 2
+									loop all blocks in radius 5 around location at {_Cores::%{_PointLocation}%}:
+										if type of loop-block is bedrock:
+											set loop-block to melon
+											spawn an slime at location 0.5 meter below loop-block
+											add spawned slime to {_PointSignal::*}
+											Add "{NoGravity:1b,Size:0,Invulnerable:1,PersistenceRequired:1,NoAI:1,Silent:1}" To nbt of spawned slime
+											wait 1 ticks
+									add size of {_Cores::*} / 2 to {_PointLocation}
+									loop all blocks in radius 5 around location at {_Cores::%{_PointLocation}%}:
+										if type of loop-block is bedrock:
+											set loop-block to pumpkin
+											spawn an slime at location 0.5 meter below loop-block
+											add spawned slime to {_PointSignal::*}
+											Add "{NoGravity:1b,Size:0,Invulnerable:1,PersistenceRequired:1,NoAI:1,Silent:1}" To nbt of spawned slime
+											wait 1 ticks
+									remove {_Cores::%{_PointLocation}%} from {_Cores::*}
+									remove size of {_Cores::*} / 2 from {_PointLocation}
+									remove {_Cores::%{_PointLocation}%} from {_Cores::*}
+							wait 1 ticks
+							loop {_Cores::*}:
+								set {_Endgateway} to false
+								loop all blocks in radius 5 around location at loop-value:
+									if loop-value-2 is end gateway:
+										set {_Endgateway} to true
+										exit 2 sections
+								loop all blocks in radius 5 around location at loop-value:
+									if loop-block is bedrock:
+										if {_Endgateway} is not true:
+											set loop-block to air
+								wait 1 ticks
+						delete {Score.Red}
+						delete {Score.Blue}
+						delete {_count}
+						loop {_PointSignal::*}:
+							apply potion of glowing of tier 1 to loop-value for 11 seconds
+						set {_player.setting} to random element of {EntryPlayers::*}
+						set {_time.setting} to 0 or 0 or 4200 or 4200 or 4200 or 10000 or 10000 or 13000
+						set {_weather.setting} to "clear" or "clear" or "clear" or "rain"
+						execute console command "/execute %{_player.setting}% ~ ~ ~ /time set %{_time.setting}%"
+						execute console command "/execute %{_player.setting}% ~ ~ ~ /weather %{_weather.setting}%"
+						loop 3 times:
+							add 1 to {_count}
+							set {_NodeValue} to skutilities yaml value "%{GameMap}%.Preview-%{_count}%" from file "plugins/Skript/yml/configs/TeamBattleMAPLocations.yml"
+							set {_PreviewLocations.%{_count}%::*} to {_NodeValue} split by "/"
+							set {_PreviewLocations.Splited::*} to {_PreviewLocations.%{_count}%::1} split by ", "
+							set {_Location} to location at {_PreviewLocations.Splited::1} parsed as number, {_PreviewLocations.Splited::2} parsed as number, {_PreviewLocations.Splited::3} parsed as number
+							set pitch of {_Location} to {_PreviewLocations.%{_count}%::2} parsed as number
+							set yaw of {_Location} to {_PreviewLocations.%{_count}%::3} parsed as number
+							wait 1 ticks
+							loop {EntryPlayers::*}:
+								teleport loop-value-2 to {_Location}
+								if loop-number is 1:
+									play sound "entity.player.levelup" with volume 1 and pitch 0 at loop-value-2 for loop-value-2
+								else:
+									play sound "entity.irongolem.attack" with volume 1 and pitch 1 at loop-value-2 for loop-value-2
+							wait 2.5 seconds
+						loop {EntryPlayers::*}:
+							message "§7---[装備開示]---" to loop-value
+							if {team::%loop-value%} is "red":
+								loop {_EquippedWeapon.Red::*}:
+									if loop-index-2 is not loop-value-1:
+										message loop-value-2 to loop-value-1
+								set {_spawn} to random element of {RedSpawn::*}
+								teleport loop-value to {_spawn}
+							else if {team::%loop-value%} is "blue":
+								loop {_EquippedWeapon.Blue::*}:
+									if loop-index-2 is not loop-value-1:
+										message loop-value-2 to loop-value-1
+								set {_spawn} to random element of {BlueSpawn::*}
+								teleport loop-value to {_spawn}
+							send loop-value title "§7§l/// §rSTANDBY...§7§l ///" with subtitle "" for 40 ticks with 10 ticks fade in and 0 ticks fade out
+							wait 1 ticks
+							set {LockMove::%loop-value%} to true
+						wait 2 seconds
+						loop {EntryPlayers::*}:
+							send loop-value title ">>>3<<<" with subtitle "" for 12 ticks with 0 ticks fade in and 5 ticks fade out
+							play sound "block.note.snare" with volume 1 and pitch 1.2 at loop-value for loop-value
+						wait 0.5 seconds
+						loop {EntryPlayers::*}:
+							send loop-value title ">>2<<" with subtitle "" for 12 ticks with 0 ticks fade in and 5 ticks fade out
+							play sound "block.note.snare" with volume 1 and pitch 1.2 at loop-value for loop-value
+						wait 0.5 seconds
+						loop {EntryPlayers::*}:
+							send loop-value title ">1<" with subtitle "" for 12 ticks with 0 ticks fade in and 5 ticks fade out
+							play sound "block.note.snare" with volume 1 and pitch 1.2 at loop-value for loop-value
+						wait 0.5 seconds
+						loop {EntryPlayers::*}:
+							send loop-value title "FIGHT" with subtitle "" for 40 ticks with 10 ticks fade in and 10 ticks fade out
+							set loop-value's gamemode to survival
+							heal loop-value
+							execute console command "/effect %loop-value% clear"
+							play sound "entity.wither.spawn" with volume 1 and pitch 0 at loop-value for loop-value
+							play sound "entity.wither.spawn" with volume 1 and pitch 1 at loop-value for loop-value
+							play sound "entity.wither.spawn" with volume 1 and pitch 2 at loop-value for loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§cRed  §c||||||||||||||||||||§7(0)" at line 20 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§9Blue §c||||||||||||||||||||§7(0)" at line 19 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§eYourPoints: 0" at line 18 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§eYourKills : 0" at line 17 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§eYourDeaths: 0" at line 16 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§r" at line 15 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§7---" at line 14 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§r§7---" at line 13 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§r§r§7---" at line 12 to loop-value
+							delete {LockMove::%loop-value%}
+						set {Entrymidway} to true
+						set {VoidLocation} to skutilities yaml value "%{GameMap}%.Void" from file "plugins/Skript/yml/configs/TeamBattleMAPLocations.yml"
+						broadcast "{@prefix}試合が開始されました。"
+						wait 1 ticks
+						if {Gamemode} is "DeathMatch" or "ShortDeathMatch":
+							broadcast "{@prefix}目標: 相手チームを殲滅"
+						else if {Gamemode} is "PointMatch":
+							broadcast "{@prefix}目標: 相手陣地のスイカ/カボチャを破壊"
+						else if {Gamemode} is "AsidePointMatch":
+							broadcast "{@prefix}目標: 青チーム:スイカの防衛/敵の殲滅"
+							broadcast "{@prefix}目標: 赤チーム:スイカの破壊"
+						else if {Gamemode} is "§5HardCoreMatch":
+							broadcast "{@prefix}目標: 相手チームを殲滅"
+							broadcast "{@prefix}(リスポーン無し)"
+						loop 300 times:
+							if {EntryIF} is not set:
+								stop
+							if {Gamemode} is "§5HardCoreMatch":
+								set {_HardCore.blue} to 0
+								set {_HardCore.red} to 0
+								loop {EntryPlayers::*}:
+									if gamemode of loop-value-2 is not spectator:
+										add 1 to {_HardCore.%{team::%loop-value-2%}%}
+								if {_HardCore.blue} is 0:
+									broadcast "{@prefix}青チームが全滅しました。"
+									add 20 to {Score.Red}
+									exit 3 sections
+								else if {_HardCore.red} is 0:
+									broadcast "{@prefix}赤チームが全滅しました。"
+									add 20 to {Score.Blue}
+									exit 3 sections
+							else if {Score.Red} or {Score.Blue} is more than 19:
+								broadcast ""
+								broadcast ""
+								broadcast ""
+								broadcast "{@prefix}試合が終了しました。"
+								exit 2 sections
+							else if loop-number is 300:
+								broadcast ""
+								broadcast ""
+								broadcast ""
+								broadcast "{@prefix}制限時間により試合が終了しました。"
+								if {Gamemode} is "AsidePointMatch":
+									add 20 to {Score.Blue}
+								exit 2 sections
+							wait 1 seconds
+							if {Score.Red} is more than 20:
+								set {Score.Red} to 20
+							if {Score.Blue} is more than 20:
+								set {Score.Blue} to 20
+							set {_RedScore.Bar} to ""
+							set {_BlueScore.Bar} to ""
+							set {_RedScore.Integer} to 20
+							loop {Score.Red} times:
+								set {_RedScore.Bar} to "%{_RedScore.Bar}%|"
+								remove 1 from {_RedScore.Integer}
+							set {_RedScore.Bar} to "§a%{_RedScore.Bar}%§c"
+							loop {_RedScore.Integer} times:
+								set {_RedScore.Bar} to "%{_RedScore.Bar}%|"
+
+							set {_BlueScore.Integer} to 20
+							loop {Score.Blue} times:
+								set {_BlueScore.Bar} to "%{_BlueScore.Bar}%|"
+								remove 1 from {_BlueScore.Integer}
+							set {_BlueScore.Bar} to "§a%{_BlueScore.Bar}%§c"
+							loop {_BlueScore.Integer} times:
+								set {_BlueScore.Bar} to "%{_BlueScore.Bar}%|"
+
+							loop all players:
+								set loop-player's level to 300 - loop-number-1
+								set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§cRed  %{_RedScore.Bar}%§7(%20 - {_RedScore.Integer}%)" at line 20 to loop-player
+								set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§9Blue %{_BlueScore.Bar}%§7(%20 - {_BlueScore.Integer}%)" at line 19 to loop-player
+							loop {EntryPlayers::*}:
+								set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§eYourPoints: %{TeamBattle.Score::%loop-value-2%}%" at line 18 to loop-value-2
+								set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§eYourKills : %{TeamBattle.Kill::%loop-value-2%}%" at line 17 to loop-value-2
+								set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§eYourDeaths: %{TeamBattle.Death::%loop-value-2%}%" at line 16 to loop-value-2
+								if {team::%loop-value-2%} is "blue":
+									set loop-value-2's tablist name to "§9%loop-value-2%§e(%{TeamBattle.Score::%loop-value-2%}%)"
+								else if {team::%loop-value-2%} is "red":
+									set loop-value-2's tablist name to "§c%loop-value-2%§e(%{TeamBattle.Score::%loop-value-2%}%)"
+								if {TeamBattle.Score::%loop-value-2%} - {_BeforePoint.%loop-value-2%} is not 0:
+									LastCharge("Point", loop-value-2, {TeamBattle.Score::%loop-value-2%} - {_BeforePoint.%loop-value-2%})
+								set {_BeforePoint.%loop-value-2%} to {TeamBattle.Score::%loop-value-2%}
+								if {Gamemode} is "SumoMatch":
+									apply potion of regeneration of tier 80 to loop-value-2 for 21 ticks
+									apply potion of resistance of tier 2 to loop-value-2 for 21 ticks
+								LastCharge("Time", loop-value-2)
+								SkillTrigger("Time", loop-value-2, loop-value-2)
+								if {_DataUpdateCount} is 15:
+									delete {_DataUpdateCount}
+									loop {_PointSignal::*}:
+										apply potion of glowing of tier 1 to loop-value-3 for 20 ticks
+									loop {EntryPlayers::*}:
+										if {team::%loop-value-2%} is not {team::%loop-value-3%}:
+											set mundosk loop-value-2's nametag for loop-value-3 to "§8§lX"
+									if loop-value-2 does not have invisibility:
+										if {team::%loop-value-2%} is "red":
+											set display name of "%loop-value-2%" parsed as player to "§c%loop-value-2%"
+											execute console command "/replaceitem entity %loop-value-2% slot.armor.feet minecraft:leather_boots 1 0 {display:{Name:""§c赤チーム"",color:16727614},Unbreakable:1b,ench:[{id:10s,lvl:1s}],AttributeModifiers:[{Name:""HaruEditor"",UUIDLeast:1900837528l,UUIDMost:1900837528l,Operation:0,AttributeName:""generic.armor"",Amount:0d,Slot:""feet""}],HideFlags:7}"
+										else if {team::%loop-value-2%} is "blue":
+											set display name of "%loop-value-2%" parsed as player to "§9%loop-value-2%"
+											execute console command "/replaceitem entity %loop-value-2% slot.armor.feet minecraft:leather_boots 1 0 {display:{Name:""§9青チーム"",color:1402879},Unbreakable:1b,ench:[{id:10s,lvl:1s}],AttributeModifiers:[{Name:""HaruEditor"",UUIDLeast:1900837528l,UUIDMost:1900837528l,Operation:0,AttributeName:""generic.armor"",Amount:0d,Slot:""feet""}],HideFlags:7}"
+							add 1 to {_DataUpdateCount}
+						delete {VoidLocation}
+						set {_RedScore.Bar} to ""
+						set {_BlueScore.Bar} to ""
+						if {Score.Red} is more than 20:
+							set {Score.Red} to 20
+						if {Score.Blue} is more than 20:
+							set {Score.Blue} to 20
+						set {_RedScore.Integer} to 20
+						if {Score.Red} is 20:
+							set {_RedScore.Integer} to 0
+							set {_RedScore.Bar} to "§a||||||||||||||||||||"
+						else:
+							set {_RedScore.Integer} to 20
+							loop {Score.Red} times:
+								set {_RedScore.Bar} to "%{_RedScore.Bar}%|"
+								remove 1 from {_RedScore.Integer}
+								if {_RedScore.Integer} is 0:
+									delete {_RedScore.Integer}
+							set {_RedScore.Bar} to "§a%{_RedScore.Bar}%§c"
+							loop {_RedScore.Integer} times:
+								set {_RedScore.Bar} to "%{_RedScore.Bar}%|"
+						if {Score.Blue} is 20:
+							set {_BlueScore.Integer} to 0
+							set {_BlueScore.Bar} to "§a||||||||||||||||||||"
+						else:
+							set {_BlueScore.Integer} to 20
+							loop {Score.Blue} times:
+								set {_BlueScore.Bar} to "%{_BlueScore.Bar}%|"
+								remove 1 from {_BlueScore.Integer}
+								if {_BlueScore.Integer} is 0:
+									delete {_BlueScore.Integer}
+							set {_BlueScore.Bar} to "§a%{_BlueScore.Bar}%§c"
+							loop {_BlueScore.Integer} times:
+								set {_BlueScore.Bar} to "%{_BlueScore.Bar}%|"
+						delete {Entrymidway}
+						loop all players in the world "TeamBattle":
+							if {EntryPlayers::*} does not contain loop-player:
+								teleport loop-player to location -12, 30, -107 in world "world"
+								TeleportEffect(loop-player)
+
+						loop {EntryPlayers::*}:
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§cRed  %{_RedScore.Bar}%§7(%20 - {_RedScore.Integer}%)" at line 20 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§9Blue %{_BlueScore.Bar}%§7(%20 - {_BlueScore.Integer}%)" at line 19 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§eYourPoints: %{TeamBattle.Score::%loop-value%}%" at line 18 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§eYourKills : %{TeamBattle.Kill::%loop-value%}%" at line 17 to loop-value
+							set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§eYourDeaths: %{TeamBattle.Death::%loop-value%}%" at line 16 to loop-value
+						loop {EntryPlayers::*}:
+							set level progress of {_p} to 0
+							send loop-value title "" with subtitle "§6試合終了" for 90 ticks with 20 ticks fade in and 20 ticks fade out
+							teleport loop-value to location at -52, 19, 135 of the world "FFA"
+							play "ENTITY_WITHER_DEATH" to loop-value at volume 10 with pitch 0
+							apply potion of night vision of tier 120 to the loop-value for 16 seconds
+							apply potion of resistance of tier 4 to the loop-value for 16 seconds
+							apply potion of regeneration of tier 6 to the loop-value for 16 seconds
+							apply potion of water breathing of tier 1 to the loop-value for 16 seconds
+							if {killgetmoney::%loop-value%} is set:
+								set {killgetmoney::%loop-value%} to {killgetmoney::%loop-value%} * 0.5
+								AddPoint(loop-value, "%{killgetmoney::%loop-value%}%" parsed as number, "EscapePrize")
+							if {Gamemode} is "§5HardCoreMatch":
+								if gamemode of loop-value is not spectator:
+									AddPoint(loop-value, 500, "Alive")
+							wait 2 ticks
+							set gamemode of loop-value to survival
+						if {Score.Red} is not set:
+							set {Score.Red} to 0
+						if {Score.Blue} is not set:
+							set {Score.Blue} to 0
+						if {Score.Red} is {Score.Blue}:
+							set {_Winner} to "§7§lDraw"
+							loop {EntryPlayers::*}:
+								AddPoint(loop-value, 500, "Draw")
+						else if {Score.Red} is more than {Score.Blue}:
+							set {_Winner} to "§c§lRed §awon the game"
+							loop {EntryPlayers::*}:
+								if {team::%loop-value%} is "red":
+									set {_ymlvalue} to skutilities yaml value "%loop-value%.Win" of file "plugins/Skript/yml/PlayerStat.yml"
+									set {_ymlvalue} to {_ymlvalue} + 1
+									set skutilities yaml value "%loop-value%.Win" of file "plugins/Skript/yml/PlayerStat.yml" to {_ymlvalue}
+
+									AddPoint(loop-value, 800, "Won the game")
+									execute loop-value command "/brsbrbrbrbrbrbbb すばらしい釣り竿 1"
+									message "勝利報酬(釣り竿)を送りました。" to loop-value
+									if {Gamemode} is "§5HardCoreMatch":
+										AddPoint(loop-value, 1200, "HardCore")
+								else:
+									set {_ymlvalue} to skutilities yaml value "%loop-value%.Lose" of file "plugins/Skript/yml/PlayerStat.yml"
+									set {_ymlvalue} to {_ymlvalue} + 1
+									set skutilities yaml value "%loop-value%.Lose" of file "plugins/Skript/yml/PlayerStat.yml" to {_ymlvalue}
+						else if {Score.Blue} is more than {Score.Red}:
+							set {_Winner} to "§9§lBlue §awon the game"
+							loop {EntryPlayers::*}:
+								if {team::%loop-value%} is "blue":
+									set {_ymlvalue} to skutilities yaml value "%loop-value%.Win" of file "plugins/Skript/yml/PlayerStat.yml"
+									set {_ymlvalue} to {_ymlvalue} + 1
+									set skutilities yaml value "%loop-value%.Win" of file "plugins/Skript/yml/PlayerStat.yml" to {_ymlvalue}
+
+									AddPoint(loop-value, 800, "Won the game")
+									execute loop-value command "/brsbrbrbrbrbrbbb すばらしい釣り竿 1"
+									if {Gamemode} is "§5HardCoreMatch":
+										AddPoint(loop-value, 1200, "HardCore")
+								else:
+									set {_ymlvalue} to skutilities yaml value "%loop-value%.Lose" of file "plugins/Skript/yml/PlayerStat.yml"
+									set {_ymlvalue} to {_ymlvalue} + 1
+									set skutilities yaml value "%loop-value%.Lose" of file "plugins/Skript/yml/PlayerStat.yml" to {_ymlvalue}
+						wait 3 seconds
+						loop {TeamBattle.Score::*}:
+							if {_1stPlayer} is not set:
+								set {_1stPlayer} to loop-index
+							else if loop-value is more than {TeamBattle.Score::%{_1stPlayer}%}:
+								set {_1stPlayer} to loop-index
+						loop all players in world "FFA":
+							if "%loop-player%" is "%{_1stPlayer}%":
+								set {_1stPlayer} to loop-player
+						message "§7-" to {_1stPlayer} parsed as player
+						AddPoint({_1stPlayer}, 300, "BestPlayer")
+						set {_weaponname} to CheckWeaponSlot({_1stPlayer}, "/Main")
+						set {_weapontype} to CheckWeaponCategory(slot {_weaponname} of {_1stPlayer}, 2)
+						set {_weaponname} to CheckWeaponName(name of slot {_weaponname} of {_1stPlayer}, true)
+						loop {TeamBattle.Score::*}:
+							set {_GetMoney.%loop-index%} to loop-value * 0.7
+						loop {EntryPlayers::*}:
+							if {TeamBattle.Kill::%loop-value%} and {TeamBattle.Death::%loop-value%} is 0:
+								set {_KD.%loop-value%} to 0.0
+							else:
+								if {TeamBattle.Kill::%loop-value%} is 0:
+									set {TeamBattle.Kill::%loop-value%} to 1
+								if {TeamBattle.Death::%loop-value%} is 0:
+									set {TeamBattle.Death::%loop-value%} to 1
+								set {_KD.%loop-value%} to {TeamBattle.Kill::%loop-value%} / {TeamBattle.Death::%loop-value%}
+
+								set {_ymlvalue} to skutilities yaml value "%loop-value%.Kill" of file "plugins/Skript/yml/PlayerStat.yml"
+								set {_ymlvalue} to {_ymlvalue} + {TeamBattle.Kill::%loop-value%}
+								set skutilities yaml value "%loop-value%.Kill" of file "plugins/Skript/yml/PlayerStat.yml" to {_ymlvalue}
+								set {_ymlvalue} to skutilities yaml value "%loop-value%.Death" of file "plugins/Skript/yml/PlayerStat.yml"
+								set {_ymlvalue} to {_ymlvalue} + {TeamBattle.Death::%loop-value%}
+								set skutilities yaml value "%loop-value%.Death" of file "plugins/Skript/yml/PlayerStat.yml" to {_ymlvalue}
+						wait 2 seconds
+						broadcast ""
+						broadcast "§6<%{Gamemode}%§6>"
+						broadcast "§f---Result---"
+						broadcast "§6/// %{_Winner}% §6///"
+						broadcast "§6BestPlayer: %{_1stPlayer}%(%{TeamBattle.Score::%{_1stPlayer}%}%)"
+						broadcast "§6          : %{_weaponname}%(%{_weapontype}%)"
+						broadcast "§6          : KD %{_KD.%{_1stPlayer}%}%"
+						broadcast "---YourScore---"
+						loop {EntryPlayers::*}:
+							message "§6Points: %{TeamBattle.Score::%loop-value%}%" to loop-value
+							message "§6Kill/Death: %{_KD.%loop-value%}%" to loop-value
+							message "§6%{_GetMoney.%loop-value%}%水晶を入手しました。" to loop-value
+							add {_GetMoney.%loop-value%} to loop-value's account
+
+							set {_ymlvalue} to skutilities yaml value "%loop-value%.TotalPoint" of file "plugins/Skript/yml/PlayerStat.yml"
+							set {_ymlvalue} to {_ymlvalue} + {TeamBattle.Score::%loop-value%}
+							set skutilities yaml value "%loop-value%.TotalPoint" of file "plugins/Skript/yml/PlayerStat.yml" to {_ymlvalue}
+						wait 8 seconds
+						loop {EntryPlayers::*}:
+							teleport loop-value to location -12, 30, -107 in world "world"
+							TeleportEffect(loop-value)
+							reset loop-value's nametag
+							set loop-value's tablist name to "%loop-value%"
+#							set name of loop-value to "%loop-value%"
+							set loop-value's level to -1
+							wait 1 ticks
+							set velocity of loop-value to new Vector 0, 0.5, 0
+							push loop-value north at speed random number between -1.0 and 1.0
+							push loop-value east at speed random number between -1.0 and 1.0
+						execute console command "/teambattle reload"
+
+			else:
+				remove player from {EntryPlayers::*}
+				broadcast "{@prefix}%player%が参加状態を解除しました"
+				set mundosk player's nametag to "%player%"
+				set player's tablist name to "%player%"
+				set display name of player to "%player%"
+		else:
+			message "{@prefix}現在試合中です"	
+
+command /checklocation:
+	trigger:
+		set {_Location} to "%x-coord of player%"
+		set {FinalLocation::*} to {_Location} split by "."
+		set {_SettingLocation} to "%{FinalLocation::1}%"
+		set {_Location} to "%y-coord of player%"
+		set {FinalLocation::*} to {_Location} split by "."
+		set {_SettingLocation} to "%{_SettingLocation}%, %{FinalLocation::1}%"
+		set {_Location} to "%z-coord of player%"
+		set {FinalLocation::*} to {_Location} split by "."
+		set {_SettingLocation} to "%{_SettingLocation}%, %{FinalLocation::1}%"
+		set {_Location} to "%pitch of player%"
+		set {FinalLocation::*} to {_Location} split by "."
+		set {_SettingLocation} to "%{_SettingLocation}%/%{FinalLocation::1}%"
+		set {_Location} to "%yaw of player%"
+		set {FinalLocation::*} to {_Location} split by "."
+		set {_SettingLocation} to "%{_SettingLocation}%/%{FinalLocation::1}%"
+		message {_SettingLocation} to player
+
+command /createnewmap:
+	trigger:
+		execute player command "/gamerule doMobSpawning false"
+		execute player command "/gamerule doMobLoot false"
+		execute player command "/gamerule doTileDrops false"
+		execute player command "/gamerule doFireTick false"
+		execute player command "/gamerule randomTickSpeed 0"
+		execute player command "/gamerule mobGriefing false"
+		execute player command "/gamerule logAdminCommands false"
+		execute player command "/gamerule sendCommandFeedback false"
+		execute player command "/gamerule commandBlockOutput false"
+		execute player command "/gamerule logAdminCommands false"
+		execute player command "/gamerule spawnRadius 0"
+		execute player command "/gamerule keepInventory true"
+		execute player command "/setworldspawn 0 10 0"
+		execute player command "/tp @p 0 10 0"
+
+
+
+command /drtsergsreysrtbhsrtbhtrdgds:
+	trigger:
+		if {Entrymidway} is true:
+			loop {EntryPlayers::*}:
+				if {team::%loop-value%} is "red":
+					add 1 to {_red}
+				else if {team::%loop-value%} is "blue":
+					add 1 to {_blue}
+			teleport player to location at 0, 2000, 0 of the world "TeamBattle"
+			set {TeamBattle.Score::%player%} to 0
+			set {TeamBattle.Kill::%player%} to 0
+			set {TeamBattle.Death::%player%} to 0
+			delete {killgetmoney::%player%}
+			delete {killstreak::%player%}
+			delete {kills::%player%}
+			if {Gamemode} is "§5HardCoreMatch":
+				message "途中参加できないゲームモードだったため、観戦モードにします"
+				wait 10 ticks
+				set player's gamemode to spectator
+				wait 20 ticks
+				teleport player to random element of {EntryPlayers::*}
+			else:
+				wipe player's sidebar
+				set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§cRed  §c||||||||||||||||||||§7(0)" at line 20 to player
+				set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§9Blue §c||||||||||||||||||||§7(0)" at line 19 to player
+				set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§eYourPoints: 0" at line 18 to player
+				set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§eYourKills : 0" at line 17 to player
+				set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§eYourDeaths: 0" at line 16 to player
+				set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§r" at line 15 to player
+				set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§7---" at line 14 to player
+				set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§r§7---" at line 13 to player
+				set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§r§r§7---" at line 12 to player
+				add player to {EntryPlayers::*}
+				apply potion of resistance of tier 4 to the player for 7 seconds
+				apply potion of regeneration of tier 6 to the player for 7 seconds
+				wait 10 ticks
+				if {_red} is {_blue}:
+					set {team::%player%} to "red" or "blue"
+				else if {_red} is less than {_blue}:
+					set {team::%player%} to "red"
+				else if {_blue} is less than {_red}:
+					set {team::%player%} to "blue"
+				if {team::%player%} is "red":
+					set {_spawn} to random element of {RedSpawn::*}
+					teleport player to {_spawn}
+					wait 1 ticks
+					set mundosk player's nametag to "§c%player%"
+					set player's tablist name to "§c%player%"
+					set display name of player to "§c%player%"
+					send player title "" with subtitle "§c赤チームに参加しました" for 60 ticks with 3 ticks fade in and 3 ticks fade out
+					broadcast "{@prefix}§c%player%§7が試合に途中参加しました。"
+				else if {team::%player%} is "blue":
+					set {_spawn} to random element of {BlueSpawn::*}
+					teleport player to {_spawn}
+					wait 1 ticks
+					set mundosk player's nametag to "§9%player%"
+					set player's tablist name to "§9%player%"
+					set display name of player to "§9%player%"
+					send player title "" with subtitle "§9青チームに参加しました" for 60 ticks with 3 ticks fade in and 3 ticks fade out
+					broadcast "{@prefix}§9%player%§7が試合に途中参加しました。"
+				set {_weaponname} to CheckWeaponSlot(player, "/Main")
+				set {_weaponname} to CheckWeaponName(name of slot {_weaponname} of player, true)
+				loop {EntryPlayers::*}:
+					if {team::%player%} is not {team::%loop-value%}:
+						set mundosk player's nametag for loop-value to "§8§lX"
+						wait 1 ticks
+				if player's ping is more than 99:
+					message "{@prefix}§cPingが100を超えています。" to player
+				else:
+					message "{@prefix}§6Ping --- %player's ping%" to player
+				if {_weaponname} is not set:
+					message "{@prefix}§cMainを装備していません。" to player
+				else:
+					message "{@prefix}§6Main --- %uncolored {_weaponname}%" to player
+				if {team::%player%} is "red":
+					message "{@prefix}§6Team --- Red" to player
+				else if {team::%player%} is "blue":
+					message "{@prefix}§6Team --- Blue" to player
+				if {team::%player%} is "red":
+					execute console command "/replaceitem entity %player% slot.armor.feet minecraft:leather_boots 1 0 {display:{Name:""§c赤チーム"",color:16727614},Unbreakable:1b,ench:[{id:10s,lvl:1s}],AttributeModifiers:[{Name:""HaruEditor"",UUIDLeast:1900837528l,UUIDMost:1900837528l,Operation:0,AttributeName:""generic.armor"",Amount:0d,Slot:""feet""}],HideFlags:7}"
+				else if {team::%player%} is "blue":
+					execute console command "/replaceitem entity %player% slot.armor.feet minecraft:leather_boots 1 0 {display:{Name:""§9青チーム"",color:1402879},Unbreakable:1b,ench:[{id:10s,lvl:1s}],AttributeModifiers:[{Name:""HaruEditor"",UUIDLeast:1900837528l,UUIDMost:1900837528l,Operation:0,AttributeName:""generic.armor"",Amount:0d,Slot:""feet""}],HideFlags:7}"
+
+
+		else:
+			message "{@prefix}試合が始まっていません。"
+			stop
+		wait 1 ticks
+		if "%player's world%" is "world":
+			message "{@prefix}Error. 運営に報告してください。"
+
+
+
+
+#{Point}
+on break:
+	if event-block is melon:
+		if {team::%player%} is "red":
+			cancel the event
+			if lore of player's held item does not contain "/":
+				add 1 to {Score.Red}
+				if {Gamemode} is "AsidePointMatch":
+					add 1 to {Score.Red}
+				remove invisibility from player
+				if {BreakChain::%player%} is not set:
+					AddPoint(player, 70, "Break")
+				else:
+					set {_point} to 70 + ({BreakChain::%player%} * 5)
+					AddPoint(player, {_point}, "Break")
+				apply potion of glowing of tier 1 to the player for 2 ticks
+				loop {EntryPlayers::*}:
+					if {team::%loop-value%} is "blue":
+						play "BLOCK_NOTE_HARP" to loop-value at volume 5 with pitch 0
+						SendSidebar(loop-value, "§4§lWARN:§rスイカが危険です", 3, 20)
+					else if {team::%loop-value%} is "red":
+						play "BLOCK_NOTE_HARP" to loop-value at volume 5
+						SendSidebar(loop-value, "§a§lINFO:§r相手のスイカを攻撃中", 2, 20)
+				add 1 to {BreakChain::%player%}
+				wait 10 seconds
+				remove 1 from {BreakChain::%player%}
+			else:
+				message "§c武器を持った状態での破壊はできません"
+		else:
+			cancel event
+			message "§c自チームの物は破壊できません"
+	if event-block is pumpkin:
+		if {team::%player%} is "blue":
+			cancel the event
+			if lore of player's held item does not contain "/":
+				add 1 to {Score.Blue}
+				remove invisibility from player
+				if {BreakChain::%player%} is not set:
+					AddPoint(player, 70, "Break")
+				else:
+					set {_point} to 70 + ({BreakChain::%player%} * 5)
+					AddPoint(player, {_point}, "Break")
+				apply potion of glowing of tier 1 to the player for 2 ticks
+				loop {EntryPlayers::*}:
+					if {team::%loop-value%} is "red":
+						play "BLOCK_NOTE_HARP" to loop-value at volume 5 with pitch 0
+						SendSidebar(loop-value, "§4§lWARN:§rカボチャが危険です", 3, 20)
+					else if {team::%loop-value%} is "blue":
+						play "BLOCK_NOTE_HARP" to loop-value at volume 5
+						SendSidebar(loop-value, "§a§lINFO:§r相手のカボチャを攻撃中", 2, 20)
+				add 1 to {BreakChain::%player%}
+				wait 10 seconds
+				remove 1 from {BreakChain::%player%}
+			else:
+				message "§c武器を持った状態での破壊はできません"
+		else:
+			cancel event
+			message "§c自チームの物は破壊できません"
+	else:
+		if event-player is not op:
+			cancel event
+
+#{/tdm}
+on inventory click:
+	if player's gamemode is not creative:
+		if player is not in the world "world":
+			if lore of clicked item contains "/":
+				if {inventory.lock::%player%} is not set:
+					cancel event
+					message "このエリアでの装備入れ替えは、許可されていません。"
+					close player's inventory
+
+command /tdm <text>:
+	aliases: /t
+	usage: "/tdm inv§b/§rchat "
+	trigger:
+		if arg is "inv":
+			if "%player's world%" is "TeamBattle":
+				if {pvp::%player%} is 1:
+					if {tdminv::%player%} is not more than 2:
+						add 1 to {tdminv::%player%}
+						DeleteWeaponsVariables(player)
+						set {inventory.lock::%player%} to false
+						send player title "" with subtitle "Inventory unlocked"
+						loop 12000 times:
+							wait 1 ticks
+							if {pvp::%player%} is 0:
+								delete {inventory.lock::%player%}
+								send player title "" with subtitle "Inventory locked"
+								stop
+					else:
+						send player title "" with subtitle "このコマンドはもう使用できません。"
+				else:
+					send player title "" with subtitle "リスポーン地点以外では使用できません。"
+			else:
+				send player title "" with subtitle "TeamBattle中以外では使用できません。"
+
+		else if arg contains "chat ":
+			if {say::%player%} is not set:
+				set {_arg} to arg
+				replace "chat " in {_arg} with ""
+				if sender is console:
+					broadcast "§e[Console]§fRiceBallSouls§a:§f %{_arg}%"
+				else:
+					if {team::%player%} is "red":
+						loop all players:
+							if {team::%loop-player%} is "red":
+								message "§a[user]§c%player%§7(TeamChat)§a:§f %{_arg}%" to loop-player
+								wait 1 ticks
+					else if {team::%player%} is "blue":
+						loop all players:
+							if {team::%loop-player%} is "blue":
+								message "§a[user]§9%player%§7(TeamChat)§a:§f %{_arg}%" to loop-player
+								wait 1 ticks
+					else:
+						broadcast "§a[user]§f%player%§7(簡易Chat)§a:§f %{_arg}%"
+				add 1 to {say::%player%}
+				wait 3 seconds
+				remove 1 from {say::%player%}
+				if {say::%player%} is 0:
+					delete {say::%player%}
+			else:
+				message "§aクールダウン中..."
+
+
+function SendSidebar(p:player, t:text, n:integer, w:integer):
+	set {_key} to random integer between 0 and 999999
+	set {SidebarMessage::%{_p}%.%{_n}%} to {_key}
+	set {_n2} to 12 + (3 - {_n})
+	if {_n2} is 14:
+		set sidebar "§6<%{Gamemode}%§6 - Score>" with score "%{_t}%" at line 14 to {_p}
+	else if {_n2} is 13:
+		set sidebar "§6<%{Gamemode}%§6 - Score>" with score "%{_t}%" at line 13 to {_p}
+	else if {_n2} is 12:
+		set sidebar "§6<%{Gamemode}%§6 - Score>" with score "%{_t}%" at line 12 to {_p}
+	loop {_w} times:
+		wait 1 ticks
+	if {SidebarMessage::%{_p}%.%{_n}%} is {_key}:
+		if {_n2} is 14:
+			set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§7---" at line 14 to {_p}
+		else if {_n2} is 13:
+			set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§r§7---" at line 13 to {_p}
+		else if {_n2} is 12:
+			set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§r§r§7---" at line 12 to {_p}
+
+
+
+
+
+function SendTitleTDM(p:player, t:text, n:integer):
+	if {_n} is 10:
+		loop 4 times:
+			send {_p} title "" with subtitle "%{_t}%" for 10 ticks with 0 ticks fade in and 4 ticks fade out
+			wait 1 ticks
+	else if {_n} is 20:
+		loop 4 times:
+			send {_p} title "" with subtitle "%{_t}%" for 20 ticks with 0 ticks fade in and 4 ticks fade out
+			wait 1 ticks
+
+
+on damage of player:
+	victim is alive
+	wait 1 ticks
+	if victim's health < 8:
+		if {healthwarning::%victim%} is not set:
+			set {healthwarning::%victim%} to true
+			loop all players in radius 25 around victim:
+				loop-player is not victim
+				if {team::%victim%} is "red":
+					if {team::%loop-player%} is "red":
+						message "" to loop-player
+						message "§c%victim%が瀕死状態です。" to loop-player
+				if {team::%victim%} is "blue":
+					if {team::%loop-player%} is "blue":
+						message "" to loop-player
+						message "§c%victim%が瀕死状態です。" to loop-player
+
+	else if victim's health > 7.5:
+		delete {healthwarning::%victim%}
+
+
+
+#武器の使用エリア判定
+on region exit:
+	set {pvp::%player%} to 0
+	if "%event-region%" contains "Blue" or "Red":
+		apply potion of resistance of tier 3 to the player for 6 seconds
+
+on region enter:
+	wait 1 ticks
+	set {pvp::%player%} to 1
+	if "%event-region%" contains "Blue" or "Red":
+		if "%event-region%" does not contain {team::%player%}:
+			damage player by 100 hearts
+			message "§c窒息しています。" to player
+
+
+every 5 ticks in world "TeamBattle":
+	if {VoidLocation} is set:
+		loop {EntryPlayers::*}:
+			if y-coord of loop-value is less than "%{VoidLocation}%" parsed as number:
+				if {Gamemode} is "SumoMatch":
+					damage loop-value by 100 hearts
+				else:
+					damage loop-value by 4 hearts
+					execute console command "/tp %loop-value% ~ %{VoidLocation}% ~"
+					wait 1 ticks
+					set velocity of loop-value to new Vector 0, 1.5, 0
+					Playsound(loop-value, "entity.player.hurt", 1, 1)
+					remove levitation from loop-value parsed as player
+					apply potion of levitation of tier 5 to the loop-value for 3 seconds
+
+on any move:
+	if {LockMove::%player%} is true:
+		cancel event
+
+on quit:
+	if {EntryPlayers::*} contains player:
+		execute player command "/snjedtgnhsrjtsfjgnmstefjygftd"
+
+function AddPoint(p:player, i:number, t:text):
+	if {team::%{_p}%} is set:
+		add {_i} to {TeamBattle.Score::%{_p}%}
+		message "§6(%{_t}% +%{_i}%)" to {_p}
+		set sidebar "§6<%{Gamemode}%§6 - Score>" with score "§eYourPoints: %{TeamBattle.Score::%{_p}%}%" at line 18 to {_p}
+
+on damage of player:
+	if {Gamemode} is "SumoMatch":
+		if "%victim's world%" is "TeamBattle":
+			set {_power} to -0.1 * (distance between victim and {killername::%victim%})
+			if {_power} is more than -1:
+				set {_power} to -1
+			push victim direction from victim to location at {killername::%victim%} at speed {_power}
+			push victim upwards at speed 0.15
+			set {_lore} to skutilities yaml value "%CheckWeaponName(name of {killername::%victim%}'s held item, true)%.Damage.No_Knockback.Affect_Players" of file "plugins/CrackShotPlus/weapons/%CheckWeaponCategory({killername::%victim%}'s held item, 4)%.yml"
+			if {_lore} is true:
+				wait 10 ticks
+				push victim direction from victim to location at {killername::%victim%} at speed ({_power} * 0.4)
+				push victim upwards at speed 0.05
+
+on damage of player:
+	if damage cause is fire:
+		cancel event
+		if {DamageCoolDown::%victim%} is not true:
+			set {DamageCoolDown::%victim%} to true
+			damage victim by 0.5 hearts
+			wait 5 ticks
+			delete {DamageCoolDown::%victim%}
+	else if damage cause is burning:
+		cancel event
+		if {ContinueDamageCoolDown::%victim%} is not true:
+			set {ContinueDamageCoolDown::%victim%} to true
+			damage victim by 0.5 hearts
+			Playsound(victim, "entity.generic.burn", 1, 1)
+			wait 9 ticks
+			damage victim by 0.5 hearts
+			Playsound(victim, "entity.generic.burn", 1, 1)
+			delete {ContinueDamageCoolDown::%victim%}
+	else if damage cause is drowning:
+		cancel event
+		if {ContinueDamageCoolDown::%victim%} is not true:
+			set {ContinueDamageCoolDown::%victim%} to true
+			damage victim by 1 hearts
+			Playsound(victim, "entity.player.hurt_drown", 1, 1)
+			wait 9 ticks
+			damage victim by 1 hearts
+			Playsound(victim, "entity.player.hurt_drown", 1, 1)
+			delete {ContinueDamageCoolDown::%victim%}
+	else if damage cause is magma:
+		cancel event
+		if {DamageCoolDown::%victim%} is not true:
+			set {DamageCoolDown::%victim%} to true
+			damage victim by 0.5 hearts
+			Playsound(victim, "entity.generic.burn", 1, 1)
+			wait 5 ticks
+			delete {DamageCoolDown::%victim%}
+	else if damage cause is lava:
+		cancel event
+		if {DamageCoolDown::%victim%} is not true:
+			set {DamageCoolDown::%victim%} to true
+			damage victim by 3 hearts
+			wait 0.5 seconds
+			delete {DamageCoolDown::%victim%}
+	else if damage cause is starvation:
+		cancel event
+		damage victim by 4.5 hearts
+	else if damage cause is suffocation:
+		cancel event
+		if "%region at victim%" does not contain "Blue" or "Red":
+			if {DamageCoolDown::%victim%} is not true:
+				set {DamageCoolDown::%victim%} to true
+				set {_loc1} to location of victim
+				message "§c窒息しています。" to victim
+				damage victim by 3 hearts
+				loop all blocks in radius 5 around location 1 meter above victim:
+					if loop-block is air or water:
+						if block at location 1 above loop-block is air or water:
+							if block at location 1 below loop-block is not air:
+								add location of loop-block to {_Loc2::*}
+				wait 1 ticks
+				if {_Loc2::*} is set:
+					set {_Loc3} to {_Loc2::1}
+					loop {_Loc2::*}:
+						if distance between {_Loc1} and {_Loc3} is more than distance between {_Loc1} and loop-value:
+							set {_Loc3} to loop-value
+					teleport victim to {_Loc3}
+					Playsound(victim, "block.grass.break", 5, 2)
+					apply potion of blindness of tier 1 to the victim for 2 seconds				
+				else:
+					damage victim by 20 hearts
+				delete {DamageCoolDown::%victim%}
+	else if damage cause is attack:
+		if attacker's held item is not stone sword:
+			if {AttackDamageCoolDown::%victim%} is not true:
+				set {AttackDamageCoolDown::%victim%} to true
+				wait 0.5 seconds
+				delete {AttackDamageCoolDown::%victim%}
+			else:
+				cancel event
+	else if damage cause is block explosion or entity explosion:
+		cancel event

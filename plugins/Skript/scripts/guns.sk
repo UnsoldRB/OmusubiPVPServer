@@ -1,0 +1,529 @@
+import:
+	com.shampaggon.crackshot.CSUtility
+	com.shampaggon.crackshot.events.WeaponScopeEvent
+	com.shampaggon.crackshot.events.WeaponHitBlockEvent
+	java.util.UUID
+
+
+on script load:
+	delete {MainAbility.CT::*}
+	delete {MainAbility.Amount::*}
+	delete {SCAR-H::*}
+	delete {MainStep::*}
+	delete {Fly-1967::*}
+
+function SRBulletDrop(e:projectile):
+	loop 10 times:
+		wait 1 ticks
+		push {_e} downwards at speed 0.025
+
+function ARAbilityATK(p:player):
+	add 1 to {MainAbility.Amount::%{_p}%}
+	wait 1 ticks
+	if {MainAbility.Amount::%{_p}%} is 15:
+		delete {MainAbility.Amount::%{_p}%}
+		set {_Slot.%{_p}%} to {_p}'s selected hotbar slot
+		set {MainAbility.CT::%{_p}%} to true
+		set slot {_Slot.%{_p}%} of {_p} to {_p}'s offhand
+		set {_p}'s offhand to air
+		{_p}.setCooldown({_p}.getItemInHand().getType(), 400)
+		AddPoint({_p}, 30, "UseAbility")
+		wait 20 seconds
+		SendSidebar({_p}, "§a§lREADY:§r§l//%CheckWeaponCharacter(""AK-47"")%//", 1, 40)
+		play "BLOCK_GLASS_BREAK" to {_p} at volume 10
+		delete {MainAbility.CT::%{_p}%}
+
+#{ショットガン\, コンパクトショットガン}
+WeaponHitBlockEvent:
+	if lore of held item of event.getPlayer() contains "Gun-CSG" or "Gun-SG":
+		set {_lore} to skutilities yaml value "%event.getWeaponTitle()%.Item_Information.Item_Lore" of file "plugins/CrackShot/weapons/Gun-CSG.yml"
+		set {_lores::*} to {_lore} split by "|"
+		replace "&", "f最大火力: " in {_lores::1} with ""
+		BreakBlock(event.getPlayer(), event.getBlock().getLocation())
+
+
+on projectile collide:
+	if {team::%projectile target%} is {team::%shooter of event-projectile%}:
+		cancel event
+	else if {CollideProjectile::*} contains "%event-projectile.getUniqueId()%":
+		cancel event
+
+on offhand switch:
+	player's gamemode is not creative
+	if lore of player's held item contains "/Gun-AR":
+		if {MainAbility.CT::%player%} is not set:
+			if player's held item is not enchanted with efficiency 1:
+				set {_Slot.%player%} to player's selected hotbar slot
+				play "BLOCK_METAL_FALL" to player at volume 1
+				play "BLOCK_METAL_FALL" to player at volume 1
+				play "BLOCK_METAL_FALL" to player at volume 1
+				if lore of player's held item contains "攻撃型":
+					wait 1 ticks
+					set slot {_Slot.%player%} of player to unbreakable iron axe:1 of efficiency 1 named "§r"
+					set name of player's held item to "§eアサルトアビリティ§e"
+					wait 30 ticks
+					if {MainAbility.CT::%player%} is not set:
+						set {MainAbility.CT::%player%} to true
+						set slot {_Slot.%player%} of player to player's offhand
+						set player's offhand to air
+						player.setCooldown(player.getItemInHand().getType(), 400)
+						wait 20 seconds
+						SendSidebar(player, "§a§lREADY:§r§l//%CheckWeaponCharacter(""AK-47"")%//", 1, 40)
+						play "BLOCK_GLASS_BREAK" to player at volume 10
+						delete {MainAbility.CT::%player%}
+				else if lore of player's held item contains "バランス型":
+					cancel event
+					set {_slot} to player.getItemInHand().getType()
+					set {MainAbility.CT::%player%} to true
+					set {_speed} to 2.2
+					if pitch of player is less than 0:
+						set {_speed} to 2.2 - pitch of player * -0.015
+					shoot an armor stand from player at speed {_speed}
+					set {_MainAbility.ITEM.%player%} to last shot armor stand
+					set name of {_MainAbility.ITEM.%player%} to "ARAbility"
+					Add "{CustomName:""ARAbility"",Silent:1,Marker:1b,Invisible:1,NoBasePlate:1}" To nbt of {_MainAbility.ITEM.%player%}
+					set helmet of {_MainAbility.ITEM.%player%} to web
+					loop 10 times:
+						draw 10 critmagic particles at location 1.5 meter above {_MainAbility.ITEM.%player%} with direction vector of {_MainAbility.ITEM.%player%} and speed 0.0
+						wait 1 ticks
+					AddPoint(player, 30, "UseAbility")
+					drawLine particle crit, center player, target location 1.5 meter above {_MainAbility.ITEM.%player%}, id "%player%.ARAbility", density 5, visibleRange 32
+					loop 100 times:
+						if player is not sneaking:
+							wait 1 ticks
+							delete velocity of player
+							delete velocity of {_MainAbility.ITEM.%player%}
+							set velocity of player to new Vector 0, 0.05, 0
+							push the player direction from player to location at {_MainAbility.ITEM.%player%} at speed 0.8
+							Playsound(player, "block.note.hat", 0.4, 0)
+							if DetectEntity(location of player, 1, {_MainAbility.ITEM.%player%}) is true:
+								exit 3 sections
+					draw 20 blockcrack particle made of oak plank at location of {_MainAbility.ITEM.%player%}
+					stopEffect "%player%.ARAbility"
+					Playsound(player, "entity.wood.break", 1, 0)
+					kill {_MainAbility.ITEM.%player%}
+					delete velocity of player
+					set velocity of player to new Vector 0, 0.5, 0
+					player.setCooldown({_slot}, 300)
+					wait 15 seconds
+					SendSidebar(player, "§a§lREADY:§r§l//%CheckWeaponCharacter(""AK-47"")%//", 1, 40)
+					play "BLOCK_GLASS_BREAK" to player at volume 10
+					delete {MainAbility.CT::%player%}
+				else if lore of player's held item contains "防衛型":
+					cancel event
+					set {MainAbility.CT::%player%} to true
+					AddPoint(player, 30, "UseAbility")
+					spawn an armor stand 5 meters forwards the player
+					set {_armorstand} to spawned armor stand
+					Add "{CustomName:""AR_Defend"",Invisible:1b,Silent:1,NoGravity:1b,Marker:1b,NoBasePlate:1,Rotation:[%yaw of player%f, 0.0f]}" To nbt of {_armorstand}
+					set {_Loc::*} to line between location 3 right {_armorstand} and location 3 left {_armorstand} with density 1
+					loop {_Loc::*}:
+						teleport {_armorstand} to loop-value
+						add "{Rotation:[%yaw of player%f, %pitch of player - 90%f]}" to nbt of {_armorstand}
+						add line between location 2 meters forwards {_armorstand} and location 2 meters backwards {_armorstand} with density 1 to {_Loc::*}
+						remove loop-value from {_Loc::*}
+					kill {_armorstand}
+					loop {_Loc::*}:
+						add line between location of player and loop-value with density 1 to {_Locplayer::*}
+						if block at loop-value is air:
+							set block at loop-value to barrier
+							add loop-value to {_lastLoc::*}
+					Playsound(player, "entity.generic.splash", 1, 1)
+					Playsound(player, "entity.generic.splash", 1, 1.2)
+					draw 1 critmagic particles at {_Locplayer::*} with direction vector 0, 0, 0 and speed 0.1, offset 0.15, 0.1, 0.15, keepFor 0.3 second
+					draw 3 waterbubble particles at {_lastLoc::*} with direction vector 0, 0, 0 and speed 0.1, offset 0.4, 0.3, 0.4, keepFor 1 second
+					wait 20 ticks
+					loop {_lastLoc::*}:
+						set block at loop-value to air
+					Playsound(player, "block.glass.break", 1, 0.6)
+					Playsound(player, "block.glass.break", 1, 0.5)
+					draw 8 blockcrack material particle made of cyan glass at {_lastLoc::*}, offset 0.5, 0.5, 0.5, keepFor 0.2 seconds
+					player.setCooldown(player.getItemInHand().getType(), 600)
+					wait 30 seconds
+					SendSidebar(player, "§a§lREADY:§r§l//%CheckWeaponCharacter(""AK-47"")%//", 1, 40)
+					play "BLOCK_GLASS_BREAK" to player at volume 10
+					delete {MainAbility.CT::%player%}
+			else:
+				cancel event
+		else:
+			cancel event
+	else if lore of player's held item contains "/Gun-SMG":
+		cancel event
+		if {MainAbility.CT::%player%} is not set:
+			set {_slot} to player.getItemInHand().getType()
+			set {MainAbility.CT::%player%} to true
+			AddPoint(player, 60, "UseAbility")
+			loop integers from 0 to 8:
+				if lore of slot loop-int of player contains "/Sub":
+					set {_ammo} to skutilities yaml value "%CheckWeaponName(name of slot loop-int of player, true)%.Reload.Reload_Amount" of file "plugins/CrackShot/weapons/%CheckWeaponCategory(slot loop-int of player, 4)%.yml"
+					SetWeaponAmmo(player, loop-int, {_ammo})
+					Playsound(player, "entity.itemframe.add_item", 1, 1)
+					wait 10 ticks
+			Playsound(player, "item.armor.equip_iron", 1, 1)
+			loop 3 times:
+				draw 20 blockcrack material particle made of player's held item at location of player, speed 0.2, offset 0.5, 0.5, 0.5, keepFor 0.1 seconds
+				wait 1 ticks
+			player.setCooldown({_slot}, 500)
+			wait 25 seconds
+			SendSidebar(player, "§a§lREADY:§r§l//%CheckWeaponCharacter(""AK-47"")%//", 1, 40)
+			play "BLOCK_GLASS_BREAK" to player at volume 10
+			delete {MainAbility.CT::%player%}
+	else if lore of player's held item contains "/Gun-LMG":
+		cancel event
+		if {MainAbility.CT::%player%} is not set:
+			player.setCooldown(player.getItemInHand().getType(), 170)
+			set {MainAbility.CT::%player%} to true
+			Playsound(player, "block.fire.extinguish", 1, 1)
+			set {_slot} to player's selected hotbar slot
+			wait 0.5 seconds
+			set {_loc} to location of player
+			drawLine particle fireworkspark, center {_loc}, target player, id "%player%.LMGAbility", rainbowMode true, density 50, visibleRange 32
+			if {_slot} + 1 is 9:
+				set {_rightslot} to 0
+			else:
+				set {_rightslot} to {_slot} + 1
+			if {_slot} - 1 is -1:
+				set {_leftslot} to 8
+			else:
+				set {_leftslot} to {_slot} - 1
+			set {_count} to 1
+			loop 15 times:
+				if player's selected hotbar slot is {_rightslot}:
+					if block at location {_count} meter to the right of player is air or water:
+						add 1 to {_count}
+					else:
+						remove 1 from {_count}
+						exit 2 sections
+
+				else if player's selected hotbar slot is {_leftslot}:
+					if block at location {_count} meter to the left of player is air or water:
+						add 1 to {_count}
+					else:
+						remove 1 from {_count}
+						exit 2 sections
+				else:
+					if block at location {_count} meter backwards location of player is air or water:
+						add 1 to {_count}
+					else:
+						remove 1 from {_count}
+						exit 2 sections
+			if player's selected hotbar slot is {_rightslot}:
+				teleport player to block at location {_count} meter to the right of player
+			else if player's selected hotbar slot is {_leftslot}:
+				teleport player to block at location {_count} meter to the left of player
+			else:
+				teleport player to block at location {_count} meter backwards location of player
+			Playsound(player, "entity.evocation_illager.prepare_summon", 1, 1)
+			AddPoint(player, 30, "UseAbility")
+			wait 2 ticks
+			stopEffect "%player%.LMGAbility"
+			wait 8 seconds
+			SendSidebar(player, "§a§lREADY:§r§l//%CheckWeaponCharacter(""AK-47"")%//", 1, 40)
+			play "BLOCK_GLASS_BREAK" to player at volume 10
+			delete {MainAbility.CT::%player%}
+	else if lore of player's held item contains "/Gun-LSR":
+		cancel event
+		if {MainAbility.CT::%player%} is not set:
+			player.setCooldown(player.getItemInHand().getType(), 700)
+			set {MainAbility.CT::%player%} to true
+			Playsound(player, "entity.generic.explode", 1, 2)
+			shoot an egg at speed 2
+			execute console command "/tp %player% ~ ~ ~ ~ ~-10"
+			set {_projectile} to last shot egg
+			loop 10 times:
+				wait 2 ticks
+				Playsound(location of {_projectile}, "block.sand.place", 1, 2)
+				Playsound(location of {_projectile}, "block.sand.place", 1, 2)
+				execute console command "/execute %player% ~ ~ ~ /particle cloud %Location(location of {_projectile})% 0 0 0 0.001 10"
+			AddPoint(player, 30, "UseAbility")
+			execute console command "/execute %player% ~ ~ ~ /particle cloud %Location(location of {_projectile})% 0 0 0 0.5 40"
+			Playsound(location of {_projectile}, "entity.firework.blast_far", 1.5, 0.2)
+			loop all blocks in radius 4 around location of {_projectile}:
+				if loop-block is not air:
+					BreakBlock(player, location of loop-block)
+			loop all players in radius 4 around location of {_projectile}:
+				push loop-player upwards at speed 0.4
+				wait 1 ticks
+				push loop-player direction from location of {_projectile} to loop-player at speed 1.4
+			wait 34 seconds
+			SendSidebar(player, "§a§lREADY:§r§l//%CheckWeaponCharacter(""AK-47"")%//", 1, 40)
+			play "BLOCK_GLASS_BREAK" to player at volume 10
+			delete {MainAbility.CT::%player%}
+	else:
+		cancel event
+
+
+on crackshot shoot:
+#{遅延処理が入る/同時処理が必要なもの}
+#{SRBulletDrop}
+	if lore of player's held item contains "/Gun-HSR" or "/Gun-LSR":
+		SRBulletDrop(projectile)
+#{アサルトアビリティ}
+	if name of player's held item contains "アサルトアビリティ":
+		if {MainAbility.CT::%player%} is not set:
+			ARAbilityATK(player)
+
+#{ショットガン}
+	if lore of player's held item contains "/Gun-SG":
+		draw 1 blockcrack material particle made of dirt at location 0.6 meter forwards, 1.5 meter above player, speed 0.2, offset 0.3, 0.3, 0.3
+
+#//////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#{PGM Hecate II}
+	if event-string is "PGMHecateII":
+		Playsound(player, "hsr_heavy", 2, 0.8)
+		Playsound(player, "hsr_heavy", 2, 0.8)
+		if block Below player is air or water:
+			chance of 50%:
+				push projectile upwards at speed 2 or 3
+			chance of 50%:
+				push projectile downwards at speed 2 or 3
+			chance of 50%:
+				push projectile right at speed 2 or 3
+			chance of 50%:
+				push projectile left at speed 2 or 3
+		loop 10 times:
+			push the projectile downwards at speed 0.18
+			wait 1 ticks
+#{追尾ミサイル}
+	if event-string is "追尾ミサイル":
+		set {_s} to player's selected hotbar slot
+		set velocity of projectile to new Vector 0, 2, 0
+		loop 200 times:
+			add 1 to {_count}
+			set {_beforeL} to location of projectile
+			draw 2 cloud particles at location of projectile with direction vector 0, 0, 0 and speed 0.01, offset 0, 0, 0, keepFor 0.2 second
+			draw 2 crit particles at location of projectile with direction vector 0, 0, 0 and speed 0.01, offset 0.2, 0.2, 0.2, keepFor 0.2 second
+			wait 1 ticks
+			if location of projectile is {_beforeL}:
+				Explosion(player, {_beforeL}, 15, 3.5, 0, false, {_s})
+				kill projectile
+				stop
+			if {_count} is less than 10:
+				push projectile upwards at speed 0.4
+
+
+
+
+on toggle sneak:
+#{ハイジャンプ}
+	if lore of player's held item contains "/Gun-LMG":
+		player is sneaking
+		if pitch of player is 90:
+			if {MainStep::%player%} is not set:
+				set {MainStep::%player%} to 2
+			if {MainStep::%player%} is not 0:
+				if block at location 0.1 meter below player is not air or water:
+					add -1 to {MainStep::%player%}
+					send player title "" with subtitle "§7Remaining %{MainStep::%player%}%" for 1 ticks
+					delete velocity of player
+					Playsound(player, "entity.enderdragon.flap", 1, 0.6)
+					wait 1 ticks
+					JumpPad(player)
+					Playsound(player, "entity.enderdragon.flap", 1, 0.7)
+					push player upwards at speed 1.8
+
+#{SMGアビリティ}
+	else if CheckWeaponCategory(player's held item, 2) is "SMG":
+		player is not sneaking
+		if pitch of player is 90:
+			if food level of player is 10:
+				set food level of player to -1
+				Playsound(player, "entity.item.break", 1, 1)
+				AddPoint(player, 30, "UseAbility")
+				set {_ammo} to CheckWeaponAmmo(name of player's held item) + 20
+				SetWeaponAmmo(player, (player's selected hotbar slot), {_ammo})
+				loop 3 times:
+					draw 20 blockcrack material particle made of player's held item at location of player, speed 0.2, offset 0.5, 0.5, 0.5, keepFor 0.1 seconds
+					wait 1 ticks
+
+#{G36C,M76}
+	if name of player's held item contains "G36C" or "M76":
+		player is not sneaking
+		loop 40 times:
+			if name of player's held item contains "G36C" or "M76":
+				wait 1 ticks
+				if player is sneaking:
+					add 1 to {_spy.%player%}
+					set {_spy2.%player%} to 40
+					remove {_spy.%player%} from {_spy2.%player%}
+					send action bar "§6透明化中...%{_spy2.%player%}%" to player
+				else:
+					send action bar "§6失敗しました" to player
+					stop
+			else:
+				send action bar "§6失敗しました" to player
+				stop
+		if {_spy.%player%} is 40:
+			set {_spy.%player%} to player's held item
+			set {_slot} to player's selected hotbar slot
+			set {_name} to name of player's held item
+			set name of player's held item to "§ %{_name}%"
+			replace "§ " in {_name} with ""
+			Playsound(player, "entity.ghast.death", 1, 1)
+			Invisible(player, 2000)
+			loop 2000 times:
+				if player' held item is {_spy.%player%}:
+					if player is not sneaking:
+						exit 2 sections
+					else if the block at location 0.2 meter below player is air or water:
+						exit 2 sections
+					wait 1 ticks
+				else:
+					exit 2 sections
+			Playsound(player, "block.enchantment_table.use", 1, 0)
+			execute console command "/execute %player% ~ ~ ~ /particle snowballpoof ~ ~1 ~ 1 0 1 0.4 10 force"
+			send action bar "§6解除されました" to player
+			remove invisibility from player
+			set name of slot {_slot} of player to {_name}
+
+on left click:
+#{FLY-1967}
+	if name of player's held item contains "FLY-1967":
+		if {MainStep::%player%} is not 0:
+			if {Fly-1967::%player%} is not true:
+				add -1 to {MainStep::%player%}
+				send player title "" with subtitle "§7Remaining %{MainStep::%player%}%" for 1 ticks
+				delete velocity of player
+				set velocity of player to new Vector 0, 0.05, 0
+				push player forwards at speed 1.3
+				wait 1 ticks
+				Playsound(player, "entity.enderdragon.flap", 1, 1.5)
+				set {Fly-1967::%player%} to true
+				JumpPad(player)
+				wait 30 ticks
+				delete {Fly-1967::%player%}
+				send player title "" with subtitle "§7Ready" for 1 ticks
+
+WeaponScopeEvent:
+	set {_p} to event.getPlayer()
+	if event.isZoomIn() is true:
+		if lore of {_p}'s held item contains "/Gun-HSR" or "/Gun-LSR":
+			if name of {_p}'s held item contains "PGM Hecate II":
+				set {_p}'s offhand to unbreakable iron hoe:6 named "スコープ"
+			else:
+				set {_p}'s offhand to unbreakable iron hoe:2 named "スコープ"
+		else if lore of {_p}'s held item contains "/Gun-REV":
+			set {_slot} to {_p}'s selected hotbar slot
+			set {_name} to name of {_p}'s held item
+			set name of {_p}'s held item to "§ %{_name}%"
+			replace "§ " in {_name} with ""
+			set {_lore} to skutilities yaml value "%CheckWeaponName({_name}, true)%.Item_Information.Item_Lore" of file "plugins/CrackShot/weapons/Gun-REV.yml"
+			set {_item::*} to {_lore} split by "|"
+			set {_weight} to subtext of {_item::6} from characters 9 to length of {_item::6}
+			set {_weight} to 6 * {_weight} parsed as number
+			set {_cooldown} to {_p}.getItemInHand().getType()
+			{_p}.setCooldown({_cooldown}, {_weight})
+			loop {_weight} times:
+				wait 1 ticks
+				if {_p}'s selected hotbar slot is not {_slot}:
+					set name of slot {_slot} of {_p} to {_name}
+					{_p}.setCooldown({_cooldown}, 0)
+					stop
+			Playsound({_p}, "entity.skeleton.ambient", 1, 2)
+			Playsound({_p}, "entity.skeleton.ambient", 1, 2)
+			set name of slot {_slot} of {_p} to {_name}
+	else:
+		if name of {_p}'s offhand is "スコープ":
+			set {_p}'s offhand to air
+
+
+
+
+#{リボルバー持ち替え}
+on player's tool changing:
+	if lore of player's held item contains "/Gun-REV":
+		replace "§ " in name of player's held item with ""
+	wait 1 ticks
+	if name of player's offhand is "スコープ":
+		set player's offhand to air
+
+
+on damage of player:
+#{アサルトアビリティ2}
+	if lore of attacker's held item contains "/Gun-AR":
+		if attacker's food level is more than 5:
+			damage was caused by attack
+			cancel event
+			remove 5 from attacker's food level
+			set {_slot} to attacker's selected hotbar slot
+			Damage(attacker, victim, 2, {_slot})
+			Playsound(attacker,"entity.zombie.break_door_wood",1,0)
+			push the victim upwards at speed 1.2
+			wait 1 ticks
+			spawn an armor stand at location 1 meter forwards attacker
+			set {_armorstand} to spawned armor stand
+			Add "{CustomName:""AR_Punch"",Invisible:1b,NoGravity:1b,Silent:1,Marker:1b,NoBasePlate:1,Rotation:[%yaw of attacker + 180%f, %pitch of attacker * 1%f]}" To nbt of {_armorstand}
+			push the victim direction from attacker to victim at speed 1.2
+			drawDragonBreath particle "cloud", speed 0.08, center {_armorstand}, id "AR-Punch.%attacker%", arcPitch 0.25, arcCount 5, arcDensity 5, arcSteps 25, arcLength 3, visibleRange 64
+			draw 50 blockcrack material particle made of oak plank at location of victim, speed 0.2, offset 0.5, 0.5, 0.5, keepFor 0.1 seconds
+			kill {_armorstand}
+			wait 1 ticks
+			stopEffect id "AR-Punch.%attacker%"
+			loop 5 times:
+				push the victim downwards at speed 0.1
+				wait 1 ticks
+
+	if damage cause is not attack:
+#{エンダースナイパー}
+		if name of attacker's held item contains "ENDER-SNIPER":
+			set {_endervic.%victim%} to location of victim
+			set {_enderatc.%victim%} to location of attacker
+			if {pvp::%victim%} is 0:
+				teleport the victim to {_enderatc.%victim%}
+				teleport the attacker to {_endervic.%victim%}
+				apply potion of blindness of tier 10 to the victim and attacker for 5 ticks
+#{BDisturb}
+		else if name of attacker's held item contains "BDisturb":
+			chance of 20%:
+				delete velocity of victim
+				set velocity of victim to new Vector 0, -0.01, 0
+		else if name of attacker's held item contains "FlipShot":
+			execute console command "/execute %attacker% ~ ~ ~ /tp %victim% ~ ~ ~ ~180 ~"
+
+
+
+#{リロード時弾薬}
+on crackshot reload finish:
+	if name of player's held item contains "無尽蔵":
+		chance of 50%:
+			execute console command "/csp give ShotShell %player%"
+#{ステップ系統}
+	else if lore of player's held item contains "/Gun-LMG":
+		set {MainStep::%player%} to 2
+		send player title "" with subtitle "§7Remaining Recharged" for 1 ticks
+	else if event-string is "FLY-1967":
+		set {MainStep::%player%} to 7
+		send player title "" with subtitle "§7Remaining Recharged" for 1 ticks
+
+on crackshot reload:
+	if {MainStep::%player%} is set:
+		delete {MainStep::%player%}
+		send player title "" with subtitle "§7Remaining Cleared" for 1 ticks
+
+
+function OnDeathEvent(a:player, v:player):
+#{SCAR-H}
+	if name of slot {weapontool::%{_a}%} of {_a} contains "SCAR-H":
+		if {SCAR-H::%{_a}%} is set:
+			add 120 to {SCAR-H::%{_a}%}
+		else:
+			set {_slot} to {weapontool::%{_a}%}
+			enchant slot {_slot} of {_a} with efficiency 1
+			set {Reloadspeed::%{_a}%.%{_slot}%} to 0.5
+			set {SCAR-H::%{_a}%} to 120
+			loop 7200 times:
+				send {_a} title "" with subtitle "§3          §bSCAR-H %{SCAR-H::%{_a}%}%" for 1 seconds with 0 ticks fade in and 1 ticks fade out
+				remove 1 from {SCAR-H::%{_a}%}
+				wait 1 ticks
+				if {SCAR-H::%{_a}%} is less than 1:
+					exit 2 sections
+			Playsound({_a}, "block.piston.extend", 1, 2)
+			delete {Reloadspeed::%{_a}%.%{_slot}%}
+			disenchant slot {_slot} of {_a}
+			send {_a} title "" with subtitle "§3          §bSCAR-H END" for 1 seconds with 0 ticks fade in and 1 ticks fade out
+			delete {SCAR-H::%{_a}%}
+			wait 4 ticks
+			Playsound({_a}, "block.piston.extend", 1, 0)
+			wait 4 ticks
+			Playsound({_a}, "block.piston.contract", 1, 2)

@@ -1,0 +1,31 @@
+﻿on death of player:
+	if name of player is "RiceBallSouls":
+		execute player command "/inventory load"
+
+command /showrealname:
+	trigger:
+		set {_a} to name of player's held item
+		replace "§" and "&" in {_a} with ""
+		broadcast {_a}
+
+function EarthWall(l:location):
+	loop 7 times:
+		add 1 to y-coord of {_l}
+		set {_tick} to random integer between 0 and 2
+		loop {_tick} times:
+			wait 1 ticks
+		if the block at {_l} is air:
+			set the block at {_l} to glass
+			add {_l} to {_Blocks::*}
+	wait 1 seconds
+	loop {_Blocks::*}:
+		wait 2 ticks
+		set the block at location of loop-value to air
+
+
+
+#on crackshot shoot:
+#	add 1 to {a}
+#	wait 1 seconds
+#	broadcast "%{a}%"
+#	delete {a}

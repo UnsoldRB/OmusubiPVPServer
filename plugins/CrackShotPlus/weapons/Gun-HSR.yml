@@ -1,0 +1,237 @@
+DSR-1:
+    Shoot:
+        Trails:
+            Default_Trail: "SR"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 1.0
+                Maxium: 1.0
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot！"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: -0.02
+    Skin:
+        Default_Skin: "default"
+
+L96:
+    Shoot:
+        Trails:
+            Default_Trail: "SR"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 1.0
+                Maxium: 1.0
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot！"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: -0.02
+    Skin:
+        Default_Skin: "default"
+
+ENDER-SNIPER:
+    Shoot:
+        Trails:
+            Default_Trail: "ENDER-SNIPER"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 1.0
+                Maxium: 1.0
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot！"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: -0.02
+    Skin:
+        Default_Skin: "default"
+
+M40A1:
+    Shoot:
+        Trails:
+            Default_Trail: "SR"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 1.0
+                Maxium: 1.0
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot！"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: -0.02
+    Skin:
+        Default_Skin: "default"
+
+ScoutRifle:
+    Shoot:
+        Trails:
+            Default_Trail: "SR"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 1.0
+                Maxium: 1.0
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot！"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: 0.025
+    Skin:
+        Default_Skin: "default"
+
+PGMHecateII:
+    Shoot:
+        Trails:
+            Default_Trail: "SR"
+        Invisible_Projectiles: true
+        Delay_Bar:
+            Left_Color: "&a"
+            Right_Color: "&c"
+            Symbol: "|"
+            Symbol_Amount: 9
+            Action_Bar: "&7CoolDown - #BAR# &7#TIME#s"
+            End_Title: ""
+            End_Subtitle: ""
+            End_Action_Bar: "Ready"
+        Camera_Recoil:
+            Upwards:
+                Minium: 5.0
+                Maxium: 5.0
+            Sideways:
+                Minium: 0.01
+                Maxium: 0.01
+    Damage:
+        Title_And_Subtitle:
+            Shooter:
+                Headshot:
+                    Subtitle: "&7HeadShot！"
+    Reload:
+        Visual_Reload:
+            Default_Visual_Reload: "Reload"
+    Scope:
+        Second_Zoom:
+            Amount: 10
+            Fog: true
+    Hit_Block:
+        Block_Crack_Animation:
+            Minium_Crack: 1
+            Maxium_Crack: 10
+    Held:
+        Hide_Attributes: true
+        Weapon_Weight: -0.03
+    Skin:
+        Default_Skin: "default"
